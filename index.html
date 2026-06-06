@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>有道词典取词/划词/截图翻译失效速查 - 屏幕取词不能用、PDF·Word·浏览器取不到词、快捷键冲突排查</title>
+<meta name="description" content="有道词典屏幕取词、划词翻译、截图OCR 或快捷键失效？输入或点选症状（取词失效 / 划词不弹窗 / Word·Office 取词 / PDF·Acrobat 取词 / Chrome 浏览器划词 / 截图OCR / 快捷键冲突 / macOS 权限 / 多屏弹窗飞走 / 64位 / 绿色版），查 L1 现象与官方定位 + L2 深度真因（全局钩子/DLL 注入、UAC 提权层级、Office COM 加载项、Acrobat 保护模式、GPU 硬件加速渲成纹理、扫描件需 OCR、DPI 多屏），并看有道 vs 欧路 / 金山词霸 / 沙拉查词 / 微软翻译 横向对照与 2026 估算。">
+<link rel="canonical" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "有道词典取词/划词/截图翻译失效速查",
+   "url": "https://yoydao.github.io/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "zh-Hans",
+   "description": "有道词典屏幕取词、划词翻译、截图OCR 或快捷键失效？输入或点选症状（取词失效 / 划词不弹窗 / Word·Office 取词 / PDF·Acrobat 取词 / Chrome 浏览器划词 / 截图OCR / 快捷键冲突 / macOS 权限 / 多屏弹窗飞走 / 64位 / 绿色版），查 L1 现象与官方定位 + L2 深度真因（全局钩子/DLL 注入、UAC 提权层级、Office COM 加载项、Acrobat 保护模式、GPU 硬件加速渲成纹理、扫描件需 OCR、DPI 多屏），并看有道 vs 欧路 / 金山词霸 / 沙拉查词 / 微软翻译 横向对照与 2026 估算。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "zh-Hans",
+   "url": "https://yoydao.github.io/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "有道词典屏幕取词整体失效怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "屏幕取词需有道词典在后台运行并开启取词开关；官方桌面版提供「智能取词 / 剪切板取词 / OCR 取词」三种方式。 屏幕取词靠全局钩子注入到前台程序去读它的文本，前提是：有道进程在跑 + 取词总开关开 + 取词方式与触发键对得上。三者缺一就表现为「整体没反应」，常被误判成软件坏了。 看右下角托盘有道图标是否活跃（灰=没运行，双击启动）；设置 → 取词划词 勾「启用取词」并选取词方式（鼠标悬停 / 按住 Ctrl）；改完重启有道再试。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典划词翻译选中不弹窗怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "划词翻译需开启「划词」并勾选「选中文字后自动翻译」；可设为选中即译或按快捷键译。 划词和取词是两个独立开关：很多人开了取词没开划词，或关了「选中后自动翻译」，于是「选中不弹窗」；也可能划词热键被占用。 设置 → 取词划词 勾「启用划词翻译」「选中文字后自动翻译」；若设的是按键触发，确认该快捷键没被占；浏览器内划词还需取词扩展。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典Word / Office 取词划词失效怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "有道对 Office 通过 COM 加载项实现划词 / 划句翻译；加载项被禁用或未注册即失效。 Office 会因兼容性或策略禁用第三方 COM 加载项；换版本（如新装教育版）后旧加载项未对新 Office 注册，就「之前能用、现在不行」。 Word：文件 → 选项 → 加载项 → 底部「管理：COM 加载项」→ 转到 → 勾选启用有道插件；仍不行卸载重装有道以重新注册插件；确认有道与 Office 位数匹配。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典PDF / Acrobat 取词失效怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "官方支持对 Adobe Reader / Acrobat 的 PDF 屏幕取词；非官方「绿色版」不能 PDF 取词，且 PDF 须为文本而非图片。 三类真因：① Acrobat「保护模式」是沙箱，拦第三方 YodaoDict.api 注入；② 64 位 Acrobat 与旧版有道增效工具位数不匹配，报「不兼容的增效工具」；③ PDF 是扫描件（图片，无文本层）。 关 Acrobat「编辑→首选项→安全性(增强)→启动时启用保护模式」，先开有道再开 Acrobat；64 位提示不兼容就装最新版有道、或把安装目录 YodaoDict.api 拷进 Acrobat 的 plug_ins；扫描件改用 OCR 强力取词。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典Chrome / 浏览器划词取词失效怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox 等浏览器需单独安装有道取词扩展；官方桌面版提供「Chrome 取词」。 浏览器是独立沙箱：① 没装有道取词扩展，全局钩子读不到网页 DOM 文本；② 开了 GPU 硬件加速把网页渲成纹理、可见层已无可读文本；③ 360 等浏览器的广告拦截 / 安全开关会拦取词。 在有道设置或扩展商店装对应浏览器的有道取词扩展；浏览器设置里关「使用硬件加速」后重启；360 浏览器关广告拦截开关。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典截图 / 截屏 OCR 翻译不工作怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "截屏 OCR 需设置截屏识别快捷键（如 Ctrl+Alt+O），并下载 OCR 模块；可框选屏幕区域识别。 截图 OCR 不依赖文本层、靠对所选区域做图像识别，前提是 OCR 模块已下载 + 热键没被占 + （macOS）有屏幕录制权限读取屏幕像素。 设置 → 快捷键 给「OCR 截屏识别」设一个不冲突的热键；首次用先下载 OCR 模块；macOS 给「屏幕录制」权限；识别不准时换更清晰区域。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典取词 / 截图快捷键冲突怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "有道取词 / 划词 / 截屏识别均可在「快捷键」里自定义；冲突时会提示，可改组合键并一键恢复默认。 全局热键是抢占式注册：谁先注册谁拿到。截图工具、输入法、QQ / 微信、其它词典都可能占用同一组合键，导致有道按了没反应。 设置 → 快捷键 看冲突提示；改成 Ctrl+Shift+字母 / Alt+字母 这类少撞的组合；逐个临时关掉其它占键软件定位冲突源。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道词典macOS 取词 / 热键需授权怎么解决？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS 需在「系统设置 → 隐私与安全性」为有道开启「辅助功能」（监听快捷键 / 控制）与「屏幕录制」（读取屏幕内容取词 / 截图）。 macOS 沙箱要求显式授权：没有「辅助功能」就监听不到全局热键、没有「屏幕录制」就读不到屏幕像素；系统升级常重置这两项授权。 系统设置 → 隐私与安全性 → 分别在「辅助功能」「屏幕录制」里勾选有道并重启有道；升级 macOS 后回来重新授权。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">语言：<strong>简体中文</strong> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a></nav>
+<h1>有道词典 屏幕取词 / 划词 / 截图翻译 / 快捷键 失效速查</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_zh.webp"><img src="/img/cover_zh.png" alt="有道词典取词/划词/截图翻译失效速查工具示意图" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>图：有道词典取词 / 划词 / 截图翻译失效速查（L1 现象 + L2 深度真因 + 竞品对照）</figcaption></figure>
+<p><strong>有道词典</strong>的<strong>屏幕取词</strong>（鼠标悬停查词）、<strong>划词翻译</strong>（选中即译）、<strong>截图 OCR</strong> 或<strong>快捷键</strong>突然不工作？先想清三件事——<strong>是没启用 / 没给权限，还是某个程序（Office / PDF / 浏览器）兼容问题，还是内容本身（扫描件 / 硬件加速）取不到可读文本</strong>。输入或点选你遇到的<strong>症状或关键词</strong>（如 <code>取词失效</code>、<code>PDF取词</code>、<code>划词</code>、<code>快捷键</code>、<code>64位</code>、<code>截图</code>），先看 <strong>L1 现象与官方定位</strong>，再看 <strong>L2 深度真因与排查</strong>，最后对照竞品与真实场景。需要安装 / 教程可到 <a href="https://yoydao.com/">有道词典下载 / 取词划词设置教程</a>。</p>
+<input id="q" placeholder="输入症状或关键词，例如 取词失效 / PDF取词 / 划词 / 快捷键 / 64位 / 截图" autocomplete="off">
+<button id="go">查询</button>
+<div id="out"></div>
+<h2>第一步：先分四类（L1·别一上来就重装）</h2>
+<p>有道取词 / 划词不工作，九成落在四类上、先分清谁的锅：① <strong>启用 / 设置类</strong>——有道没在后台跑（托盘图标灰了）、或设置里没勾「启用取词 / 划词 / 选中后自动翻译」、取词方式没选对；② <strong>权限类</strong>——macOS 没给「辅助功能 + 屏幕录制」、Windows 取词目标是提权程序而有道没以管理员运行；③ <strong>程序兼容类</strong>——Word/Excel 的有道 COM 加载项被禁、Acrobat 保护模式拦注入、浏览器没装取词扩展；④ <strong>渲染 / 内容类</strong>——扫描件 PDF 是图片要走 OCR、浏览器/PDF 开了 GPU 硬件加速把文字画成纹理、多屏 DPI 不一致弹窗飞走。更完整的设置见 <a href="https://yoydao.com/tutorial/">有道词典取词划词设置教程</a>。</p>
+<div class="cat"><div class="catbox"><b>启用 / 设置类</b><span class="cs">取词 · 划词 · 自动翻译 · OCR强力取词</span><div>先确认有道在后台运行（托盘图标非灰），到 设置 → 取词划词 勾选「启用取词」「启用划词」「选中文字后自动翻译」，并选对取词方式（鼠标悬停 / 按 Ctrl）。</div></div><div class="catbox"><b>权限类</b><span class="cs">macOS 辅助功能+屏幕录制 · Windows 管理员/UAC</span><div>macOS：系统设置 → 隐私与安全性，给有道勾「辅助功能」「屏幕录制」；Windows：取词目标是「以管理员运行」的程序时，有道也要以管理员身份运行（同权限层级钩子才注入得进去）。</div></div><div class="catbox"><b>程序兼容类</b><span class="cs">Office COM · Acrobat 保护模式 · 64位 · 浏览器扩展</span><div>Office：文件 → 选项 → 加载项 → COM 加载项，勾选启用有道插件；Acrobat：关「启动时启用保护模式」，必要时把 YodaoDict.api 拷进 plug_ins；浏览器：装有道取词扩展。</div></div><div class="catbox"><b>快捷键类</b><span class="cs">冲突 · 自定义 · 截屏OCR 热键</span><div>设置 → 快捷键，看是否有冲突提示；改成 Ctrl+Shift / Alt+字母 这类不易撞的组合；截屏 OCR 单独设热键（如 Ctrl+Alt+O，避开其它软件）。</div></div><div class="catbox"><b>渲染 / 显示类</b><span class="cs">硬件加速 · 扫描件 · DPI多屏 · 全屏</span><div>浏览器 / PDF 用 GPU 硬件加速会把内容渲成纹理、可见区无可读文本（关硬件加速）；扫描件 PDF 是图片要开 OCR；多屏弹窗飞走勾「固定窗位置」。</div></div><div class="catbox"><b>网络 / 安装类</b><span class="cs">取词速度 · 绿色版 · 插件未加载</span><div>联网取词慢先查网络；务必装官方完整版——非官方「绿色版 / 精简版」缺少注册的取词钩子 DLL，PDF / 全局取词会直接失效。</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="有道词典取词/划词失效排查决策流程图" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">取词 / 划词不工作排查流程（先分四类：开关 / 权限 / 程序 / 内容）</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">取词不工作</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">先分四类</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">本机可自查 →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">开关未开 · 权限未给</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">程序 / 内容 →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/浏览器 · 扫描件/硬件加速</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">四类根因（逐项看真因 / 排查）</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① 启用 / 设置</text><text x="32" y="234" fill="#555" font-size="11">取词·划词·OCR 开关</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② 权限</text><text x="206" y="234" fill="#555" font-size="11">mac 辅助功能 · win 管理员</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ 程序兼容</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · 浏览器</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ 渲染 / 内容</text><text x="554" y="234" fill="#555" font-size="11">扫描件 · 硬件加速 · 多屏</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>图1：有道词典取词 / 划词失效排查决策流程——先分四类，再定位本机 / 程序 / 内容</figcaption></figure>
+<h2>第二步：最常被忽略的真因 → L2 深度（屏幕取词 = 全局钩子 / DLL 注入）</h2>
+<p>关键认知：<strong>屏幕取词不是「读屏幕图像」，而是有道往别的程序里注入一段取词代码（全局钩子 / DLL）去读它的文本缓冲区</strong>。这就解释了大半「玄学」失效——① <strong>权限层级</strong>：普通权限的有道注不进「以管理员运行」的程序（反之亦然），所以某个程序里取不了词，多半是两边权限不一致；② <strong>位数</strong>：32/64 位钩子不互通，旧版有道对 64 位 Acrobat 会报「不兼容的增效工具，无法加载 YodaoDict.api」；③ <strong>沙箱</strong>：Acrobat「保护模式」是沙箱，直接拦第三方 .api 注入；④ <strong>硬件加速</strong>：浏览器 / PDF 用 GPU 把内容渲成纹理后，可见区已无「可读文本」，取词自然读不到；⑤ <strong>扫描件</strong>：图片型 PDF 根本没有文本层，得用「OCR 强力取词」。下图是取词启用自检面板示意；再往下是竞品横向对照与 2026 估算。</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="有道词典取词启用前自检面板示意图" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">取词启用自检面板示意（绿=已确认 / 红=易忽略待查）</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">自检项</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">判断</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">状态</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">有道在后台运行（托盘图标非灰）</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">进程在</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">已确认</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">已勾选 取词 / 划词 / 选中后自动翻译</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">三开关</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">已确认</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">取词方式选对（鼠标悬停 / 按 Ctrl）</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">取词方式</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">已确认</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">目标程序兼容（Office加载项 / PDF非保护模式 / 浏览器扩展）</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">程序侧</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">待查</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">权限已给（mac 辅助功能+屏幕录制 / win 管理员）</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">权限层级</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">已确认</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">快捷键无冲突 + 非扫描件 / 已开OCR</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">易忽略</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">待查</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">注：红 = 最易被忽略两点——特定程序兼容（Office / PDF / 浏览器）与 内容 / 快捷键（扫描件需 OCR、热键冲突）；先按这两点核。</text></svg><figcaption>图2：取词启用自检面板示意（绿=已确认 / 红=易忽略待查）</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_zh.webp"><img src="/img/board_zh.png" alt="有道词典取词启用前自检面板红绿项示意图" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>图：先核「在后台 + 三开关 + 权限」，再看「程序兼容 + 内容/快捷键」——后两点最易忽略</figcaption></figure>
+<h2>全部症状对照表（L1 现象 / 官方定位 · L2 深度真因）</h2>
+<table id="tbl"></table>
+<h2>竞品划词 / 取词工具横向对照（取词方式 / OCR / 平台 / 价格 · 公开口径）</h2>
+<table class="cmp"><tr><th>软件</th><th>屏幕取词 / 划词</th><th>截图 OCR</th><th>平台</th><th>扩展词库</th><th>价格（估算）</th></tr><tr><td>有道词典</td><td>全局取词 + 划词翻译</td><td>截屏 OCR + 强力取词</td><td>Win / Mac / iOS / Android / Web / 浏览器扩展</td><td>mdx 较弱</td><td>核心免费（部分会员 / 去广告）</td></tr><tr><td>欧路词典 Eudic</td><td>划词 + 屏幕取词</td><td>截图取词</td><td>Win / Mac / iOS / Android</td><td>mdx 强（可装海量词库）</td><td>基础免费 + 增强版付费</td></tr><tr><td>金山词霸</td><td>取词 + 划词</td><td>截图翻译</td><td>Win / Mac / 手机 / Web</td><td>一般</td><td>免费（含广告）+ 会员</td></tr><tr><td>沙拉查词 Saladict</td><td>浏览器内划词（扩展）</td><td>依赖网页 / OCR 需配置</td><td>浏览器扩展（Chrome / Edge / Firefox）</td><td>可自配词典源</td><td>免费 · 开源</td></tr><tr><td>微软翻译 / Bing</td><td>系统级划词较弱</td><td>Office 内置 + 截图</td><td>Win / Office / Edge / 手机</td><td>无</td><td>免费</td></tr></table><section class="i4data">
+<h2>有道取词失效主因与划词工具对照（2026 估算）</h2>
+<p>以下为综合有道词典官方帮助 / 常见问题、各竞品公开资料与开发者排错经验的 <strong>2026 估算</strong>（非厂商承诺值、非一手实测，仅供参考；随版本与系统变化）：</p>
+<table>
+<tr><th>维度</th><th>估算 / 对照</th></tr>
+<tr><td>取词失效主因占比（社区经验 · 估算）</td><td><strong>未启用 / 权限 ≈ 40%</strong> &gt; <strong>程序兼容（Office/PDF/浏览器）≈ 25%</strong> &gt; 快捷键冲突 ≈ 20% &gt; 渲染 / 内容（硬件加速 / 扫描件）≈ 15%</td></tr>
+<tr><td>取词技术本质</td><td>屏幕取词 = <strong>全局钩子 / DLL 注入</strong>读目标程序文本缓冲区（非读屏幕图像）；故受权限层级、位数、沙箱、硬件加速影响</td></tr>
+<tr><td>各端取词能力（估算）</td><td>桌面（Win/Mac）支持<strong>全局屏幕取词 + 划词 + 截屏 OCR</strong>；移动端以划词 / 拍照翻译为主；网页 / 浏览器需<strong>取词扩展</strong></td></tr>
+<tr><td>划词 / 取词工具横评（估算）</td><td>有道 = 全平台 + AI 翻译强；欧路 = 扩展词库（mdx）强；金山 = 大众免费；沙拉查词 = 浏览器开源；微软 = Office 内置</td></tr>
+<tr><td>价格档（估算）</td><td>有道 / 金山 <strong>核心免费</strong>（会员去广告 / 增值）· 欧路<strong>增强版付费</strong>· 沙拉查词<strong>免费开源</strong>· 微软翻译<strong>免费</strong></td></tr>
+</table>
+<p><small>估算口径：信源基线 + 时间外推（综合 cidian.youdao.com 官方帮助 / 常见问题、欧路 / 金山 / 沙拉查词 / 微软公开资料、公开开发者排错帖 2026 抓取），随各家版本与系统策略会变；请以各家最新官方为准。</small></p>
+</section>
+<h2>真实场景速判</h2>
+<ul class="scenes"><li>浏览器里取不了词、记事本 / Word 却能取：多半是浏览器没装有道取词扩展，或开了 GPU 硬件加速把网页渲成纹理 → 装扩展，或在浏览器关「使用硬件加速」后重启。</li><li>Acrobat 64 位打开 PDF 划词没反应、提示「不兼容的增效工具，无法加载 YodaoDict.api」：关 Acrobat「编辑 → 首选项 → 安全性(增强) → 启动时启用保护模式」，先开有道再开 Acrobat；仍不行把有道安装目录的 YodaoDict.api 拷进 Acrobat 的 plug_ins。</li><li>PDF 文字能选中却取不到、或整页都取不了：要么是扫描件（图片型 PDF，无文本层，得开「OCR 强力取词」），要么 Acrobat 保护模式 / Autotray.exe 占用拦了注入。</li><li>新装 Office（尤其教育版 / 365）后 Word 不能划句翻译：有道 Office COM 加载项被禁用 → 文件 → 选项 → 加载项 → COM 加载项 → 勾选启用；不行就重装有道修复插件注册。</li><li>升级系统后 macOS 上取词、热键全失效：系统更新会重置权限 → 重新到「隐私与安全性」给有道勾「辅助功能」「屏幕录制」并重启有道。</li><li>取词在普通程序好用、在某个「以管理员运行」的程序里失灵：权限层级不同，全局钩子注不进高权限进程 → 右键有道「以管理员身份运行」。</li><li>多屏 / 高分屏取词弹窗「飞」到看不见的地方：各屏 DPI 缩放不一致所致 → 取词设置里勾「固定窗位置」，把弹窗钉到主屏左上角。</li></ul><div class="related"><h2>相关</h2><ul><li><a href="https://yoydao.com/">有道词典下载 / 安装与使用教程</a></li><li><a href="https://yoydao.com/tutorial/">有道词典取词划词设置教程</a></li><li><a href="https://yoydao.com/tools/youdao-word-capture/">有道取词失效速查（本站权威版 · 全量表）</a></li><li><a href="https://yoidao.com/">有道智云 API 错误码查询（姊妹站）</a></li></ul></div></main>
+<footer>取词 / 划词 / OCR / 64 位兼容口径整理自有道词典官方桌面版常见问题与帮助（cidian.youdao.com）；Office 加载项排查参考 Microsoft 官方问答，Acrobat 64 位「无法加载 YodaoDict.api / 关保护模式」整理自公开开发者排错帖（已二次提炼）。竞品对照综合自欧路词典、金山词霸、沙拉查词、微软翻译公开资料。2026 占比 / 平台 / 价格为估算、非厂商承诺值、非一手实测，仅供参考，请以各家最新官方为准。<br>工具页 · 取词不替代官方客户端</footer>
+</div>
+<script src="/codes.js"></script><script src="/app.js"></script>
+</body></html>
