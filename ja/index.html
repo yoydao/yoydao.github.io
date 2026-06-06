@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>有道辞書 画面取得/選択翻訳/スクショOCR/ショートカット が効かない - 原因と対処（PDF・Word・ブラウザ・64bit）</title>
+<meta name="description" content="有道辞書（Youdao）の画面取得（マウスオーバー辞書）・選択翻訳・スクショ OCR・ショートカットが効かない？症状（取得が無反応 / 選択しても出ない / Word・Office 取得 / PDF・Acrobat 取得 / Chrome ブラウザ選択 / スクショ OCR / ショートカット競合 / macOS 権限 / マルチモニタでポップアップが画面外 / 64bit / 非公式版）を検索し、L1 症状と公式の位置づけ + L2 根本原因（グローバルフック / DLL インジェクション、UAC 権限レベル、Office COM アドイン、Acrobat 保護モード、GPU ハードウェアアクセラレーションでテクスチャ化、スキャン PDF は OCR、DPI マルチモニタ）を確認。有道 vs 欧路 / 金山詞覇 / Saladict / Microsoft 翻訳 の比較と 2026 推計も。">
+<link rel="canonical" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "有道辞書 取得/選択/OCR/ショートカット 対処検索",
+   "url": "https://yoydao.github.io/ja/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ja",
+   "description": "有道辞書（Youdao）の画面取得（マウスオーバー辞書）・選択翻訳・スクショ OCR・ショートカットが効かない？症状（取得が無反応 / 選択しても出ない / Word・Office 取得 / PDF・Acrobat 取得 / Chrome ブラウザ選択 / スクショ OCR / ショートカット競合 / macOS 権限 / マルチモニタでポップアップが画面外 / 64bit / 非公式版）を検索し、L1 症状と公式の位置づけ + L2 根本原因（グローバルフック / DLL インジェクション、UAC 権限レベル、Office COM アドイン、Acrobat 保護モード、GPU ハードウェアアクセラレーションでテクスチャ化、スキャン PDF は OCR、DPI マルチモニタ）を確認。有道 vs 欧路 / 金山詞覇 / Saladict / Microsoft 翻訳 の比較と 2026 推計も。",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ja",
+   "url": "https://yoydao.github.io/ja/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "有道辞書の画面取得が全く効かないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "画面取得には有道がバックグラウンドで動作し取得が有効である必要があり、公式版は スマート取得 / クリップボード取得 / OCR 取得 を提供。 画面取得は前面アプリへ注入したグローバルフックで文字を読む方式。有道プロセス稼働 + 取得マスタースイッチ ON + トリガーキー一致 が前提で、どれか欠けると「全く無反応」になり、ソフト故障と誤解されやすい。 トレイの有道アイコンが有効か確認（グレー＝未起動、ダブルクリックで起動）；設定 → 取得・選択 で「取得を有効」、方式（マウスオーバー / Ctrl 押下）を選択；変更後に有道を再起動。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書の選択しても翻訳が出ないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "選択翻訳は「選択」を有効にし「選択時に自動翻訳」を入れる必要があり、選択時即訳かキー押下で動作。 選択と取得は別スイッチ：取得は入れたが選択を入れていない、または「選択時に自動翻訳」を切っているため「選択しても無反応」。選択ホットキーが占有されている場合も。 設定 → 取得・選択 で「選択翻訳を有効」「選択時に自動翻訳」を入れる；キー駆動ならそのキーが空いているか確認；ブラウザ内選択には取得拡張も必要。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書のWord / Office で取得・選択が効かないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "有道は Office と COM アドインで連携し選択 / 文翻訳を実現；アドインが無効 / 未登録だと効かない。 Office は互換性やポリシーで第三者 COM アドインを無効化；版を変える（新規教育版など）と旧アドインが新 Office に未登録で「前は使えたが今はダメ」に。 Word：ファイル → オプション → アドイン → 下部「管理：COM アドイン」→ 設定 → 有道アドインを有効化；ダメなら有道を再インストールして再登録；有道と Office のビット数一致を確認。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書のPDF / Acrobat で取得が効かないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "公式版は Adobe Reader / Acrobat の PDF 画面取得に対応；非公式「ポータブル」版は PDF 取得不可、PDF は画像でなく文字である必要。 3 つ：① Acrobat「保護モード」はサンドボックスで第三者 YodaoDict.api 注入を遮断；② 64bit Acrobat と旧版有道のビット数不一致で「互換性のないプラグイン」；③ PDF がスキャン（画像・文字レイヤ無し）。 Acrobat の 編集 → 環境設定 → セキュリティ(拡張) →「起動時に保護モードを有効」を切り、先に有道→次に Acrobat；64bit で不可なら最新版有道を入れる / YodaoDict.api を plug_ins へコピー；スキャンは OCR 強力取得。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書のChrome / ブラウザで選択・取得が効かないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox 等は有道取得拡張を別途導入；公式デスクトップ版は「Chrome 取得」を提供。 ブラウザは独立サンドボックス：① 有道取得拡張が無くフックがページ DOM 文字を読めない；② GPU アクセラレーションでページをテクスチャ化し可読層が無い；③ 360 等の広告ブロック / セキュリティが取得を遮断。 ブラウザ用の有道取得拡張を導入（有道設定 / ストア）；ブラウザ設定の「ハードウェアアクセラレーションを使用」を切り再起動；360 ブラウザは広告ブロックを切る。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書のスクショ / 範囲 OCR 翻訳が動かないはどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "スクショ OCR はスクショ認識ホットキー（例 Ctrl+Alt+O）の設定と OCR モジュールのダウンロードが必要で、範囲をドラッグ選択。 スクショ OCR は文字レイヤ不要で選択範囲を画像認識する方式。OCR モジュール導入 + ホットキー空き + （macOS）画面収録権限 が前提。 設定 → ショートカット で「OCR スクショ」に競合しないキーを設定；初回は OCR モジュールを導入；macOS は「画面収録」を許可；認識が悪いとき鮮明な範囲を選ぶ。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書の取得 / スクショ ホットキー競合はどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "取得 / 選択 / スクショ認識はショートカットでカスタム可能；競合時は警告し、変更や既定復元ができる。 グローバルホットキーは先勝ち：スクショツール、入力ソフト、QQ / WeChat、他辞書が同じ組合せを占有すると有道のキーが無反応に。 設定 → ショートカット で競合表示を確認；Ctrl+Shift+英字 / Alt+英字 等の被りにくい組合せに；占有ソフトを 1 つずつ一時終了し原因を特定。"
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "有道辞書のmacOS で取得 / ホットキーに権限が必要はどう直す？",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS は システム設定 → プライバシーとセキュリティ で有道に「アクセシビリティ」（ホットキー監視 / 制御）と「画面収録」（取得 / スクショの画面読取）を許可する必要。 macOS サンドボックスは明示許可が必要：「アクセシビリティ」無しでグローバルホットキーを拾えず、「画面収録」無しで画面ピクセルを読めない；更新で両方リセットされやすい。 システム設定 → プライバシーとセキュリティ →「アクセシビリティ」「画面収録」で有道を有効化し再起動；macOS 更新ごとに再許可。"
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">言語：<a href="/">简体中文</a> · <a href="/en/">English</a> · <strong>日本語</strong> · <a href="/zh-tw/">繁體中文</a></nav>
+<h1>有道辞書 画面取得 / 選択翻訳 / スクショ OCR / ショートカット 対処検索</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ja.webp"><img src="/img/cover_ja.png" alt="有道辞書 取得/選択/スクショ 対処検索ツールの図" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>図：有道辞書 取得 / 選択 / スクショ 対処検索（L1 症状 + L2 根本原因 + 競合比較）</figcaption></figure>
+<p><strong>有道辞書</strong>の<strong>画面取得</strong>（マウスオーバーで辞書）、<strong>選択翻訳</strong>、<strong>スクショ OCR</strong>、<strong>ショートカット</strong>が急に効かない？まず 3 つを切り分け——<strong>有効化 / 権限の問題か、特定アプリ（Office / PDF / ブラウザ）の互換性か、コンテンツ自体（スキャン / ハードウェアアクセラレーション）に読み取れる文字が無いのか</strong>。出会った<strong>症状やキーワード</strong>（例：<code>取得</code>、<code>pdf</code>、<code>選択</code>、<code>ショートカット</code>、<code>64bit</code>、<code>スクショ</code>）を検索し、まず <strong>L1 症状と公式の位置づけ</strong>、次に <strong>L2 根本原因と対処</strong>、最後に競合比較と実例を確認。導入 / 設定は <a href="https://yoydao.com/">有道辞書ダウンロード / 取得・選択設定ガイド</a> へ。</p>
+<input id="q" placeholder="症状かキーワードを入力（例：取得 / pdf / 選択 / ショートカット / 64bit / スクショ）" autocomplete="off">
+<button id="go">検索</button>
+<div id="out"></div>
+<h2>ステップ1：まず 4 分類で切り分け（L1・いきなり再インストールしない）</h2>
+<p>有道の取得 / 選択が効かない時、9 割は 4 つのどれか。まず誰のせいか切り分け：① <strong>有効化 / 設定</strong>——有道がバックグラウンドで動いていない（トレイがグレー）、「取得 / 選択 / 選択時に自動翻訳」を入れていない、トリガーが違う；② <strong>権限</strong>——macOS で「アクセシビリティ + 画面収録」を許可していない、Windows で対象が管理者実行アプリなのに有道は管理者でない；③ <strong>アプリ互換</strong>——Word/Excel の有道 COM アドインが無効、Acrobat 保護モードが注入を遮断、ブラウザに取得拡張が無い；④ <strong>描画 / コンテンツ</strong>——スキャン PDF は画像（OCR が必要）、ブラウザ/PDF が GPU ハードウェアアクセラレーションで文字をテクスチャ化、マルチモニタの DPI 不一致でポップアップが画面外。詳しくは <a href="https://yoydao.com/ja/tutorial/">取得・選択設定ガイド</a>。</p>
+<div class="cat"><div class="catbox"><b>有効化 / 設定</b><span class="cs">取得 . 選択 . 自動翻訳 . OCR 強力取得</span><div>有道がバックグラウンドで動作（トレイがグレーでない）を確認し、設定 → 取得・選択 で「取得を有効」「選択を有効」「選択時に自動翻訳」を入れ、トリガー（マウスオーバー / Ctrl 押下）を選ぶ。</div></div><div class="catbox"><b>権限</b><span class="cs">macOS アクセシビリティ+画面収録 . Windows 管理者/UAC</span><div>macOS：システム設定 → プライバシーとセキュリティ で有道に「アクセシビリティ」「画面収録」を許可；Windows：対象が「管理者として実行」の時は有道も管理者で実行（同じ権限レベルでないとフックが注入できない）。</div></div><div class="catbox"><b>アプリ互換</b><span class="cs">Office COM . Acrobat 保護モード . 64bit . ブラウザ拡張</span><div>Office：ファイル → オプション → アドイン → COM アドイン で有道を有効化；Acrobat：「起動時に保護モードを有効」を切り、必要なら YodaoDict.api を plug_ins へコピー；ブラウザ：有道取得拡張を入れる。</div></div><div class="catbox"><b>ショートカット</b><span class="cs">競合 . カスタム . スクショ OCR キー</span><div>設定 → ショートカット で競合表示を確認；Ctrl+Shift / Alt+英字 のような被りにくい組合せに変更；スクショ OCR は別キー（例 Ctrl+Alt+O、他アプリと回避）。</div></div><div class="catbox"><b>描画 / 表示</b><span class="cs">ハードウェアアクセラレーション . スキャン . DPI マルチモニタ . 全画面</span><div>ブラウザ/PDF が GPU アクセラレーションでテクスチャ化すると可視層に読める文字が無い（アクセラレーションを切る）；スキャン PDF は画像で OCR が必要；ポップアップが画面外なら「ウィンドウ位置を固定」。</div></div><div class="catbox"><b>ネットワーク / 導入</b><span class="cs">取得速度 . 非公式版 . アドイン未読込</span><div>オンライン辞書が遅い時はネットワークを確認；必ず公式フル版を導入——非公式「ポータブル / 軽量版」は登録される取得フック DLL が無く、PDF / グローバル取得が効かない。</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="有道辞書 取得/選択 不具合の切り分けフロー" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">取得 / 選択 不具合の切り分け（まず 4 分類：スイッチ / 権限 / アプリ / コンテンツ）</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">取得が無反応</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">4 分類</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">本体で自己確認 →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">スイッチ OFF . 権限なし</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">アプリ / コンテンツ →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/ブラウザ . スキャン/アクセラ</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">4 つの根因（原因 / 対処を見る）</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">1. 有効化/設定</text><text x="32" y="234" fill="#555" font-size="11">取得 . 選択 . OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">2. 権限</text><text x="206" y="234" fill="#555" font-size="11">mac アクセシビリティ . win 管理者</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">3. アプリ互換</text><text x="380" y="234" fill="#555" font-size="11">Office . PDF . ブラウザ</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">4. 描画/コンテンツ</text><text x="554" y="234" fill="#555" font-size="11">スキャン . アクセラ . マルチモニタ</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>図1：有道辞書 取得 / 選択 不具合の切り分けフロー——まず 4 分類、次に 本体 / アプリ / コンテンツ</figcaption></figure>
+<h2>ステップ2：最も見落とす根因 → L2（画面取得 = グローバルフック / DLL インジェクション）</h2>
+<p>要点：<strong>画面取得は「画面画像を読む」のではなく、有道が相手アプリに取得コード（グローバルフック / DLL）を注入してその文字バッファを読む</strong>。これで「謎の」不具合の大半が説明できる——① <strong>権限レベル</strong>：通常権限の有道は「管理者実行」アプリに注入できない（逆も）。だから「そのアプリだけ取得できない」は権限不一致が多い；② <strong>ビット数</strong>：32/64bit フックは互換が無く、旧版有道は 64bit Acrobat で「互換性のないプラグイン、YodaoDict.api を読み込めません」；③ <strong>サンドボックス</strong>：Acrobat「保護モード」はサンドボックスで第三者 .api 注入を遮断；④ <strong>ハードウェアアクセラレーション</strong>：ブラウザ/PDF が GPU でテクスチャ化すると、可視層に「読める文字」が無く取得できない；⑤ <strong>スキャン</strong>：画像 PDF は文字レイヤが無く「OCR 強力取得」が必要。下図は取得有効化セルフチェック盤、さらに下に競合比較と 2026 推計。</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="有道辞書 取得前セルフチェック盤" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">取得 有効化セルフチェック盤（緑＝確認済み / 赤＝見落としやすい）</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">チェック項目</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">判断</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">状態</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">有道がバックグラウンドで動作（トレイ非グレー）</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">起動中</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">確認済み</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">取得 / 選択 / 選択時自動翻訳 をオン</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 スイッチ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">確認済み</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">トリガーが正しい（マウスオーバー / Ctrl）</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">トリガー</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">確認済み</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">対象アプリ互換（Office アドイン / PDF 非保護 / ブラウザ拡張）</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">アプリ側</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">要確認</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">権限を許可（mac アクセシビリティ+収録 / win 管理者）</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">権限レベル</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">確認済み</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ショートカット競合なし + 非スキャン / OCR オン</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">見落とし</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">要確認</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">注：赤＝最も見落とす 2 点——特定アプリ互換（Office / PDF / ブラウザ）と コンテンツ / ショートカット（スキャンは OCR、キー競合）。まずこの 2 点を確認。</text></svg><figcaption>図2：取得 有効化セルフチェック盤（緑＝確認済み / 赤＝見落としやすい）</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ja.webp"><img src="/img/board_ja.png" alt="有道辞書 取得前セルフチェック盤の緑/赤項目の図" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>図：先に「起動中 + 3 スイッチ + 権限」、次に「アプリ互換 + コンテンツ/ショートカット」——後者 2 つが最も見落とされる</figcaption></figure>
+<h2>全症状対照表（L1 症状 / 公式の位置づけ・L2 根本原因）</h2>
+<table id="tbl"></table>
+<h2>競合 選択 / 取得ツール比較（取得方式 / OCR / 対応 OS / 価格・公開情報）</h2>
+<table class="cmp"><tr><th>ソフト</th><th>画面取得 / 選択</th><th>スクショ OCR</th><th>対応 OS</th><th>拡張辞書</th><th>価格（推計）</th></tr><tr><td>有道辞書</td><td>グローバル取得 + 選択翻訳</td><td>スクショ OCR + 強力取得</td><td>Win / Mac / iOS / Android / Web / ブラウザ拡張</td><td>mdx 弱め</td><td>コア無料（一部会員 / 広告除去）</td></tr><tr><td>欧路詞典 Eudic</td><td>選択 + 画面取得</td><td>スクショ取得</td><td>Win / Mac / iOS / Android</td><td>mdx 強（大量辞書）</td><td>基本無料 + 強化版有料</td></tr><tr><td>金山詞覇 iCIBA</td><td>取得 + 選択</td><td>スクショ翻訳</td><td>Win / Mac / モバイル / Web</td><td>普通</td><td>無料（広告）+ 会員</td></tr><tr><td>Saladict</td><td>ブラウザ内選択（拡張）</td><td>ページ依存 / OCR は要設定</td><td>ブラウザ拡張（Chrome / Edge / Firefox）</td><td>辞書ソース自由設定</td><td>無料・オープンソース</td></tr><tr><td>Microsoft 翻訳 / Bing</td><td>システム級選択は弱い</td><td>Office 内蔵 + スクショ</td><td>Win / Office / Edge / モバイル</td><td>なし</td><td>無料</td></tr></table><section class="i4data">
+<h2>有道 取得不具合の原因と 選択ツール比較（2026 推計）</h2>
+<p>以下は有道公式ヘルプ / FAQ、各競合の公開情報、開発者のトラブル対応を総合した <strong>2026 推計</strong>（各社の確約値でも一次測定でもなく参考用。版と OS で変動）：</p>
+<table>
+<tr><th>項目</th><th>推計 / 対照</th></tr>
+<tr><td>取得不具合の原因内訳（コミュニティ・推計）</td><td><strong>未有効化 / 権限 ≈ 40%</strong> &gt; <strong>アプリ互換（Office/PDF/ブラウザ）≈ 25%</strong> &gt; ショートカット競合 ≈ 20% &gt; 描画 / コンテンツ（アクセラ / スキャン）≈ 15%</td></tr>
+<tr><td>取得の本質</td><td>画面取得 = <strong>グローバルフック / DLL インジェクション</strong>で対象アプリの文字バッファを読む（画面画像を読むのではない）。ゆえに権限レベル・ビット数・サンドボックス・ハードウェアアクセラレーションの影響を受ける</td></tr>
+<tr><td>OS 別取得能力（推計）</td><td>デスクトップ（Win/Mac）は<strong>グローバル画面取得 + 選択 + スクショ OCR</strong>；モバイルは選択 / 写真翻訳が中心；Web / ブラウザは<strong>取得拡張</strong>が必要</td></tr>
+<tr><td>選択 / 取得ツール総評（推計）</td><td>有道 = 全 OS + AI 翻訳が強い；欧路 = 拡張辞書（mdx）が強い；金山 = 大衆無料；Saladict = OSS ブラウザ；Microsoft = Office 内蔵</td></tr>
+<tr><td>価格帯（推計）</td><td>有道 / 金山 <strong>コア無料</strong>（会員で広告除去 / 付加）・欧路<strong>強化版有料</strong>・Saladict<strong>無料 OSS</strong>・Microsoft 翻訳<strong>無料</strong></td></tr>
+</table>
+<p><small>推計の根拠：出典基線 + 時間外挿（cidian.youdao.com 公式ヘルプ / FAQ、欧路 / 金山 / Saladict / Microsoft 公開情報、公開の開発者投稿 2026 取得）。各社の版と OS ポリシーで変動。各社の最新公式を基準に。</small></p>
+</section>
+<h2>実例・クイック判定</h2>
+<ul class="scenes"><li>ブラウザで取得できないが Notepad / Word は OK：多くは有道取得拡張が未導入、または GPU アクセラレーションでページがテクスチャ化 → 拡張を入れる、またはブラウザの「ハードウェアアクセラレーションを使用」をオフにして再起動。</li><li>Acrobat 64bit で PDF 選択が無反応、「互換性のないプラグイン、YodaoDict.api を読み込めません」：Acrobat の 編集 → 環境設定 → セキュリティ(拡張) →「起動時に保護モードを有効」を切り、先に有道→次に Acrobat；なお無理なら有道フォルダの YodaoDict.api を Acrobat の plug_ins へコピー。</li><li>PDF の文字は選べるのに取得できない / ページ全体で取れない：スキャン（画像 PDF・文字レイヤ無し、「OCR 強力取得」が必要）か、Acrobat 保護モード / Autotray.exe の占有で注入が遮断。</li><li>Office（特に教育版 / 365）導入後 Word で選択翻訳できない：有道 Office COM アドインが無効 → ファイル → オプション → アドイン → COM アドイン → 有効化；ダメなら有道を再インストールしてアドインを再登録。</li><li>OS 更新後、macOS で取得もショートカットも全滅：更新で権限がリセット → プライバシーとセキュリティ で有道に「アクセシビリティ」「画面収録」を再許可して再起動。</li><li>通常アプリでは取得できるのに、ある「管理者実行」アプリでだけ不可：権限レベルが違い、グローバルフックが高権限プロセスに注入できない → 有道を右クリック「管理者として実行」。</li><li>マルチモニタ / 高 DPI で取得ポップアップが見えない位置に「飛ぶ」：各画面の DPI スケール不一致が原因 → 取得設定で「ウィンドウ位置を固定」しメイン画面左上に固定。</li></ul><div class="related"><h2>関連</h2><ul><li><a href="https://yoydao.com/">有道辞書ダウンロード / 設定ガイド</a></li><li><a href="https://yoydao.com/ja/tutorial/">取得・選択設定ガイド</a></li><li><a href="https://yoydao.com/ja/tools/youdao-word-capture/">有道 取得対処検索（権威版・全量表）</a></li><li><a href="https://yoidao.com/ja/">有道智云 API エラーコード（姉妹サイト）</a></li></ul></div></main>
+<footer>取得 / 選択 / OCR / 64bit 互換は有道辞書 公式デスクトップ版 よくある質問・ヘルプ（cidian.youdao.com）より整理。Office アドインは Microsoft 公式 Q&A を参照、Acrobat 64bit「YodaoDict.api を読み込めない / 保護モードを切る」は公開の開発者投稿から（再構成）。競合比較は 欧路詞典 / 金山詞覇 / Saladict / Microsoft 翻訳 の公開情報を総合。2026 の割合 / 対応 OS / 価格は推計であり、各社の確約値でも一次測定でもありません。参考用、各社の最新公式を基準に。<br>ツールページ・公式クライアントの代替ではありません</footer>
+</div>
+<script src="/ja/codes.js"></script><script src="/app.js"></script>
+</body></html>
