@@ -3,36 +3,6 @@
 <title>有道词典取词/划词/截图翻译失效速查 - 屏幕取词不能用、PDF·Word·浏览器取不到词、快捷键冲突排查</title>
 <meta name="description" content="有道词典屏幕取词、划词翻译、截图OCR 或快捷键失效？输入或点选症状（取词失效 / 划词不弹窗 / Word·Office 取词 / PDF·Acrobat 取词 / Chrome 浏览器划词 / 截图OCR / 快捷键冲突 / macOS 权限 / 多屏弹窗飞走 / 64位 / 绿色版），查 L1 现象与官方定位 + L2 深度真因（全局钩子/DLL 注入、UAC 提权层级、Office COM 加载项、Acrobat 保护模式、GPU 硬件加速渲成纹理、扫描件需 OCR、DPI 多屏），并看有道 vs 欧路 / 金山词霸 / 沙拉查词 / 微软翻译 横向对照与 2026 估算。">
 <link rel="canonical" href="https://yoydao.github.io/">
-<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
-<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
-<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
-<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
-<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
-<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
-<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
-<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
-<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
-<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
-<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
-<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
-<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
-<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
-<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
-<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
-<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
-<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
-<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
-<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
-<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
-<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
-<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
-<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
-<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
-<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
-<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
-<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
-<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
-<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
 <link rel="stylesheet" href="/style.css">
 <script type="application/ld+json">
 {
@@ -127,6 +97,36 @@
  ]
 }
 </script>
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
 </head>
 <body><div class="wrap"><main>
 <nav class="lang">语言：<strong>简体中文</strong> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
