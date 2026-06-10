@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao ekranda kelime yakalama/seçim çevirisi/OCR/kısayol çalışmıyor - nedenler ve çözüm (PDF, Word, tarayıcı, 64-bit)</title>
+<meta name="description" content="Youdao'nun ekranda kelime yakalaması (üzerine gelince arama), seçim çevirisi, ekran görüntüsü OCR'si veya kısayolları çalışmıyor mu? Belirtiyi arayın (yakalama ölü / seçimde açılır yok / Word-Office yakalama / PDF-Acrobat yakalama / Chrome tarayıcı seçimi / OCR / kısayol çakışması / macOS izinleri / çoklu monitörde açılır ekran dışı / 64-bit / taşınabilir sürüm) - L1 belirtisi ve resmi konumlandırma ile L2 kök nedeni: küresel kanca / DLL enjeksiyonu, UAC ayrıcalık düzeyi, Office COM eklentisi, Acrobat korumalı mod, GPU donanım hızlandırması metni dokuya çevirir, taranmış PDF OCR gerektirir, DPI çoklu monitör; Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator karşılaştırması ve 2026 tahminleriyle.">
+<link rel="canonical" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao yakalama/seçim/OCR/kısayol çözüm arama",
+   "url": "https://yoydao.github.io/tr/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "tr",
+   "description": "Youdao'nun ekranda kelime yakalaması (üzerine gelince arama), seçim çevirisi, ekran görüntüsü OCR'si veya kısayolları çalışmıyor mu? Belirtiyi arayın (yakalama ölü / seçimde açılır yok / Word-Office yakalama / PDF-Acrobat yakalama / Chrome tarayıcı seçimi / OCR / kısayol çakışması / macOS izinleri / çoklu monitörde açılır ekran dışı / 64-bit / taşınabilir sürüm) - L1 belirtisi ve resmi konumlandırma ile L2 kök nedeni: küresel kanca / DLL enjeksiyonu, UAC ayrıcalık düzeyi, Office COM eklentisi, Acrobat korumalı mod, GPU donanım hızlandırması metni dokuya çevirir, taranmış PDF OCR gerektirir, DPI çoklu monitör; Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator karşılaştırması ve 2026 tahminleriyle.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "tr",
+   "url": "https://yoydao.github.io/tr/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Ekran yakalama genel olarak ölü - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ekran yakalama, yakalama etkin olarak Youdao'nun arka planda olmasını gerektirir; resmi masaüstü sürümü akıllı yakalama / pano yakalama / OCR yakalama sunar. Ekran yakalama, ön plandaki uygulamanın metnini okumak için enjekte edilen küresel kancayı kullanır: çalışan Youdao süreci + etkin ana yakalama anahtarı + eşleşen tetikleyici tuş gerekir. Biri eksikse «tamamen ölü» görünür, sık sık bozuk yazılım sanılır. Tepsi simgesinin etkin olduğunu kontrol edin (gri = çalışmıyor, başlatmak için çift tıklayın); Ayarlar → Yakalama ve seçim, «yakalamayı etkinleştir»i işaretleyip modu seçin (üzerine gelme / Ctrl basılı); Youdao'yu yeniden başlatıp tekrar deneyin."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Seçim çevirisi açılır göstermez - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Seçim çevirisi, «seçimde otomatik çevir» işaretli «seçim»in etkin olmasını gerektirir; seçimde veya tuşla çevirebilir. Seçim ve yakalama ayrı anahtarlardır: çoğu yakalamayı etkinleştirir ama seçimi değil, ya da «seçimde otomatik çevir»i kapatır, dolayısıyla «seçim hiçbir şey göstermez»; seçim kısayolu da alınmış olabilir. Ayarlar → Yakalama ve seçim, «seçim çevirisini etkinleştir» ve «seçimde otomatik çevir»i işaretleyin; tuşla ise o tuşun boş olduğunu doğrulayın; tarayıcı içi seçim de yakalama uzantısını gerektirir."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Word / Office'te yakalama/seçim başarısız - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao, seçim / cümle çevirisi için COM eklentisiyle Office'e entegre olur; eklenti devre dışı veya kayıtsızsa başarısız olur. Office, uyumluluk veya politika gereği üçüncü taraf COM eklentilerini devre dışı bırakır; sürüm değiştirmek (ör. yeni Education) eski eklentiyi yeni Office için kayıtsız bırakır, dolayısıyla «eskiden çalışırdı, şimdi olmuyor». Word: Dosya → Seçenekler → Eklentiler → altta «Yönet: COM Eklentileri» → Git → Youdao eklentisini işaretleyin; olmazsa yeniden kaydetmek için Youdao'yu yeniden kurun; Youdao ve Office bit boyutunun eşleştiğinden emin olun."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao PDF / Acrobat'ta yakalama başarısız - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Resmi sürümler Adobe Reader / Acrobat'ta PDF ekran yakalamayı destekler; resmi olmayan «taşınabilir» sürümler PDF yakalayamaz, ve PDF metin olmalı, görüntü değil. Üç neden: ① Acrobat «korumalı modu» üçüncü taraf YodaoDict.api enjeksiyonunu engelleyen bir kum havuzudur; ② 64-bit Acrobat ile eski Youdao eklentisi arasındaki bit uyumsuzluğu «uyumsuz eklenti» verir; ③ PDF bir taramadır (görüntü, metin katmansız). Acrobat'ta Düzen → Tercihler → Güvenlik (geliştirilmiş) → «Başlangıçta korumalı modu etkinleştir»i kapatın, Youdao'yu Acrobat'tan önce açın; 64-bit «uyumsuz» uyarısı için en yeni Youdao'yu kurun, ya da YodaoDict.api'yi Acrobat'ın plug_ins'ine kopyalayın; taramalar için güçlü OCR yakalama kullanın."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chrome / tarayıcıda seçim/yakalama başarısız - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox vb. ayrı bir Youdao yakalama uzantısı gerektirir; resmi masaüstü sürümü «Chrome yakalama» sunar. Tarayıcı kendi kum havuzudur: ① Youdao yakalama uzantısı olmadan küresel kanca DOM metnini okuyamaz; ② GPU donanım hızlandırması sayfayı okunabilir katman olmadan dokuya oluşturur; ③ adblock / güvenlik anahtarları (ör. 360 tarayıcı) yakalamayı engeller. Tarayıcınız için Youdao yakalama uzantısını kurun (Youdao ayarları veya mağaza); tarayıcı ayarlarında «donanım hızlandırmasını kullan»ı kapatıp yeniden başlatın; 360 tarayıcıda adblock'u kapatın."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Ekran görüntüsü / bölge OCR çevirisi çalışmıyor - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ekran görüntüsü OCR'si ayarlı bir tanıma kısayolu (ör. Ctrl+Alt+O) ve indirilmiş OCR modülü gerektirir; bir ekran bölgesini sürükleyerek seçersiniz. Ekran görüntüsü OCR'si metin katmanı gerektirmez - seçilen bölgeyi görüntü ile tanır, dolayısıyla indirilmiş OCR modülü + boş bir kısayol + (macOS) pikselleri okumak için ekran kaydı izni gerekir. Ayarlar → Kısayollar, «OCR ekran görüntüsü»ne çakışmasız bir tuş atayın; ilk kullanımda OCR modülünü indirin; macOS'ta «Ekran Kaydı» verin; tanıma başarısızsa daha net bir bölge seçin."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Yakalama / ekran görüntüsü kısayol çakışması - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yakalama / seçim / ekran görüntüsü tanıma hepsi Kısayollar'da özelleştirilebilir; çakışmada uyarır, ve yeniden atayabilir veya sıfırlayabilirsiniz. Küresel kısayollar ilk gelen ilk alır: bir ekran görüntüsü aracı, giriş yöntemi, QQ / WeChat veya başka sözlük aynı kombinasyonu tutabilir, dolayısıyla Youdao tuşu hiçbir şey yapmaz. Ayarlar → Kısayollar, çakışma uyarısına dikkat; Ctrl+Shift+harf / Alt+harf gibi daha nadir bir kombinasyona geçin; tuş tutan uygulamaları teker teker kapatıp suçluyu bulun."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS yakalama / kısayollar yetki gerektirir - nasıl çözülür?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS, Youdao'ya «Erişilebilirlik» (kısayolları izleme / kontrol) ve «Ekran Kaydı» (yakalama / ekran görüntüsü için ekranı okuma) iznini Sistem Ayarları → Gizlilik ve Güvenlik'te vermelidir. macOS kum havuzu açık izinler gerektirir: «Erişilebilirlik» olmadan küresel kısayolları duymaz, «Ekran Kaydı» olmadan pikselleri okumaz; güncellemeler ikisini de sık sıfırlar. Sistem Ayarları → Gizlilik ve Güvenlik → «Erişilebilirlik» ve «Ekran Kaydı»nda Youdao'yu işaretleyip yeniden başlatın; her macOS güncellemesinden sonra yeniden verin."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Dil: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <strong>Türkçe</strong> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao ekranda kelime yakalama / seçim çevirisi / OCR / kısayol - çözüm arama</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_tr.webp"><img src="/img/cover_tr.png" alt="Youdao yakalama/seçim/ekran görüntüsü çözüm arama aracı çizimi" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Şek: Youdao yakalama / seçim / ekran görüntüsü çözüm arama (L1 belirtisi + L2 kök nedeni + rakip karşılaştırması)</figcaption></figure>
+<p><strong>Youdao</strong>'nun <strong>ekranda kelime yakalaması</strong> (üzerine gelince arama), <strong>seçim çevirisi</strong>, <strong>OCR</strong>'si veya <strong>kısayolları</strong> aniden durdu mu? Önce üç şeyi netleştirin: <strong>etkin değil / izin yok mu, belirli bir uygulamanın (Office / PDF / tarayıcı) uyumluluğu mu, yoksa içeriğin kendisi (tarama / donanım hızlandırma) okunabilir metinden yoksun mu?</strong> Yaşadığınız <strong>belirtiyi veya anahtar kelimeyi</strong> arayın (ör. <code>yakalama</code>, <code>pdf</code>, <code>seçim</code>, <code>kısayol</code>, <code>64-bit</code>, <code>OCR</code>): önce <strong>L1 belirtisi ve resmi konumlandırma</strong>, sonra <strong>L2 kök nedeni ve çözüm</strong>, son olarak rakip karşılaştırması ve gerçek vakalar. Kurulum / ayar? Bkz. <a href="https://yoydao.com/">Youdao indir / yakalama ve seçim kılavuzu</a>.</p>
+<input id="q" placeholder="Belirti veya anahtar kelime girin, ör. yakalama / pdf / seçim / kısayol / 64-bit / OCR" autocomplete="off">
+<button id="go">Ara</button>
+<div id="out"></div>
+<h2>Adım 1: önce dört gruba ayırın (L1 - hemen yeniden kurmayın)</h2>
+<p>Youdao yakalama/seçim durduğunda, 10'da 9 kez dört gruptan biridir - önce kimin suçu olduğunu bulun: ① <strong>etkinleştirme/ayarlar</strong> — Youdao arka planda çalışmıyor (tepsi simgesi gri), veya «yakalamayı / seçimi / seçimde otomatik çeviriyi etkinleştir» işaretlenmemiş, ya da yanlış tetikleyici; ② <strong>izinler</strong> — macOS «Erişilebilirlik + Ekran Kaydı» verilmemiş, veya Windows'ta hedef yükseltilmiş bir uygulama ve Youdao yönetici olarak çalışmıyor; ③ <strong>uygulama uyumluluğu</strong> — Word/Excel'de Youdao COM eklentisi devre dışı, Acrobat korumalı modu enjeksiyonu engelliyor, veya tarayıcıda yakalama uzantısı yok; ④ <strong>oluşturma/içerik</strong> — taranmış PDF görüntüdür (OCR gerekir), tarayıcı/PDF GPU donanım hızlandırmasıyla metni doku olarak çizer, veya uyumsuz çoklu monitör DPI'si açılırı ekran dışına atar. Tam ayar: <a href="https://yoydao.com/tutorial/">Youdao yakalama ve seçim kılavuzu</a>.</p>
+<div class="cat"><div class="catbox"><b>Etkinleştirme / ayarlar</b><span class="cs">yakalama · seçim · otomatik çeviri · güçlü OCR</span><div>Youdao'nun arka planda çalıştığından emin olun (tepsi simgesi gri değil), Ayarlar → Yakalama ve seçim'e gidin ve «yakalamayı etkinleştir», «seçimi etkinleştir», «seçimde otomatik çevir»i işaretleyin, doğru tetikleyiciyi seçin (üzerine gelme / Ctrl basılı).</div></div><div class="catbox"><b>İzinler</b><span class="cs">macOS Erişilebilirlik+Ekran Kaydı · Windows yönetici/UAC</span><div>macOS: Sistem Ayarları → Gizlilik ve Güvenlik, Youdao'ya «Erişilebilirlik» ve «Ekran Kaydı» verin; Windows: hedef «yönetici olarak çalıştırılıyorsa», Youdao'yu da yönetici olarak çalıştırın (kanca yalnızca aynı ayrıcalık düzeyinde enjekte eder).</div></div><div class="catbox"><b>Uygulama uyumluluğu</b><span class="cs">Office COM · Acrobat korumalı mod · 64-bit · tarayıcı uzantısı</span><div>Office: Dosya → Seçenekler → Eklentiler → COM Eklentileri, Youdao eklentisini işaretleyin; Acrobat: «Başlangıçta korumalı modu etkinleştir»i kapatın, gerekirse YodaoDict.api'yi plug_ins'e kopyalayın; tarayıcı: Youdao yakalama uzantısını kurun.</div></div><div class="catbox"><b>Kısayollar</b><span class="cs">çakışma · özel · OCR ekran görüntüsü tuşu</span><div>Ayarlar → Kısayollar, çakışma uyarısına dikkat; Ctrl+Shift / Alt+harf gibi daha az çakışan bir kombinasyona geçin; OCR ekran görüntüsüne kendi tuşunu verin (ör. Ctrl+Alt+O, diğer uygulamalardan uzak).</div></div><div class="catbox"><b>Oluşturma / görüntü</b><span class="cs">donanım hızlandırma · taramalar · DPI çoklu monitör · tam ekran</span><div>GPU donanım hızlandırmalı tarayıcı/PDF içeriği okunabilir metin olmadan dokuya oluşturur (hızlandırmayı kapatın); taranmış PDF görüntüdür (OCR kullanın); çoklu monitörde ekran dışı açılır için «pencere konumunu sabitle»yi işaretleyin.</div></div><div class="catbox"><b>Ağ / kurulum</b><span class="cs">yakalama hızı · taşınabilir sürüm · eklenti yüklenmedi</span><div>Çevrimiçi arama yavaş mı? ağı kontrol edin; her zaman resmi tam sürümü kurun - resmi olmayan «taşınabilir/hafif» sürümlerde kayıtlı yakalama kanca DLL'si yoktur, bu yüzden PDF/küresel yakalama başarısız olur.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao yakalama/seçim arıza triyaj akışı" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Yakalama / seçim çalışmıyor triyajı (önce dört grup: anahtarlar / izinler / uygulama / içerik)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Yakalama ölü</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Dört grup</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Ana makine öz kontrol →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">anahtar kapalı · izin yok</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Uygulama / içerik →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/tarayıcı · tarama/donanım-hız</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Dört kök neden (öğe başına neden / çözüm okuyun)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Etkinleştirme/ayarlar</text><text x="32" y="234" fill="#555" font-size="11">yakalama · seçim · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② İzinler</text><text x="206" y="234" fill="#555" font-size="11">mac Erişilebilirlik · win yönetici</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Uygulama uyumu</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · tarayıcı</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Oluşturma/içerik</text><text x="554" y="234" fill="#555" font-size="11">tarama · hızlandırma · çoklu monitör</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Şek 1: Youdao yakalama/seçim arıza triyajı - dört gruba ayırın, sonra ana makine / uygulama / içeriğe daraltın</figcaption></figure>
+<h2>Adım 2: en çok gözden kaçan kök neden → L2 (ekran yakalama = küresel kanca / DLL enjeksiyonu)</h2>
+<p>Ana fikir: <strong>ekran yakalama «ekran görüntüsünü okumaz» - Youdao yakalama kodunu (küresel kanca / DLL) diğer uygulamaya enjekte ederek onun metin arabelleğini okur</strong>. Bu çoğu «gizemli» arızayı açıklar: ① <strong>ayrıcalık düzeyi</strong> — normal haklı Youdao «yönetici olarak çalıştırılan» bir uygulamaya enjekte edemez (ve tersi), bu yüzden «yalnızca o uygulama yakalamıyor» genelde uyumsuz ayrıcalık demektir; ② <strong>bit boyutu</strong> — 32/64-bit kancalar karışmaz, bu yüzden eski Youdao 64-bit Acrobat'ta «uyumsuz eklenti, YodaoDict.api yüklenemiyor» verir; ③ <strong>kum havuzu</strong> — Acrobat «korumalı modu» üçüncü taraf .api enjeksiyonunu engelleyen bir kum havuzudur; ④ <strong>donanım hızlandırma</strong> — tarayıcı/PDF içeriği GPU dokusuna oluşturduğunda yakalanacak «okunabilir metin» kalmaz; ⑤ <strong>taramalar</strong> — yalnızca görüntü PDF'sinin metin katmanı yoktur, «güçlü OCR yakalama» kullanın. Aşağıda öz kontrol paneli; ardından rakip karşılaştırması ve 2026 tahminleri.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao yakalama öncesi öz kontrol paneli" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Yakalama etkinleştirme öz kontrol paneli (yeşil = onaylı / kırmızı = kolayca gözden kaçan)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Kontrol öğesi</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Karar</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Durum</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao arka planda çalışıyor (tepsi gri değil)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">süreç canlı</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">onaylı</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">İşaretli yakalama / seçim / seçimde otomatik çevir</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 anahtar</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">onaylı</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Doğru yakalama tetikleyici (üzerine gelme / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">tetikleyici</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">onaylı</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Hedef uygulama uyumlu (Office eklentisi / PDF korumasız / tarayıcı uzantısı)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">uygulama tarafı</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">kontrol edilecek</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">İzinler verildi (mac Erişilebilirlik+Kayıt / win yönetici)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ayrıcalık düzeyi</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">onaylı</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Kısayol çakışması yok + tarama değil / OCR açık</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">kolayca atlanan</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">kontrol edilecek</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Not: kırmızı = en çok gözden kaçan ikisi - belirli uygulama uyumluluğu (Office / PDF / tarayıcı) ve içerik/kısayol (tarama OCR gerektirir, tuş çakışmaları); önce bu ikisini kontrol edin.</text></svg><figcaption>Şek 2: yakalama etkinleştirme öz kontrol paneli (yeşil = onaylı / kırmızı = kolayca gözden kaçan)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_tr.webp"><img src="/img/board_tr.png" alt="Youdao yakalama öncesi öz kontrol paneli yeşil/kırmızı öğeler çizimi" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Şek: önce «çalışıyor + üç anahtar + izinler», sonra «uygulama uyumluluğu + içerik/kısayol» kontrol edin - son ikisi en çok gözden kaçar</figcaption></figure>
+<h2>Tam belirti tablosu (L1 belirtisi / resmi konumlandırma · L2 kök nedeni)</h2>
+<table id="tbl"></table>
+<h2>Rakip seçim/yakalama araçları karşılaştırması (yakalama modu / OCR / platform / fiyat · kamuya açık veri)</h2>
+<table class="cmp"><tr><th>Yazılım</th><th>Ekran yakalama / seçim</th><th>Ekran görüntüsü OCR</th><th>Platformlar</th><th>Ek sözlükler</th><th>Fiyat (tah.)</th></tr><tr><td>Youdao</td><td>küresel yakalama + seçim çevirisi</td><td>ekran görüntüsü OCR + güçlü yakalama</td><td>Win / Mac / iOS / Android / Web / tarayıcı uzantısı</td><td>mdx zayıf</td><td>çekirdek ücretsiz (kısmen üyelik / reklamsız)</td></tr><tr><td>Eudic</td><td>seçim + ekran yakalama</td><td>ekran görüntüsü yakalama</td><td>Win / Mac / iOS / Android</td><td>mdx güçlü (büyük kütüphaneler)</td><td>temel ücretsiz + gelişmiş ücretli</td></tr><tr><td>iCIBA (Kingsoft)</td><td>yakalama + seçim</td><td>ekran görüntüsü çevirisi</td><td>Win / Mac / mobil / Web</td><td>orta</td><td>ücretsiz (reklam) + üyelik</td></tr><tr><td>Saladict</td><td>tarayıcı içi seçim (uzantı)</td><td>sayfaya bağlı / OCR yapılandırma gerektirir</td><td>tarayıcı uzantısı (Chrome / Edge / Firefox)</td><td>yapılandırılabilir kaynaklar</td><td>ücretsiz · açık kaynak</td></tr><tr><td>Microsoft Translator / Bing</td><td>sistem geneli seçim zayıf</td><td>Office yerleşik + ekran görüntüsü</td><td>Win / Office / Edge / mobil</td><td>yok</td><td>ücretsiz</td></tr></table><section class="i4data">
+<h2>Youdao yakalama arıza nedenleri ve seçim araçları karşılaştırması (2026 tahmini)</h2>
+<p>Aşağıdakiler Youdao'nun resmi yardım / SSS'sinden, rakiplerin kamuya açık materyalinden ve geliştirici sorun gidermesinden sentezlenmiş <strong>2026 tahminleridir</strong> (üretici taahhüdü değil, birinci elden ölçüm değil; başvuru için, sürüm ve işletim sistemine göre değişir):</p>
+<table>
+<tr><th>Boyut</th><th>Tahmin / karşılaştırma</th></tr>
+<tr><td>Yakalama arıza nedenleri dağılımı (topluluk · tah.)</td><td><strong>etkin değil / izinler ~%40</strong> &gt; <strong>uygulama uyumluluğu (Office/PDF/tarayıcı) ~%25</strong> &gt; kısayol çakışması ~%20 &gt; oluşturma / içerik (donanım-hız / tarama) ~%15</td></tr>
+<tr><td>Yakalama gerçekte nedir</td><td>ekran yakalama = hedef uygulamanın metin arabelleğini okuyan <strong>küresel kanca / DLL enjeksiyonu</strong> (ekran görüntüsünü okumaz); dolayısıyla ayrıcalık düzeyi, bit boyutu, kum havuzu, donanım hızlandırmasından etkilenir</td></tr>
+<tr><td>Platform başına yakalama (tah.)</td><td>masaüstü (Win/Mac) <strong>küresel ekran yakalama + seçim + ekran görüntüsü OCR</strong> destekler; mobil çoğunlukla seçim / fotoğraf çevirisi; web / tarayıcı bir <strong>yakalama uzantısı</strong> gerektirir</td></tr>
+<tr><td>Seçim / yakalama araçları özeti (tah.)</td><td>Youdao = tüm platformlar + güçlü AI çeviri; Eudic = güçlü ek kütüphaneler (mdx); iCIBA = kitlesel ücretsiz; Saladict = açık kaynak tarayıcı; Microsoft = Office yerleşik</td></tr>
+<tr><td>Fiyat katmanları (tah.)</td><td>Youdao / iCIBA <strong>çekirdek ücretsiz</strong> (reklamsız / ekstra için üyelik) · Eudic <strong>gelişmiş ücretli</strong> · Saladict <strong>ücretsiz açık kaynak</strong> · Microsoft Translator <strong>ücretsiz</strong></td></tr>
+</table>
+<p><small>Tahmin temeli: kaynak temel çizgisi + zamansal dış değerleme (cidian.youdao.com resmi yardım / SSS, Eudic / iCIBA / Saladict / Microsoft kamuya açık materyal, kamuya açık geliştirici yazıları, 2026); her sağlayıcının sürüm ve işletim sistemi politikasına göre değişir. En yeni resmi bilgileri esas alın. LLM yerelleştirme.</small></p>
+</section>
+<h2>Gerçek vakalar - hızlı okuma</h2>
+<ul class="scenes"><li>Tarayıcıda yakalanmaz ama Not Defteri / Word olur: genelde tarayıcıda Youdao yakalama uzantısı yoktur, ya da GPU donanım hızlandırması sayfayı dokuya oluşturmuştur → uzantıyı kurun, ya da «donanım hızlandırmasını kullan»ı kapatıp yeniden başlatın.</li><li>Acrobat 64-bit, PDF'de seçim yanıt vermez, «uyumsuz eklenti, YodaoDict.api yüklenemiyor»: Acrobat'ta Düzen → Tercihler → Güvenlik (geliştirilmiş) → «Başlangıçta korumalı modu etkinleştir»i kapatın, Youdao'yu Acrobat'tan önce açın; sürerse YodaoDict.api'yi Youdao klasöründen Acrobat'ın plug_ins'ine kopyalayın.</li><li>PDF metni seçilebilir ama yakalanmaz, ya da tüm sayfa olmaz: ya taramadır (metin katmanı olmayan görüntü PDF, «güçlü OCR yakalama» gerekir), ya Acrobat korumalı modu / Autotray.exe kilidi enjeksiyonu engeller.</li><li>Office (özellikle Education / 365) kurulduktan sonra Word seçimi çevirmez: Youdao Office COM eklentisi devre dışı → Dosya → Seçenekler → Eklentiler → COM Eklentileri → etkinleştirin; olmazsa yeniden kaydetmek için Youdao'yu yeniden kurun.</li><li>İşletim sistemi güncellemesinden sonra macOS'ta yakalama ve kısayollar ölür: güncelleme izinleri sıfırladı → Gizlilik ve Güvenlik'te Youdao'ya «Erişilebilirlik» ve «Ekran Kaydı»nı yeniden verin ve yeniden başlatın.</li><li>Yakalama normal uygulamalarda çalışır ama «yönetici olarak çalıştırılan» bir uygulamada başarısız: farklı ayrıcalık düzeyleri küresel kancanın yükseltilmiş sürece enjekte etmesini engeller → Youdao'ya sağ tık «Yönetici olarak çalıştır».</li><li>Çoklu monitör / yüksek DPI: yakalama açılırı görünmez bir yere «uçar»: ekran başına uyumsuz DPI ölçeklemesi nedeniyle → yakalama ayarlarında «pencere konumunu sabitle»yi işaretleyip ana ekranın sol üstüne sabitleyin.</li></ul><div class="related"><h2>İlgili</h2><ul><li><a href="https://yoydao.com/">Youdao indir / kurulum kılavuzu</a></li><li><a href="https://yoydao.com/tr/tutorial/">Youdao yakalama ve seçim kılavuzu</a></li><li><a href="https://yoydao.com/tr/tools/youdao-word-capture/">Youdao yakalama çözüm arama (yetkili tam tablo)</a></li><li><a href="https://yoidao.com/tr/">Youdao Zhiyun API hata kodları (kardeş site)</a></li></ul></div></main>
+<footer>Yakalama/seçim/OCR/64-bit uyumluluk notları Youdao'nun resmi masaüstü SSS ve yardımından (cidian.youdao.com) derlenmiştir; Office eklentisi sorun giderme Microsoft'un resmi Soru-Cevabına başvurur, ve Acrobat 64-bit «YodaoDict.api yüklenemiyor / korumalı modu kapat» notları kamuya açık geliştirici yazılarından (yeniden ifade). Karşılaştırmalar Eudic, iCIBA, Saladict ve Microsoft Translator kamuya açık materyalinden. 2026 oranları/platformları/fiyatları tahmindir, üretici taahhüdü veya birinci elden ölçüm değildir. LLM yerelleştirme; her sağlayıcının en yeni resmi bilgilerini esas alın.<br>Araç sayfası · resmi istemcinin yerini tutmaz</footer>
+</div>
+<script src="/tr/codes.js"></script><script src="/app.js"></script>
+</body></html>
