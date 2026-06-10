@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao التقاط الكلمات على الشاشة/ترجمة التحديد/OCR/الاختصارات لا يعمل - الأسباب والحل (PDF، Word، المتصفح، 64 بت)</title>
+<meta name="description" content="التقاط الكلمات على الشاشة في Youdao (البحث بالتمرير)، ترجمة التحديد، OCR لقطة الشاشة أو الاختصارات لا تعمل؟ ابحث عن العَرَض (التقاط ميت / لا نافذة منبثقة عند التحديد / التقاط Word-Office / التقاط PDF-Acrobat / تحديد متصفح Chrome / OCR / تعارض اختصار / أذونات macOS / نافذة خارج الشاشة على شاشات متعددة / 64 بت / نسخة محمولة) لرؤية عَرَض L1 والموضع الرسمي مع السبب الجذري L2: خطاف عام / حقن DLL، مستوى امتياز UAC، وظيفة COM الإضافية لـ Office، وضع Acrobat المحمي، تسريع عتاد GPU يحوّل النص إلى نسيج، PDF ممسوح يحتاج OCR، DPI شاشات متعددة؛ مع مقارنة Youdao مقابل Eudic / iCIBA / Saladict / Microsoft Translator وتقديرات 2026.">
+<link rel="canonical" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao بحث حلول الالتقاط/التحديد/OCR/الاختصارات",
+   "url": "https://yoydao.github.io/ar/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ar",
+   "description": "التقاط الكلمات على الشاشة في Youdao (البحث بالتمرير)، ترجمة التحديد، OCR لقطة الشاشة أو الاختصارات لا تعمل؟ ابحث عن العَرَض (التقاط ميت / لا نافذة منبثقة عند التحديد / التقاط Word-Office / التقاط PDF-Acrobat / تحديد متصفح Chrome / OCR / تعارض اختصار / أذونات macOS / نافذة خارج الشاشة على شاشات متعددة / 64 بت / نسخة محمولة) لرؤية عَرَض L1 والموضع الرسمي مع السبب الجذري L2: خطاف عام / حقن DLL، مستوى امتياز UAC، وظيفة COM الإضافية لـ Office، وضع Acrobat المحمي، تسريع عتاد GPU يحوّل النص إلى نسيج، PDF ممسوح يحتاج OCR، DPI شاشات متعددة؛ مع مقارنة Youdao مقابل Eudic / iCIBA / Saladict / Microsoft Translator وتقديرات 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ar",
+   "url": "https://yoydao.github.io/ar/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao التقاط الشاشة ميت كلياً - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "التقاط الشاشة يتطلب Youdao بالخلفية مع تفعيل الالتقاط؛ نسخة سطح المكتب الرسمية تقدّم التقاطاً ذكياً / التقاط الحافظة / التقاط OCR. التقاط الشاشة يستخدم خطافاً عاماً محقوناً في تطبيق المقدمة لقراءة نصّه: يحتاج عملية Youdao قيد التشغيل + مفتاح الالتقاط الرئيسي مفعّلاً + مفتاح المحفّز متطابقاً. نقص أحدها يبدو «ميتاً تماماً»، وغالباً يُظَنّ أن البرنامج معطوب. افحص نشاط أيقونة الصينية (رمادي = لا يعمل، انقر مزدوجاً للبدء)؛ الإعدادات → الالتقاط والتحديد، أشّر «تفعيل الالتقاط» واختر الوضع (تمرير / الضغط على Ctrl)؛ أعد تشغيل Youdao وحاول."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ترجمة التحديد لا تُظهر نافذة - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ترجمة التحديد تتطلب «التحديد» مفعّلاً مع «الترجمة التلقائية عند التحديد» مؤشَّراً؛ تترجم عند التحديد أو بمفتاح. التحديد والالتقاط مفتاحان منفصلان: كثيرون يفعّلون الالتقاط دون التحديد، أو يوقفون «الترجمة التلقائية عند التحديد»، لذا «التحديد لا يُظهر شيئاً»؛ قد يكون اختصار التحديد مأخوذاً أيضاً. الإعدادات → الالتقاط والتحديد، أشّر «تفعيل ترجمة التحديد» و«الترجمة التلقائية عند التحديد»؛ إن كان بمفتاح، تأكد أنه حر؛ التحديد داخل المتصفح يحتاج امتداد الالتقاط أيضاً."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao فشل الالتقاط/التحديد في Word / Office - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "يتكامل Youdao مع Office عبر وظيفة COM لترجمة التحديد / الجملة؛ إن كانت معطّلة أو غير مسجّلة يفشل. يعطّل Office وظائف COM لطرف ثالث للتوافق أو السياسة؛ تبديل الإصدار (مثل Education جديد) يترك الوظيفة القديمة غير مسجّلة للإصدار الجديد، لذا «كان يعمل، الآن لا». Word: ملف → خيارات → الوظائف الإضافية → أسفل «إدارة: وظائف COM» → انتقل → أشّر وظيفة Youdao؛ وإلا أعد تثبيت Youdao لإعادة تسجيلها؛ تأكد من تطابق المعمارية بين Youdao وOffice."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao فشل الالتقاط في PDF / Acrobat - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "النسخ الرسمية تدعم التقاط شاشة PDF في Adobe Reader / Acrobat؛ النسخ «المحمولة» غير الرسمية لا تلتقط PDF، ويجب أن يكون PDF نصاً لا صورة. ثلاثة أسباب: ① «الوضع المحمي» في Acrobat صندوق رملي يحجب حقن YodaoDict.api لطرف ثالث؛ ② عدم تطابق المعمارية بين Acrobat 64 بت ووظيفة Youdao قديمة يعطي «وظيفة غير متوافقة»؛ ③ PDF مسح (صورة، بلا طبقة نص). أوقف في Acrobat تحرير → التفضيلات → الأمان (المعزَّز) → «تفعيل الوضع المحمي عند البدء»، افتح Youdao قبل Acrobat؛ لتنبيه «غير متوافق» 64 بت ثبّت أحدث Youdao، أو انسخ YodaoDict.api إلى plug_ins في Acrobat؛ للمسح استخدم OCR التقاط قوي."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao فشل التحديد/الالتقاط في Chrome / المتصفح - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox وغيرها تحتاج امتداد التقاط Youdao منفصلاً؛ نسخة سطح المكتب الرسمية تقدّم «التقاط Chrome». المتصفح صندوقه الرملي الخاص: ① بلا امتداد التقاط Youdao لا يقرأ الخطاف العام نص DOM؛ ② تسريع عتاد GPU يعرض الصفحة كنسيج بلا طبقة مقروءة؛ ③ مفاتيح adblock / الأمان (مثل متصفح 360) تحجب الالتقاط. ثبّت امتداد التقاط Youdao لمتصفحك (عبر إعدادات Youdao أو المتجر)؛ أوقف «استخدام تسريع العتاد» في إعدادات المتصفح وأعد التشغيل؛ أوقف adblock في متصفح 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR لقطة الشاشة/المنطقة لا يعمل - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR اللقطة يحتاج اختصار تعرّف لقطة مضبوطاً (مثل Ctrl+Alt+O) ووحدة OCR منزّلة؛ تحدد منطقة شاشة بالسحب. OCR اللقطة لا يحتاج طبقة نص - يتعرّف على المنطقة المحددة بالصورة، لذا يحتاج وحدة OCR منزّلة + اختصاراً حراً + (macOS) إذن تسجيل الشاشة لقراءة البكسلات. الإعدادات → الاختصارات، عيّن مفتاحاً بلا تعارض لـ «OCR اللقطة»؛ نزّل وحدة OCR عند أول استخدام؛ على macOS امنح «تسجيل الشاشة»؛ اختر منطقة أوضح إن فشل التعرّف."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao تعارض اختصار الالتقاط / لقطة الشاشة - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "الالتقاط / التحديد / تعرّف اللقطة كلها قابلة للتخصيص في الاختصارات؛ عند التعارض يحذّر، ويمكن إعادة الربط أو إعادة الضبط. الاختصارات العامة أولوية للأسبق: قد تمسك أداة لقطة، طريقة إدخال، QQ / WeChat أو قاموس آخر نفس التركيبة، لذا مفتاح Youdao لا يفعل شيئاً. الإعدادات → الاختصارات، انتبه لتحذير التعارض؛ بدّل إلى تركيبة أندر مثل Ctrl+Shift+حرف / Alt+حرف؛ أغلق التطبيقات الماسكة للمفاتيح واحداً تلو آخر لإيجاد المتسبب."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS الالتقاط / الاختصارات تحتاج تفويضاً - كيف الحل؟",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "يجب أن تمنح macOS لـ Youdao «إمكانية الوصول» (مراقبة الاختصارات / التحكم) و«تسجيل الشاشة» (قراءة الشاشة للالتقاط / اللقطة) في إعدادات النظام → الخصوصية والأمان. صندوق macOS الرملي يطلب أذونات صريحة: بلا «إمكانية الوصول» لا يسمع الاختصارات العامة، بلا «تسجيل الشاشة» لا يقرأ البكسلات؛ التحديثات تعيد ضبط الاثنين غالباً. إعدادات النظام → الخصوصية والأمان → أشّر Youdao في «إمكانية الوصول» و«تسجيل الشاشة» وأعد تشغيله؛ امنح مجدداً بعد كل تحديث macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">اللغة: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <strong>العربية</strong> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao التقاط الكلمات على الشاشة / ترجمة التحديد / OCR / الاختصارات - بحث الحلول</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ar.webp"><img src="/img/cover_ar.png" alt="رسم توضيحي لأداة Youdao لبحث حلول الالتقاط/التحديد/لقطة الشاشة" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شكل: Youdao بحث حلول الالتقاط / التحديد / لقطة الشاشة (عَرَض L1 + السبب الجذري L2 + مقارنة المنافسين)</figcaption></figure>
+<p>هل توقّف فجأة <strong>التقاط الكلمات على الشاشة</strong> في <strong>Youdao</strong> (البحث بالتمرير)، أو <strong>ترجمة التحديد</strong>، أو <strong>OCR</strong>، أو <strong>الاختصارات</strong>؟ وضّح ثلاثة أمور أولاً: <strong>غير مُفعّل / لا إذن، توافق تطبيق معيّن (Office / PDF / متصفح)، أم المحتوى نفسه (مسح / تسريع عتاد) بلا نص مقروء؟</strong> ابحث عن <strong>العَرَض أو الكلمة المفتاحية</strong> التي تواجهها (مثل <code>التقاط</code>، <code>pdf</code>، <code>تحديد</code>، <code>اختصار</code>، <code>64 بت</code>، <code>OCR</code>): أولاً <strong>عَرَض L1 والموضع الرسمي</strong>، ثم <strong>السبب الجذري L2 والحل</strong>، وأخيراً مقارنة المنافسين وحالات حقيقية. تثبيت / إعداد؟ راجع <a href="https://yoydao.com/">تنزيل Youdao / دليل الالتقاط والتحديد</a>.</p>
+<input id="q" placeholder="أدخل عَرَضاً أو كلمة مفتاحية، مثل التقاط / pdf / تحديد / اختصار / 64 بت / OCR" autocomplete="off">
+<button id="go">بحث</button>
+<div id="out"></div>
+<h2>الخطوة 1: قسّم إلى أربع مجموعات أولاً (L1 - لا تُعِد التثبيت فوراً)</h2>
+<p>عندما يتوقف التقاط/تحديد Youdao، فهو في 9 من 10 مرات إحدى أربع مجموعات - اعرف الخطأ أولاً: ① <strong>التفعيل/الإعدادات</strong> — Youdao لا يعمل بالخلفية (أيقونة الصينية رمادية)، أو لم تؤشّر «تفعيل الالتقاط / التحديد / الترجمة التلقائية عند التحديد»، أو محفّز خاطئ؛ ② <strong>الأذونات</strong> — لم تُمنح macOS «إمكانية الوصول + تسجيل الشاشة»، أو على Windows الهدف تطبيق مرتفع بينما Youdao لا يعمل كمسؤول؛ ③ <strong>توافق التطبيق</strong> — وظيفة Youdao COM معطّلة في Word/Excel، وضع Acrobat المحمي يحجب الحقن، أو المتصفح بلا امتداد التقاط؛ ④ <strong>العرض/المحتوى</strong> — PDF ممسوح صورة (يحتاج OCR)، المتصفح/PDF بتسريع عتاد GPU يرسم النص كنسيج، أو DPI شاشات متعددة غير متطابق يقذف النافذة خارج الشاشة. الإعداد الكامل: <a href="https://yoydao.com/tutorial/">دليل التقاط وتحديد Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>التفعيل / الإعدادات</b><span class="cs">التقاط · تحديد · ترجمة تلقائية · OCR قوي</span><div>تأكد أن Youdao يعمل بالخلفية (أيقونة الصينية ليست رمادية)، اذهب إلى الإعدادات → الالتقاط والتحديد وأشّر «تفعيل الالتقاط» و«تفعيل التحديد» و«الترجمة التلقائية عند التحديد»، واختر المحفّز الصحيح (تمرير / الضغط على Ctrl).</div></div><div class="catbox"><b>الأذونات</b><span class="cs">macOS إمكانية الوصول+تسجيل الشاشة · Windows مسؤول/UAC</span><div>macOS: إعدادات النظام → الخصوصية والأمان، امنح Youdao «إمكانية الوصول» و«تسجيل الشاشة»؛ Windows: حين يكون الهدف «يعمل كمسؤول»، شغّل Youdao أيضاً كمسؤول (الخطاف يحقن فقط في نفس مستوى الامتياز).</div></div><div class="catbox"><b>توافق التطبيق</b><span class="cs">Office COM · وضع Acrobat المحمي · 64 بت · امتداد المتصفح</span><div>Office: ملف → خيارات → الوظائف الإضافية → وظائف COM، أشّر وظيفة Youdao؛ Acrobat: أوقف «تفعيل الوضع المحمي عند البدء»، وعند الحاجة انسخ YodaoDict.api إلى plug_ins؛ المتصفح: ثبّت امتداد التقاط Youdao.</div></div><div class="catbox"><b>الاختصارات</b><span class="cs">تعارض · مخصّص · مفتاح OCR لقطة الشاشة</span><div>الإعدادات → الاختصارات، انتبه لتحذير التعارض؛ بدّل إلى تركيبة أقل تصادماً مثل Ctrl+Shift / Alt+حرف؛ امنح OCR لقطة الشاشة مفتاحاً خاصاً (مثل Ctrl+Alt+O، بعيداً عن التطبيقات الأخرى).</div></div><div class="catbox"><b>العرض / الشاشة</b><span class="cs">تسريع العتاد · ممسوحات · DPI شاشات متعددة · ملء الشاشة</span><div>متصفح/PDF بتسريع عتاد GPU يعرض المحتوى كنسيج بلا نص مقروء (أوقف التسريع)؛ PDF ممسوح صورة (استخدم OCR)؛ للنوافذ خارج الشاشة على شاشات متعددة أشّر «تثبيت موضع النافذة».</div></div><div class="catbox"><b>الشبكة / التثبيت</b><span class="cs">سرعة الالتقاط · نسخة محمولة · وظيفة غير محمَّلة</span><div>بحث عبر الإنترنت بطيء؟ افحص الشبكة؛ ثبّت دائماً النسخة الرسمية الكاملة - النسخ «المحمولة/الخفيفة» غير الرسمية تفتقر إلى DLL خطاف الالتقاط المسجّل، لذا يفشل التقاط PDF/العام فوراً.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="تدفق فرز أعطال التقاط/تحديد Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">فرز التقاط / تحديد لا يعمل (أربع مجموعات أولاً: مفاتيح / أذونات / تطبيق / محتوى)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">التقاط ميت</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">أربع مجموعات</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">المضيف قابل للفحص الذاتي ←</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">مفتاح مغلق · لا إذن</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">تطبيق / محتوى ←</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/متصفح · مسح/تسريع-عتاد</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">أربعة أسباب جذرية (اقرأ السبب / الحل لكل عنصر)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① التفعيل/الإعدادات</text><text x="32" y="234" fill="#555" font-size="11">التقاط · تحديد · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② الأذونات</text><text x="206" y="234" fill="#555" font-size="11">mac إمكانية الوصول · win مسؤول</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ توافق التطبيق</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · متصفح</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ العرض/المحتوى</text><text x="554" y="234" fill="#555" font-size="11">مسح · تسريع · شاشات متعددة</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>شكل 1: فرز أعطال التقاط/تحديد Youdao - قسّم إلى أربع مجموعات، ثم حدّد على المضيف / التطبيق / المحتوى</figcaption></figure>
+<h2>الخطوة 2: السبب الجذري الأكثر تجاهلاً → L2 (التقاط الشاشة = خطاف عام / حقن DLL)</h2>
+<p>الفكرة الأساسية: <strong>التقاط الشاشة لا «يقرأ صورة الشاشة» - يحقن Youdao كود التقاط (خطاف عام / DLL) في التطبيق الآخر لقراءة مخزن نصّه</strong>. هذا يفسّر معظم الأعطال «الغامضة»: ① <strong>مستوى الامتياز</strong> — Youdao بحقوق عادية لا يحقن في تطبيق «يعمل كمسؤول» (والعكس)، لذا «فقط ذلك التطبيق لا يلتقط» يعني عادة امتيازات غير متطابقة؛ ② <strong>المعمارية (البت)</strong> — خطافات 32/64 بت لا تختلط، لذا Youdao قديم على Acrobat 64 بت يعطي «وظيفة إضافية غير متوافقة، تعذّر تحميل YodaoDict.api»؛ ③ <strong>الصندوق الرملي</strong> — «الوضع المحمي» في Acrobat صندوق رملي يحجب حقن .api لطرف ثالث؛ ④ <strong>تسريع العتاد</strong> — حين يعرض المتصفح/PDF المحتوى كنسيج GPU لا يبقى «نص مقروء» لالتقاطه؛ ⑤ <strong>الممسوحات</strong> — PDF بصورة فقط بلا طبقة نص، استخدم «OCR التقاط قوي». بالأسفل لوحة الفحص الذاتي؛ ثم مقارنة المنافسين وتقديرات 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="لوحة الفحص الذاتي قبل الالتقاط في Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">لوحة فحص ذاتي لتفعيل الالتقاط (أخضر = مؤكَّد / أحمر = يُغفَل بسهولة)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">عنصر الفحص</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">الحكم</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">الحالة</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao يعمل بالخلفية (الصينية ليست رمادية)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">العملية حية</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">مؤكَّد</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">مؤشَّر التقاط / تحديد / ترجمة تلقائية عند التحديد</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 مفاتيح</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">مؤكَّد</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">محفّز التقاط صحيح (تمرير / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">المحفّز</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">مؤكَّد</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">التطبيق الهدف متوافق (وظيفة Office / PDF غير محمي / امتداد متصفح)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">جانب التطبيق</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">للفحص</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">الأذونات ممنوحة (mac إمكانية الوصول+تسجيل / win مسؤول)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">مستوى الامتياز</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">مؤكَّد</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">لا تعارض اختصار + ليس مسحاً / OCR مفعّل</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">يُغفَل بسهولة</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">للفحص</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">ملاحظة: أحمر = الأكثر إغفالاً - توافق تطبيق معيّن (Office / PDF / متصفح) والمحتوى/الاختصار (المسح يحتاج OCR، تعارض المفاتيح)؛ افحص هذين أولاً.</text></svg><figcaption>شكل 2: لوحة فحص ذاتي لتفعيل الالتقاط (أخضر = مؤكَّد / أحمر = يُغفَل بسهولة)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ar.webp"><img src="/img/board_ar.png" alt="رسم توضيحي للوحة الفحص الذاتي قبل الالتقاط في Youdao بعناصر خضراء/حمراء" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>شكل: افحص أولاً «يعمل + ثلاثة مفاتيح + أذونات»، ثم «توافق التطبيق + المحتوى/الاختصار» - الأخيران الأكثر إغفالاً</figcaption></figure>
+<h2>جدول الأعراض الكامل (عَرَض L1 / الموضع الرسمي · السبب الجذري L2)</h2>
+<table id="tbl"></table>
+<h2>مقارنة أدوات التحديد/الالتقاط المنافسة (وضع الالتقاط / OCR / المنصة / السعر · بيانات عامة)</h2>
+<table class="cmp"><tr><th>البرنامج</th><th>التقاط الشاشة / التحديد</th><th>OCR اللقطة</th><th>المنصات</th><th>قواميس إضافية</th><th>السعر (تقدير)</th></tr><tr><td>Youdao</td><td>التقاط عام + ترجمة التحديد</td><td>OCR لقطة + التقاط قوي</td><td>Win / Mac / iOS / Android / Web / امتداد متصفح</td><td>mdx ضعيف</td><td>أساسي مجاني (بعض العضوية / بلا إعلانات)</td></tr><tr><td>Eudic</td><td>تحديد + التقاط الشاشة</td><td>التقاط لقطة</td><td>Win / Mac / iOS / Android</td><td>mdx قوي (مكتبات ضخمة)</td><td>أساسي مجاني + معزَّز مدفوع</td></tr><tr><td>iCIBA (Kingsoft)</td><td>التقاط + تحديد</td><td>ترجمة لقطة</td><td>Win / Mac / محمول / Web</td><td>متوسط</td><td>مجاني (إعلانات) + عضوية</td></tr><tr><td>Saladict</td><td>تحديد داخل المتصفح (امتداد)</td><td>حسب الصفحة / OCR يحتاج إعداداً</td><td>امتداد متصفح (Chrome / Edge / Firefox)</td><td>مصادر قابلة للضبط</td><td>مجاني · مفتوح المصدر</td></tr><tr><td>Microsoft Translator / Bing</td><td>تحديد على مستوى النظام ضعيف</td><td>مدمج في Office + لقطة</td><td>Win / Office / Edge / محمول</td><td>لا شيء</td><td>مجاني</td></tr></table><section class="i4data">
+<h2>أسباب فشل التقاط Youdao ومقارنة أدوات التحديد (تقدير 2026)</h2>
+<p>التالي <strong>تقديرات 2026</strong> مركّبة من مساعدة / أسئلة Youdao الرسمية، ومواد المنافسين العامة، واستكشاف المطوّرين (ليست التزام الشركة المصنّعة ولا قياساً مباشراً؛ للمرجع، تتغير حسب الإصدار ونظام التشغيل):</p>
+<table>
+<tr><th>البُعد</th><th>تقدير / مقارنة</th></tr>
+<tr><td>توزيع أسباب فشل الالتقاط (المجتمع · تقدير)</td><td><strong>غير مُفعّل / أذونات ~40%</strong> &gt; <strong>توافق التطبيق (Office/PDF/متصفح) ~25%</strong> &gt; تعارض اختصار ~20% &gt; العرض / المحتوى (تسريع-عتاد / مسح) ~15%</td></tr>
+<tr><td>ما هو الالتقاط حقاً</td><td>التقاط الشاشة = <strong>خطاف عام / حقن DLL</strong> يقرأ مخزن نص التطبيق الهدف (لا يقرأ صورة الشاشة)؛ لذا يتأثّر بمستوى الامتياز، المعمارية، الصندوق الرملي، تسريع العتاد</td></tr>
+<tr><td>الالتقاط لكل منصة (تقدير)</td><td>سطح المكتب (Win/Mac) يدعم <strong>التقاط شاشة عام + تحديد + OCR لقطة</strong>؛ المحمول غالباً تحديد / ترجمة صورة؛ الويب / المتصفح يحتاج <strong>امتداد التقاط</strong></td></tr>
+<tr><td>ملخص أدوات التحديد / الالتقاط (تقدير)</td><td>Youdao = كل المنصات + ترجمة AI قوية؛ Eudic = مكتبات إضافية قوية (mdx)؛ iCIBA = مجاني جماهيري؛ Saladict = متصفح مفتوح المصدر؛ Microsoft = مدمج في Office</td></tr>
+<tr><td>مستويات السعر (تقدير)</td><td>Youdao / iCIBA <strong>أساسي مجاني</strong> (عضوية لبلا إعلانات / إضافات) · Eudic <strong>معزَّز مدفوع</strong> · Saladict <strong>مجاني مفتوح المصدر</strong> · Microsoft Translator <strong>مجاني</strong></td></tr>
+</table>
+<p><small>أساس التقدير: خط أساس المصادر + استقراء زمني (cidian.youdao.com مساعدة / أسئلة رسمية، مواد Eudic / iCIBA / Saladict / Microsoft العامة، مقالات مطوّرين عامة، 2026)؛ يتغير حسب إصدار وسياسة نظام كل مزوّد. ارجع إلى أحدث معلومات رسمية. توطين LLM.</small></p>
+</section>
+<h2>حالات حقيقية - قراءة سريعة</h2>
+<ul class="scenes"><li>لا التقاط في المتصفح لكن Notepad / Word جيدان: عادة المتصفح بلا امتداد التقاط Youdao، أو عرض تسريع عتاد GPU الصفحة كنسيج → ثبّت الامتداد، أو أوقف «استخدام تسريع العتاد» وأعد التشغيل.</li><li>Acrobat 64 بت، التحديد في PDF لا يفعل شيئاً، «وظيفة غير متوافقة، تعذّر تحميل YodaoDict.api»: أوقف في Acrobat تحرير → التفضيلات → الأمان (المعزَّز) → «تفعيل الوضع المحمي عند البدء»، افتح Youdao قبل Acrobat؛ إن استمر، انسخ YodaoDict.api من مجلد Youdao إلى plug_ins في Acrobat.</li><li>نص PDF قابل للتحديد لكن لا يُلتقَط، أو الصفحة كاملة لا: إما مسح (PDF صورة بلا طبقة نص، يحتاج «OCR التقاط قوي»)، أو وضع Acrobat المحمي / قفل Autotray.exe يحجب الحقن.</li><li>بعد تثبيت Office (خاصة Education / 365) لا يترجم Word التحديد: وظيفة Youdao Office COM معطّلة → ملف → خيارات → الوظائف الإضافية → وظائف COM → فعّلها؛ وإلا أعد تثبيت Youdao لإعادة تسجيلها.</li><li>بعد تحديث النظام، يموت الالتقاط والاختصارات على macOS: التحديث أعاد ضبط الأذونات → امنح Youdao «إمكانية الوصول» و«تسجيل الشاشة» مجدداً في الخصوصية والأمان وأعد تشغيله.</li><li>الالتقاط يعمل في التطبيقات العادية لكنه يفشل داخل تطبيق «يعمل كمسؤول»: مستويات امتياز مختلفة تمنع الخطاف العام من الحقن في العملية المرتفعة → نقرة يمنى على Youdao «تشغيل كمسؤول».</li><li>شاشات متعددة / DPI عالٍ: نافذة الالتقاط «تطير» إلى مكان غير مرئي: بسبب تحجيم DPI غير متطابق لكل شاشة → أشّر «تثبيت موضع النافذة» في إعدادات الالتقاط لتثبيتها أعلى يسار الشاشة الرئيسية.</li></ul><div class="related"><h2>ذو صلة</h2><ul><li><a href="https://yoydao.com/">تنزيل Youdao / دليل الإعداد</a></li><li><a href="https://yoydao.com/ar/tutorial/">دليل التقاط وتحديد Youdao</a></li><li><a href="https://yoydao.com/ar/tools/youdao-word-capture/">Youdao بحث حلول الالتقاط (جدول كامل موثوق)</a></li><li><a href="https://yoidao.com/ar/">رموز أخطاء واجهة Youdao Zhiyun (موقع شقيق)</a></li></ul></div></main>
+<footer>ملاحظات الالتقاط/التحديد/OCR/توافق 64 بت مجمَّعة من الأسئلة الشائعة والمساعدة الرسمية لسطح مكتب Youdao (cidian.youdao.com)؛ استكشاف وظيفة Office الإضافية يشير إلى أسئلة وأجوبة Microsoft الرسمية، وملاحظات Acrobat 64 بت «تعذّر تحميل YodaoDict.api / إيقاف الوضع المحمي» من مقالات مطوّرين عامة (أُعيدت صياغتها). المقارنات من مواد Eudic وiCIBA وSaladict وMicrosoft Translator العامة. نسب/منصات/أسعار 2026 تقديرات، ليست التزام الشركة المصنّعة ولا قياساً مباشراً. توطين LLM؛ ارجع إلى أحدث معلومات رسمية لكل مزوّد.<br>صفحة أداة · ليست بديلاً عن العميل الرسمي</footer>
+</div>
+<script src="/ar/codes.js"></script><script src="/app.js"></script>
+</body></html>
