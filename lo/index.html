@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="lo"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao ການຈັບຄຳໃນໜ້າຈໍ/ການແປຕາມການເລືອກ/OCR/ທາງລັດ ບໍ່ເຮັດວຽກ - ສາເຫດ ແລະ ວິທີແກ້ (PDF, Word, ບຣາວເຊີ, 64-ບິດ)</title>
+<meta name="description" content="ການຈັບຄຳໃນໜ້າຈໍ Youdao (ຄົ້ນຫາໂດຍວາງເມົ້າ), ການແປຕາມການເລືອກ, OCR ການຖ່າຍຮູບໜ້າຈໍ ຫຼື ທາງລັດ ບໍ່ເຮັດວຽກບໍ? ຄົ້ນຫາອາການ (ການຈັບຕາຍ / ບໍ່ມີປ໊ອບອັບເມື່ອເລືອກ / ການຈັບ Word-Office / ການຈັບ PDF-Acrobat / ການເລືອກບຣາວເຊີ Chrome / OCR / ການຂັດແຍ່ງທາງລັດ / ສິດ macOS / ປ໊ອບອັບນອກໜ້າຈໍໃນຫຼາຍຈໍ / 64-ບິດ / ສະບັບພົກພາ) — ອາການ L1 ແລະ ຕຳແໜ່ງທາງການ ພ້ອມສາເຫດຮາກ L2: global hook / DLL injection, ລະດັບສິດ UAC, Office COM add-in, Acrobat protected mode, ການເລັ່ງຮາດແວ GPU ປ່ຽນຂໍ້ຄວາມເປັນ texture, ສະແກນ PDF ຕ້ອງ OCR, DPI ຫຼາຍຈໍ; ກັບການປຽບທຽບ Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator ແລະ ການຄາດຄະເນ 2026.">
+<link rel="canonical" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao ການຄົ້ນຫາວິທີແກ້ ການຈັບ/ການເລືອກ/OCR/ທາງລັດ",
+   "url": "https://yoydao.github.io/lo/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "lo",
+   "description": "ການຈັບຄຳໃນໜ້າຈໍ Youdao (ຄົ້ນຫາໂດຍວາງເມົ້າ), ການແປຕາມການເລືອກ, OCR ການຖ່າຍຮູບໜ້າຈໍ ຫຼື ທາງລັດ ບໍ່ເຮັດວຽກບໍ? ຄົ້ນຫາອາການ (ການຈັບຕາຍ / ບໍ່ມີປ໊ອບອັບເມື່ອເລືອກ / ການຈັບ Word-Office / ການຈັບ PDF-Acrobat / ການເລືອກບຣາວເຊີ Chrome / OCR / ການຂັດແຍ່ງທາງລັດ / ສິດ macOS / ປ໊ອບອັບນອກໜ້າຈໍໃນຫຼາຍຈໍ / 64-ບິດ / ສະບັບພົກພາ) — ອາການ L1 ແລະ ຕຳແໜ່ງທາງການ ພ້ອມສາເຫດຮາກ L2: global hook / DLL injection, ລະດັບສິດ UAC, Office COM add-in, Acrobat protected mode, ການເລັ່ງຮາດແວ GPU ປ່ຽນຂໍ້ຄວາມເປັນ texture, ສະແກນ PDF ຕ້ອງ OCR, DPI ຫຼາຍຈໍ; ກັບການປຽບທຽບ Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator ແລະ ການຄາດຄະເນ 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "lo",
+   "url": "https://yoydao.github.io/lo/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao ການຈັບໜ້າຈໍຕາຍທັງໝົດ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ການຈັບໜ້າຈໍຕ້ອງໃຫ້ Youdao ຢູ່ໃນພື້ນຫຼັງໂດຍເປີດການຈັບ; ສະບັບ desktop ທາງການໃຫ້ ການຈັບສະຫຼາດ / ການຈັບ clipboard / ການຈັບ OCR. ການຈັບໜ້າຈໍໃຊ້ global hook ທີ່ສັກເຂົ້າແອັບໜ້າເພື່ອອ່ານຂໍ້ຄວາມ: ຕ້ອງມີ process Youdao ແລ່ນ + ສະວິດການຈັບຫຼັກເປີດ + ປຸ່ມຕົວກະຕຸ້ນກົງກັນ. ຂາດໜຶ່ງກໍ່ເບິ່ງຄື «ຕາຍສະນິດ», ມັກຖືກເຂົ້າໃຈຜິດວ່າຊອບແວເພ. ກວດໄອຄອນ tray ວ່າຍັງເຮັດວຽກ (ສີຂີ້ເຖົ່າ = ບໍ່ແລ່ນ, ຄລິກສອງເທື່ອເພື່ອເລີ່ມ); ການຕັ້ງຄ່າ → ການຈັບ ແລະ ການເລືອກ, ໝາຍ «ເປີດໃຊ້ການຈັບ» ແລະ ເລືອກໂໝດ (ວາງເມົ້າ / ກົດ Ctrl); ເລີ່ມ Youdao ໃໝ່ ແລ້ວລອງອີກ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ການແປຕາມການເລືອກບໍ່ສະແດງປ໊ອບອັບ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ການແປຕາມການເລືອກຕ້ອງ «ການເລືອກ» ເປີດ ໂດຍໝາຍ «ແປອັດຕະໂນມັດເມື່ອເລືອກ»; ສາມາດແປເມື່ອເລືອກ ຫຼື ດ້ວຍປຸ່ມ. ການເລືອກ ແລະ ການຈັບ ເປັນສະວິດແຍກ: ຫຼາຍຄົນເປີດການຈັບ ແຕ່ບໍ່ການເລືອກ, ຫຼື ປິດ «ແປອັດຕະໂນມັດເມື່ອເລືອກ», ສະນັ້ນ «ການເລືອກບໍ່ສະແດງຫຍັງ»; hotkey ການເລືອກອາດຖືກຍຶດເຊັ່ນກັນ. ການຕັ້ງຄ່າ → ການຈັບ ແລະ ການເລືອກ, ໝາຍ «ເປີດໃຊ້ການແປຕາມການເລືອກ» ແລະ «ແປອັດຕະໂນມັດເມື່ອເລືອກ»; ຖ້າດ້ວຍປຸ່ມ ກວດປຸ່ມນັ້ນວ່າງ; ການເລືອກໃນບຣາວເຊີຕ້ອງສ່ວນຂະຫຍາຍການຈັບເຊັ່ນກັນ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ການຈັບ/ການເລືອກໃນ Word / Office ລົ້ມເຫຼວ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao ເຊື່ອມໂຍງກັບ Office ຜ່ານ COM add-in ສຳລັບການແປການເລືອກ / ປະໂຫຍກ; ຖ້າ add-in ຖືກປິດ ຫຼື ບໍ່ລົງທະບຽນກໍ່ລົ້ມເຫຼວ. Office ປິດ COM add-in ພາກສ່ວນທີສາມຍ້ອນຄວາມເຂົ້າກັນ ຫຼື ນະໂຍບາຍ; ການປ່ຽນສະບັບ (ເຊັ່ນ Education ໃໝ່) ປ່ອຍ add-in ເກົ່າບໍ່ລົງທະບຽນສຳລັບ Office ໃໝ່, ສະນັ້ນ «ກ່ອນເຮັດວຽກ, ດຽວນີ້ບໍ່». Word: ໄຟລ໌ → ຕົວເລືອກ → Add-in → ລຸ່ມ «ຈັດການ: COM add-in» → ໄປ → ໝາຍ Youdao add-in; ບໍ່ດັ່ງນັ້ນຕິດຕັ້ງ Youdao ໃໝ່ເພື່ອລົງທະບຽນຄືນ; ກວດ bitness Youdao ແລະ Office ກົງກັນ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ການຈັບໃນ PDF / Acrobat ລົ້ມເຫຼວ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ສະບັບທາງການຮອງຮັບການຈັບໜ້າຈໍ PDF ໃນ Adobe Reader / Acrobat; ສະບັບ «ພົກພາ» ບໍ່ເປັນທາງການຈັບ PDF ບໍ່ໄດ້, ແລະ PDF ຕ້ອງເປັນຂໍ້ຄວາມ, ບໍ່ແມ່ນຮູບ. ສາມສາເຫດ: ① «protected mode» ຂອງ Acrobat ແມ່ນ sandbox ທີ່ກີດຂວາງການສັກ YodaoDict.api ພາກສ່ວນທີສາມ; ② bitness ບໍ່ກົງລະຫວ່າງ Acrobat 64-ບິດ ແລະ Youdao plug-in ເກົ່າ ໃຫ້ «ປລັກອິນບໍ່ເຂົ້າກັນ»; ③ PDF ເປັນສະແກນ (ຮູບ, ບໍ່ມີຊັ້ນຂໍ້ຄວາມ). ໃນ Acrobat ແກ້ໄຂ → ການຕັ້ງຄ່າ → ຄວາມປອດໄພ (ຂັ້ນສູງ) → «ເປີດໃຊ້ protected mode ເມື່ອເລີ່ມ» ປິດ, ເປີດ Youdao ກ່ອນ Acrobat; ສຳລັບ «ບໍ່ເຂົ້າກັນ» 64-ບິດ ຕິດຕັ້ງ Youdao ຫຼ້າສຸດ, ຫຼື copy YodaoDict.api ໄປ plug_ins ຂອງ Acrobat; ສຳລັບສະແກນໃຊ້ OCR ການຈັບແບບແຮງ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ການເລືອກ/ການຈັບໃນ Chrome / ບຣາວເຊີ ລົ້ມເຫຼວ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox ແລະ ອື່ນໆ ຕ້ອງສ່ວນຂະຫຍາຍການຈັບ Youdao ແຍກ; ສະບັບ desktop ທາງການໃຫ້ «ການຈັບ Chrome». ບຣາວເຊີເປັນ sandbox ຂອງມັນເອງ: ① ບໍ່ມີສ່ວນຂະຫຍາຍການຈັບ Youdao, global hook ອ່ານ DOM ຂໍ້ຄວາມບໍ່ໄດ້; ② ການເລັ່ງຮາດແວ GPU ເຣນເດີໜ້າເປັນ texture ໂດຍບໍ່ມີຊັ້ນທີ່ອ່ານໄດ້; ③ adblock / ຄວາມປອດໄພ toggle (ເຊັ່ນ 360 ບຣາວເຊີ) ກີດຂວາງການຈັບ. ຕິດຕັ້ງສ່ວນຂະຫຍາຍການຈັບ Youdao ສຳລັບບຣາວເຊີຂອງທ່ານ (ຜ່ານການຕັ້ງຄ່າ Youdao ຫຼື store); ປິດ «ໃຊ້ການເລັ່ງຮາດແວ» ໃນການຕັ້ງຄ່າບຣາວເຊີ ແລ້ວເລີ່ມໃໝ່; ປິດ adblock ໃນ 360 ບຣາວເຊີ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR ການຖ່າຍຮູບໜ້າຈໍ/ພື້ນທີ່ ບໍ່ເຮັດວຽກ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR ການຖ່າຍຮູບໜ້າຈໍ ຕ້ອງ hotkey ຮັບຮູ້ການຖ່າຍຮູບໜ້າຈໍທີ່ຕັ້ງ (ເຊັ່ນ Ctrl+Alt+O) ແລະ ໂມດູນ OCR ດາວໂຫຼດ; ລາກເລືອກພື້ນທີ່ໜ້າຈໍ. OCR ການຖ່າຍຮູບໜ້າຈໍ ບໍ່ຕ້ອງຊັ້ນຂໍ້ຄວາມ - ຮັບຮູ້ພື້ນທີ່ທີ່ເລືອກດ້ວຍຮູບ, ສະນັ້ນຕ້ອງໂມດູນ OCR ດາວໂຫຼດ + hotkey ວ່າງ + (macOS) ສິດການບັນທຶກໜ້າຈໍ ເພື່ອອ່ານ pixel. ການຕັ້ງຄ່າ → ທາງລັດ, ກຳນົດປຸ່ມບໍ່ຂັດແຍ່ງສຳລັບ «OCR ການຖ່າຍຮູບໜ້າຈໍ»; ດາວໂຫຼດໂມດູນ OCR ໃນການໃຊ້ຄັ້ງທຳອິດ; ໃນ macOS ໃຫ້ «ການບັນທຶກໜ້າຈໍ»; ເລືອກພື້ນທີ່ຊັດເຈນກວ່າຖ້າຮັບຮູ້ລົ້ມເຫຼວ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ການຂັດແຍ່ງທາງລັດການຈັບ / ການຖ່າຍຮູບໜ້າຈໍ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ການຈັບ / ການເລືອກ / ການຮັບຮູ້ການຖ່າຍຮູບໜ້າຈໍ ທັງໝົດກຳນົດເອງໄດ້ໃນ ທາງລັດ; ເມື່ອຂັດແຍ່ງເຕືອນ, ແລະ ສາມາດ rebind ຫຼື reset. ທາງລັດ global ມາກ່ອນໄດ້ກ່ອນ: ເຄື່ອງມືຖ່າຍຮູບໜ້າຈໍ, ວິທີປ້ອນ, QQ / WeChat ຫຼື ວັດຈະນານຸກົມອື່ນ ອາດຖືການປະສົມດຽວກັນ, ສະນັ້ນປຸ່ມ Youdao ບໍ່ເຮັດຫຍັງ. ການຕັ້ງຄ່າ → ທາງລັດ, ເບິ່ງຄຳເຕືອນການຂັດແຍ່ງ; ປ່ຽນເປັນການປະສົມຫາຍາກກວ່າ ເຊັ່ນ Ctrl+Shift+ຕົວອັກສອນ / Alt+ຕົວອັກສອນ; ປິດແອັບທີ່ຖືປຸ່ມເທື່ອລະອັນເພື່ອຫາຜູ້ກໍ່."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS ການຈັບ / ທາງລັດ ຕ້ອງການອະນຸຍາດ - ແກ້ໄຂແນວໃດ?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS ຕ້ອງໃຫ້ Youdao «ການເຂົ້າເຖິງ» (ຕິດຕາມທາງລັດ / ຄວບຄຸມ) ແລະ «ການບັນທຶກໜ້າຈໍ» (ອ່ານໜ້າຈໍສຳລັບການຈັບ / ການຖ່າຍຮູບໜ້າຈໍ) ໃນ ການຕັ້ງຄ່າລະບົບ → ຄວາມເປັນສ່ວນຕົວ ແລະ ຄວາມປອດໄພ. sandbox macOS ຮຽກຮ້ອງອະນຸຍາດຊັດເຈນ: ບໍ່ມີ «ການເຂົ້າເຖິງ» ບໍ່ໄດ້ຍິນທາງລັດ global, ບໍ່ມີ «ການບັນທຶກໜ້າຈໍ» ບໍ່ອ່ານ pixel; ອັບເດດມັກ reset ທັງສອງ. ການຕັ້ງຄ່າລະບົບ → ຄວາມເປັນສ່ວນຕົວ ແລະ ຄວາມປອດໄພ → ໝາຍ Youdao ໃນ «ການເຂົ້າເຖິງ» ແລະ «ການບັນທຶກໜ້າຈໍ» ແລ້ວເລີ່ມໃໝ່; ໃຫ້ຄືນຫຼັງທຸກອັບເດດ macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ພາສາ: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <strong>ພາສາລາວ</strong> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao ການຈັບຄຳໃນໜ້າຈໍ / ການແປຕາມການເລືອກ / OCR / ທາງລັດ - ການຄົ້ນຫາວິທີແກ້</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_lo.webp"><img src="/img/cover_lo.png" alt="ຮູບປະກອບເຄື່ອງມື Youdao ສຳລັບການຄົ້ນຫາວິທີແກ້ ການຈັບ/ການເລືອກ/ການຖ່າຍຮູບໜ້າຈໍ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ຮູບ: Youdao ການຄົ້ນຫາວິທີແກ້ ການຈັບ / ການເລືອກ / ການຖ່າຍຮູບໜ້າຈໍ (ອາການ L1 + ສາເຫດຮາກ L2 + ການປຽບທຽບຄູ່ແຂ່ງ)</figcaption></figure>
+<p><strong>ການຈັບຄຳໃນໜ້າຈໍ</strong> ຂອງ <strong>Youdao</strong> (ຄົ້ນຫາໂດຍວາງເມົ້າ), <strong>ການແປຕາມການເລືອກ</strong>, <strong>OCR</strong> ຫຼື <strong>ທາງລັດ</strong> ຢຸດທັນທີບໍ? ກ່ອນອື່ນຊີ້ແຈງສາມເລື່ອງ: <strong>ບໍ່ໄດ້ເປີດໃຊ້ / ບໍ່ມີສິດ, ຄວາມເຂົ້າກັນໄດ້ຂອງແອັບໃດໜຶ່ງ (Office / PDF / ບຣາວເຊີ), ຫຼື ເນື້ອໃນເອງ (ສະແກນ / ການເລັ່ງຮາດແວ) ບໍ່ມີຂໍ້ຄວາມທີ່ອ່ານໄດ້?</strong> ຄົ້ນຫາ <strong>ອາການ ຫຼື ຄຳສຳຄັນ</strong> ທີ່ທ່ານພົບ (ເຊັ່ນ <code>ການຈັບ</code>, <code>pdf</code>, <code>ການເລືອກ</code>, <code>ທາງລັດ</code>, <code>64-ບິດ</code>, <code>OCR</code>): ກ່ອນອື່ນ <strong>ອາການ L1 ແລະ ຕຳແໜ່ງທາງການ</strong>, ຈາກນັ້ນ <strong>ສາເຫດຮາກ L2 ແລະ ວິທີແກ້</strong>, ສຸດທ້າຍການປຽບທຽບຄູ່ແຂ່ງ ແລະ ກໍລະນີຈິງ. ຕິດຕັ້ງ / ຕັ້ງຄ່າ? ເບິ່ງ <a href="https://yoydao.com/">ດາວໂຫຼດ Youdao / ຄູ່ມືການຈັບ ແລະ ການເລືອກ</a>.</p>
+<input id="q" placeholder="ໃສ່ອາການ ຫຼື ຄຳສຳຄັນ, ເຊັ່ນ ການຈັບ / pdf / ການເລືອກ / ທາງລັດ / 64-ບິດ / OCR" autocomplete="off">
+<button id="go">ຄົ້ນຫາ</button>
+<div id="out"></div>
+<h2>ຂັ້ນຕອນ 1: ແບ່ງເປັນສີ່ກຸ່ມກ່ອນ (L1 - ຢ່າຕິດຕັ້ງໃໝ່ທັນທີ)</h2>
+<p>ເມື່ອການຈັບ/ການເລືອກ Youdao ຢຸດ, 9 ໃນ 10 ເທື່ອມັນແມ່ນໜຶ່ງໃນສີ່ກຸ່ມ - ຊອກຫາຄວາມຜິດກ່ອນ: ① <strong>ການເປີດໃຊ້/ການຕັ້ງຄ່າ</strong> — Youdao ບໍ່ແລ່ນໃນພື້ນຫຼັງ (ໄອຄອນ tray ສີຂີ້ເຖົ່າ), ຫຼື ບໍ່ໄດ້ໝາຍ «ເປີດໃຊ້ການຈັບ / ການເລືອກ / ແປອັດຕະໂນມັດເມື່ອເລືອກ», ຫຼື ຕົວກະຕຸ້ນຜິດ; ② <strong>ສິດ</strong> — macOS «ການເຂົ້າເຖິງ + ການບັນທຶກໜ້າຈໍ» ບໍ່ໄດ້ໃຫ້, ຫຼື ໃນ Windows ເປົ້າໝາຍແມ່ນແອັບສິດສູງ ແຕ່ Youdao ບໍ່ແລ່ນເປັນຜູ້ບໍລິຫານ; ③ <strong>ຄວາມເຂົ້າກັນໄດ້ຂອງແອັບ</strong> — Youdao COM add-in ໃນ Word/Excel ຖືກປິດ, Acrobat protected mode ກີດຂວາງການສັກ, ຫຼື ບຣາວເຊີບໍ່ມີສ່ວນຂະຫຍາຍການຈັບ; ④ <strong>ການເຣນເດີ/ເນື້ອໃນ</strong> — ສະແກນ PDF ເປັນຮູບ (ຕ້ອງ OCR), ບຣາວເຊີ/PDF ກັບການເລັ່ງຮາດແວ GPU ແຕ້ມຂໍ້ຄວາມເປັນ texture, ຫຼື DPI ຫຼາຍຈໍບໍ່ກົງ ໂຍນປ໊ອບອັບອອກນອກໜ້າຈໍ. ການຕັ້ງຄ່າເຕັມ: <a href="https://yoydao.com/tutorial/">ຄູ່ມືການຈັບ ແລະ ການເລືອກ Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>ການເປີດໃຊ້ / ການຕັ້ງຄ່າ</b><span class="cs">ການຈັບ · ການເລືອກ · ແປອັດຕະໂນມັດ · OCR ແຮງ</span><div>ໃຫ້ແນ່ໃຈວ່າ Youdao ແລ່ນໃນພື້ນຫຼັງ (ໄອຄອນ tray ບໍ່ແມ່ນສີຂີ້ເຖົ່າ), ໄປທີ່ ການຕັ້ງຄ່າ → ການຈັບ ແລະ ການເລືອກ ແລ້ວໝາຍ «ເປີດໃຊ້ການຈັບ», «ເປີດໃຊ້ການເລືອກ», «ແປອັດຕະໂນມັດເມື່ອເລືອກ» ແລະ ເລືອກຕົວກະຕຸ້ນທີ່ຖືກຕ້ອງ (ວາງເມົ້າ / ກົດ Ctrl).</div></div><div class="catbox"><b>ສິດ</b><span class="cs">macOS ການເຂົ້າເຖິງ+ການບັນທຶກໜ້າຈໍ · Windows ຜູ້ບໍລິຫານ/UAC</span><div>macOS: ການຕັ້ງຄ່າລະບົບ → ຄວາມເປັນສ່ວນຕົວ ແລະ ຄວາມປອດໄພ, ໃຫ້ Youdao «ການເຂົ້າເຖິງ» ແລະ «ການບັນທຶກໜ້າຈໍ»; Windows: ເມື່ອເປົ້າໝາຍ «ແລ່ນເປັນຜູ້ບໍລິຫານ», ໃຫ້ແລ່ນ Youdao ເປັນຜູ້ບໍລິຫານເຊັ່ນກັນ (hook ສັກໄດ້ສະເພາະລະດັບສິດດຽວກັນ).</div></div><div class="catbox"><b>ຄວາມເຂົ້າກັນໄດ້ຂອງແອັບ</b><span class="cs">Office COM · Acrobat protected mode · 64-ບິດ · ສ່ວນຂະຫຍາຍບຣາວເຊີ</span><div>Office: ໄຟລ໌ → ຕົວເລືອກ → Add-in → COM add-in, ໝາຍ Youdao add-in; Acrobat: ປິດ «ເປີດໃຊ້ protected mode ເມື່ອເລີ່ມ», ຖ້າຈຳເປັນ copy YodaoDict.api ໄປ plug_ins; ບຣາວເຊີ: ຕິດຕັ້ງສ່ວນຂະຫຍາຍການຈັບ Youdao.</div></div><div class="catbox"><b>ທາງລັດ</b><span class="cs">ການຂັດແຍ່ງ · ກຳນົດເອງ · ປຸ່ມ OCR ການຖ່າຍຮູບໜ້າຈໍ</span><div>ການຕັ້ງຄ່າ → ທາງລັດ, ເບິ່ງຄຳເຕືອນການຂັດແຍ່ງ; ປ່ຽນເປັນການປະສົມທີ່ຂັດແຍ່ງໜ້ອຍ ເຊັ່ນ Ctrl+Shift / Alt+ຕົວອັກສອນ; ໃຫ້ OCR ການຖ່າຍຮູບໜ້າຈໍປຸ່ມຂອງມັນເອງ (ເຊັ່ນ Ctrl+Alt+O, ຫ່າງຈາກແອັບອື່ນ).</div></div><div class="catbox"><b>ການເຣນເດີ / ການສະແດງ</b><span class="cs">ການເລັ່ງຮາດແວ · ສະແກນ · DPI ຫຼາຍຈໍ · ເຕັມຈໍ</span><div>ບຣາວເຊີ/PDF ກັບການເລັ່ງຮາດແວ GPU ເຣນເດີເນື້ອໃນເປັນ texture ໂດຍບໍ່ມີຂໍ້ຄວາມທີ່ອ່ານໄດ້ (ປິດການເລັ່ງ); ສະແກນ PDF ເປັນຮູບ (ໃຊ້ OCR); ສຳລັບປ໊ອບອັບນອກໜ້າຈໍໃນຫຼາຍຈໍ ໝາຍ «ປັກໝຸດຕຳແໜ່ງໜ້າຕ່າງ».</div></div><div class="catbox"><b>ເຄືອຂ່າຍ / ການຕິດຕັ້ງ</b><span class="cs">ຄວາມໄວການຈັບ · ສະບັບພົກພາ · add-in ບໍ່ໂຫຼດ</span><div>ການຄົ້ນຫາອອນລາຍຊ້າ? ກວດເຄືອຂ່າຍ; ຕິດຕັ້ງສະບັບເຕັມທາງການສະເໝີ - ສະບັບ «ພົກພາ/ເບົາ» ບໍ່ເປັນທາງການ ບໍ່ມີ DLL hook ການຈັບທີ່ລົງທະບຽນ, ສະນັ້ນການຈັບ PDF/global ລົ້ມເຫຼວທັນທີ.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ກະແສການຈັດປະເພດຄວາມລົ້ມເຫຼວການຈັບ/ການເລືອກ Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ການຈັດປະເພດການຈັບ / ການເລືອກ ບໍ່ເຮັດວຽກ (ສີ່ກຸ່ມກ່ອນ: ສະວິດ / ສິດ / ແອັບ / ເນື້ອໃນ)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ການຈັບຕາຍ</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">ສີ່ກຸ່ມ</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">host ກວດສອບຕົນເອງ →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">ສະວິດປິດ · ບໍ່ມີສິດ</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">ແອັບ / ເນື້ອໃນ →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/ບຣາວເຊີ · ສະແກນ/ເລັ່ງ-ຮາດ</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">ສີ່ສາເຫດຮາກ (ອ່ານສາເຫດ / ວິທີແກ້ ຕໍ່ລາຍການ)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① ການເປີດໃຊ້/ການຕັ້ງຄ່າ</text><text x="32" y="234" fill="#555" font-size="11">ການຈັບ · ການເລືອກ · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② ສິດ</text><text x="206" y="234" fill="#555" font-size="11">mac ການເຂົ້າເຖິງ · win ຜູ້ບໍລິຫານ</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ ຄວາມເຂົ້າກັນຂອງແອັບ</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · ບຣາວເຊີ</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ ເຣນເດີ/ເນື້ອໃນ</text><text x="554" y="234" fill="#555" font-size="11">ສະແກນ · ເລັ່ງ · ຫຼາຍຈໍ</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>ຮູບ 1: ການຈັດປະເພດຄວາມລົ້ມເຫຼວການຈັບ/ການເລືອກ Youdao - ແບ່ງເປັນສີ່ກຸ່ມ, ຈາກນັ້ນຈຳກັດໄປທີ່ host / ແອັບ / ເນື້ອໃນ</figcaption></figure>
+<h2>ຂັ້ນຕອນ 2: ສາເຫດຮາກທີ່ຖືກລະເລີຍຫຼາຍທີ່ສຸດ → L2 (ການຈັບໜ້າຈໍ = global hook / DLL injection)</h2>
+<p>ແນວຄິດຫຼັກ: <strong>ການຈັບໜ້າຈໍ «ບໍ່ອ່ານຮູບໜ້າຈໍ» - Youdao ສັກລະຫັດການຈັບ (global hook / DLL) ເຂົ້າແອັບອື່ນເພື່ອອ່ານ text buffer ຂອງມັນ</strong>. ນີ້ອະທິບາຍຄວາມລົ້ມເຫຼວ «ລຶກລັບ» ສ່ວນໃຫຍ່: ① <strong>ລະດັບສິດ</strong> — Youdao ສິດປົກກະຕິສັກເຂົ້າແອັບ «ແລ່ນເປັນຜູ້ບໍລິຫານ» ບໍ່ໄດ້ (ແລະ ກົງກັນຂ້າມ), ສະນັ້ນ «ມີແຕ່ແອັບນັ້ນບໍ່ຈັບ» ປົກກະຕິແມ່ນສິດບໍ່ກົງ; ② <strong>bitness</strong> — hook 32/64-ບິດ ບໍ່ປະສົມ, ສະນັ້ນ Youdao ເກົ່າໃນ Acrobat 64-ບິດ ໃຫ້ «ປລັກອິນບໍ່ເຂົ້າກັນ, ໂຫຼດ YodaoDict.api ບໍ່ໄດ້»; ③ <strong>sandbox</strong> — «protected mode» ຂອງ Acrobat ແມ່ນ sandbox ທີ່ກີດຂວາງການສັກ .api ຂອງພາກສ່ວນທີສາມ; ④ <strong>ການເລັ່ງຮາດແວ</strong> — ເມື່ອບຣາວເຊີ/PDF ເຣນເດີເນື້ອໃນເປັນ GPU texture ບໍ່ມີ «ຂໍ້ຄວາມທີ່ອ່ານໄດ້» ໃຫ້ຈັບ; ⑤ <strong>ສະແກນ</strong> — PDF ຮູບລ້ວນບໍ່ມີຊັ້ນຂໍ້ຄວາມ, ໃຊ້ «OCR ການຈັບແບບແຮງ». ລຸ່ມນີ້ແມ່ນ panel ກວດສອບຕົນເອງ; ຈາກນັ້ນການປຽບທຽບຄູ່ແຂ່ງ ແລະ ການຄາດຄະເນ 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="panel ກວດສອບຕົນເອງກ່ອນການຈັບຂອງ Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">panel ກວດສອບຕົນເອງການເປີດໃຊ້ການຈັບ (ຂຽວ = ຢືນຢັນ / ແດງ = ລະເລີຍງ່າຍ)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">ລາຍການກວດ</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ການຕັດສິນ</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ສະຖານະ</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao ແລ່ນໃນພື້ນຫຼັງ (tray ບໍ່ສີຂີ້ເຖົ່າ)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">process ມີຊີວິດ</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ຢືນຢັນ</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ໝາຍ ການຈັບ / ການເລືອກ / ແປອັດຕະໂນມັດເມື່ອເລືອກ</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 ສະວິດ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ຢືນຢັນ</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ຕົວກະຕຸ້ນການຈັບຖືກ (ວາງເມົ້າ / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ຕົວກະຕຸ້ນ</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ຢືນຢັນ</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ແອັບເປົ້າໝາຍເຂົ້າກັນ (Office add-in / PDF ບໍ່ປ້ອງກັນ / ສ່ວນຂະຫຍາຍບຣາວເຊີ)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ຝ່າຍແອັບ</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ຕ້ອງກວດ</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ສິດໄດ້ໃຫ້ (mac ການເຂົ້າເຖິງ+ບັນທຶກ / win ຜູ້ບໍລິຫານ)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ລະດັບສິດ</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ຢືນຢັນ</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ບໍ່ມີການຂັດແຍ່ງທາງລັດ + ບໍ່ແມ່ນສະແກນ / OCR ເປີດ</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ລະເລີຍງ່າຍ</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ຕ້ອງກວດ</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">ໝາຍເຫດ: ແດງ = ສອງອັນທີ່ລະເລີຍຫຼາຍທີ່ສຸດ - ຄວາມເຂົ້າກັນຂອງແອັບສະເພາະ (Office / PDF / ບຣາວເຊີ) ແລະ ເນື້ອໃນ/ທາງລັດ (ສະແກນຕ້ອງ OCR, ການຂັດແຍ່ງປຸ່ມ); ກວດສອງອັນນີ້ກ່ອນ.</text></svg><figcaption>ຮູບ 2: panel ກວດສອບຕົນເອງການເປີດໃຊ້ການຈັບ (ຂຽວ = ຢືນຢັນ / ແດງ = ລະເລີຍງ່າຍ)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_lo.webp"><img src="/img/board_lo.png" alt="ຮູບປະກອບ panel ກວດສອບຕົນເອງກ່ອນການຈັບຂອງ Youdao ລາຍການຂຽວ/ແດງ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ຮູບ: ກວດ «ກຳລັງແລ່ນ + ສາມສະວິດ + ສິດ» ກ່ອນ, ຈາກນັ້ນ «ຄວາມເຂົ້າກັນໄດ້ຂອງແອັບ + ເນື້ອໃນ/ທາງລັດ» - ສອງອັນສຸດທ້າຍຖືກລະເລີຍຫຼາຍທີ່ສຸດ</figcaption></figure>
+<h2>ຕາຕະລາງອາການເຕັມ (ອາການ L1 / ຕຳແໜ່ງທາງການ · ສາເຫດຮາກ L2)</h2>
+<table id="tbl"></table>
+<h2>ການປຽບທຽບເຄື່ອງມືການເລືອກ/ການຈັບຄູ່ແຂ່ງ (ໂໝດການຈັບ / OCR / ແພລດຟອມ / ລາຄາ · ຂໍ້ມູນສາທາລະນະ)</h2>
+<table class="cmp"><tr><th>ຊອບແວ</th><th>ການຈັບໜ້າຈໍ / ການເລືອກ</th><th>OCR ຖ່າຍຮູບໜ້າຈໍ</th><th>ແພລດຟອມ</th><th>ວັດຈະນານຸກົມເພີ່ມ</th><th>ລາຄາ (ປະມານ)</th></tr><tr><td>Youdao</td><td>ການຈັບ global + ການແປຕາມການເລືອກ</td><td>OCR ຖ່າຍຮູບໜ້າຈໍ + ການຈັບແບບແຮງ</td><td>Win / Mac / iOS / Android / Web / ສ່ວນຂະຫຍາຍບຣາວເຊີ</td><td>mdx ອ່ອນ</td><td>core ຟຣີ (ບາງສະມາຊິກ / ບໍ່ມີໂຄສະນາ)</td></tr><tr><td>Eudic</td><td>ການເລືອກ + ການຈັບໜ້າຈໍ</td><td>ການຈັບຖ່າຍຮູບໜ້າຈໍ</td><td>Win / Mac / iOS / Android</td><td>mdx ແຂງແຮງ (ຄັງໃຫຍ່)</td><td>ພື້ນຖານຟຣີ + ປັບປຸງເສຍເງິນ</td></tr><tr><td>iCIBA (Kingsoft)</td><td>ການຈັບ + ການເລືອກ</td><td>ການແປຖ່າຍຮູບໜ້າຈໍ</td><td>Win / Mac / ມືຖື / Web</td><td>ປານກາງ</td><td>ຟຣີ (ໂຄສະນາ) + ສະມາຊິກ</td></tr><tr><td>Saladict</td><td>ການເລືອກໃນບຣາວເຊີ (ສ່ວນຂະຫຍາຍ)</td><td>ຂຶ້ນກັບໜ້າ / OCR ຕ້ອງ config</td><td>ສ່ວນຂະຫຍາຍບຣາວເຊີ (Chrome / Edge / Firefox)</td><td>ແຫຼ່ງປັບໄດ້</td><td>ຟຣີ · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>ການເລືອກລະດັບລະບົບອ່ອນ</td><td>Office built-in + ຖ່າຍຮູບໜ້າຈໍ</td><td>Win / Office / Edge / ມືຖື</td><td>ບໍ່ມີ</td><td>ຟຣີ</td></tr></table><section class="i4data">
+<h2>ສາເຫດຄວາມລົ້ມເຫຼວການຈັບ Youdao ແລະ ການປຽບທຽບເຄື່ອງມືການເລືອກ (ການຄາດຄະເນ 2026)</h2>
+<p>ຕໍ່ໄປນີ້ແມ່ນ <strong>ການຄາດຄະເນ 2026</strong> ທີ່ສັງເຄາະຈາກການຊ່ວຍເຫຼືອ / FAQ ທາງການຂອງ Youdao, ເອກະສານສາທາລະນະຂອງຄູ່ແຂ່ງ ແລະ ການແກ້ໄຂຂອງນັກພັດທະນາ (ບໍ່ແມ່ນຄຳໝັ້ນຂອງຜູ້ຜະລິດ, ບໍ່ແມ່ນການວັດແທກໂດຍກົງ; ສຳລັບອ້າງອີງ, ປ່ຽນຕາມສະບັບ ແລະ OS):</p>
+<table>
+<tr><th>ມິຕິ</th><th>ການຄາດຄະເນ / ການປຽບທຽບ</th></tr>
+<tr><td>ການແບ່ງສາເຫດຄວາມລົ້ມເຫຼວການຈັບ (ຊຸມຊົນ · ປະມານ)</td><td><strong>ບໍ່ເປີດໃຊ້ / ສິດ ~40%</strong> &gt; <strong>ຄວາມເຂົ້າກັນຂອງແອັບ (Office/PDF/ບຣາວເຊີ) ~25%</strong> &gt; ການຂັດແຍ່ງທາງລັດ ~20% &gt; ການເຣນເດີ / ເນື້ອໃນ (ເລັ່ງ-ຮາດ / ສະແກນ) ~15%</td></tr>
+<tr><td>ການຈັບແທ້ໆແມ່ນຫຍັງ</td><td>ການຈັບໜ້າຈໍ = <strong>global hook / DLL injection</strong> ທີ່ອ່ານ text buffer ຂອງແອັບເປົ້າໝາຍ (ບໍ່ອ່ານຮູບໜ້າຈໍ); ສະນັ້ນຖືກກະທົບໂດຍລະດັບສິດ, bitness, sandbox, ການເລັ່ງຮາດແວ</td></tr>
+<tr><td>ການຈັບຕໍ່ແພລດຟອມ (ປະມານ)</td><td>desktop (Win/Mac) ຮອງຮັບ <strong>ການຈັບໜ້າຈໍ global + ການເລືອກ + OCR ຖ່າຍຮູບໜ້າຈໍ</strong>; ມືຖືສ່ວນໃຫຍ່ການເລືອກ / ການແປຮູບ; web / ບຣາວເຊີຕ້ອງ <strong>ສ່ວນຂະຫຍາຍການຈັບ</strong></td></tr>
+<tr><td>ສະຫຼຸບເຄື່ອງມືການເລືອກ / ການຈັບ (ປະມານ)</td><td>Youdao = ທຸກແພລດຟອມ + ການແປ AI ແຂງແຮງ; Eudic = ຄັງເພີ່ມແຂງແຮງ (mdx); iCIBA = ຟຣີມວນຊົນ; Saladict = ບຣາວເຊີ open source; Microsoft = Office built-in</td></tr>
+<tr><td>ລະດັບລາຄາ (ປະມານ)</td><td>Youdao / iCIBA <strong>core ຟຣີ</strong> (ສະມາຊິກສຳລັບບໍ່ມີໂຄສະນາ / ເພີ່ມ) · Eudic <strong>ປັບປຸງເສຍເງິນ</strong> · Saladict <strong>ຟຣີ open source</strong> · Microsoft Translator <strong>ຟຣີ</strong></td></tr>
+</table>
+<p><small>ພື້ນຖານການຄາດຄະເນ: baseline ແຫຼ່ງ + ການ extrapolate ເວລາ (cidian.youdao.com ການຊ່ວຍເຫຼືອ / FAQ ທາງການ, Eudic / iCIBA / Saladict / Microsoft ເອກະສານສາທາລະນະ, ບົດຂຽນນັກພັດທະນາສາທາລະນະ, 2026); ປ່ຽນຕາມສະບັບ ແລະ ນະໂຍບາຍ OS ຂອງແຕ່ລະຜູ້ໃຫ້ບໍລິການ. ເບິ່ງຂໍ້ມູນທາງການຫຼ້າສຸດ. ການແປ LLM.</small></p>
+</section>
+<h2>ກໍລະນີຈິງ - ອ່ານໄວ</h2>
+<ul class="scenes"><li>ບໍ່ຈັບໃນບຣາວເຊີ ແຕ່ Notepad / Word ປົກກະຕິ: ປົກກະຕິບຣາວເຊີບໍ່ມີສ່ວນຂະຫຍາຍການຈັບ Youdao, ຫຼື ການເລັ່ງຮາດແວ GPU ເຣນເດີໜ້າເປັນ texture → ຕິດຕັ້ງສ່ວນຂະຫຍາຍ, ຫຼື ປິດ «ໃຊ້ການເລັ່ງຮາດແວ» ແລ້ວເລີ່ມໃໝ່.</li><li>Acrobat 64-ບິດ, ການເລືອກໃນ PDF ບໍ່ມີຫຍັງ, «ປລັກອິນບໍ່ເຂົ້າກັນ, ໂຫຼດ YodaoDict.api ບໍ່ໄດ້»: ໃນ Acrobat ແກ້ໄຂ → ການຕັ້ງຄ່າ → ຄວາມປອດໄພ (ຂັ້ນສູງ) → «ເປີດໃຊ້ protected mode ເມື່ອເລີ່ມ» ປິດ, ເປີດ Youdao ກ່ອນ Acrobat; ຖ້າຍັງ copy YodaoDict.api ຈາກໂຟນເດີ Youdao ໄປ plug_ins ຂອງ Acrobat.</li><li>ຂໍ້ຄວາມ PDF ເລືອກໄດ້ ແຕ່ບໍ່ຈັບ, ຫຼື ໜ້າທັງໝົດບໍ່ໄດ້: ມັນເປັນສະແກນ (ຮູບ PDF ບໍ່ມີຊັ້ນຂໍ້ຄວາມ, ຕ້ອງ «OCR ການຈັບແບບແຮງ»), ຫຼື Acrobat protected mode / ການລັອກ Autotray.exe ກີດຂວາງການສັກ.</li><li>ຫຼັງຕິດຕັ້ງ Office (ໂດຍສະເພາະ Education / 365) Word ບໍ່ແປການເລືອກ: Youdao Office COM add-in ຖືກປິດ → ໄຟລ໌ → ຕົວເລືອກ → Add-in → COM add-in → ເປີດໃຊ້; ບໍ່ດັ່ງນັ້ນຕິດຕັ້ງ Youdao ໃໝ່ເພື່ອລົງທະບຽນຄືນ.</li><li>ຫຼັງອັບເດດ OS ການຈັບ ແລະ ທາງລັດ ຕາຍໃນ macOS: ອັບເດດ reset ສິດ → ໃຫ້ Youdao «ການເຂົ້າເຖິງ» ແລະ «ການບັນທຶກໜ້າຈໍ» ຄືນໃນ ຄວາມເປັນສ່ວນຕົວ ແລະ ຄວາມປອດໄພ ແລ້ວເລີ່ມໃໝ່.</li><li>ການຈັບເຮັດວຽກໃນແອັບປົກກະຕິ ແຕ່ລົ້ມເຫຼວໃນແອັບ «ແລ່ນເປັນຜູ້ບໍລິຫານ»: ລະດັບສິດຕ່າງກັນກີດຂວາງ global hook ສັກເຂົ້າ process ສິດສູງ → ຄລິກຂວາ Youdao «ແລ່ນເປັນຜູ້ບໍລິຫານ».</li><li>ຫຼາຍຈໍ / DPI ສູງ: ປ໊ອບອັບການຈັບ «ບິນ» ໄປບ່ອນທີ່ເບິ່ງບໍ່ເຫັນ: ຍ້ອນການ scale DPI ແຕ່ລະຈໍບໍ່ກົງ → ໝາຍ «ປັກໝຸດຕຳແໜ່ງໜ້າຕ່າງ» ໃນການຕັ້ງຄ່າການຈັບ ເພື່ອປັກໄວ້ມຸມເທິງຊ້າຍຂອງຈໍຫຼັກ.</li></ul><div class="related"><h2>ກ່ຽວຂ້ອງ</h2><ul><li><a href="https://yoydao.com/">ດາວໂຫຼດ Youdao / ຄູ່ມືການຕັ້ງຄ່າ</a></li><li><a href="https://yoydao.com/lo/tutorial/">ຄູ່ມືການຈັບ ແລະ ການເລືອກ Youdao</a></li><li><a href="https://yoydao.com/lo/tools/youdao-word-capture/">Youdao ການຄົ້ນຫາວິທີແກ້ການຈັບ (ຕາຕະລາງເຕັມທີ່ເຊື່ອຖືໄດ້)</a></li><li><a href="https://yoidao.com/lo/">Youdao Zhiyun API ລະຫັດຄວາມຜິດພາດ (ເວັບອ້າຍນ້ອງ)</a></li></ul></div></main>
+<footer>ໝາຍເຫດການຈັບ/ການເລືອກ/OCR/ຄວາມເຂົ້າກັນໄດ້ 64-ບິດ ລວບລວມຈາກ FAQ ແລະ ການຊ່ວຍເຫຼືອ desktop ທາງການຂອງ Youdao (cidian.youdao.com); ການແກ້ໄຂ Office add-in ອ້າງອີງ Q&A ທາງການຂອງ Microsoft, ແລະ ໝາຍເຫດ Acrobat 64-ບິດ «ໂຫຼດ YodaoDict.api ບໍ່ໄດ້ / ປິດ protected mode» ຈາກບົດຂຽນນັກພັດທະນາສາທາລະນະ (ຮຽບຮຽງ). ການປຽບທຽບຈາກເອກະສານສາທາລະນະຂອງ Eudic, iCIBA, Saladict ແລະ Microsoft Translator. ສັດສ່ວນ/ແພລດຟອມ/ລາຄາ 2026 ແມ່ນການຄາດຄະເນ, ບໍ່ແມ່ນຄຳໝັ້ນຂອງຜູ້ຜະລິດ ຫຼື ການວັດແທກໂດຍກົງ. ການແປ LLM; ເບິ່ງຂໍ້ມູນທາງການຫຼ້າສຸດຂອງແຕ່ລະຜູ້ໃຫ້ບໍລິການ.<br>ໜ້າເຄື່ອງມື · ບໍ່ແທນ client ທາງການ</footer>
+</div>
+<script src="/lo/codes.js"></script><script src="/app.js"></script>
+</body></html>
