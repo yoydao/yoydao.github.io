@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="my"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao ဖန်သားပြင်ပေါ်စကားလုံးဖမ်းယူ/ရွေးချယ်ဘာသာပြန်/OCR/ဖြတ်လမ်း အလုပ်မလုပ် - အကြောင်းရင်းနှင့် ဖြေရှင်းနည်း (PDF, Word, browser, 64-bit)</title>
+<meta name="description" content="Youdao ၏ ဖန်သားပြင်ပေါ်စကားလုံးဖမ်းယူ (hover ဖြင့်ရှာ), ရွေးချယ်ဘာသာပြန်, screenshot OCR သို့မဟုတ် ဖြတ်လမ်းများ အလုပ်မလုပ်ဘူးလား? လက္ခဏာရှာပါ (ဖမ်းယူသေ / ရွေးချယ်စဉ် popup မရှိ / Word-Office ဖမ်းယူ / PDF-Acrobat ဖမ်းယူ / Chrome browser ရွေးချယ် / OCR / ဖြတ်လမ်းပဋိပက္ခ / macOS ခွင့်ပြုချက်များ / multi-monitor တွင် popup ဖန်သားပြင်ပြင်ပ / 64-bit / portable ဗားရှင်း) — L1 လက္ခဏာနှင့် တရားဝင်နေရာ အပြင် L2 အရင်းခံအကြောင်းရင်း: global hook / DLL injection, UAC အခွင့်ထူးအဆင့်, Office COM add-in, Acrobat protected mode, GPU hardware acceleration စာသားကို texture ပြောင်း, scan PDF က OCR လို, DPI multi-monitor; Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator နှိုင်းယှဉ်မှုနှင့် 2026 ခန့်မှန်းချက်များဖြင့်.">
+<link rel="canonical" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao ဖမ်းယူ/ရွေးချယ်/OCR/ဖြတ်လမ်း ဖြေရှင်းနည်းရှာဖွေ",
+   "url": "https://yoydao.github.io/my/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "my",
+   "description": "Youdao ၏ ဖန်သားပြင်ပေါ်စကားလုံးဖမ်းယူ (hover ဖြင့်ရှာ), ရွေးချယ်ဘာသာပြန်, screenshot OCR သို့မဟုတ် ဖြတ်လမ်းများ အလုပ်မလုပ်ဘူးလား? လက္ခဏာရှာပါ (ဖမ်းယူသေ / ရွေးချယ်စဉ် popup မရှိ / Word-Office ဖမ်းယူ / PDF-Acrobat ဖမ်းယူ / Chrome browser ရွေးချယ် / OCR / ဖြတ်လမ်းပဋိပက္ခ / macOS ခွင့်ပြုချက်များ / multi-monitor တွင် popup ဖန်သားပြင်ပြင်ပ / 64-bit / portable ဗားရှင်း) — L1 လက္ခဏာနှင့် တရားဝင်နေရာ အပြင် L2 အရင်းခံအကြောင်းရင်း: global hook / DLL injection, UAC အခွင့်ထူးအဆင့်, Office COM add-in, Acrobat protected mode, GPU hardware acceleration စာသားကို texture ပြောင်း, scan PDF က OCR လို, DPI multi-monitor; Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator နှိုင်းယှဉ်မှုနှင့် 2026 ခန့်မှန်းချက်များဖြင့်.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "my",
+   "url": "https://yoydao.github.io/my/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao ဖန်သားပြင်ဖမ်းယူ စုစုပေါင်းသေ - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ဖန်သားပြင်ဖမ်းယူ အတွက် Youdao သည် background တွင် ဖမ်းယူဖွင့်ထားရန်လို; တရားဝင် desktop ဗားရှင်းက smart ဖမ်းယူ / clipboard ဖမ်းယူ / OCR ဖမ်းယူ ပေး. ဖန်သားပြင်ဖမ်းယူ က foreground app ထဲ inject ထားသော global hook ဖြင့် စာသားဖတ်: လည်ပတ်နေသော Youdao process + active ဖမ်းယူ master switch + ကိုက်ညီသော trigger key လို. တစ်ခုလိုလျှင် «လုံးဝသေ» ပုံပေါ်, software ပျက်ဟု မကြာခဏ ထင်မှတ်. tray icon active ဟုတ်မဟုတ်စစ် (မီးခိုး = မလည်ပတ်, စတင်ရန် double-click); setting → ဖမ်းယူနှင့် ရွေးချယ်, «ဖမ်းယူဖွင့်» check ပြီး mode ရွေး (hover / Ctrl ဖိ); Youdao ပြန်စပြီး ပြန်ကြိုးစား."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ရွေးချယ်ဘာသာပြန် popup မပြ - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ရွေးချယ်ဘာသာပြန် အတွက် «ရွေးချယ်» ဖွင့်ပြီး «ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန်» check လို; ရွေးချယ်စဉ် သို့မဟုတ် key ဖြင့် ဘာသာပြန်နိုင်. ရွေးချယ်နှင့် ဖမ်းယူ သည် သီးခြား switch: များစွာက ဖမ်းယူဖွင့် ဒါပေမဲ့ ရွေးချယ်မဖွင့်, သို့မဟုတ် «ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန်» ပိတ်, ထို့ကြောင့် «ရွေးချယ်ခြင်းက ဘာမှမပြ»; ရွေးချယ် hotkey လည်း ယူခံရနိုင်. setting → ဖမ်းယူနှင့် ရွေးချယ်, «ရွေးချယ်ဘာသာပြန်ဖွင့်» နှင့် «ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန်» check; key-trigger ဆိုလျှင် ထို key အားဟု အတည်ပြု; browser အတွင်းရွေးချယ်က ဖမ်းယူ extension လည်းလို."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Word / Office တွင် ဖမ်းယူ/ရွေးချယ် ပျက် - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao သည် ရွေးချယ် / ဝါကျ ဘာသာပြန်အတွက် COM add-in ဖြင့် Office နှင့်ပေါင်းစည်း; add-in ပိတ် သို့မဟုတ် မregister လျှင် ပျက်. Office က တွဲဖက်နိုင်မှု သို့မဟုတ် policy အတွက် third-party COM add-in များ ပိတ်; ဗားရှင်းပြောင်း (ဥပမာ Education အသစ်) က ဟောင်း add-in ကို Office အသစ်အတွက် မregister ထား, ထို့ကြောင့် «အရင်အလုပ်လုပ်, အခု မလုပ်». Word: File → Options → Add-ins → အောက် «Manage: COM add-ins» → Go → Youdao add-in check; မဟုတ်လျှင် ပြန်register ရန် Youdao ပြန်ထည့်; Youdao နှင့် Office bitness ကိုက်ညီမှု စစ်."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao PDF / Acrobat တွင် ဖမ်းယူ ပျက် - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "တရားဝင်ဗားရှင်းများက Adobe Reader / Acrobat တွင် PDF ဖန်သားပြင်ဖမ်းယူ ပံ့ပိုး; တရားဝင်မဟုတ်သော «portable» ဗားရှင်းများက PDF မဖမ်းယူနိုင်, PDF က စာသားဖြစ်ရန်လို, ပုံမဟုတ်. အကြောင်းသုံးခု: ① Acrobat ၏ «protected mode» က third-party YodaoDict.api injection ပိတ်ဆို့သော sandbox; ② 64-bit Acrobat နှင့် ဟောင်း Youdao plug-in အကြား bitness မကိုက်ညီမှုက «မတွဲဖက်နိုင်သော plug-in» ပေး; ③ PDF က scan (ပုံ, text layer မပါ). Acrobat တွင် Edit → Preferences → Security (Enhanced) → «startup တွင် protected mode ဖွင့်» ပိတ်, Acrobat မတိုင်မီ Youdao ဖွင့်; 64-bit «မတွဲဖက်နိုင်» အတွက် နောက်ဆုံး Youdao ထည့်, သို့မဟုတ် YodaoDict.api ကို Acrobat ၏ plug_ins သို့ copy; scan အတွက် OCR ပါဝါဖမ်းယူ သုံး."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chrome / browser တွင် ရွေးချယ်/ဖမ်းယူ ပျက် - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox စသည်တို့က သီးခြား Youdao ဖမ်းယူ extension လို; တရားဝင် desktop ဗားရှင်းက «Chrome ဖမ်းယူ» ပေး. browser က ၎င်း၏ sandbox ကိုယ်ပိုင်: ① Youdao ဖမ်းယူ extension မရှိဘဲ global hook က DOM စာသား မဖတ်နိုင်; ② GPU hardware acceleration က စာမျက်နှာကို ဖတ်နိုင်သော layer မပါဘဲ texture render; ③ adblock / security toggle (ဥပမာ 360 browser) က ဖမ်းယူ ပိတ်ဆို့. သင့် browser အတွက် Youdao ဖမ်းယူ extension ထည့် (Youdao setting သို့မဟုတ် store မှ); browser setting တွင် «hardware acceleration သုံး» ပိတ်ပြီး ပြန်စ; 360 browser တွင် adblock ပိတ်."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao screenshot / area OCR ဘာသာပြန် အလုပ်မလုပ် - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "screenshot OCR အတွက် သတ်မှတ်ထားသော screenshot-recognize hotkey (ဥပမာ Ctrl+Alt+O) နှင့် download လုပ်ထားသော OCR module လို; screen area ကို ဆွဲ၍ ရွေးချယ်. screenshot OCR က text layer မလို - ရွေးချယ်ထားသော area ကို ပုံဖြင့်သိ, ထို့ကြောင့် download OCR module + အားသော hotkey + (macOS) pixel ဖတ်ရန် screen recording ခွင့်ပြုချက်လို. setting → ဖြတ်လမ်း, «OCR screenshot» အတွက် ပဋိပက္ခမရှိသော key သတ်မှတ်; ပထမသုံးစဉ် OCR module download; macOS တွင် «Screen Recording» ပေး; သိမှု ပျက်လျှင် ပိုကြည်လင်သော area ရွေး."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ဖမ်းယူ / screenshot ဖြတ်လမ်း ပဋိပက္ခ - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ဖမ်းယူ / ရွေးချယ် / screenshot-recognize အားလုံး ဖြတ်လမ်းတွင် စိတ်ကြိုက်ပြင်နိုင်; ပဋိပက္ခတွင် သတိပေး, rebind သို့မဟုတ် reset နိုင်. global ဖြတ်လမ်းက အရင်လာ-အရင်ရ: screenshot tool, input method, QQ / WeChat သို့မဟုတ် အခြားအဘိဓာန် က တူသော ပေါင်းစပ်ကို ကိုင်နိုင်, ထို့ကြောင့် Youdao key ဘာမှမလုပ်. setting → ဖြတ်လမ်း, ပဋိပက္ခသတိပေးချက်ကြည့်; Ctrl+Shift+စာလုံး / Alt+စာလုံး ကဲ့သို့ ရှားသော ပေါင်းစပ်သို့ပြောင်း; တရားခံရှာရန် key-ကိုင် app များ တစ်ခုစီ ပိတ်."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS ဖမ်းယူ / ဖြတ်လမ်း authorization လို - ဘယ်လိုဖြေရှင်း?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS က Youdao ကို «Accessibility» (ဖြတ်လမ်း စောင့်ကြည့် / ထိန်းချုပ်) နှင့် «Screen Recording» (ဖမ်းယူ / screenshot အတွက် screen ဖတ်) ကို System Settings → Privacy & Security တွင် ပေးရမည်. macOS sandbox က ရှင်းလင်းသော ခွင့်ပြုချက်တောင်း: «Accessibility» မပါဘဲ global ဖြတ်လမ်းမကြား, «Screen Recording» မပါဘဲ pixel မဖတ်; update များက မကြာခဏ နှစ်ခုလုံး reset. System Settings → Privacy & Security → «Accessibility» နှင့် «Screen Recording» တွင် Youdao check ပြီး ပြန်စ; macOS update တိုင်းနောက် ပြန်ပေး."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ဘာသာ: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <strong>မြန်မာ</strong></nav>
+<h1>Youdao ဖန်သားပြင်ဖမ်းယူ / ရွေးချယ်ဘာသာပြန် / OCR / ဖြတ်လမ်း - ဖြေရှင်းနည်းရှာဖွေ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_my.webp"><img src="/img/cover_my.png" alt="Youdao ဖမ်းယူ/ရွေးချယ်/screenshot ဖြေရှင်းနည်းရှာဖွေ tool ၏ သရုပ်ဖော်ပုံ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ပုံ: Youdao ဖမ်းယူ / ရွေးချယ် / screenshot ဖြေရှင်းနည်းရှာဖွေ (L1 လက္ခဏာ + L2 အရင်းခံအကြောင်းရင်း + ပြိုင်ဘက်နှိုင်းယှဉ်)</figcaption></figure>
+<p><strong>Youdao</strong> ၏ <strong>ဖန်သားပြင်ပေါ်စကားလုံးဖမ်းယူ</strong> (hover ဖြင့်ရှာ), <strong>ရွေးချယ်ဘာသာပြန်</strong>, <strong>OCR</strong> သို့မဟုတ် <strong>ဖြတ်လမ်း</strong> ရုတ်တရက်ရပ်သွားသလား? အရင်ဆုံး သုံးခုရှင်းပါ: <strong>မဖွင့်ထား / ခွင့်မရှိ, app တစ်ခု (Office / PDF / browser) ၏ တွဲဖက်နိုင်မှု, သို့မဟုတ် အကြောင်းအရာကိုယ်တိုင် (scan / hardware acceleration) ဖတ်နိုင်သောစာသားမရှိ?</strong> သင်ကြုံတွေ့သော <strong>လက္ခဏာ သို့မဟုတ် keyword</strong> ရှာပါ (ဥပမာ <code>ဖမ်းယူ</code>, <code>pdf</code>, <code>ရွေးချယ်</code>, <code>ဖြတ်လမ်း</code>, <code>64-bit</code>, <code>OCR</code>): အရင်ဆုံး <strong>L1 လက္ခဏာနှင့် တရားဝင်နေရာ</strong>, ထို့နောက် <strong>L2 အရင်းခံအကြောင်းရင်းနှင့် ဖြေရှင်းနည်း</strong>, နောက်ဆုံး ပြိုင်ဘက်နှိုင်းယှဉ်မှုနှင့် တကယ့်အမှုများ. ထည့်သွင်း / တပ်ဆင်? ကြည့်ပါ <a href="https://yoydao.com/">Youdao ဒေါင်းလုဒ် / ဖမ်းယူနှင့် ရွေးချယ်လမ်းညွှန်</a>.</p>
+<input id="q" placeholder="လက္ခဏာ သို့မဟုတ် keyword ထည့်ပါ, ဥပမာ ဖမ်းယူ / pdf / ရွေးချယ် / ဖြတ်လမ်း / 64-bit / OCR" autocomplete="off">
+<button id="go">ရှာဖွေ</button>
+<div id="out"></div>
+<h2>အဆင့် 1: အရင်ဆုံး လေးအုပ်စုခွဲပါ (L1 - ချက်ချင်းပြန်မထည့်ပါနှင့်)</h2>
+<p>Youdao ဖမ်းယူ/ရွေးချယ် ရပ်သောအခါ, 10 ကြိမ်တွင် 9 ကြိမ်က လေးအုပ်စုထဲမှ တစ်ခုဖြစ်သည် - အရင်ဆုံး အပြစ်ရှာပါ: ① <strong>ဖွင့်ခြင်း/setting</strong> — Youdao background တွင်မလည်ပတ် (tray icon မီးခိုး), သို့မဟုတ် «ဖမ်းယူ / ရွေးချယ် / ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန် ဖွင့်» မ check, သို့မဟုတ် trigger မှား; ② <strong>ခွင့်ပြုချက်များ</strong> — macOS «Accessibility + Screen Recording» မပေး, သို့မဟုတ် Windows တွင် target က elevated app ဖြစ်ပြီး Youdao administrator အဖြစ်မလည်ပတ်; ③ <strong>app တွဲဖက်နိုင်မှု</strong> — Word/Excel တွင် Youdao COM add-in ပိတ်, Acrobat protected mode injection ပိတ်ဆို့, သို့မဟုတ် browser တွင် ဖမ်းယူ extension မရှိ; ④ <strong>rendering/အကြောင်းအရာ</strong> — scan PDF က ပုံ (OCR လို), browser/PDF က GPU hardware acceleration ဖြင့် စာသားကို texture အဖြစ်ဆွဲ, သို့မဟုတ် မကိုက်ညီသော multi-monitor DPI က popup ကို ဖန်သားပြင်ပြင်ပ ပစ်ထုတ်. အပြည့်အစုံ setting: <a href="https://yoydao.com/tutorial/">Youdao ဖမ်းယူနှင့် ရွေးချယ်လမ်းညွှန်</a>.</p>
+<div class="cat"><div class="catbox"><b>ဖွင့်ခြင်း / setting</b><span class="cs">ဖမ်းယူ · ရွေးချယ် · အလိုအလျောက်ဘာသာပြန် · OCR ပါဝါ</span><div>Youdao background တွင်လည်ပတ်ကြောင်း သေချာပါ (tray icon မီးခိုးမဟုတ်), setting → ဖမ်းယူနှင့် ရွေးချယ် သို့သွားပြီး «ဖမ်းယူဖွင့်», «ရွေးချယ်ဖွင့်», «ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန်» check လုပ်ပြီး မှန်ကန်သော trigger ရွေးပါ (hover / Ctrl ဖိ).</div></div><div class="catbox"><b>ခွင့်ပြုချက်များ</b><span class="cs">macOS Accessibility+Screen Recording · Windows administrator/UAC</span><div>macOS: System Settings → Privacy & Security, Youdao ကို «Accessibility» နှင့် «Screen Recording» ပေးပါ; Windows: target က «administrator အဖြစ်လည်ပတ်» သောအခါ, Youdao ကိုလည်း administrator အဖြစ်လည်ပတ်ပါ (hook က အခွင့်ထူးအဆင့်တူတွင်သာ inject).</div></div><div class="catbox"><b>app တွဲဖက်နိုင်မှု</b><span class="cs">Office COM · Acrobat protected mode · 64-bit · browser extension</span><div>Office: File → Options → Add-ins → COM add-ins, Youdao add-in check; Acrobat: «startup တွင် protected mode ဖွင့်» ပိတ်, လိုအပ်လျှင် YodaoDict.api ကို plug_ins သို့ copy; browser: Youdao ဖမ်းယူ extension ထည့်.</div></div><div class="catbox"><b>ဖြတ်လမ်း</b><span class="cs">ပဋိပက္ခ · စိတ်ကြိုက် · OCR screenshot key</span><div>setting → ဖြတ်လမ်း, ပဋိပက္ခသတိပေးချက်ကြည့်; Ctrl+Shift / Alt+စာလုံး ကဲ့သို့ ပဋိပက္ခနည်းသော ပေါင်းစပ်သို့ပြောင်း; OCR screenshot ကို သီးသန့် key ပေး (ဥပမာ Ctrl+Alt+O, အခြား app များမှ ဝေး).</div></div><div class="catbox"><b>rendering / display</b><span class="cs">hardware acceleration · scan · DPI multi-monitor · full screen</span><div>GPU hardware acceleration ပါသော browser/PDF က အကြောင်းအရာကို ဖတ်နိုင်သောစာသားမပါဘဲ texture render (acceleration ပိတ်); scan PDF က ပုံ (OCR သုံး); multi-monitor တွင် ဖန်သားပြင်ပြင်ပ popup အတွက် «window position pin» check.</div></div><div class="catbox"><b>network / installation</b><span class="cs">ဖမ်းယူအမြန်နှုန်း · portable ဗားရှင်း · add-in မ load</span><div>online ရှာဖွေ နှေး? network စစ်; တရားဝင် full ဗားရှင်းအမြဲထည့်ပါ - တရားဝင်မဟုတ်သော «portable/ပေါ့ပါး» ဗားရှင်းများတွင် register လုပ်ထားသော ဖမ်းယူ-hook DLL မရှိ, ထို့ကြောင့် PDF/global ဖမ်းယူ ချက်ချင်းပျက်.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao ဖမ်းယူ/ရွေးချယ် ချို့ယွင်းမှု triage flow" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ဖမ်းယူ / ရွေးချယ် အလုပ်မလုပ် triage (အရင် လေးအုပ်စု: switch / ခွင့်ပြုချက် / app / အကြောင်းအရာ)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ဖမ်းယူသေ</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">လေးအုပ်စု</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">host self-check →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">switch ပိတ် · ခွင့်မရှိ</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">app / အကြောင်းအရာ →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/browser · scan/hw-accel</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">လေး အရင်းခံအကြောင်းရင်း (item အလိုက် အကြောင်း / ဖြေရှင်းနည်းဖတ်)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① ဖွင့်ခြင်း/setting</text><text x="32" y="234" fill="#555" font-size="11">ဖမ်းယူ · ရွေးချယ် · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② ခွင့်ပြုချက်</text><text x="206" y="234" fill="#555" font-size="11">mac Accessibility · win administrator</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ app တွဲဖက်နိုင်မှု</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · browser</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ render/အကြောင်းအရာ</text><text x="554" y="234" fill="#555" font-size="11">scan · accel · multi-monitor</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>ပုံ 1: Youdao ဖမ်းယူ/ရွေးချယ် ချို့ယွင်းမှု triage - လေးအုပ်စုခွဲ, ထို့နောက် host / app / အကြောင်းအရာ သို့ ကန့်သတ်</figcaption></figure>
+<h2>အဆင့် 2: အလျစ်လျူရှုဆုံး အရင်းခံအကြောင်းရင်း → L2 (ဖန်သားပြင်ဖမ်းယူ = global hook / DLL injection)</h2>
+<p>အဓိကအချက်: <strong>ဖန်သားပြင်ဖမ်းယူသည် «ဖန်သားပြင်ပုံကို မဖတ်» - Youdao က ဖမ်းယူ code (global hook / DLL) ကို အခြား app ထဲ inject လုပ်ပြီး ၎င်း၏ text buffer ကိုဖတ်သည်</strong>. ၎င်းသည် «မရှင်းနိုင်သော» ချို့ယွင်းမှုအများစုကို ရှင်းပြသည်: ① <strong>အခွင့်ထူးအဆင့်</strong> — ပုံမှန်အခွင့်အရေး Youdao သည် «administrator အဖြစ်လည်ပတ်» app ထဲ inject မလုပ်နိုင် (ဆန့်ကျင်လည်း), ထို့ကြောင့် «ထို app သာ မဖမ်းယူ» သည် များသောအားဖြင့် မကိုက်ညီသောအခွင့်ထူး; ② <strong>bitness</strong> — 32/64-bit hook များ မရောစပ်, ထို့ကြောင့် ဟောင်းသော Youdao သည် 64-bit Acrobat တွင် «မတွဲဖက်နိုင်သော plug-in, YodaoDict.api load မလုပ်နိုင်» ပေးသည်; ③ <strong>sandbox</strong> — Acrobat ၏ «protected mode» သည် third-party .api injection ကိုပိတ်ဆို့သော sandbox; ④ <strong>hardware acceleration</strong> — browser/PDF က အကြောင်းအရာကို GPU texture အဖြစ် render လုပ်သောအခါ ဖမ်းယူရန် «ဖတ်နိုင်သောစာသား» မကျန်; ⑤ <strong>scan</strong> — ပုံသက်သက် PDF တွင် text layer မရှိ, «OCR ပါဝါဖမ်းယူ» သုံးပါ. အောက်တွင် self-check panel; ထို့နောက် ပြိုင်ဘက်နှိုင်းယှဉ်မှုနှင့် 2026 ခန့်မှန်းချက်များ.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao ဖမ်းယူမတိုင်မီ self-check panel" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ဖမ်းယူဖွင့်ခြင်း self-check panel (အစိမ်း = အတည်ပြု / အနီ = အလွယ်လျစ်လျူ)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">စစ်ဆေး item</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ဆုံးဖြတ်ချက်</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">အခြေအနေ</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao background လည်ပတ် (tray မီးခိုးမဟုတ်)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">process အသက်ရှင်</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">အတည်ပြု</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">check ဖမ်းယူ / ရွေးချယ် / ရွေးချယ်စဉ်အလိုအလျောက်ဘာသာပြန်</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 switch</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">အတည်ပြု</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">မှန်ကန်သော ဖမ်းယူ trigger (hover / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">trigger</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">အတည်ပြု</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">target app တွဲဖက်နိုင် (Office add-in / PDF မကာကွယ် / browser extension)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">app ဘက်</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">စစ်ရန်</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ခွင့်ပြုချက်ပေး (mac Accessibility+Recording / win administrator)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">အခွင့်ထူးအဆင့်</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">အတည်ပြု</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ဖြတ်လမ်းပဋိပက္ခမရှိ + scan မဟုတ် / OCR ဖွင့်</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">အလွယ်လျစ်လျူ</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">စစ်ရန်</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">မှတ်ချက်: အနီ = အလျစ်လျူဆုံးနှစ်ခု - သီးခြား app တွဲဖက်နိုင်မှု (Office / PDF / browser) နှင့် အကြောင်းအရာ/ဖြတ်လမ်း (scan က OCR လို, key ပဋိပက္ခ); ဤနှစ်ခုကို အရင်စစ်.</text></svg><figcaption>ပုံ 2: ဖမ်းယူဖွင့်ခြင်း self-check panel (အစိမ်း = အတည်ပြု / အနီ = အလွယ်လျစ်လျူ)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_my.webp"><img src="/img/board_my.png" alt="Youdao ဖမ်းယူမတိုင်မီ self-check panel အစိမ်း/အနီ အရာများ၏ သရုပ်ဖော်ပုံ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>ပုံ: အရင်ဆုံး «လည်ပတ်နေ + သုံး switch + ခွင့်ပြုချက်», ထို့နောက် «app တွဲဖက်နိုင်မှု + အကြောင်းအရာ/ဖြတ်လမ်း» စစ်ဆေး - နောက်ဆုံးနှစ်ခု အလျစ်လျူဆုံး</figcaption></figure>
+<h2>လက္ခဏာဇယားအပြည့်အစုံ (L1 လက္ခဏာ / တရားဝင်နေရာ · L2 အရင်းခံအကြောင်းရင်း)</h2>
+<table id="tbl"></table>
+<h2>ပြိုင်ဘက် ရွေးချယ်/ဖမ်းယူ tool နှိုင်းယှဉ် (ဖမ်းယူ mode / OCR / platform / စျေးနှုန်း · အများသုံးData)</h2>
+<table class="cmp"><tr><th>software</th><th>ဖန်သားပြင်ဖမ်းယူ / ရွေးချယ်</th><th>screenshot OCR</th><th>platform</th><th>ထပ်ဆောင်းအဘိဓာန်</th><th>စျေးနှုန်း (ခန့်)</th></tr><tr><td>Youdao</td><td>global ဖမ်းယူ + ရွေးချယ်ဘာသာပြန်</td><td>screenshot OCR + ပါဝါဖမ်းယူ</td><td>Win / Mac / iOS / Android / Web / browser ext</td><td>mdx အားနည်း</td><td>core အခမဲ့ (အချို့ membership / ကြော်ငြာမဲ့)</td></tr><tr><td>Eudic</td><td>ရွေးချယ် + ဖန်သားပြင်ဖမ်းယူ</td><td>screenshot ဖမ်းယူ</td><td>Win / Mac / iOS / Android</td><td>mdx အားကောင်း (library ကြီး)</td><td>base အခမဲ့ + enhanced ပေးချေ</td></tr><tr><td>iCIBA (Kingsoft)</td><td>ဖမ်းယူ + ရွေးချယ်</td><td>screenshot ဘာသာပြန်</td><td>Win / Mac / mobile / Web</td><td>အလယ်အလတ်</td><td>အခမဲ့ (ကြော်ငြာ) + membership</td></tr><tr><td>Saladict</td><td>browser အတွင်းရွေးချယ် (extension)</td><td>page-မူတည် / OCR config လို</td><td>browser extension (Chrome / Edge / Firefox)</td><td>config လုပ်နိုင်သော source</td><td>အခမဲ့ · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>system-level ရွေးချယ် အားနည်း</td><td>Office built-in + screenshot</td><td>Win / Office / Edge / mobile</td><td>မရှိ</td><td>အခမဲ့</td></tr></table><section class="i4data">
+<h2>Youdao ဖမ်းယူ ပျက်ကွက်အကြောင်းရင်းများနှင့် ရွေးချယ် tool နှိုင်းယှဉ်မှု (2026 ခန့်မှန်း)</h2>
+<p>အောက်ပါတို့သည် Youdao ၏ တရားဝင်အကူအညီ / FAQ, ပြိုင်ဘက်များ၏ အများသုံးစာရွက်စာတမ်းနှင့် developer ဖြေရှင်းမှုမှ ပေါင်းစပ်ထားသော <strong>2026 ခန့်မှန်းချက်များ</strong> (ထုတ်လုပ်သူ ကတိ မဟုတ်, တိုက်ရိုက်တိုင်းတာမှု မဟုတ်; ကိုးကားရန်, ဗားရှင်းနှင့် OS ဖြင့်ပြောင်း):</p>
+<table>
+<tr><th>အတိုင်းအတာ</th><th>ခန့်မှန်း / နှိုင်းယှဉ်</th></tr>
+<tr><td>ဖမ်းယူ ပျက်ကွက်အကြောင်းရင်းခွဲဝေ (community · ခန့်)</td><td><strong>မဖွင့် / ခွင့်ပြုချက် ~40%</strong> &gt; <strong>app တွဲဖက်နိုင်မှု (Office/PDF/browser) ~25%</strong> &gt; ဖြတ်လမ်းပဋိပက္ခ ~20% &gt; rendering / အကြောင်းအရာ (hw-accel / scan) ~15%</td></tr>
+<tr><td>ဖမ်းယူ တကယ်ဘာလဲ</td><td>ဖန်သားပြင်ဖမ်းယူ = target app ၏ text buffer ဖတ်သော <strong>global hook / DLL injection</strong> (ဖန်သားပြင်ပုံ မဖတ်); ထို့ကြောင့် အခွင့်ထူးအဆင့်, bitness, sandbox, hardware acceleration က သက်ရောက်</td></tr>
+<tr><td>platform အလိုက် ဖမ်းယူ (ခန့်)</td><td>desktop (Win/Mac) က <strong>global ဖန်သားပြင်ဖမ်းယူ + ရွေးချယ် + screenshot OCR</strong> ပံ့ပိုး; mobile က အများအားဖြင့် ရွေးချယ် / ဓာတ်ပုံဘာသာပြန်; web / browser က <strong>ဖမ်းယူ extension</strong> လို</td></tr>
+<tr><td>ရွေးချယ် / ဖမ်းယူ tool အကျဉ်း (ခန့်)</td><td>Youdao = platform အားလုံး + AI ဘာသာပြန် အားကောင်း; Eudic = ထပ်ဆောင်း library အားကောင်း (mdx); iCIBA = အများသုံးအခမဲ့; Saladict = open-source browser; Microsoft = Office built-in</td></tr>
+<tr><td>စျေးနှုန်းအဆင့် (ခန့်)</td><td>Youdao / iCIBA <strong>core အခမဲ့</strong> (ကြော်ငြာမဲ့ / အပို အတွက် membership) · Eudic <strong>enhanced ပေးချေ</strong> · Saladict <strong>အခမဲ့ open source</strong> · Microsoft Translator <strong>အခမဲ့</strong></td></tr>
+</table>
+<p><small>ခန့်မှန်းအခြေခံ: source baseline + အချိန် extrapolate (cidian.youdao.com တရားဝင်အကူအညီ / FAQ, Eudic / iCIBA / Saladict / Microsoft အများသုံးစာရွက်စာတမ်း, အများသုံး developer ရေးသားချက်များ, 2026); provider တစ်ခုစီ၏ ဗားရှင်းနှင့် OS policy ဖြင့်ပြောင်း. နောက်ဆုံးတရားဝင်အချက်အလက်ကြည့်. LLM ဒေသသုံးပြုလုပ်ခြင်း.</small></p>
+</section>
+<h2>တကယ့်အမှုများ - အမြန်ဖတ်</h2>
+<ul class="scenes"><li>browser တွင်မဖမ်းယူ ဒါပေမဲ့ Notepad / Word ပုံမှန်: များသောအားဖြင့် browser တွင် Youdao ဖမ်းယူ extension မရှိ, သို့မဟုတ် GPU hardware acceleration က စာမျက်နှာကို texture render → extension ထည့်, သို့မဟုတ် «hardware acceleration သုံး» ပိတ်ပြီး ပြန်စ.</li><li>Acrobat 64-bit, PDF တွင် ရွေးချယ်ခြင်း ဘာမှမလုပ်, «မတွဲဖက်နိုင်သော plug-in, YodaoDict.api load မလုပ်နိုင်»: Acrobat တွင် Edit → Preferences → Security (Enhanced) → «startup တွင် protected mode ဖွင့်» ပိတ်, Acrobat မတိုင်မီ Youdao ဖွင့်; ဆက်ဖြစ်လျှင် YodaoDict.api ကို Youdao folder မှ Acrobat ၏ plug_ins သို့ copy.</li><li>PDF စာသား ရွေးနိုင် ဒါပေမဲ့ မဖမ်းယူ, သို့မဟုတ် စာမျက်နှာတစ်ခုလုံးမရ: ၎င်းသည် scan (text layer မပါသော ပုံ PDF, «OCR ပါဝါဖမ်းယူ» လို), သို့မဟုတ် Acrobat protected mode / Autotray.exe lock က injection ပိတ်ဆို့.</li><li>Office (အထူးသဖြင့် Education / 365) ထည့်ပြီးနောက် Word က ရွေးချယ်မှု မဘာသာပြန်: Youdao Office COM add-in ပိတ် → File → Options → Add-ins → COM add-ins → ဖွင့်; မဟုတ်လျှင် ပြန်register ရန် Youdao ပြန်ထည့်.</li><li>OS update ပြီးနောက် macOS တွင် ဖမ်းယူနှင့် ဖြတ်လမ်း သေ: update က ခွင့်ပြုချက်များ reset → Privacy & Security တွင် Youdao ကို «Accessibility» နှင့် «Screen Recording» ပြန်ပေးပြီး ပြန်စ.</li><li>ပုံမှန် app များတွင် ဖမ်းယူအလုပ်လုပ် ဒါပေမဲ့ «administrator အဖြစ်လည်ပတ်» app တွင်ပျက်: မတူသော အခွင့်ထူးအဆင့်များက global hook ကို elevated process ထဲ inject ခြင်းကို ပိတ်ဆို့ → Youdao ကို right-click «Run as administrator».</li><li>multi-monitor / high DPI: ဖမ်းယူ popup က မမြင်ရသောနေရာသို့ «ပျံ»: per-screen DPI scaling မကိုက်ညီခြင်းကြောင့် → ဖမ်းယူ setting တွင် «window position pin» check ပြီး main screen ၏ ဘယ်ဘက်အပေါ်ထောင့်တွင် ပင်.</li></ul><div class="related"><h2>ဆက်စပ်</h2><ul><li><a href="https://yoydao.com/">Youdao ဒေါင်းလုဒ် / တပ်ဆင်လမ်းညွှန်</a></li><li><a href="https://yoydao.com/my/tutorial/">Youdao ဖမ်းယူနှင့် ရွေးချယ်လမ်းညွှန်</a></li><li><a href="https://yoydao.com/my/tools/youdao-word-capture/">Youdao ဖမ်းယူ ဖြေရှင်းနည်းရှာဖွေ (ယုံကြည်စိတ်ချရသော အပြည့်အစုံဇယား)</a></li><li><a href="https://yoidao.com/my/">Youdao Zhiyun API error code များ (ညီနောင် site)</a></li></ul></div></main>
+<footer>ဖမ်းယူ/ရွေးချယ်/OCR/64-bit တွဲဖက်နိုင်မှု မှတ်စုများကို Youdao ၏ တရားဝင် desktop FAQ နှင့် အကူအညီ (cidian.youdao.com) မှ စုစည်း; Office add-in ဖြေရှင်းခြင်း Microsoft ၏ တရားဝင် Q&A ကို ကိုးကား, Acrobat 64-bit «YodaoDict.api load မလုပ်နိုင် / protected mode ပိတ်» မှတ်စုများ အများသုံး developer ရေးသားချက်များမှ (ပြန်လည်ရေးသား). နှိုင်းယှဉ်မှုများ Eudic, iCIBA, Saladict နှင့် Microsoft Translator ၏ အများသုံးစာရွက်စာတမ်းမှ. 2026 အချိုး/platform/စျေးနှုန်း ခန့်မှန်းချက်များ, ထုတ်လုပ်သူ ကတိ သို့မဟုတ် တိုက်ရိုက်တိုင်းတာမှု မဟုတ်. LLM ဒေသသုံးပြုလုပ်ခြင်း; provider တစ်ခုစီ၏ နောက်ဆုံးတရားဝင်အချက်အလက်ကို ကြည့်ပါ.<br>tool စာမျက်နှာ · တရားဝင် client အစားထိုးမဟုတ်</footer>
+</div>
+<script src="/my/codes.js"></script><script src="/app.js"></script>
+</body></html>
