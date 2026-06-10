@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao przechwytywanie słów na ekranie/tłumaczenie zaznaczenia/OCR/skróty nie działa - przyczyny i rozwiązanie (PDF, Word, przeglądarka, 64-bit)</title>
+<meta name="description" content="Przechwytywanie słów na ekranie Youdao (sprawdzanie po najechaniu), tłumaczenie zaznaczenia, OCR zrzutu lub skróty nie działają? Wyszukaj objaw (przechwytywanie martwe / brak wyskakującego okna przy zaznaczeniu / przechwytywanie Word-Office / przechwytywanie PDF-Acrobat / zaznaczenie w Chrome / OCR / konflikt skrótu / uprawnienia macOS / okno poza ekranem przy wielu monitorach / 64-bit / wersja przenośna) dla objawu L1 i pozycji oficjalnej oraz przyczyny źródłowej L2: globalny hak / wstrzyknięcie DLL, poziom uprawnień UAC, dodatek COM Office, tryb chroniony Acrobat, akceleracja sprzętowa GPU renderująca tekst jako teksturę, zeskanowany PDF wymagający OCR, DPI wielu monitorów; z porównaniem Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator i szacunkami 2026.">
+<link rel="canonical" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao wyszukiwarka rozwiązań przechwytywania/zaznaczenia/OCR/skrótów",
+   "url": "https://yoydao.github.io/pl/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "pl",
+   "description": "Przechwytywanie słów na ekranie Youdao (sprawdzanie po najechaniu), tłumaczenie zaznaczenia, OCR zrzutu lub skróty nie działają? Wyszukaj objaw (przechwytywanie martwe / brak wyskakującego okna przy zaznaczeniu / przechwytywanie Word-Office / przechwytywanie PDF-Acrobat / zaznaczenie w Chrome / OCR / konflikt skrótu / uprawnienia macOS / okno poza ekranem przy wielu monitorach / 64-bit / wersja przenośna) dla objawu L1 i pozycji oficjalnej oraz przyczyny źródłowej L2: globalny hak / wstrzyknięcie DLL, poziom uprawnień UAC, dodatek COM Office, tryb chroniony Acrobat, akceleracja sprzętowa GPU renderująca tekst jako teksturę, zeskanowany PDF wymagający OCR, DPI wielu monitorów; z porównaniem Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator i szacunkami 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "pl",
+   "url": "https://yoydao.github.io/pl/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Przechwytywanie ekranu martwe ogólnie - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Przechwytywanie ekranu wymaga Youdao w tle z włączonym przechwytywaniem; oficjalna wersja desktopowa oferuje inteligentne przechwytywanie / przechwytywanie ze schowka / przechwytywanie OCR. Przechwytywanie ekranu używa globalnego haka wstrzykniętego do aplikacji na pierwszym planie, by czytać jej tekst: potrzeba działającego procesu Youdao + aktywnego głównego przełącznika + pasującego klawisza wyzwalacza. Gdy brakuje jednego, wygląda «całkiem martwe», często mylone z zepsutym oprogramowaniem. Sprawdź, czy ikona w zasobniku jest aktywna (szara = nie działa, kliknij dwukrotnie, by uruchomić); Ustawienia → Przechwytywanie i zaznaczenie, zaznacz «włącz przechwytywanie» i wybierz tryb (najechanie / przytrzymaj Ctrl); uruchom ponownie Youdao i spróbuj."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Tłumaczenie zaznaczenia nie pokazuje okna - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tłumaczenie zaznaczenia wymaga włączonego «zaznaczenia» z zaznaczonym «tłumacz przy zaznaczeniu»; może tłumaczyć przy zaznaczeniu lub klawiszem. Zaznaczenie i przechwytywanie to osobne przełączniki: wielu włącza przechwytywanie, ale nie zaznaczenie, lub wyłącza «tłumacz przy zaznaczeniu», stąd «zaznaczenie nic nie pokazuje»; skrót zaznaczenia też może być zajęty. Ustawienia → Przechwytywanie i zaznaczenie, zaznacz «włącz tłumaczenie zaznaczenia» i «tłumacz przy zaznaczeniu»; jeśli klawiszem, sprawdź, czy jest wolny; zaznaczenie w przeglądarce wymaga też rozszerzenia."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Przechwytywanie/zaznaczenie w Word / Office zawodzi - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao integruje się z Office przez dodatek COM do tłumaczenia zaznaczenia / zdania; gdy dodatek jest wyłączony lub niezarejestrowany, zawodzi. Office wyłącza cudze dodatki COM ze względu na zgodność lub politykę; zmiana wersji (np. nowy Education) zostawia stary dodatek niezarejestrowany dla nowego Office, stąd «działało, teraz nie». Word: Plik → Opcje → Dodatki → na dole «Zarządzaj: Dodatki COM» → Przejdź → zaznacz dodatek Youdao; jeśli nie, przeinstaluj Youdao, by go ponownie zarejestrować; sprawdź zgodność architektury Youdao i Office."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Przechwytywanie w PDF / Acrobat zawodzi - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Wersje oficjalne wspierają przechwytywanie ekranu PDF w Adobe Reader / Acrobat; nieoficjalne wersje «przenośne» nie mogą przechwytywać PDF, a PDF musi być tekstem, nie obrazem. Trzy przyczyny: ① «tryb chroniony» Acrobat to piaskownica blokująca wstrzyknięcie cudzego YodaoDict.api; ② niedopasowanie architektury 64-bit Acrobat i starej wtyczki Youdao daje «niezgodna wtyczka»; ③ PDF to skan (obraz, bez warstwy tekstu). Wyłącz w Acrobat Edycja → Preferencje → Zabezpieczenia (rozszerzone) → «Włącz tryb chroniony przy uruchamianiu», otwórz Youdao przed Acrobat; przy komunikacie «niezgodna» 64-bit zainstaluj najnowszy Youdao, lub skopiuj YodaoDict.api do plug_ins Acrobat; dla skanów użyj mocnego OCR."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Zaznaczenie/przechwytywanie w Chrome / przeglądarce zawodzi - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox itp. wymagają osobnego rozszerzenia Youdao; oficjalna wersja desktopowa oferuje «przechwytywanie Chrome». Przeglądarka to własna piaskownica: ① bez rozszerzenia Youdao globalny hak nie czyta tekstu DOM; ② akceleracja sprzętowa GPU renderuje stronę do tekstury bez czytelnej warstwy; ③ przełączniki adblock / bezpieczeństwa (np. przeglądarka 360) blokują przechwytywanie. Zainstaluj rozszerzenie Youdao dla swojej przeglądarki (przez ustawienia Youdao lub sklep); wyłącz «użyj akceleracji sprzętowej» w ustawieniach przeglądarki i uruchom ponownie; wyłącz adblock w przeglądarce 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR zrzutu/obszaru nie działa - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR zrzutu wymaga ustawionego skrótu rozpoznawania (np. Ctrl+Alt+O) i pobranego modułu OCR; zaznaczasz obszar ekranu przeciągając. OCR zrzutu nie wymaga warstwy tekstu - rozpoznaje zaznaczony obszar przez obraz, więc potrzeba pobranego modułu OCR + wolnego skrótu + (macOS) uprawnienia nagrywania ekranu, by czytać piksele. Ustawienia → Skróty, przypisz bezkonfliktowy klawisz do «OCR zrzutu»; pobierz moduł OCR przy pierwszym użyciu; na macOS przyznaj «Nagrywanie ekranu»; wybierz wyraźniejszy obszar, jeśli rozpoznawanie zawodzi."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Konflikt skrótu przechwytywania / zrzutu - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Przechwytywanie / zaznaczenie / rozpoznawanie zrzutu są dostosowywalne w Skrótach; przy konflikcie ostrzega, można przypisać ponownie lub zresetować. Skróty globalne działają na zasadzie kto pierwszy: narzędzie zrzutów, metoda wprowadzania, QQ / WeChat lub inny słownik mogą trzymać tę samą kombinację, więc klawisz Youdao nic nie robi. Ustawienia → Skróty, uważaj na ostrzeżenie o konflikcie; zmień na rzadszą kombinację jak Ctrl+Shift+litera / Alt+litera; zamykaj aplikacje trzymające klawisze po kolei, by znaleźć winowajcę."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS przechwytywanie / skróty wymagają autoryzacji - jak rozwiązać?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS musi przyznać Youdao «Dostępność» (do monitorowania skrótów / sterowania) i «Nagrywanie ekranu» (do czytania ekranu przy przechwytywaniu / zrzucie) w Ustawieniach systemowych → Prywatność i bezpieczeństwo. Piaskownica macOS wymaga jawnych uprawnień: bez «Dostępności» nie słyszy skrótów globalnych, bez «Nagrywania ekranu» nie czyta pikseli; aktualizacje często resetują oba. Ustawienia systemowe → Prywatność i bezpieczeństwo → zaznacz Youdao w «Dostępności» i «Nagrywaniu ekranu» i uruchom ponownie; przyznawaj ponownie po każdej aktualizacji macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Język: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <strong>Polski</strong> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao przechwytywanie słów na ekranie / tłumaczenie zaznaczenia / OCR / skróty - wyszukiwarka rozwiązań</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_pl.webp"><img src="/img/cover_pl.png" alt="Ilustracja narzędzia Youdao do wyszukiwania rozwiązań przechwytywania/zaznaczenia/zrzutu" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rys: Youdao wyszukiwarka rozwiązań przechwytywania / zaznaczenia / zrzutu (objaw L1 + przyczyna źródłowa L2 + porównanie rywali)</figcaption></figure>
+<p>Czy <strong>przechwytywanie słów na ekranie</strong> <strong>Youdao</strong> (sprawdzanie po najechaniu), <strong>tłumaczenie zaznaczenia</strong>, <strong>OCR</strong> lub <strong>skróty</strong> nagle przestały działać? Najpierw wyjaśnij trzy rzeczy: <strong>czy to niewłączone / brak uprawnień, zgodność konkretnej aplikacji (Office / PDF / przeglądarka), czy sama treść (skan / akceleracja sprzętowa) bez czytelnego tekstu?</strong> Wyszukaj <strong>objaw lub słowo kluczowe</strong> (np. <code>przechwytywanie</code>, <code>pdf</code>, <code>zaznaczenie</code>, <code>skrót</code>, <code>64-bit</code>, <code>OCR</code>): najpierw <strong>objaw L1 i pozycja oficjalna</strong>, potem <strong>przyczyna źródłowa L2 i rozwiązanie</strong>, na końcu porównanie z rywalami i realne przypadki. Instalacja / konfiguracja? Zobacz <a href="https://yoydao.com/">pobieranie Youdao / przewodnik przechwytywania i zaznaczenia</a>.</p>
+<input id="q" placeholder="Wpisz objaw lub słowo kluczowe, np. przechwytywanie / pdf / zaznaczenie / skrót / 64-bit / OCR" autocomplete="off">
+<button id="go">Szukaj</button>
+<div id="out"></div>
+<h2>Krok 1: najpierw podziel na cztery grupy (L1 - nie instaluj od razu ponownie)</h2>
+<p>Gdy przechwytywanie/zaznaczenie Youdao przestaje działać, 9 na 10 razy to jedna z czterech grup - najpierw znajdź, czyja wina: ① <strong>włączenie/ustawienia</strong> — Youdao nie działa w tle (ikona w zasobniku szara), lub nie zaznaczono «włącz przechwytywanie / zaznaczenie / tłumacz przy zaznaczeniu», lub zły wyzwalacz; ② <strong>uprawnienia</strong> — macOS «Dostępność + Nagrywanie ekranu» nieprzyznane, lub w Windows cel to aplikacja z podniesionymi uprawnieniami, a Youdao nie działa jako administrator; ③ <strong>zgodność aplikacji</strong> — dodatek COM Youdao wyłączony w Word/Excel, tryb chroniony Acrobat blokuje wstrzyknięcie, lub przeglądarka nie ma rozszerzenia; ④ <strong>renderowanie/treść</strong> — zeskanowany PDF to obraz (wymaga OCR), przeglądarka/PDF z akceleracją sprzętową GPU rysuje tekst jako teksturę, lub niedopasowane DPI wielu monitorów wyrzuca okno poza ekran. Pełna konfiguracja: <a href="https://yoydao.com/tutorial/">przewodnik przechwytywania i zaznaczenia Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Włączenie / ustawienia</b><span class="cs">przechwytywanie · zaznaczenie · autotłumaczenie · mocny OCR</span><div>Upewnij się, że Youdao działa w tle (ikona w zasobniku nieszara), wejdź w Ustawienia → Przechwytywanie i zaznaczenie i zaznacz «włącz przechwytywanie», «włącz zaznaczenie», «tłumacz przy zaznaczeniu», wybierz właściwy wyzwalacz (najechanie / przytrzymaj Ctrl).</div></div><div class="catbox"><b>Uprawnienia</b><span class="cs">macOS Dostępność+Nagrywanie ekranu · Windows administrator/UAC</span><div>macOS: Ustawienia systemowe → Prywatność i bezpieczeństwo, przyznaj Youdao «Dostępność» i «Nagrywanie ekranu»; Windows: gdy cel jest «uruchomiony jako administrator», uruchom Youdao też jako administrator (hak wstrzykuje tylko na tym samym poziomie uprawnień).</div></div><div class="catbox"><b>Zgodność aplikacji</b><span class="cs">Office COM · tryb chroniony Acrobat · 64-bit · rozszerzenie przeglądarki</span><div>Office: Plik → Opcje → Dodatki → Dodatki COM, zaznacz dodatek Youdao; Acrobat: wyłącz «Włącz tryb chroniony przy uruchamianiu», w razie potrzeby skopiuj YodaoDict.api do plug_ins; przeglądarka: zainstaluj rozszerzenie Youdao.</div></div><div class="catbox"><b>Skróty</b><span class="cs">konflikt · własny · klawisz OCR zrzutu</span><div>Ustawienia → Skróty, uważaj na ostrzeżenie o konflikcie; zmień na rzadszą kombinację jak Ctrl+Shift / Alt+litera; daj OCR zrzutu własny klawisz (np. Ctrl+Alt+O, z dala od innych aplikacji).</div></div><div class="catbox"><b>Renderowanie / wyświetlanie</b><span class="cs">akceleracja sprzętowa · skany · DPI wielu monitorów · pełny ekran</span><div>Przeglądarka/PDF z akceleracją sprzętową GPU renderuje treść do tekstury bez czytelnego tekstu (wyłącz akcelerację); zeskanowany PDF to obraz (użyj OCR); przy oknach poza ekranem na wielu monitorach zaznacz «przypnij pozycję okna».</div></div><div class="catbox"><b>Sieć / instalacja</b><span class="cs">szybkość przechwytywania · wersja przenośna · dodatek nie załadowany</span><div>Wyszukiwanie online wolne? sprawdź sieć; zawsze instaluj oficjalną pełną wersję - nieoficjalne wersje «przenośne/lekkie» nie mają zarejestrowanej DLL haka przechwytywania, więc przechwytywanie PDF/globalne po prostu zawodzi.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Przepływ triage awarii przechwytywania/zaznaczenia Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Triage przechwytywanie / zaznaczenie nie działa (najpierw cztery grupy: przełączniki / uprawnienia / aplikacja / treść)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Przechwytywanie martwe</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Cztery grupy</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host samosprawdzalny →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">przełącznik wył · brak uprawnień</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Aplikacja / treść →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/przeglądarka · skan/akcel-spr</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Cztery przyczyny źródłowe (czytaj przyczynę / rozwiązanie per pozycja)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Włączenie/ustaw.</text><text x="32" y="234" fill="#555" font-size="11">przechwyt. · zazn. · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Uprawnienia</text><text x="206" y="234" fill="#555" font-size="11">mac Dostępność · win administrator</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Zgodność apl.</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · przeglądarka</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Render/treść</text><text x="554" y="234" fill="#555" font-size="11">skan · akcel · wiele monitorów</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Rys 1: triage awarii przechwytywania/zaznaczenia Youdao - podziel na cztery grupy, potem zlokalizuj na host / aplikacja / treść</figcaption></figure>
+<h2>Krok 2: najczęściej pomijana przyczyna źródłowa → L2 (przechwytywanie ekranu = globalny hak / wstrzyknięcie DLL)</h2>
+<p>Kluczowa myśl: <strong>przechwytywanie ekranu nie «czyta obrazu ekranu» - Youdao wstrzykuje kod przechwytywania (globalny hak / DLL) do innej aplikacji, by czytać jej bufor tekstu</strong>. To wyjaśnia większość «tajemniczych» awarii: ① <strong>poziom uprawnień</strong> — Youdao z normalnymi prawami nie może wstrzyknąć do aplikacji «uruchomionej jako administrator» (i odwrotnie), więc «tylko ta aplikacja nie przechwytuje» zwykle oznacza niedopasowane uprawnienia; ② <strong>architektura</strong> — haki 32/64-bit nie mieszają się, więc stary Youdao na 64-bit Acrobat daje «niezgodna wtyczka, nie można załadować YodaoDict.api»; ③ <strong>piaskownica</strong> — «tryb chroniony» Acrobat to piaskownica blokująca wstrzyknięcie cudzego .api; ④ <strong>akceleracja sprzętowa</strong> — gdy przeglądarka/PDF renderuje treść do tekstury GPU, nie zostaje «czytelny tekst» do przechwycenia; ⑤ <strong>skany</strong> — PDF tylko z obrazem nie ma warstwy tekstu, użyj «mocnego OCR». Poniżej panel autokontroli; dalej porównanie z rywalami i szacunki 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Panel autokontroli Youdao przed przechwytywaniem" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Panel autokontroli włączenia przechwytywania (zielony = potwierdzone / czerwony = łatwo przeoczyć)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Punkt kontroli</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Werdykt</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Stan</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao działa w tle (zasobnik nieszary)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">proces żyje</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">potwierdzone</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Zaznaczone przechwyt. / zazn. / tłumacz przy zaznaczeniu</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 przełączniki</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">potwierdzone</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Właściwy wyzwalacz (najechanie / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">wyzwalacz</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">potwierdzone</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Aplikacja docelowa zgodna (dodatek Office / PDF niechroniony / rozszerzenie przegl.)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">strona apl.</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">do sprawdzenia</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Uprawnienia przyznane (mac Dostępność+Nagrywanie / win administrator)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">poziom uprawnień</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">potwierdzone</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Brak konfliktu skrótu + nie skan / OCR wł</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">łatwo przeoczyć</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">do sprawdzenia</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Uwaga: czerwony = dwa najczęściej pomijane - zgodność konkretnej aplikacji (Office / PDF / przeglądarka) i treść/skrót (skan wymaga OCR, konflikty klawiszy); sprawdź te dwa najpierw.</text></svg><figcaption>Rys 2: panel autokontroli włączenia przechwytywania (zielony = potwierdzone / czerwony = łatwo przeoczyć)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_pl.webp"><img src="/img/board_pl.png" alt="Ilustracja panelu autokontroli Youdao przed przechwytywaniem z elementami zielony/czerwony" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Rys: sprawdź najpierw «działa + trzy przełączniki + uprawnienia», potem «zgodność aplikacji + treść/skrót» - ostatnie dwa są najczęściej pomijane</figcaption></figure>
+<h2>Pełna tabela objawów (objaw L1 / pozycja oficjalna · przyczyna źródłowa L2)</h2>
+<table id="tbl"></table>
+<h2>Porównanie konkurencyjnych narzędzi zaznaczenia/przechwytywania (tryb / OCR / platforma / cena · dane publiczne)</h2>
+<table class="cmp"><tr><th>Oprogramowanie</th><th>Przechwytywanie ekranu / zaznaczenie</th><th>OCR zrzutu</th><th>Platformy</th><th>Słowniki dodatkowe</th><th>Cena (szac.)</th></tr><tr><td>Youdao</td><td>globalne przechwytywanie + tłumaczenie zaznaczenia</td><td>OCR zrzutu + mocne przechwytywanie</td><td>Win / Mac / iOS / Android / Web / rozszerzenie przegl.</td><td>mdx słabe</td><td>rdzeń darmowy (część subskrypcja / bez reklam)</td></tr><tr><td>Eudic</td><td>zaznaczenie + przechwytywanie ekranu</td><td>przechwytywanie zrzutu</td><td>Win / Mac / iOS / Android</td><td>mdx silne (ogromne biblioteki)</td><td>baza darmowa + premium płatne</td></tr><tr><td>iCIBA (Kingsoft)</td><td>przechwytywanie + zaznaczenie</td><td>tłumaczenie zrzutu</td><td>Win / Mac / mobile / Web</td><td>średnie</td><td>darmowe (reklamy) + subskrypcja</td></tr><tr><td>Saladict</td><td>zaznaczenie w przeglądarce (rozszerzenie)</td><td>zależne od strony / OCR wymaga konfiguracji</td><td>rozszerzenie przeglądarki (Chrome / Edge / Firefox)</td><td>konfigurowalne źródła</td><td>darmowe · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>zaznaczenie systemowe słabe</td><td>wbudowane w Office + zrzut</td><td>Win / Office / Edge / mobile</td><td>brak</td><td>darmowe</td></tr></table><section class="i4data">
+<h2>Przyczyny awarii przechwytywania Youdao i porównanie narzędzi zaznaczenia (szacunek 2026)</h2>
+<p>Poniżej <strong>szacunki 2026</strong> zsyntetyzowane z oficjalnej pomocy / FAQ Youdao, materiałów publicznych rywali i rozwiązywania problemów deweloperów (nie zobowiązania producenta, nie pomiary z pierwszej ręki; orientacyjnie, zmienia się z wersją i OS):</p>
+<table>
+<tr><th>Wymiar</th><th>Szacunek / porównanie</th></tr>
+<tr><td>Podział przyczyn awarii przechwytywania (społeczność · szac.)</td><td><strong>niewłączone / uprawnienia ~40%</strong> &gt; <strong>zgodność aplikacji (Office/PDF/przeglądarka) ~25%</strong> &gt; konflikt skrótu ~20% &gt; renderowanie / treść (akcel-spr / skan) ~15%</td></tr>
+<tr><td>Czym naprawdę jest przechwytywanie</td><td>przechwytywanie ekranu = <strong>globalny hak / wstrzyknięcie DLL</strong> czytające bufor tekstu aplikacji docelowej (nie czyta obrazu ekranu); stąd wpływ poziomu uprawnień, architektury, piaskownicy, akceleracji sprzętowej</td></tr>
+<tr><td>Przechwytywanie per platforma (szac.)</td><td>desktop (Win/Mac) wspiera <strong>globalne przechwytywanie ekranu + zaznaczenie + OCR zrzutu</strong>; mobile to głównie zaznaczenie / tłumaczenie ze zdjęcia; web / przeglądarka wymaga <strong>rozszerzenia</strong></td></tr>
+<tr><td>Przegląd narzędzi zaznaczenia / przechwytywania (szac.)</td><td>Youdao = wszystkie platformy + silne tłumaczenie AI; Eudic = silne biblioteki dodatkowe (mdx); iCIBA = masowo darmowe; Saladict = przeglądarka open source; Microsoft = wbudowane w Office</td></tr>
+<tr><td>Poziomy cen (szac.)</td><td>Youdao / iCIBA <strong>rdzeń darmowy</strong> (subskrypcja za bez reklam / dodatki) · Eudic <strong>premium płatne</strong> · Saladict <strong>darmowe open source</strong> · Microsoft Translator <strong>darmowe</strong></td></tr>
+</table>
+<p><small>Podstawa szacunku: linia bazowa źródeł + ekstrapolacja czasowa (oficjalna pomoc / FAQ cidian.youdao.com, materiały publiczne Eudic / iCIBA / Saladict / Microsoft, publiczne artykuły deweloperów, 2026); zmienia się z wersją i polityką OS każdego dostawcy. Kieruj się najnowszymi oficjalnymi informacjami. Lokalizacja LLM.</small></p>
+</section>
+<h2>Realne przypadki - szybki przegląd</h2>
+<ul class="scenes"><li>Brak przechwytywania w przeglądarce, ale Notatnik / Word działają: zwykle przeglądarka nie ma rozszerzenia Youdao, lub akceleracja sprzętowa GPU wyrenderowała stronę do tekstury → zainstaluj rozszerzenie, lub wyłącz «użyj akceleracji sprzętowej» i uruchom ponownie.</li><li>Acrobat 64-bit, zaznaczenie w PDF nic nie daje, «niezgodna wtyczka, nie można załadować YodaoDict.api»: wyłącz w Acrobat Edycja → Preferencje → Zabezpieczenia (rozszerzone) → «Włącz tryb chroniony przy uruchamianiu», otwórz Youdao przed Acrobat; jeśli nie pomaga, skopiuj YodaoDict.api z folderu Youdao do plug_ins Acrobat.</li><li>Tekst PDF jest zaznaczalny, ale nie przechwytuje się, lub cała strona nie: to skan (PDF obrazowy bez warstwy tekstu, wymaga «mocnego OCR»), lub tryb chroniony Acrobat / blokada Autotray.exe utrudnia wstrzyknięcie.</li><li>Po instalacji Office (zwłaszcza Education / 365) Word nie tłumaczy zaznaczenia: dodatek COM Office Youdao jest wyłączony → Plik → Opcje → Dodatki → Dodatki COM → włącz; jeśli nie, przeinstaluj Youdao, by ponownie go zarejestrować.</li><li>Po aktualizacji systemu przechwytywanie i skróty giną na macOS: aktualizacja zresetowała uprawnienia → ponownie przyznaj Youdao «Dostępność» i «Nagrywanie ekranu» w Prywatności i bezpieczeństwie i uruchom ponownie.</li><li>Przechwytywanie działa w zwykłych aplikacjach, ale zawodzi w aplikacji «uruchomionej jako administrator»: różne poziomy uprawnień nie pozwalają globalnemu hakowi wstrzyknąć do podniesionego procesu → prawy klik Youdao «Uruchom jako administrator».</li><li>Wiele monitorów / wysokie DPI: okno przechwytywania «odlatuje» w niewidoczne miejsce: przez niedopasowane skalowanie DPI na ekranach → zaznacz «przypnij pozycję okna» w ustawieniach przechwytywania, by przypiąć je w lewym górnym rogu głównego ekranu.</li></ul><div class="related"><h2>Powiązane</h2><ul><li><a href="https://yoydao.com/">Pobieranie Youdao / przewodnik konfiguracji</a></li><li><a href="https://yoydao.com/pl/tutorial/">Przewodnik przechwytywania i zaznaczenia Youdao</a></li><li><a href="https://yoydao.com/pl/tools/youdao-word-capture/">Youdao wyszukiwarka rozwiązań przechwytywania (autorytatywna pełna tabela)</a></li><li><a href="https://yoidao.com/pl/">Kody błędów API Youdao Zhiyun (witryna siostrzana)</a></li></ul></div></main>
+<footer>Uwagi o przechwytywaniu/zaznaczeniu/OCR/zgodności 64-bit zebrano z oficjalnych FAQ i pomocy desktopowej Youdao (cidian.youdao.com); rozwiązywanie dodatku Office odsyła do oficjalnego Q&A Microsoft, a uwagi Acrobat 64-bit «nie można załadować YodaoDict.api / wyłącz tryb chroniony» pochodzą z publicznych artykułów deweloperów (przeredagowane). Porównania pochodzą z materiałów publicznych Eudic, iCIBA, Saladict i Microsoft Translator. Proporcje/platformy/ceny 2026 to szacunki, nie zobowiązania producenta ani pomiary z pierwszej ręki. Lokalizacja LLM; kieruj się najnowszymi oficjalnymi informacjami każdego dostawcy.<br>Strona narzędzia · nie zastępuje oficjalnego klienta</footer>
+</div>
+<script src="/pl/codes.js"></script><script src="/app.js"></script>
+</body></html>
