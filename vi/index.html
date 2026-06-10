@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao chụp từ trên màn hình/dịch bôi chọn/OCR/phím tắt không hoạt động - nguyên nhân và cách khắc phục (PDF, Word, trình duyệt, 64-bit)</title>
+<meta name="description" content="Chụp từ trên màn hình Youdao (tra khi rê chuột), dịch bôi chọn, OCR ảnh chụp hay phím tắt không hoạt động? Tìm triệu chứng (chụp chết / không hiện popup khi bôi chọn / chụp Word-Office / chụp PDF-Acrobat / bôi chọn trình duyệt Chrome / OCR / xung đột phím tắt / quyền macOS / popup ngoài màn hình khi nhiều màn hình / 64-bit / bản portable) để xem triệu chứng L1 và định vị chính thức cùng nguyên nhân gốc L2: hook toàn cục / chèn DLL, mức đặc quyền UAC, add-in COM Office, chế độ bảo vệ Acrobat, tăng tốc phần cứng GPU dựng văn bản thành texture, PDF quét cần OCR, DPI nhiều màn hình; với so sánh Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator và ước tính 2026.">
+<link rel="canonical" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao tìm giải pháp chụp/bôi chọn/OCR/phím tắt",
+   "url": "https://yoydao.github.io/vi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "vi",
+   "description": "Chụp từ trên màn hình Youdao (tra khi rê chuột), dịch bôi chọn, OCR ảnh chụp hay phím tắt không hoạt động? Tìm triệu chứng (chụp chết / không hiện popup khi bôi chọn / chụp Word-Office / chụp PDF-Acrobat / bôi chọn trình duyệt Chrome / OCR / xung đột phím tắt / quyền macOS / popup ngoài màn hình khi nhiều màn hình / 64-bit / bản portable) để xem triệu chứng L1 và định vị chính thức cùng nguyên nhân gốc L2: hook toàn cục / chèn DLL, mức đặc quyền UAC, add-in COM Office, chế độ bảo vệ Acrobat, tăng tốc phần cứng GPU dựng văn bản thành texture, PDF quét cần OCR, DPI nhiều màn hình; với so sánh Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator và ước tính 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "vi",
+   "url": "https://yoydao.github.io/vi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Chụp màn hình chết toàn bộ - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chụp màn hình cần Youdao chạy nền với chụp đã bật; bản desktop chính thức cung cấp chụp thông minh / chụp clipboard / chụp OCR. Chụp màn hình dùng hook toàn cục chèn vào ứng dụng tiền cảnh để đọc văn bản của nó: cần tiến trình Youdao chạy + công tắc chụp chính bật + phím kích hoạt khớp. Thiếu một, trông «chết hẳn», thường bị nhầm phần mềm hỏng. Kiểm tra biểu tượng khay có hoạt động (xám = chưa chạy, nhấp đúp để mở); Cài đặt → Chụp và bôi chọn, tích «bật chụp» và chọn chế độ (rê chuột / giữ Ctrl); khởi động lại Youdao và thử lại."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Dịch bôi chọn không hiện popup - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Dịch bôi chọn cần «bôi chọn» bật với «tự dịch khi bôi chọn» được tích; có thể dịch khi bôi chọn hoặc bằng phím. Bôi chọn và chụp là công tắc riêng: nhiều người bật chụp nhưng không bật bôi chọn, hoặc tắt «tự dịch khi bôi chọn», nên «bôi chọn không hiện gì»; phím tắt bôi chọn cũng có thể bị chiếm. Cài đặt → Chụp và bôi chọn, tích «bật dịch bôi chọn» và «tự dịch khi bôi chọn»; nếu bằng phím, xác nhận phím đó trống; bôi chọn trong trình duyệt còn cần tiện ích chụp."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chụp/bôi chọn trong Word / Office hỏng - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao tích hợp Office qua add-in COM để dịch bôi chọn / câu; nếu add-in bị tắt hoặc chưa đăng ký, hỏng. Office tắt add-in COM bên thứ ba vì tương thích hoặc chính sách; đổi phiên bản (vd. Education mới) khiến add-in cũ chưa đăng ký cho Office mới, nên «trước được, giờ không». Word: Tệp → Tùy chọn → Phần bổ trợ → dưới cùng «Quản lý: Phần bổ trợ COM» → Đến → tích add-in Youdao; nếu không, cài lại Youdao để đăng ký lại; đảm bảo bitness Youdao và Office khớp."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chụp trong PDF / Acrobat hỏng - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Bản chính thức hỗ trợ chụp màn hình PDF trong Adobe Reader / Acrobat; bản «portable» không chính thức không chụp được PDF, và PDF phải là văn bản, không phải ảnh. Ba nguyên nhân: ① «chế độ bảo vệ» Acrobat là sandbox chặn chèn YodaoDict.api bên thứ ba; ② lệch bitness giữa Acrobat 64-bit và add-in Youdao cũ cho «plugin không tương thích»; ③ PDF là bản quét (ảnh, không lớp văn bản). Tắt trong Acrobat Chỉnh sửa → Tùy chọn → Bảo mật (nâng cao) → «Bật chế độ bảo vệ khi khởi động», mở Youdao trước Acrobat; với cảnh báo «không tương thích» 64-bit, cài Youdao mới nhất, hoặc sao YodaoDict.api vào plug_ins của Acrobat; với bản quét dùng OCR chụp mạnh."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Bôi chọn/chụp trong Chrome / trình duyệt hỏng - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox v.v. cần tiện ích chụp Youdao riêng; bản desktop chính thức cung cấp «chụp Chrome». Trình duyệt là sandbox riêng: ① thiếu tiện ích chụp Youdao, hook toàn cục không đọc văn bản DOM; ② tăng tốc phần cứng GPU kết xuất trang thành texture không lớp đọc được; ③ công tắc adblock / bảo mật (vd. trình duyệt 360) chặn chụp. Cài tiện ích chụp Youdao cho trình duyệt của bạn (qua cài đặt Youdao hoặc cửa hàng); tắt «dùng tăng tốc phần cứng» trong cài đặt trình duyệt rồi khởi động lại; tắt adblock ở trình duyệt 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR ảnh chụp/vùng không hoạt động - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR ảnh chụp cần phím tắt nhận diện ảnh chụp đã đặt (vd. Ctrl+Alt+O) và mô-đun OCR đã tải; bạn chọn vùng màn hình bằng cách kéo. OCR ảnh chụp không cần lớp văn bản - nó nhận diện vùng đã chọn bằng ảnh, nên cần mô-đun OCR đã tải + phím tắt trống + (macOS) quyền ghi màn hình để đọc điểm ảnh. Cài đặt → Phím tắt, gán phím không xung đột cho «OCR ảnh chụp»; tải mô-đun OCR lần đầu dùng; trên macOS cấp «Ghi màn hình»; chọn vùng rõ hơn nếu nhận diện kém."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Xung đột phím tắt chụp / ảnh chụp - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chụp / bôi chọn / nhận diện ảnh chụp đều tùy chỉnh được trong Phím tắt; khi xung đột nó cảnh báo, và bạn có thể gán lại hoặc đặt lại. Phím tắt toàn cục là ai-trước-được-trước: công cụ chụp, bộ gõ, QQ / WeChat hay từ điển khác có thể giữ cùng tổ hợp, nên phím Youdao không làm gì. Cài đặt → Phím tắt, chú ý cảnh báo xung đột; đổi sang tổ hợp hiếm hơn như Ctrl+Shift+chữ / Alt+chữ; đóng từng ứng dụng giữ phím để tìm thủ phạm."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS chụp / phím tắt cần cấp quyền - khắc phục thế nào?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS phải cấp cho Youdao «Trợ năng» (giám sát phím tắt / điều khiển) và «Ghi màn hình» (đọc màn hình để chụp / ảnh chụp) trong Cài đặt hệ thống → Quyền riêng tư và bảo mật. Sandbox macOS đòi cấp quyền tường minh: thiếu «Trợ năng» không nghe được phím tắt toàn cục, thiếu «Ghi màn hình» không đọc được điểm ảnh; cập nhật thường đặt lại cả hai. Cài đặt hệ thống → Quyền riêng tư và bảo mật → tích Youdao trong «Trợ năng» và «Ghi màn hình» rồi khởi động lại; cấp lại sau mỗi cập nhật macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Ngôn ngữ: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <strong>Tiếng Việt</strong> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao chụp từ trên màn hình / dịch bôi chọn / OCR / phím tắt - tìm giải pháp</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_vi.webp"><img src="/img/cover_vi.png" alt="Minh họa công cụ tìm giải pháp chụp/bôi chọn/ảnh chụp của Youdao" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Hình: Youdao tìm giải pháp chụp / bôi chọn / ảnh chụp (triệu chứng L1 + nguyên nhân gốc L2 + so sánh đối thủ)</figcaption></figure>
+<p><strong>Chụp từ trên màn hình</strong> của <strong>Youdao</strong> (tra khi rê chuột), <strong>dịch bôi chọn</strong>, <strong>OCR</strong> hay <strong>phím tắt</strong> đột nhiên ngừng? Trước tiên làm rõ ba điều: <strong>chưa bật / thiếu quyền, do tương thích của một ứng dụng cụ thể (Office / PDF / trình duyệt), hay bản thân nội dung (bản quét / tăng tốc phần cứng) không có văn bản đọc được?</strong> Tìm <strong>triệu chứng hoặc từ khóa</strong> bạn gặp (vd. <code>chụp</code>, <code>pdf</code>, <code>bôi chọn</code>, <code>phím tắt</code>, <code>64-bit</code>, <code>OCR</code>): trước hết <strong>triệu chứng L1 và định vị chính thức</strong>, rồi <strong>nguyên nhân gốc L2 và cách khắc phục</strong>, cuối cùng so sánh đối thủ và ca thực tế. Cài đặt / thiết lập? Xem <a href="https://yoydao.com/">tải Youdao / hướng dẫn chụp và bôi chọn</a>.</p>
+<input id="q" placeholder="Nhập triệu chứng hoặc từ khóa, vd. chụp / pdf / bôi chọn / phím tắt / 64-bit / OCR" autocomplete="off">
+<button id="go">Tìm</button>
+<div id="out"></div>
+<h2>Bước 1: chia thành bốn nhóm trước (L1 - đừng cài lại ngay)</h2>
+<p>Khi chụp/bôi chọn Youdao ngừng, 9 trên 10 lần là một trong bốn nhóm - tìm lỗi của ai trước: ① <strong>kích hoạt/cài đặt</strong> — Youdao không chạy nền (biểu tượng khay xám), hoặc bạn chưa tích «bật chụp / bôi chọn / tự dịch khi bôi chọn», hoặc sai bộ kích hoạt; ② <strong>quyền</strong> — macOS «Trợ năng + Ghi màn hình» chưa cấp, hoặc trên Windows mục tiêu là ứng dụng nâng quyền còn Youdao không chạy với tư cách quản trị; ③ <strong>tương thích ứng dụng</strong> — add-in COM Youdao bị tắt trong Word/Excel, chế độ bảo vệ Acrobat chặn chèn, hoặc trình duyệt thiếu tiện ích chụp; ④ <strong>kết xuất/nội dung</strong> — PDF quét là hình ảnh (cần OCR), trình duyệt/PDF bật tăng tốc phần cứng GPU vẽ văn bản thành texture, hoặc DPI nhiều màn hình lệch ném popup ra ngoài. Cài đặt đầy đủ: <a href="https://yoydao.com/tutorial/">hướng dẫn chụp và bôi chọn Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Kích hoạt / cài đặt</b><span class="cs">chụp · bôi chọn · tự dịch · OCR mạnh</span><div>Đảm bảo Youdao chạy nền (biểu tượng khay không xám), vào Cài đặt → Chụp và bôi chọn và tích «bật chụp», «bật bôi chọn», «tự dịch khi bôi chọn», và chọn đúng bộ kích hoạt (rê chuột / giữ Ctrl).</div></div><div class="catbox"><b>Quyền</b><span class="cs">macOS Trợ năng+Ghi màn hình · Windows quản trị/UAC</span><div>macOS: Cài đặt hệ thống → Quyền riêng tư và bảo mật, cấp cho Youdao «Trợ năng» và «Ghi màn hình»; Windows: khi mục tiêu «chạy với tư cách quản trị», chạy Youdao cũng với tư cách quản trị (hook chỉ chèn ở cùng mức đặc quyền).</div></div><div class="catbox"><b>Tương thích ứng dụng</b><span class="cs">Office COM · chế độ bảo vệ Acrobat · 64-bit · tiện ích trình duyệt</span><div>Office: Tệp → Tùy chọn → Phần bổ trợ → Phần bổ trợ COM, tích add-in Youdao; Acrobat: tắt «Bật chế độ bảo vệ khi khởi động», nếu cần sao YodaoDict.api vào plug_ins; trình duyệt: cài tiện ích chụp Youdao.</div></div><div class="catbox"><b>Phím tắt</b><span class="cs">xung đột · tùy chỉnh · phím OCR ảnh chụp</span><div>Cài đặt → Phím tắt, chú ý cảnh báo xung đột; đổi sang tổ hợp ít đụng như Ctrl+Shift / Alt+chữ; cho OCR ảnh chụp phím riêng (vd. Ctrl+Alt+O, tránh xa ứng dụng khác).</div></div><div class="catbox"><b>Kết xuất / hiển thị</b><span class="cs">tăng tốc phần cứng · bản quét · DPI nhiều màn hình · toàn màn hình</span><div>Trình duyệt/PDF bật tăng tốc phần cứng GPU kết xuất nội dung thành texture không có văn bản đọc được (tắt tăng tốc); PDF quét là ảnh (dùng OCR); với popup ngoài màn hình khi nhiều màn hình tích «ghim vị trí cửa sổ».</div></div><div class="catbox"><b>Mạng / cài đặt</b><span class="cs">tốc độ chụp · bản portable · add-in chưa nạp</span><div>Tra cứu trực tuyến chậm? kiểm tra mạng; luôn cài bản chính thức đầy đủ - bản «portable/nhẹ» không chính thức thiếu DLL hook chụp đã đăng ký, nên chụp PDF/toàn cục hỏng ngay.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Luồng phân loại lỗi chụp/bôi chọn Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Phân loại chụp / bôi chọn không hoạt động (bốn nhóm trước: công tắc / quyền / ứng dụng / nội dung)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Chụp chết</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Bốn nhóm</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host tự kiểm được →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">công tắc tắt · thiếu quyền</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Ứng dụng / nội dung →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/trình duyệt · quét/tăngtốc-pc</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Bốn nguyên nhân gốc (đọc nguyên nhân / cách khắc phục theo mục)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Kích hoạt/cài đặt</text><text x="32" y="234" fill="#555" font-size="11">chụp · bôi chọn · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Quyền</text><text x="206" y="234" fill="#555" font-size="11">mac Trợ năng · win quản trị</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Tương thích ƯD</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · trình duyệt</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Kết xuất/nội dung</text><text x="554" y="234" fill="#555" font-size="11">quét · tăng tốc · nhiều màn hình</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Hình 1: phân loại lỗi chụp/bôi chọn Youdao - chia thành bốn nhóm, rồi khoanh vùng vào host / ứng dụng / nội dung</figcaption></figure>
+<h2>Bước 2: nguyên nhân gốc bị bỏ qua nhiều nhất → L2 (chụp màn hình = hook toàn cục / chèn DLL)</h2>
+<p>Ý chính: <strong>chụp màn hình không «đọc ảnh màn hình» - Youdao chèn mã chụp (hook toàn cục / DLL) vào ứng dụng khác để đọc bộ đệm văn bản của nó</strong>. Điều này giải thích phần lớn lỗi «khó hiểu»: ① <strong>mức đặc quyền</strong> — Youdao quyền thường không thể chèn vào ứng dụng «chạy với tư cách quản trị» (và ngược lại), nên «chỉ ứng dụng đó không chụp» thường là lệch đặc quyền; ② <strong>bitness</strong> — hook 32/64-bit không trộn lẫn, nên Youdao cũ trên Acrobat 64-bit báo «plugin không tương thích, không tải được YodaoDict.api»; ③ <strong>sandbox</strong> — «chế độ bảo vệ» Acrobat là sandbox chặn chèn .api bên thứ ba; ④ <strong>tăng tốc phần cứng</strong> — khi trình duyệt/PDF kết xuất nội dung thành texture GPU thì không còn «văn bản đọc được» để chụp; ⑤ <strong>bản quét</strong> — PDF chỉ là ảnh không có lớp văn bản, dùng «OCR chụp mạnh». Bên dưới là bảng tự kiểm; tiếp là so sánh đối thủ và ước tính 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bảng tự kiểm trước khi chụp của Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Bảng tự kiểm kích hoạt chụp (xanh = đã xác nhận / đỏ = dễ bỏ qua)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Mục kiểm</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Kết luận</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Trạng thái</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao chạy nền (khay không xám)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">tiến trình sống</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">đã xác nhận</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Đã tích chụp / bôi chọn / tự dịch khi bôi chọn</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 công tắc</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">đã xác nhận</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Đúng bộ kích hoạt chụp (rê chuột / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">bộ kích hoạt</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">đã xác nhận</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Ứng dụng đích tương thích (add-in Office / PDF không bảo vệ / tiện ích trình duyệt)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">phía ứng dụng</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">cần kiểm</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Quyền đã cấp (mac Trợ năng+Ghi / win quản trị)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">mức đặc quyền</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">đã xác nhận</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Không xung đột phím tắt + không phải bản quét / OCR bật</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">dễ bỏ qua</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">cần kiểm</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Lưu ý: đỏ = hai cái bị bỏ qua nhiều nhất - tương thích ứng dụng cụ thể (Office / PDF / trình duyệt) và nội dung/phím tắt (bản quét cần OCR, xung đột phím); kiểm tra hai cái này trước.</text></svg><figcaption>Hình 2: bảng tự kiểm kích hoạt chụp (xanh = đã xác nhận / đỏ = dễ bỏ qua)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_vi.webp"><img src="/img/board_vi.png" alt="Minh họa bảng tự kiểm trước khi chụp của Youdao với mục xanh/đỏ" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Hình: kiểm tra «đang chạy + ba công tắc + quyền» trước, rồi «tương thích ứng dụng + nội dung/phím tắt» - hai cái sau bị bỏ qua nhiều nhất</figcaption></figure>
+<h2>Bảng triệu chứng đầy đủ (triệu chứng L1 / định vị chính thức · nguyên nhân gốc L2)</h2>
+<table id="tbl"></table>
+<h2>So sánh công cụ bôi chọn/chụp đối thủ (chế độ chụp / OCR / nền tảng / giá · dữ liệu công khai)</h2>
+<table class="cmp"><tr><th>Phần mềm</th><th>Chụp màn hình / bôi chọn</th><th>OCR ảnh chụp</th><th>Nền tảng</th><th>Từ điển thêm</th><th>Giá (ước tính)</th></tr><tr><td>Youdao</td><td>chụp toàn cục + dịch bôi chọn</td><td>OCR ảnh chụp + chụp mạnh</td><td>Win / Mac / iOS / Android / Web / tiện ích trình duyệt</td><td>mdx yếu</td><td>lõi miễn phí (một số thành viên / không quảng cáo)</td></tr><tr><td>Eudic</td><td>bôi chọn + chụp màn hình</td><td>chụp ảnh chụp</td><td>Win / Mac / iOS / Android</td><td>mdx mạnh (thư viện lớn)</td><td>cơ bản miễn phí + nâng cao trả phí</td></tr><tr><td>iCIBA (Kingsoft)</td><td>chụp + bôi chọn</td><td>dịch ảnh chụp</td><td>Win / Mac / di động / Web</td><td>trung bình</td><td>miễn phí (quảng cáo) + thành viên</td></tr><tr><td>Saladict</td><td>bôi chọn trong trình duyệt (tiện ích)</td><td>tùy trang / OCR cần cấu hình</td><td>tiện ích trình duyệt (Chrome / Edge / Firefox)</td><td>nguồn tự cấu hình</td><td>miễn phí · mã nguồn mở</td></tr><tr><td>Microsoft Translator / Bing</td><td>bôi chọn cấp hệ thống yếu</td><td>tích hợp Office + ảnh chụp</td><td>Win / Office / Edge / di động</td><td>không có</td><td>miễn phí</td></tr></table><section class="i4data">
+<h2>Nguyên nhân lỗi chụp Youdao và so sánh công cụ bôi chọn (ước tính 2026)</h2>
+<p>Sau đây là <strong>ước tính 2026</strong> tổng hợp từ trợ giúp / FAQ chính thức của Youdao, tài liệu công khai của đối thủ và xử lý sự cố của nhà phát triển (không phải cam kết của nhà sản xuất, không phải đo trực tiếp; để tham khảo, thay đổi theo phiên bản và hệ điều hành):</p>
+<table>
+<tr><th>Khía cạnh</th><th>Ước tính / so sánh</th></tr>
+<tr><td>Phân chia nguyên nhân lỗi chụp (cộng đồng · ư.t.)</td><td><strong>chưa bật / quyền ~40%</strong> &gt; <strong>tương thích ứng dụng (Office/PDF/trình duyệt) ~25%</strong> &gt; xung đột phím tắt ~20% &gt; kết xuất / nội dung (tăng tốc-pc / quét) ~15%</td></tr>
+<tr><td>Chụp thực chất là gì</td><td>chụp màn hình = <strong>hook toàn cục / chèn DLL</strong> đọc bộ đệm văn bản của ứng dụng đích (không đọc ảnh màn hình); nên chịu ảnh hưởng của mức đặc quyền, bitness, sandbox, tăng tốc phần cứng</td></tr>
+<tr><td>Chụp theo nền tảng (ư.t.)</td><td>desktop (Win/Mac) hỗ trợ <strong>chụp màn hình toàn cục + bôi chọn + OCR ảnh chụp</strong>; di động chủ yếu bôi chọn / dịch ảnh; web / trình duyệt cần <strong>tiện ích chụp</strong></td></tr>
+<tr><td>Tổng quan công cụ bôi chọn / chụp (ư.t.)</td><td>Youdao = mọi nền tảng + dịch AI mạnh; Eudic = thư viện thêm mạnh (mdx); iCIBA = miễn phí đại chúng; Saladict = trình duyệt mã nguồn mở; Microsoft = tích hợp Office</td></tr>
+<tr><td>Mức giá (ư.t.)</td><td>Youdao / iCIBA <strong>lõi miễn phí</strong> (thành viên để không quảng cáo / thêm) · Eudic <strong>nâng cao trả phí</strong> · Saladict <strong>miễn phí mã nguồn mở</strong> · Microsoft Translator <strong>miễn phí</strong></td></tr>
+</table>
+<p><small>Cơ sở ước tính: đường cơ sở nguồn + ngoại suy thời gian (trợ giúp / FAQ chính thức cidian.youdao.com, tài liệu công khai Eudic / iCIBA / Saladict / Microsoft, bài viết công khai của nhà phát triển, 2026); thay đổi theo phiên bản và chính sách hệ điều hành của từng nhà cung cấp. Theo thông tin chính thức mới nhất. Bản địa hóa LLM.</small></p>
+</section>
+<h2>Ca thực tế - đọc nhanh</h2>
+<ul class="scenes"><li>Không chụp trong trình duyệt nhưng Notepad / Word vẫn được: thường trình duyệt thiếu tiện ích chụp Youdao, hoặc tăng tốc phần cứng GPU đã kết xuất trang thành texture → cài tiện ích, hoặc tắt «dùng tăng tốc phần cứng» rồi khởi động lại.</li><li>Acrobat 64-bit, bôi chọn trong PDF không phản hồi, «plugin không tương thích, không tải được YodaoDict.api»: tắt trong Acrobat Chỉnh sửa → Tùy chọn → Bảo mật (nâng cao) → «Bật chế độ bảo vệ khi khởi động», mở Youdao trước Acrobat; nếu vẫn vậy, sao YodaoDict.api từ thư mục Youdao vào plug_ins của Acrobat.</li><li>Văn bản PDF chọn được nhưng không chụp, hoặc cả trang không: hoặc là bản quét (PDF ảnh không lớp văn bản, cần «OCR chụp mạnh»), hoặc chế độ bảo vệ Acrobat / khóa Autotray.exe cản chèn.</li><li>Sau khi cài Office (nhất là Education / 365) Word không dịch bôi chọn: add-in COM Office Youdao bị tắt → Tệp → Tùy chọn → Phần bổ trợ → Phần bổ trợ COM → bật; nếu không, cài lại Youdao để đăng ký lại.</li><li>Sau khi cập nhật hệ điều hành, chụp và phím tắt chết trên macOS: cập nhật đã đặt lại quyền → cấp lại cho Youdao «Trợ năng» và «Ghi màn hình» trong Quyền riêng tư và bảo mật rồi khởi động lại.</li><li>Chụp chạy trong ứng dụng thường nhưng hỏng trong ứng dụng «chạy với tư cách quản trị»: mức đặc quyền khác nhau khiến hook toàn cục không chèn được vào tiến trình nâng quyền → chuột phải Youdao «Chạy với tư cách quản trị».</li><li>Nhiều màn hình / DPI cao: popup chụp «bay» tới chỗ không thấy: do tỷ lệ DPI mỗi màn hình lệch → tích «ghim vị trí cửa sổ» trong cài đặt chụp để ghim ở góc trên trái màn hình chính.</li></ul><div class="related"><h2>Liên quan</h2><ul><li><a href="https://yoydao.com/">Tải Youdao / hướng dẫn thiết lập</a></li><li><a href="https://yoydao.com/vi/tutorial/">Hướng dẫn chụp và bôi chọn Youdao</a></li><li><a href="https://yoydao.com/vi/tools/youdao-word-capture/">Youdao tìm giải pháp chụp (bảng đầy đủ uy tín)</a></li><li><a href="https://yoidao.com/vi/">Mã lỗi API Youdao Zhiyun (trang anh em)</a></li></ul></div></main>
+<footer>Ghi chú về chụp/bôi chọn/OCR/tương thích 64-bit được tổng hợp từ FAQ và trợ giúp desktop chính thức của Youdao (cidian.youdao.com); xử lý add-in Office tham chiếu Q&A chính thức của Microsoft, và ghi chú Acrobat 64-bit «không tải được YodaoDict.api / tắt chế độ bảo vệ» từ bài viết công khai của nhà phát triển (diễn đạt lại). So sánh từ tài liệu công khai của Eudic, iCIBA, Saladict và Microsoft Translator. Tỷ lệ/nền tảng/giá 2026 là ước tính, không phải cam kết của nhà sản xuất hay đo trực tiếp. Bản địa hóa LLM; theo thông tin chính thức mới nhất của từng nhà cung cấp.<br>Trang công cụ · không thay thế phần mềm chính thức</footer>
+</div>
+<script src="/vi/codes.js"></script><script src="/app.js"></script>
+</body></html>
