@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao captura de palavras na tela/tradução por seleção/OCR/atalhos não funciona - causas e solução (PDF, Word, navegador, 64 bits)</title>
+<meta name="description" content="A captura de palavras na tela do Youdao (consulta ao passar o mouse), a tradução por seleção, o OCR de captura ou os atalhos não funcionam? Busque o sintoma (captura morta / sem pop-up ao selecionar / captura no Word-Office / captura no PDF-Acrobat / seleção no Chrome / OCR de captura / conflito de atalho / permissões macOS / pop-up fora da tela em multimonitor / 64 bits / versão portátil) para o sintoma L1 e o posicionamento oficial mais a causa raiz L2: hook global / injeção de DLL, nível de privilégio UAC, suplemento COM do Office, modo protegido do Acrobat, aceleração de hardware GPU que renderiza o texto como textura, PDF digitalizado que precisa de OCR, DPI multimonitor; com comparação Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator e estimativas 2026.">
+<link rel="canonical" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao busca de solução de captura/seleção/OCR/atalhos",
+   "url": "https://yoydao.github.io/pt-br/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "pt-BR",
+   "description": "A captura de palavras na tela do Youdao (consulta ao passar o mouse), a tradução por seleção, o OCR de captura ou os atalhos não funcionam? Busque o sintoma (captura morta / sem pop-up ao selecionar / captura no Word-Office / captura no PDF-Acrobat / seleção no Chrome / OCR de captura / conflito de atalho / permissões macOS / pop-up fora da tela em multimonitor / 64 bits / versão portátil) para o sintoma L1 e o posicionamento oficial mais a causa raiz L2: hook global / injeção de DLL, nível de privilégio UAC, suplemento COM do Office, modo protegido do Acrobat, aceleração de hardware GPU que renderiza o texto como textura, PDF digitalizado que precisa de OCR, DPI multimonitor; com comparação Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator e estimativas 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "pt-BR",
+   "url": "https://yoydao.github.io/pt-br/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Captura na tela morta no geral - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A captura na tela precisa do Youdao em segundo plano com captura habilitada; a versão oficial de desktop oferece captura inteligente / captura por área de transferência / captura OCR. A captura na tela usa um hook global injetado no app em primeiro plano para ler seu texto: precisa do processo do Youdao rodando + interruptor mestre de captura ativo + tecla de gatilho coincidindo. Se faltar um, parece «totalmente morta», muitas vezes confundido com software quebrado. Verifique se o ícone da bandeja está ativo (cinza = não roda, duplo clique para iniciar); Ajustes → Captura e seleção, marque «habilitar captura» e escolha o modo (passar o mouse / segurar Ctrl); reinicie o Youdao e tente de novo."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao A tradução por seleção não mostra pop-up - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A tradução por seleção precisa de «seleção» habilitada com «traduzir ao selecionar» marcado; pode traduzir ao selecionar ou por uma tecla. Seleção e captura são interruptores distintos: muitos habilitam captura mas não seleção, ou desativam «traduzir ao selecionar», daí «selecionar não mostra nada»; o atalho de seleção também pode estar ocupado. Ajustes → Captura e seleção, marque «habilitar tradução por seleção» e «traduzir ao selecionar»; se for por tecla, confirme que ela está livre; a seleção no navegador também precisa da extensão de captura."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Captura/seleção no Word / Office falha - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O Youdao integra ao Office via suplemento COM para tradução de seleção / frase; se o suplemento está desativado ou não registrado, falha. O Office desativa suplementos COM de terceiros por compatibilidade ou política; trocar de versão (ex. uma Educação nova) deixa o suplemento antigo não registrado para o novo Office, daí «antes funcionava, agora não». Word: Arquivo → Opções → Suplementos → embaixo «Gerenciar: Suplementos COM» → Ir → marque o suplemento Youdao; senão reinstale o Youdao para reregistrá-lo; verifique se a arquitetura do Youdao e do Office coincide."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Captura no PDF / Acrobat falha - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Versões oficiais suportam a captura na tela de PDF no Adobe Reader / Acrobat; versões «portáteis» não oficiais não capturam PDF, e o PDF deve ser texto, não imagem. Três causas: ① o «modo protegido» do Acrobat é uma sandbox que bloqueia a injeção de YodaoDict.api de terceiros; ② a divergência de arquitetura entre Acrobat 64 bits e um suplemento antigo do Youdao dá «suplemento incompatível»; ③ o PDF é uma digitalização (imagem, sem camada de texto). Desative no Acrobat Editar → Preferências → Segurança (avançada) → «Habilitar modo protegido na inicialização», abra o Youdao antes do Acrobat; para o aviso «incompatível» 64 bits, instale o Youdao mais recente, ou copie YodaoDict.api para plug_ins do Acrobat; para digitalizações use o OCR de captura potente."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Seleção/captura no Chrome / navegador falha - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox etc. precisam de uma extensão de captura do Youdao à parte; a versão oficial de desktop oferece a «captura Chrome». O navegador é sua própria sandbox: ① sem a extensão de captura do Youdao, o hook global não lê o texto do DOM; ② a aceleração de hardware GPU renderiza a página em textura sem camada legível; ③ interruptores adblock / segurança (ex. navegador 360) bloqueiam a captura. Instale a extensão de captura do Youdao para seu navegador (via ajustes do Youdao ou a loja); desative «usar aceleração de hardware» nos ajustes do navegador e reinicie; desative o adblock no navegador 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao O OCR de captura/região não funciona - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O OCR de captura precisa de um atalho de reconhecimento de captura definido (ex. Ctrl+Alt+O) e o módulo OCR baixado; você seleciona uma região de tela arrastando. O OCR de captura não precisa de camada de texto - reconhece por imagem a região selecionada, então precisa do módulo OCR baixado + um atalho livre + (macOS) permissão de gravação de tela para ler os pixels. Ajustes → Atalhos, atribua uma tecla sem conflito ao «OCR de captura»; baixe o módulo OCR no primeiro uso; no macOS conceda «Gravação de tela»; escolha uma região mais nítida se o reconhecimento falhar."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Conflito do atalho de captura / captura de tela - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Captura / seleção / reconhecimento de captura são todos personalizáveis em Atalhos; em conflito avisa, e você pode reatribuir ou redefinir. Atalhos globais são por ordem de chegada: uma ferramenta de captura, um método de entrada, QQ / WeChat ou outro dicionário podem ter a mesma combinação, então a tecla do Youdao não faz nada. Ajustes → Atalhos, atenção ao aviso de conflito; mude para uma combinação mais rara como Ctrl+Shift+letra / Alt+letra; feche apps que pegam teclas um a um para achar o culpado."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS captura / atalhos precisam de autorização - como resolver?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O macOS precisa conceder ao Youdao «Acessibilidade» (para monitorar atalhos / controlar) e «Gravação de tela» (para ler a tela em captura / captura de tela) em Ajustes do sistema → Privacidade e segurança. A sandbox do macOS exige permissões explícitas: sem «Acessibilidade» não ouve os atalhos globais, sem «Gravação de tela» não lê os pixels; atualizações costumam redefinir ambos. Ajustes do sistema → Privacidade e segurança → marque o Youdao em «Acessibilidade» e «Gravação de tela» e reinicie-o; reconceda após cada atualização do macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Idioma: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <strong>Português (BR)</strong> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao captura de palavras na tela / tradução por seleção / OCR / atalhos - busca de solução</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ptbr.webp"><img src="/img/cover_ptbr.png" alt="Ilustração da ferramenta de busca de solução de captura/seleção/captura de tela do Youdao" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: busca de solução de captura / seleção / captura de tela do Youdao (sintoma L1 + causa raiz L2 + comparação de rivais)</figcaption></figure>
+<p>A <strong>captura de palavras na tela</strong> do <strong>Youdao</strong> (consulta ao passar o mouse), a <strong>tradução por seleção</strong>, o <strong>OCR</strong> ou os <strong>atalhos</strong> pararam de repente? Esclareça três coisas primeiro: <strong>está não habilitado / sem permissão, é a compatibilidade de um app específico (Office / PDF / navegador), ou o conteúdo em si (digitalização / aceleração de hardware) sem texto legível?</strong> Busque o <strong>sintoma ou palavra-chave</strong> que tem (ex.: <code>captura</code>, <code>pdf</code>, <code>seleção</code>, <code>atalho</code>, <code>64 bits</code>, <code>OCR</code>): primeiro o <strong>sintoma L1 e o posicionamento oficial</strong>, depois a <strong>causa raiz L2 e a solução</strong>, por fim a comparação com rivais e casos reais. Instalar / configurar? Veja <a href="https://yoydao.com/">download do Youdao / guia de captura e seleção</a>.</p>
+<input id="q" placeholder="Digite um sintoma ou palavra-chave, ex. captura / pdf / seleção / atalho / 64 bits / OCR" autocomplete="off">
+<button id="go">Buscar</button>
+<div id="out"></div>
+<h2>Passo 1: divida em quatro grupos primeiro (L1 - não reinstale logo)</h2>
+<p>Quando a captura/seleção do Youdao para, 9 em cada 10 vezes é um de quatro grupos - descubra a culpa primeiro: ① <strong>habilitação/ajustes</strong> — o Youdao não roda em segundo plano (ícone da bandeja cinza), ou você não marcou «habilitar captura / seleção / traduzir ao selecionar», ou o gatilho de captura errado; ② <strong>permissões</strong> — no macOS «Acessibilidade + Gravação de tela» não concedidas, ou no Windows o alvo é um app elevado e o Youdao não roda como administrador; ③ <strong>compatibilidade do app</strong> — o suplemento COM do Youdao está desativado no Word/Excel, o modo protegido do Acrobat bloqueia a injeção, ou o navegador não tem a extensão de captura; ④ <strong>renderização/conteúdo</strong> — um PDF digitalizado é imagem (precisa de OCR), o navegador/PDF tem aceleração de hardware GPU que desenha o texto como textura, ou o DPI multimonitor desalinhado joga o pop-up fora da tela. Configuração completa: <a href="https://yoydao.com/tutorial/">guia de captura e seleção do Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Habilitação / ajustes</b><span class="cs">captura · seleção · tradução automática · OCR potente</span><div>Verifique se o Youdao roda em segundo plano (ícone da bandeja não cinza), vá em Ajustes → Captura e seleção e marque «habilitar captura», «habilitar seleção», «traduzir ao selecionar», e escolha o gatilho certo (passar o mouse / segurar Ctrl).</div></div><div class="catbox"><b>Permissões</b><span class="cs">macOS Acessibilidade+Gravação de tela · Windows administrador/UAC</span><div>macOS: Ajustes do sistema → Privacidade e segurança, conceda ao Youdao «Acessibilidade» e «Gravação de tela»; Windows: quando o alvo é «executado como administrador», execute o Youdao também como administrador (um hook só injeta no mesmo nível de privilégio).</div></div><div class="catbox"><b>Compatibilidade do app</b><span class="cs">Office COM · modo protegido Acrobat · 64 bits · extensão de navegador</span><div>Office: Arquivo → Opções → Suplementos → Suplementos COM, marque o suplemento Youdao; Acrobat: desative «Habilitar modo protegido na inicialização», e se preciso copie YodaoDict.api para plug_ins; navegador: instale a extensão de captura do Youdao.</div></div><div class="catbox"><b>Atalhos</b><span class="cs">conflito · personalizado · tecla OCR de captura</span><div>Ajustes → Atalhos, atenção ao aviso de conflito; mude para uma combinação menos comum como Ctrl+Shift / Alt+letra; dê ao OCR de captura sua própria tecla (ex. Ctrl+Alt+O, longe de outros apps).</div></div><div class="catbox"><b>Renderização / exibição</b><span class="cs">aceleração de hardware · digitalizações · DPI multimonitor · tela cheia</span><div>Um navegador/PDF com aceleração de hardware GPU renderiza o conteúdo em textura sem texto legível (desative a aceleração); um PDF digitalizado é imagem (use OCR); para pop-ups fora da tela em multimonitor marque «fixar posição da janela».</div></div><div class="catbox"><b>Rede / instalação</b><span class="cs">velocidade de captura · versão portátil · suplemento não carregado</span><div>Consultas online lentas? verifique a rede; instale sempre a versão oficial completa - versões «portáteis/leves» não oficiais não têm a DLL de hook de captura registrada, então a captura PDF/global simplesmente falha.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fluxo de triagem de falhas de captura/seleção do Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Triagem captura / seleção não funciona (quatro grupos primeiro: interruptores / permissões / app / conteúdo)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Captura morta</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Quatro grupos</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host autoverificável →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">interruptor off · sem permissão</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">App / conteúdo →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/navegador · digital/acel-hw</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Quatro causas raiz (leia causa / solução por item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Habilitação/ajustes</text><text x="32" y="234" fill="#555" font-size="11">captura · seleção · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Permissões</text><text x="206" y="234" fill="#555" font-size="11">mac Acessibilidade · win admin</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Compat. app</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · navegador</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Render/conteúdo</text><text x="554" y="234" fill="#555" font-size="11">digital · acel · multimonitor</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Fig 1: triagem de falhas de captura/seleção do Youdao - divida em quatro grupos, depois localize em host / app / conteúdo</figcaption></figure>
+<h2>Passo 2: a causa raiz mais ignorada → L2 (captura na tela = hook global / injeção de DLL)</h2>
+<p>Ideia-chave: <strong>a captura na tela não «lê a imagem da tela» - o Youdao injeta código de captura (um hook global / DLL) no outro app para ler seu buffer de texto</strong>. Isso explica a maioria das falhas «misteriosas»: ① <strong>nível de privilégio</strong> — um Youdao com direitos normais não consegue injetar em um app «executado como administrador» (e vice-versa), então «só esse app não captura» costuma ser privilégios desalinhados; ② <strong>arquitetura</strong> — hooks de 32/64 bits não se misturam, então um Youdao antigo no Acrobat 64 bits dá «suplemento incompatível, não foi possível carregar YodaoDict.api»; ③ <strong>sandbox</strong> — o «modo protegido» do Acrobat é uma sandbox que bloqueia a injeção de .api de terceiros; ④ <strong>aceleração de hardware</strong> — quando um navegador/PDF renderiza o conteúdo em textura GPU não sobra «texto legível» para capturar; ⑤ <strong>digitalizações</strong> — um PDF só de imagem não tem camada de texto, use o «OCR de captura potente». Abaixo o painel de autoverificação; mais abaixo a comparação com rivais e as estimativas 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Painel de autoverificação pré-captura do Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Painel de autoverificação de habilitação da captura (verde = confirmado / vermelho = fácil de ignorar)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Item</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Veredito</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Estado</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao em segundo plano (bandeja não cinza)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">processo ativo</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmado</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Marcado captura / seleção / traduzir ao selecionar</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 interruptores</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmado</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Gatilho de captura certo (passar o mouse / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">gatilho</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmado</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">App alvo compatível (suplemento Office / PDF não protegido / extensão navegador)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">lado app</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">a verificar</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Permissões concedidas (mac Acessibilidade+Gravação / win admin)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">privilégio</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">confirmado</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Sem conflito de atalho + não digitalizado / OCR ligado</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">fácil de ignorar</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">a verificar</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Nota: vermelho = os dois mais ignorados - compatibilidade de app específico (Office / PDF / navegador) e conteúdo/atalho (digitalização precisa de OCR, conflitos de tecla); verifique esses dois primeiro.</text></svg><figcaption>Fig 2: painel de autoverificação de habilitação da captura (verde = confirmado / vermelho = fácil de ignorar)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ptbr.webp"><img src="/img/board_ptbr.png" alt="Ilustração do painel de autoverificação pré-captura do Youdao com itens verde/vermelho" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: verifique primeiro «rodando + três interruptores + permissões», depois «compatibilidade do app + conteúdo/atalho» - os dois últimos são os mais ignorados</figcaption></figure>
+<h2>Tabela completa de sintomas (sintoma L1 / posicionamento oficial · causa raiz L2)</h2>
+<table id="tbl"></table>
+<h2>Comparação de ferramentas rivais de seleção/captura (modo de captura / OCR / plataforma / preço · dados públicos)</h2>
+<table class="cmp"><tr><th>Software</th><th>Captura na tela / seleção</th><th>OCR de captura</th><th>Plataformas</th><th>Dicionários adicionais</th><th>Preço (est.)</th></tr><tr><td>Youdao</td><td>captura global + tradução por seleção</td><td>OCR de captura + captura potente</td><td>Win / Mac / iOS / Android / Web / extensão navegador</td><td>mdx fraco</td><td>núcleo grátis (alguma assinatura / sem anúncios)</td></tr><tr><td>Eudic</td><td>seleção + captura na tela</td><td>captura de tela</td><td>Win / Mac / iOS / Android</td><td>mdx forte (bibliotecas enormes)</td><td>base grátis + avançada paga</td></tr><tr><td>iCIBA (Kingsoft)</td><td>captura + seleção</td><td>tradução de captura</td><td>Win / Mac / móvel / Web</td><td>média</td><td>grátis (anúncios) + assinatura</td></tr><tr><td>Saladict</td><td>seleção no navegador (extensão)</td><td>depende da página / OCR requer config</td><td>extensão de navegador (Chrome / Edge / Firefox)</td><td>fontes configuráveis</td><td>grátis · código aberto</td></tr><tr><td>Microsoft Translator / Bing</td><td>seleção a nível de sistema fraca</td><td>integrado ao Office + captura</td><td>Win / Office / Edge / móvel</td><td>nenhum</td><td>grátis</td></tr></table><section class="i4data">
+<h2>Causas de falha de captura do Youdao e comparação de ferramentas de seleção (estimativa 2026)</h2>
+<p>O seguinte são <strong>estimativas 2026</strong> sintetizadas da ajuda / FAQ oficial do Youdao, material público de rivais e solução de problemas de desenvolvedores (não compromissos do fabricante, não medição direta; para referência, muda por versão e SO):</p>
+<table>
+<tr><th>Dimensão</th><th>Estimativa / comparação</th></tr>
+<tr><td>Divisão das causas de falha de captura (comunidade · est.)</td><td><strong>não habilitado / permissões ~40%</strong> &gt; <strong>compatibilidade de app (Office/PDF/navegador) ~25%</strong> &gt; conflito de atalho ~20% &gt; renderização / conteúdo (acel-hw / digitalização) ~15%</td></tr>
+<tr><td>O que é a captura de fato</td><td>captura na tela = <strong>hook global / injeção de DLL</strong> que lê o buffer de texto do app alvo (não lê a imagem da tela); daí a influência de nível de privilégio, arquitetura, sandbox, aceleração de hardware</td></tr>
+<tr><td>Captura por plataforma (est.)</td><td>desktop (Win/Mac) suporta <strong>captura global na tela + seleção + OCR de captura</strong>; móvel é sobretudo seleção / tradução por foto; web / navegador precisa de uma <strong>extensão de captura</strong></td></tr>
+<tr><td>Resumo de ferramentas de seleção / captura (est.)</td><td>Youdao = todas as plataformas + tradução IA forte; Eudic = bibliotecas adicionais fortes (mdx); iCIBA = grátis em massa; Saladict = navegador de código aberto; Microsoft = integrado ao Office</td></tr>
+<tr><td>Faixas de preço (est.)</td><td>Youdao / iCIBA <strong>núcleo grátis</strong> (assinatura para sem anúncios / extras) · Eudic <strong>avançada paga</strong> · Saladict <strong>grátis código aberto</strong> · Microsoft Translator <strong>grátis</strong></td></tr>
+</table>
+<p><small>Base da estimativa: linha de base das fontes + extrapolação temporal (ajuda / FAQ oficial de cidian.youdao.com, material público de Eudic / iCIBA / Saladict / Microsoft, artigos públicos de desenvolvedores, 2026); muda com a versão e política de SO de cada fornecedor. Baseie-se nas informações oficiais mais recentes. Localização LLM.</small></p>
+</section>
+<h2>Casos reais - leitura rápida</h2>
+<ul class="scenes"><li>Não captura no navegador, mas Bloco de Notas / Word vão: normalmente o navegador não tem a extensão de captura do Youdao, ou a aceleração de hardware GPU renderizou a página em textura → instale a extensão, ou desative «usar aceleração de hardware» e reinicie.</li><li>Acrobat 64 bits, selecionar num PDF não faz nada, «suplemento incompatível, não foi possível carregar YodaoDict.api»: desative no Acrobat Editar → Preferências → Segurança (avançada) → «Habilitar modo protegido na inicialização», abra o Youdao antes do Acrobat; se persistir, copie YodaoDict.api da pasta do Youdao para plug_ins do Acrobat.</li><li>O texto do PDF é selecionável mas não captura, ou a página inteira não: ou é digitalização (PDF imagem sem camada de texto, precisa de «OCR de captura potente»), ou o modo protegido do Acrobat / um bloqueio do Autotray.exe impede a injeção.</li><li>Após instalar o Office (sobretudo Educação / 365) o Word não traduz uma seleção: o suplemento COM do Office do Youdao está desativado → Arquivo → Opções → Suplementos → Suplementos COM → habilite; senão reinstale o Youdao para reregistrá-lo.</li><li>Após uma atualização do SO, captura e atalhos morrem no macOS: a atualização redefiniu as permissões → reconceda ao Youdao «Acessibilidade» e «Gravação de tela» em Privacidade e segurança e reinicie-o.</li><li>A captura funciona em apps normais mas falha dentro de um app «executado como administrador»: níveis de privilégio diferentes impedem o hook global de injetar no processo elevado → clique direito no Youdao «Executar como administrador».</li><li>Multimonitor / alto DPI: o pop-up de captura «voa» para algum lugar invisível: causado pela escala DPI por tela desalinhada → marque «fixar posição da janela» nos ajustes de captura para prendê-lo no canto superior esquerdo da tela principal.</li></ul><div class="related"><h2>Relacionado</h2><ul><li><a href="https://yoydao.com/">Download do Youdao / guia de configuração</a></li><li><a href="https://yoydao.com/pt-br/tutorial/">Guia de captura e seleção do Youdao</a></li><li><a href="https://yoydao.com/pt-br/tools/youdao-word-capture/">Busca de solução de captura do Youdao (tabela completa de referência)</a></li><li><a href="https://yoidao.com/pt-br/">Códigos de erro da API Youdao Zhiyun (site irmão)</a></li></ul></div></main>
+<footer>As notas de captura/seleção/OCR/compatibilidade de 64 bits são compiladas das FAQ e ajuda oficiais de desktop do Youdao (cidian.youdao.com); a solução do suplemento do Office referencia o Q&A oficial da Microsoft, e as notas do Acrobat 64 bits «não foi possível carregar YodaoDict.api / desativar o modo protegido» vêm de artigos públicos de desenvolvedores (reformulado). As comparações vêm de material público de Eudic, iCIBA, Saladict e Microsoft Translator. Proporções/plataformas/preços 2026 são estimativas, não compromissos do fabricante nem medição direta. Localização LLM; baseie-se nas informações oficiais mais recentes de cada fornecedor.<br>Página de ferramenta · não substitui o cliente oficial</footer>
+</div>
+<script src="/pt-br/codes.js"></script><script src="/app.js"></script>
+</body></html>
