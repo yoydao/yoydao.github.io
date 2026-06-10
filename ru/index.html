@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao захват слов с экрана/перевод по выделению/OCR/горячие клавиши не работают - причины и решение (PDF, Word, браузер, 64-бит)</title>
+<meta name="description" content="Захват слов с экрана Youdao (поиск по наведению), перевод по выделению, OCR-захват или горячие клавиши не работают? Найдите симптом (захват мёртв / нет всплытия при выделении / захват в Word-Office / захват в PDF-Acrobat / выделение в Chrome / OCR-захват / конфликт горячих клавиш / разрешения macOS / окно вне экрана на мультимониторе / 64-бит / портативная сборка) — симптом L1 и официальная позиция плюс корневая причина L2: глобальный хук / инъекция DLL, уровень привилегий UAC, COM-надстройка Office, защищённый режим Acrobat, аппаратное ускорение GPU превращает текст в текстуру, скан-PDF требует OCR, DPI мультимонитора; со сравнением Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator и оценками 2026.">
+<link rel="canonical" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao поиск решения захвата/выделения/OCR/горячих клавиш",
+   "url": "https://yoydao.github.io/ru/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "ru",
+   "description": "Захват слов с экрана Youdao (поиск по наведению), перевод по выделению, OCR-захват или горячие клавиши не работают? Найдите симптом (захват мёртв / нет всплытия при выделении / захват в Word-Office / захват в PDF-Acrobat / выделение в Chrome / OCR-захват / конфликт горячих клавиш / разрешения macOS / окно вне экрана на мультимониторе / 64-бит / портативная сборка) — симптом L1 и официальная позиция плюс корневая причина L2: глобальный хук / инъекция DLL, уровень привилегий UAC, COM-надстройка Office, защищённый режим Acrobat, аппаратное ускорение GPU превращает текст в текстуру, скан-PDF требует OCR, DPI мультимонитора; со сравнением Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator и оценками 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "ru",
+   "url": "https://yoydao.github.io/ru/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Захват экрана полностью мёртв - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Захват экрана требует, чтобы Youdao работал в фоне с включённым захватом; официальная настольная сборка предлагает умный захват / захват из буфера / OCR-захват. Захват экрана использует глобальный хук, внедрённый в приложение на переднем плане, чтобы читать его текст: нужны работающий процесс Youdao + активный главный переключатель захвата + совпадающая клавиша-триггер. Если чего-то нет, выглядит «совсем мёртвым», часто принимают за поломку. Проверьте, активен ли значок в трее (серый = не работает, двойной клик для запуска); Настройки → Захват и выделение, отметьте «включить захват» и выберите режим (наведение / удержание Ctrl); перезапустите Youdao и попробуйте снова."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Перевод по выделению не показывает окно - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Перевод по выделению требует включённого «выделения» с отмеченным «автоперевод при выделении»; может переводить при выделении или по клавише. Выделение и захват — разные переключатели: многие включают захват, но не выделение, или отключают «автоперевод при выделении», отсюда «выделение ничего не показывает»; клавиша выделения тоже может быть занята. Настройки → Захват и выделение, отметьте «включить перевод по выделению» и «автоперевод при выделении»; если по клавише, проверьте, что она свободна; выделение в браузере тоже требует расширения захвата."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Захват/выделение в Word / Office не работает - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao интегрируется с Office через COM-надстройку для перевода выделения / фразы; если надстройка отключена или не зарегистрирована, не работает. Office отключает сторонние COM-надстройки по совместимости или политике; смена версии (напр. новый Education) оставляет старую надстройку незарегистрированной для нового Office, отсюда «раньше работало, теперь нет». Word: Файл → Параметры → Надстройки → внизу «Управление: Надстройки COM» → Перейти → отметьте надстройку Youdao; иначе переустановите Youdao для перерегистрации; убедитесь, что разрядность Youdao и Office совпадает."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Захват в PDF / Acrobat не работает - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Официальные сборки поддерживают захват экрана PDF в Adobe Reader / Acrobat; неофициальные «портативные» сборки не могут захватывать PDF, а PDF должен быть текстом, не изображением. Три причины: ① «защищённый режим» Acrobat это песочница, блокирующая инъекцию стороннего YodaoDict.api; ② несовпадение разрядности между 64-битным Acrobat и старым плагином Youdao даёт «несовместимый плагин»; ③ PDF это скан (изображение без текстового слоя). Отключите в Acrobat Редактирование → Установки → Защита (расширенная) → «Включить защищённый режим при запуске», откройте Youdao перед Acrobat; при сообщении «несовместимо» на 64-бит установите свежий Youdao, или скопируйте YodaoDict.api в plug_ins Acrobat; для сканов используйте мощный OCR-захват."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Выделение/захват в Chrome / браузере не работает - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox и т.п. требуют отдельного расширения захвата Youdao; официальная настольная сборка предлагает «захват Chrome». Браузер — своя песочница: ① без расширения захвата Youdao глобальный хук не читает текст DOM; ② аппаратное ускорение GPU рендерит страницу в текстуру без читаемого слоя; ③ переключатели adblock / безопасности (напр. браузер 360) блокируют захват. Установите расширение захвата Youdao для вашего браузера (через настройки Youdao или магазин); отключите «использовать аппаратное ускорение» в настройках браузера и перезапустите; отключите adblock в браузере 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR-перевод скриншота/области не работает - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR скриншота требует заданной горячей клавиши распознавания (напр. Ctrl+Alt+O) и загруженного модуля OCR; вы выделяете область экрана перетаскиванием. OCR скриншота не требует текстового слоя - он распознаёт выделенную область по изображению, поэтому нужны загруженный модуль OCR + свободная горячая клавиша + (macOS) разрешение записи экрана для чтения пикселей. Настройки → Горячие клавиши, задайте бесконфликтную клавишу для «OCR скриншота»; загрузите модуль OCR при первом использовании; в macOS выдайте «Запись экрана»; выберите более чёткую область, если распознавание плохое."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Конфликт горячей клавиши захвата / скриншота - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Захват / выделение / распознавание скриншота — всё настраивается в Горячих клавишах; при конфликте предупреждает, можно переназначить или сбросить. Глобальные горячие клавиши работают по принципу «кто первый»: инструмент скриншотов, метод ввода, QQ / WeChat или другой словарь могут держать ту же комбинацию, поэтому клавиша Youdao не реагирует. Настройки → Горячие клавиши, следите за предупреждением о конфликте; смените на более редкую комбинацию вроде Ctrl+Shift+буква / Alt+буква; закрывайте приложения, держащие клавиши, по одному, чтобы найти виновника."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS захват / горячие клавиши требуют авторизации - как решить?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS должна выдать Youdao «Универсальный доступ» (мониторить горячие клавиши / управлять) и «Запись экрана» (читать экран для захвата / скриншота) в Системных настройках → Конфиденциальность и безопасность. Песочница macOS требует явных разрешений: без «Универсального доступа» не слышит глобальные горячие клавиши, без «Записи экрана» не читает пиксели; обновления часто сбрасывают оба. Системные настройки → Конфиденциальность и безопасность → отметьте Youdao в «Универсальном доступе» и «Записи экрана» и перезапустите; выдавайте заново после каждого обновления macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Язык: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <strong>Русский</strong> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao захват слов с экрана / перевод по выделению / OCR / горячие клавиши - поиск решения</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_ru.webp"><img src="/img/cover_ru.png" alt="Иллюстрация инструмента Youdao для поиска решения захвата/выделения/скриншота" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Рис: поиск решения захвата / выделения / скриншота Youdao (симптом L1 + корневая причина L2 + сравнение конкурентов)</figcaption></figure>
+<p><strong>Захват слов с экрана</strong> <strong>Youdao</strong> (поиск по наведению), <strong>перевод по выделению</strong>, <strong>OCR</strong> или <strong>горячие клавиши</strong> внезапно перестали работать? Сначала разберитесь в трёх вещах: <strong>не включено / нет разрешения, совместимость конкретного приложения (Office / PDF / браузер), или сам контент (скан / аппаратное ускорение) без читаемого текста?</strong> Найдите <strong>симптом или ключевое слово</strong> (например <code>захват</code>, <code>pdf</code>, <code>выделение</code>, <code>горячая клавиша</code>, <code>64-бит</code>, <code>OCR</code>): сначала <strong>симптом L1 и официальная позиция</strong>, затем <strong>корневая причина L2 и решение</strong>, в конце сравнение с конкурентами и реальные случаи. Установка / настройка? См. <a href="https://yoydao.com/">загрузка Youdao / руководство по захвату и выделению</a>.</p>
+<input id="q" placeholder="Введите симптом или ключевое слово, напр. захват / pdf / выделение / горячая клавиша / 64-бит / OCR" autocomplete="off">
+<button id="go">Найти</button>
+<div id="out"></div>
+<h2>Шаг 1: сначала разделите на четыре группы (L1 - не переустанавливайте сразу)</h2>
+<p>Когда захват/выделение Youdao перестаёт работать, в 9 случаях из 10 это одна из четырёх групп - сначала найдите, чья вина: ① <strong>включение/настройки</strong> — Youdao не работает в фоне (значок в трее серый), или не отмечено «включить захват / выделение / автоперевод при выделении», или неверный триггер захвата; ② <strong>разрешения</strong> — в macOS не выданы «Универсальный доступ + Запись экрана», или в Windows цель — приложение с повышенными правами, а Youdao не запущен от администратора; ③ <strong>совместимость приложения</strong> — COM-надстройка Youdao отключена в Word/Excel, защищённый режим Acrobat блокирует инъекцию, или в браузере нет расширения захвата; ④ <strong>рендеринг/контент</strong> — скан-PDF это изображение (нужен OCR), браузер/PDF с аппаратным ускорением GPU рисует текст как текстуру, или несовпадение DPI мультимонитора выбрасывает окно за экран. Полная настройка: <a href="https://yoydao.com/tutorial/">руководство по захвату и выделению Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Включение / настройки</b><span class="cs">захват · выделение · автоперевод · мощный OCR</span><div>Убедитесь, что Youdao работает в фоне (значок в трее не серый), зайдите в Настройки → Захват и выделение и отметьте «включить захват», «включить выделение», «автоперевод при выделении», выберите правильный триггер (наведение / удержание Ctrl).</div></div><div class="catbox"><b>Разрешения</b><span class="cs">macOS Универсальный доступ+Запись экрана · Windows администратор/UAC</span><div>macOS: Системные настройки → Конфиденциальность и безопасность, выдайте Youdao «Универсальный доступ» и «Запись экрана»; Windows: когда цель «запущена от администратора», запускайте Youdao тоже от администратора (хук внедряется только на том же уровне привилегий).</div></div><div class="catbox"><b>Совместимость приложения</b><span class="cs">Office COM · защищённый режим Acrobat · 64-бит · расширение браузера</span><div>Office: Файл → Параметры → Надстройки → Надстройки COM, отметьте надстройку Youdao; Acrobat: отключите «Включить защищённый режим при запуске», при необходимости скопируйте YodaoDict.api в plug_ins; браузер: установите расширение захвата Youdao.</div></div><div class="catbox"><b>Горячие клавиши</b><span class="cs">конфликт · своя · клавиша OCR-захвата</span><div>Настройки → Горячие клавиши, следите за предупреждением о конфликте; смените на менее частую комбинацию вроде Ctrl+Shift / Alt+буква; дайте OCR-захвату свою клавишу (напр. Ctrl+Alt+O, подальше от других приложений).</div></div><div class="catbox"><b>Рендеринг / отображение</b><span class="cs">аппаратное ускорение · сканы · DPI мультимонитор · полный экран</span><div>Браузер/PDF с аппаратным ускорением GPU рендерит контент в текстуру без читаемого текста (отключите ускорение); скан-PDF это изображение (используйте OCR); при окне за экраном на мультимониторе отметьте «зафиксировать положение окна».</div></div><div class="catbox"><b>Сеть / установка</b><span class="cs">скорость захвата · портативная сборка · надстройка не загружена</span><div>Онлайн-поиск медленный? проверьте сеть; всегда ставьте официальную полную сборку - неофициальные «портативные/лёгкие» сборки лишены зарегистрированной DLL хука захвата, поэтому PDF/глобальный захват просто не работает.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Поток триажа сбоев захвата/выделения Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Триаж захват / выделение не работает (сначала четыре группы: переключатели / разрешения / приложение / контент)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Захват мёртв</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Четыре группы</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Хост самопроверяем →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">переключатель выкл · нет разрешения</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Приложение / контент →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/браузер · скан/аппарат-ускор</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Четыре корневые причины (читать причину / решение по пункту)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Включение/настр.</text><text x="32" y="234" fill="#555" font-size="11">захват · выделение · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Разрешения</text><text x="206" y="234" fill="#555" font-size="11">mac Универс. доступ · win админ</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Совмест. прилож.</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · браузер</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Рендер/контент</text><text x="554" y="234" fill="#555" font-size="11">скан · ускор · мультимонитор</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Рис 1: триаж сбоев захвата/выделения Youdao - разделите на четыре группы, затем локализуйте на хост / приложение / контент</figcaption></figure>
+<h2>Шаг 2: самая упускаемая корневая причина → L2 (захват экрана = глобальный хук / инъекция DLL)</h2>
+<p>Ключевая мысль: <strong>захват экрана не «читает изображение экрана» - Youdao внедряет код захвата (глобальный хук / DLL) в другое приложение, чтобы читать его текстовый буфер</strong>. Это объясняет большинство «загадочных» сбоев: ① <strong>уровень привилегий</strong> — Youdao с обычными правами не может внедриться в приложение, «запущенное от администратора» (и наоборот), поэтому «только в этом приложении нет захвата» обычно значит несовпадение прав; ② <strong>разрядность</strong> — 32/64-битные хуки не смешиваются, поэтому старый Youdao в 64-битном Acrobat выдаёт «несовместимый плагин, не удаётся загрузить YodaoDict.api»; ③ <strong>песочница</strong> — «защищённый режим» Acrobat это песочница, блокирующая инъекцию стороннего .api; ④ <strong>аппаратное ускорение</strong> — когда браузер/PDF рендерит контент в текстуру GPU, не остаётся «читаемого текста» для захвата; ⑤ <strong>сканы</strong> — PDF только из изображения не имеет текстового слоя, используйте «мощный OCR-захват». Ниже панель самопроверки; далее сравнение с конкурентами и оценки 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Панель самопроверки перед захватом Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Панель самопроверки включения захвата (зелёный = подтверждено / красный = легко упустить)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Пункт проверки</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Вердикт</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Статус</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao работает в фоне (трей не серый)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">процесс жив</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">подтверждено</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Отмечено захват / выделение / автоперевод при выделении</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 переключателя</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">подтверждено</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Верный триггер захвата (наведение / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">триггер</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">подтверждено</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Целевое приложение совместимо (надстройка Office / PDF не защищён / расширение браузера)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">сторона прилож.</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">проверить</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Разрешения выданы (mac Универс. доступ+Запись / win админ)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">уровень прав</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">подтверждено</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Нет конфликта горячих клавиш + не скан / OCR вкл</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">легко упустить</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">проверить</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Прим.: красный = два самых упускаемых - совместимость конкретного приложения (Office / PDF / браузер) и контент/горячая клавиша (скан требует OCR, конфликты клавиш); проверьте эти два первыми.</text></svg><figcaption>Рис 2: панель самопроверки включения захвата (зелёный = подтверждено / красный = легко упустить)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_ru.webp"><img src="/img/board_ru.png" alt="Иллюстрация панели самопроверки перед захватом Youdao с зелёными/красными пунктами" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Рис: сначала проверьте «работает + три переключателя + разрешения», потом «совместимость приложения + контент/горячая клавиша» - последние два упускают чаще всего</figcaption></figure>
+<h2>Полная таблица симптомов (симптом L1 / официальная позиция · корневая причина L2)</h2>
+<table id="tbl"></table>
+<h2>Сравнение конкурирующих инструментов выделения/захвата (режим захвата / OCR / платформа / цена · публичные данные)</h2>
+<table class="cmp"><tr><th>ПО</th><th>Захват экрана / выделение</th><th>OCR скриншота</th><th>Платформы</th><th>Доп. словари</th><th>Цена (оценка)</th></tr><tr><td>Youdao</td><td>глобальный захват + перевод по выделению</td><td>OCR скриншота + мощный захват</td><td>Win / Mac / iOS / Android / Web / расширение браузера</td><td>mdx слабо</td><td>ядро бесплатно (часть подписка / без рекламы)</td></tr><tr><td>Eudic</td><td>выделение + захват экрана</td><td>захват скриншота</td><td>Win / Mac / iOS / Android</td><td>mdx сильно (огромные библиотеки)</td><td>база бесплатно + расширенная платно</td></tr><tr><td>iCIBA (Kingsoft)</td><td>захват + выделение</td><td>перевод скриншота</td><td>Win / Mac / мобайл / Web</td><td>средне</td><td>бесплатно (реклама) + подписка</td></tr><tr><td>Saladict</td><td>выделение в браузере (расширение)</td><td>зависит от страницы / OCR нужна настройка</td><td>расширение браузера (Chrome / Edge / Firefox)</td><td>настраиваемые источники</td><td>бесплатно · открытый код</td></tr><tr><td>Microsoft Translator / Bing</td><td>системное выделение слабо</td><td>встроено в Office + скриншот</td><td>Win / Office / Edge / мобайл</td><td>нет</td><td>бесплатно</td></tr></table><section class="i4data">
+<h2>Причины сбоев захвата Youdao и сравнение инструментов выделения (оценка 2026)</h2>
+<p>Ниже <strong>оценки 2026</strong>, сведённые из официальной справки / FAQ Youdao, публичных материалов конкурентов и устранения проблем разработчиками (не обязательства производителя, не прямые замеры; для справки, меняется с версией и ОС):</p>
+<table>
+<tr><th>Измерение</th><th>Оценка / сравнение</th></tr>
+<tr><td>Распределение причин сбоев захвата (сообщество · оценка)</td><td><strong>не включено / разрешения ~40%</strong> &gt; <strong>совместимость приложения (Office/PDF/браузер) ~25%</strong> &gt; конфликт горячих клавиш ~20% &gt; рендеринг / контент (аппарат-ускор / скан) ~15%</td></tr>
+<tr><td>Что такое захват на деле</td><td>захват экрана = <strong>глобальный хук / инъекция DLL</strong>, читающий текстовый буфер целевого приложения (не читает изображение экрана); отсюда влияние уровня привилегий, разрядности, песочницы, аппаратного ускорения</td></tr>
+<tr><td>Захват по платформам (оценка)</td><td>десктоп (Win/Mac) поддерживает <strong>глобальный захват экрана + выделение + OCR скриншота</strong>; мобайл в основном выделение / перевод по фото; веб / браузер требует <strong>расширение захвата</strong></td></tr>
+<tr><td>Обзор инструментов выделения / захвата (оценка)</td><td>Youdao = все платформы + сильный ИИ-перевод; Eudic = сильные доп. библиотеки (mdx); iCIBA = массовый бесплатный; Saladict = браузер с открытым кодом; Microsoft = встроен в Office</td></tr>
+<tr><td>Ценовые уровни (оценка)</td><td>Youdao / iCIBA <strong>ядро бесплатно</strong> (подписка для без рекламы / экстра) · Eudic <strong>расширенная платно</strong> · Saladict <strong>бесплатно открытый код</strong> · Microsoft Translator <strong>бесплатно</strong></td></tr>
+</table>
+<p><small>Основа оценки: базовая линия источников + временная экстраполяция (официальная справка / FAQ cidian.youdao.com, публичные материалы Eudic / iCIBA / Saladict / Microsoft, публичные статьи разработчиков, 2026); меняется с версией и политикой ОС каждого поставщика. Ориентируйтесь на свежую официальную информацию. LLM-локализация.</small></p>
+</section>
+<h2>Реальные случаи - быстрый разбор</h2>
+<ul class="scenes"><li>Нет захвата в браузере, но Блокнот / Word работают: обычно в браузере нет расширения захвата Youdao, или аппаратное ускорение GPU отрендерило страницу в текстуру → установите расширение, или отключите «использовать аппаратное ускорение» и перезапустите.</li><li>Acrobat 64-бит, выделение в PDF ничего не даёт, «несовместимый плагин, не удаётся загрузить YodaoDict.api»: отключите в Acrobat Редактирование → Установки → Защита (расширенная) → «Включить защищённый режим при запуске», откройте Youdao перед Acrobat; если не помогает, скопируйте YodaoDict.api из папки Youdao в plug_ins Acrobat.</li><li>Текст PDF выделяется, но не захватывается, или вся страница не захватывается: либо это скан (PDF-изображение без текстового слоя, нужен «мощный OCR-захват»), либо защищённый режим Acrobat / блокировка Autotray.exe мешает инъекции.</li><li>После установки Office (особенно Education / 365) Word не переводит выделение: COM-надстройка Office от Youdao отключена → Файл → Параметры → Надстройки → Надстройки COM → включите; иначе переустановите Youdao для перерегистрации.</li><li>После обновления ОС захват и горячие клавиши мертвы на macOS: обновление сбросило разрешения → заново выдайте Youdao «Универсальный доступ» и «Запись экрана» в Конфиденциальности и безопасности и перезапустите.</li><li>Захват работает в обычных приложениях, но не внутри приложения, «запущенного от администратора»: разные уровни привилегий не дают глобальному хуку внедриться в повышенный процесс → правый клик по Youdao «Запуск от имени администратора».</li><li>Мультимонитор / высокий DPI: окно захвата «улетает» в невидимое место: из-за несовпадения масштаба DPI по экранам → отметьте «зафиксировать положение окна» в настройках захвата, чтобы закрепить его в левом верхнем углу главного экрана.</li></ul><div class="related"><h2>Связанное</h2><ul><li><a href="https://yoydao.com/">Загрузка Youdao / руководство по настройке</a></li><li><a href="https://yoydao.com/ru/tutorial/">Руководство по захвату и выделению Youdao</a></li><li><a href="https://yoydao.com/ru/tools/youdao-word-capture/">Поиск решения захвата Youdao (авторитетная полная таблица)</a></li><li><a href="https://yoidao.com/ru/">Коды ошибок API Youdao Zhiyun (родственный сайт)</a></li></ul></div></main>
+<footer>Заметки о захвате/выделении/OCR/совместимости 64-бит собраны из официальных настольных FAQ и справки Youdao (cidian.youdao.com); устранение проблем с надстройкой Office ссылается на официальный Q&A Microsoft, а заметки Acrobat 64-бит «не удаётся загрузить YodaoDict.api / отключить защищённый режим» — из публичных статей разработчиков (переформулировано). Сравнения собраны из публичных материалов Eudic, iCIBA, Saladict и Microsoft Translator. Доли/платформы/цены 2026 — оценки, не обязательства производителя и не прямые замеры. LLM-локализация; ориентируйтесь на свежую официальную информацию каждого поставщика.<br>Страница инструмента · не заменяет официальный клиент</footer>
+</div>
+<script src="/ru/codes.js"></script><script src="/app.js"></script>
+</body></html>
