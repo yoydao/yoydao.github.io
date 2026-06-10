@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="th"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao จับคำบนหน้าจอ/เลือกแปล/OCR/ปุ่มลัด ใช้ไม่ได้ - สาเหตุและวิธีแก้ (PDF, Word, เบราว์เซอร์, 64 บิต)</title>
+<meta name="description" content="จับคำบนหน้าจอ Youdao (ชี้เมาส์เพื่อค้น) เลือกแปล OCR ภาพหน้าจอ หรือปุ่มลัดใช้ไม่ได้? ค้นหาอาการ (จับตาย / ไม่ขึ้นป๊อปอัปเมื่อเลือก / จับใน Word-Office / จับใน PDF-Acrobat / เลือกในเบราว์เซอร์ Chrome / OCR / ปุ่มลัดชน / สิทธิ์ macOS / ป๊อปอัปนอกจอเมื่อหลายจอ / 64 บิต / เวอร์ชันพกพา) เพื่อดูอาการ L1 และตำแหน่งทางการ พร้อมสาเหตุราก L2: ฮุกส่วนกลาง / ฉีด DLL, ระดับสิทธิ์ UAC, ส่วนเสริม COM ของ Office, โหมดป้องกัน Acrobat, การเร่งฮาร์ดแวร์ GPU เรนเดอร์ข้อความเป็นพื้นผิว, PDF สแกนต้อง OCR, DPI หลายจอ; พร้อมเปรียบเทียบ Youdao กับ Eudic / iCIBA / Saladict / Microsoft Translator และประมาณการ 2026.">
+<link rel="canonical" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao ค้นหาวิธีแก้ จับ/เลือก/OCR/ปุ่มลัด",
+   "url": "https://yoydao.github.io/th/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "th",
+   "description": "จับคำบนหน้าจอ Youdao (ชี้เมาส์เพื่อค้น) เลือกแปล OCR ภาพหน้าจอ หรือปุ่มลัดใช้ไม่ได้? ค้นหาอาการ (จับตาย / ไม่ขึ้นป๊อปอัปเมื่อเลือก / จับใน Word-Office / จับใน PDF-Acrobat / เลือกในเบราว์เซอร์ Chrome / OCR / ปุ่มลัดชน / สิทธิ์ macOS / ป๊อปอัปนอกจอเมื่อหลายจอ / 64 บิต / เวอร์ชันพกพา) เพื่อดูอาการ L1 และตำแหน่งทางการ พร้อมสาเหตุราก L2: ฮุกส่วนกลาง / ฉีด DLL, ระดับสิทธิ์ UAC, ส่วนเสริม COM ของ Office, โหมดป้องกัน Acrobat, การเร่งฮาร์ดแวร์ GPU เรนเดอร์ข้อความเป็นพื้นผิว, PDF สแกนต้อง OCR, DPI หลายจอ; พร้อมเปรียบเทียบ Youdao กับ Eudic / iCIBA / Saladict / Microsoft Translator และประมาณการ 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "th",
+   "url": "https://yoydao.github.io/th/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao จับหน้าจอตายทั้งหมด แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "การจับหน้าจอต้องให้ Youdao อยู่เบื้องหลังโดยเปิดจับ; เวอร์ชันเดสก์ท็อปทางการมีจับอัจฉริยะ / จับคลิปบอร์ด / จับ OCR. การจับหน้าจอใช้ฮุกส่วนกลางที่ฉีดเข้าแอปหน้าฉากเพื่ออ่านข้อความ: ต้องมีกระบวนการ Youdao ทำงาน + สวิตช์จับหลักเปิด + ปุ่มทริกเกอร์ตรงกัน. ขาดอย่างใดก็ดู «ตายสนิท» มักเข้าใจผิดว่าซอฟต์แวร์เสีย. ตรวจไอคอนถาดว่ายังทำงาน (เทา = ไม่ทำงาน ดับเบิลคลิกเพื่อเริ่ม); ตั้งค่า → จับและเลือก ติ๊ก «เปิดจับ» แล้วเลือกโหมด (ชี้เมาส์ / กด Ctrl); เริ่ม Youdao ใหม่แล้วลองอีก."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao เลือกแปลไม่ขึ้นป๊อปอัป แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "เลือกแปลต้องเปิด «เลือก» โดยติ๊ก «แปลอัตโนมัติเมื่อเลือก»; แปลได้เมื่อเลือกหรือด้วยปุ่ม. เลือกกับจับเป็นสวิตช์แยก: หลายคนเปิดจับแต่ไม่เปิดเลือก หรือปิด «แปลอัตโนมัติเมื่อเลือก» จึง «เลือกแล้วไม่ขึ้น»; ปุ่มลัดเลือกอาจถูกยึด. ตั้งค่า → จับและเลือก ติ๊ก «เปิดเลือกแปล» และ «แปลอัตโนมัติเมื่อเลือก»; ถ้าใช้ปุ่ม ยืนยันว่าปุ่มว่าง; เลือกในเบราว์เซอร์ต้องมีส่วนขยายจับด้วย."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao จับ/เลือกใน Word / Office ล้มเหลว แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao ผสานกับ Office ผ่านส่วนเสริม COM เพื่อแปลเลือก / ประโยค; ถ้าส่วนเสริมถูกปิดหรือไม่ลงทะเบียน จะล้มเหลว. Office ปิดส่วนเสริม COM บุคคลที่สามด้วยความเข้ากันได้หรือนโยบาย; เปลี่ยนเวอร์ชัน (เช่น Education ใหม่) ทำให้ส่วนเสริมเก่าไม่ลงทะเบียนกับ Office ใหม่ จึง «ก่อนใช้ได้ ตอนนี้ไม่ได้». Word: ไฟล์ → ตัวเลือก → ส่วนเสริม → ด้านล่าง «จัดการ: ส่วนเสริม COM» → ไป → ติ๊กส่วนเสริม Youdao; ถ้าไม่ ติดตั้ง Youdao ใหม่เพื่อลงทะเบียนใหม่; ตรวจว่าบิตของ Youdao และ Office ตรงกัน."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao จับใน PDF / Acrobat ล้มเหลว แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "เวอร์ชันทางการรองรับการจับหน้าจอ PDF ใน Adobe Reader / Acrobat; เวอร์ชัน «พกพา» ไม่ทางการจับ PDF ไม่ได้ และ PDF ต้องเป็นข้อความ ไม่ใช่รูป. สามสาเหตุ: ① «โหมดป้องกัน» Acrobat คือแซนด์บ็อกซ์ที่ขวางการฉีด YodaoDict.api บุคคลที่สาม; ② บิตไม่ตรงระหว่าง Acrobat 64 บิตกับปลั๊กอิน Youdao เก่าให้ «ปลั๊กอินไม่เข้ากัน»; ③ PDF เป็นสแกน (รูป ไม่มีชั้นข้อความ). ปิดใน Acrobat แก้ไข → การตั้งค่า → ความปลอดภัย (ขั้นสูง) → «เปิดโหมดป้องกันตอนเริ่ม» เปิด Youdao ก่อน Acrobat; สำหรับ «ไม่เข้ากัน» 64 บิต ติดตั้ง Youdao ล่าสุด หรือคัดลอก YodaoDict.api ไป plug_ins ของ Acrobat; สำหรับสแกนใช้ OCR จับแบบแรง."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao เลือก/จับใน Chrome / เบราว์เซอร์ล้มเหลว แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox ฯลฯ ต้องมีส่วนขยายจับ Youdao แยก; เวอร์ชันเดสก์ท็อปทางการมี «จับ Chrome». เบราว์เซอร์เป็นแซนด์บ็อกซ์ของตัวเอง: ① ไม่มีส่วนขยายจับ Youdao ฮุกส่วนกลางอ่านข้อความ DOM ไม่ได้; ② เร่งฮาร์ดแวร์ GPU เรนเดอร์หน้าเป็นพื้นผิวไม่มีชั้นอ่านได้; ③ สวิตช์ adblock / ความปลอดภัย (เช่นเบราว์เซอร์ 360) ขวางการจับ. ติดตั้งส่วนขยายจับ Youdao สำหรับเบราว์เซอร์ของคุณ (ผ่านตั้งค่า Youdao หรือสโตร์); ปิด «ใช้การเร่งฮาร์ดแวร์» ในตั้งค่าเบราว์เซอร์แล้วเริ่มใหม่; ปิด adblock ในเบราว์เซอร์ 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR ภาพหน้าจอ/พื้นที่ ใช้ไม่ได้ แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR ภาพหน้าจอต้องตั้งปุ่มลัดรู้จำ (เช่น Ctrl+Alt+O) และดาวน์โหลดโมดูล OCR; เลือกพื้นที่จอด้วยการลาก. OCR ภาพหน้าจอไม่ต้องมีชั้นข้อความ - มันรู้จำพื้นที่ที่เลือกด้วยภาพ จึงต้องมีโมดูล OCR ที่ดาวน์โหลด + ปุ่มลัดว่าง + (macOS) สิทธิ์บันทึกหน้าจอเพื่ออ่านพิกเซล. ตั้งค่า → ปุ่มลัด กำหนดปุ่มไม่ชนให้ «OCR ภาพหน้าจอ»; ดาวน์โหลดโมดูล OCR ครั้งแรกที่ใช้; บน macOS ให้ «บันทึกหน้าจอ»; เลือกพื้นที่ที่ชัดกว่าถ้ารู้จำพลาด."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ปุ่มลัดจับ / ภาพหน้าจอชน แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "จับ / เลือก / รู้จำภาพหน้าจอ ปรับแต่งได้ทั้งหมดใน ปุ่มลัด; เมื่อชนจะเตือน และผูกใหม่หรือรีเซ็ตได้. ปุ่มลัดส่วนกลางใครก่อนได้ก่อน: เครื่องมือจับภาพ, วิธีป้อน, QQ / WeChat หรือพจนานุกรมอื่นอาจถือชุดเดียวกัน จึงทำให้ปุ่ม Youdao ไม่ทำอะไร. ตั้งค่า → ปุ่มลัด ดูการเตือนชน; เปลี่ยนเป็นชุดที่หายากกว่าเช่น Ctrl+Shift+ตัวอักษร / Alt+ตัวอักษร; ปิดแอปที่ถือปุ่มทีละตัวเพื่อหาตัวการ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS จับ / ปุ่มลัด ต้องอนุญาต แก้อย่างไร?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS ต้องให้ Youdao «การช่วยการเข้าถึง» (เฝ้าปุ่มลัด / ควบคุม) และ «บันทึกหน้าจอ» (อ่านจอเพื่อจับ / ภาพหน้าจอ) ในตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย. แซนด์บ็อกซ์ macOS ต้องอนุญาตชัดเจน: ไม่มี «การช่วยการเข้าถึง» ไม่ได้ยินปุ่มลัดส่วนกลาง ไม่มี «บันทึกหน้าจอ» อ่านพิกเซลไม่ได้; อัปเดตมักรีเซ็ตทั้งสอง. ตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย → ติ๊ก Youdao ใน «การช่วยการเข้าถึง» และ «บันทึกหน้าจอ» แล้วเริ่มใหม่; ให้ใหม่หลังอัปเดต macOS ทุกครั้ง."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ภาษา: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <strong>ไทย</strong> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao จับคำบนหน้าจอ / เลือกแปล / OCR / ปุ่มลัด - ค้นหาวิธีแก้</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_th.webp"><img src="/img/cover_th.png" alt="ภาพประกอบเครื่องมือ Youdao ค้นหาวิธีแก้ จับ/เลือก/ภาพหน้าจอ" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>รูป: Youdao ค้นหาวิธีแก้ จับ / เลือก / ภาพหน้าจอ (อาการ L1 + สาเหตุราก L2 + เปรียบเทียบคู่แข่ง)</figcaption></figure>
+<p><strong>การจับคำบนหน้าจอ</strong>ของ <strong>Youdao</strong> (ชี้เมาส์เพื่อค้น), <strong>เลือกแปล</strong>, <strong>OCR</strong> หรือ <strong>ปุ่มลัด</strong> หยุดทำงานกะทันหัน? แยกสามอย่างก่อน: <strong>ยังไม่เปิด / ไม่มีสิทธิ์, ความเข้ากันได้ของแอปหนึ่ง ๆ (Office / PDF / เบราว์เซอร์), หรือเนื้อหาเอง (สแกน / เร่งฮาร์ดแวร์) ไม่มีข้อความอ่านได้?</strong> ค้นหา<strong>อาการหรือคำสำคัญ</strong>ที่พบ (เช่น <code>จับ</code>, <code>pdf</code>, <code>เลือก</code>, <code>ปุ่มลัด</code>, <code>64 บิต</code>, <code>OCR</code>): ก่อนอื่น <strong>อาการ L1 และตำแหน่งทางการ</strong>, จากนั้น <strong>สาเหตุราก L2 และวิธีแก้</strong>, สุดท้ายเปรียบเทียบคู่แข่งและกรณีจริง. ติดตั้ง / ตั้งค่า? ดู <a href="https://yoydao.com/">ดาวน์โหลด Youdao / คู่มือจับและเลือก</a>.</p>
+<input id="q" placeholder="ใส่อาการหรือคำสำคัญ เช่น จับ / pdf / เลือก / ปุ่มลัด / 64 บิต / OCR" autocomplete="off">
+<button id="go">ค้นหา</button>
+<div id="out"></div>
+<h2>ขั้นที่ 1: แบ่งเป็นสี่กลุ่มก่อน (L1 - อย่าเพิ่งติดตั้งใหม่)</h2>
+<p>เมื่อจับ/เลือกของ Youdao หยุด 9 ใน 10 ครั้งเป็นหนึ่งในสี่กลุ่ม - หาก่อนว่าใครผิด: ① <strong>การเปิด/ตั้งค่า</strong> — Youdao ไม่ทำงานเบื้องหลัง (ไอคอนถาดเป็นสีเทา) หรือไม่ติ๊ก «เปิดจับ / เลือก / แปลอัตโนมัติเมื่อเลือก» หรือทริกเกอร์ผิด; ② <strong>สิทธิ์</strong> — macOS ยังไม่ให้ «การช่วยการเข้าถึง + บันทึกหน้าจอ» หรือบน Windows เป้าหมายเป็นแอปสิทธิ์สูงแต่ Youdao ไม่ได้รันแบบผู้ดูแล; ③ <strong>ความเข้ากันได้ของแอป</strong> — ส่วนเสริม COM ของ Youdao ถูกปิดใน Word/Excel, โหมดป้องกัน Acrobat ขวางการฉีด, หรือเบราว์เซอร์ไม่มีส่วนขยายจับ; ④ <strong>การเรนเดอร์/เนื้อหา</strong> — PDF สแกนเป็นรูปภาพ (ต้อง OCR), เบราว์เซอร์/PDF เร่งฮาร์ดแวร์ GPU วาดข้อความเป็นพื้นผิว, หรือ DPI หลายจอไม่ตรงทำให้ป๊อปอัปลอยออกนอกจอ. การตั้งค่าเต็ม: <a href="https://yoydao.com/tutorial/">คู่มือจับและเลือก Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>การเปิด / ตั้งค่า</b><span class="cs">จับ · เลือก · แปลอัตโนมัติ · OCR แบบแรง</span><div>ให้แน่ใจว่า Youdao ทำงานเบื้องหลัง (ไอคอนถาดไม่ใช่สีเทา) ไปที่ ตั้งค่า → จับและเลือก แล้วติ๊ก «เปิดจับ» «เปิดเลือก» «แปลอัตโนมัติเมื่อเลือก» และเลือกทริกเกอร์ที่ถูก (ชี้เมาส์ / กด Ctrl).</div></div><div class="catbox"><b>สิทธิ์</b><span class="cs">macOS การช่วยการเข้าถึง+บันทึกหน้าจอ · Windows ผู้ดูแล/UAC</span><div>macOS: ตั้งค่าระบบ → ความเป็นส่วนตัวและความปลอดภัย ให้ Youdao «การช่วยการเข้าถึง» และ «บันทึกหน้าจอ»; Windows: เมื่อเป้าหมาย «รันแบบผู้ดูแล» ให้รัน Youdao แบบผู้ดูแลด้วย (ฮุกฉีดได้เฉพาะระดับสิทธิ์เดียวกัน).</div></div><div class="catbox"><b>ความเข้ากันได้ของแอป</b><span class="cs">Office COM · โหมดป้องกัน Acrobat · 64 บิต · ส่วนขยายเบราว์เซอร์</span><div>Office: ไฟล์ → ตัวเลือก → ส่วนเสริม → ส่วนเสริม COM ติ๊กส่วนเสริม Youdao; Acrobat: ปิด «เปิดโหมดป้องกันตอนเริ่ม» ถ้าจำเป็นคัดลอก YodaoDict.api ไป plug_ins; เบราว์เซอร์: ติดตั้งส่วนขยายจับ Youdao.</div></div><div class="catbox"><b>ปุ่มลัด</b><span class="cs">ชน · กำหนดเอง · ปุ่ม OCR ภาพหน้าจอ</span><div>ตั้งค่า → ปุ่มลัด ดูการเตือนชน; เปลี่ยนเป็นชุดที่ชนยากเช่น Ctrl+Shift / Alt+ตัวอักษร; ให้ OCR ภาพหน้าจอมีปุ่มของตัวเอง (เช่น Ctrl+Alt+O เลี่ยงแอปอื่น).</div></div><div class="catbox"><b>การเรนเดอร์ / แสดงผล</b><span class="cs">เร่งฮาร์ดแวร์ · สแกน · DPI หลายจอ · เต็มจอ</span><div>เบราว์เซอร์/PDF เร่งฮาร์ดแวร์ GPU เรนเดอร์เนื้อหาเป็นพื้นผิวไม่มีข้อความอ่านได้ (ปิดการเร่ง); PDF สแกนเป็นรูป (ใช้ OCR); ป๊อปอัปนอกจอเมื่อหลายจอให้ติ๊ก «ตรึงตำแหน่งหน้าต่าง».</div></div><div class="catbox"><b>เครือข่าย / การติดตั้ง</b><span class="cs">ความเร็วจับ · เวอร์ชันพกพา · ส่วนเสริมไม่โหลด</span><div>ค้นออนไลน์ช้า? ตรวจเครือข่าย; ติดตั้งเวอร์ชันทางการเต็มเสมอ - เวอร์ชัน «พกพา/บาง» ที่ไม่ทางการไม่มี DLL ฮุกจับที่ลงทะเบียน จึงจับ PDF/ส่วนกลางล้มเหลวทันที.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ผังคัดแยกความล้มเหลวจับ/เลือกของ Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">คัดแยกจับ / เลือกใช้ไม่ได้ (สี่กลุ่มก่อน: สวิตช์ / สิทธิ์ / แอป / เนื้อหา)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">จับตาย</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">สี่กลุ่ม</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">โฮสต์ตรวจเองได้ →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">สวิตช์ปิด · ไม่มีสิทธิ์</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">แอป / เนื้อหา →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/เบราว์เซอร์ · สแกน/เร่งฮาร์ด</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">สี่สาเหตุราก (อ่านสาเหตุ / วิธีแก้ต่อรายการ)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① เปิด/ตั้งค่า</text><text x="32" y="234" fill="#555" font-size="11">จับ · เลือก · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② สิทธิ์</text><text x="206" y="234" fill="#555" font-size="11">mac การช่วยเข้าถึง · win ผู้ดูแล</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ เข้ากันได้แอป</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · เบราว์เซอร์</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ เรนเดอร์/เนื้อหา</text><text x="554" y="234" fill="#555" font-size="11">สแกน · เร่ง · หลายจอ</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>รูป 1: คัดแยกความล้มเหลวจับ/เลือกของ Youdao - แบ่งเป็นสี่กลุ่ม แล้วระบุไปที่ โฮสต์ / แอป / เนื้อหา</figcaption></figure>
+<h2>ขั้นที่ 2: สาเหตุรากที่มองข้ามมากที่สุด → L2 (จับหน้าจอ = ฮุกส่วนกลาง / ฉีด DLL)</h2>
+<p>แนวคิดหลัก: <strong>การจับหน้าจอไม่ได้ «อ่านภาพหน้าจอ» - Youdao ฉีดโค้ดจับ (ฮุกส่วนกลาง / DLL) เข้าไปในแอปอื่นเพื่ออ่านบัฟเฟอร์ข้อความของมัน</strong>. นี่อธิบายความล้มเหลว «ลึกลับ» ส่วนใหญ่: ① <strong>ระดับสิทธิ์</strong> — Youdao สิทธิ์ปกติฉีดเข้าแอปที่ «รันแบบผู้ดูแล» ไม่ได้ (และกลับกัน) ดังนั้น «เฉพาะแอปนั้นจับไม่ได้» มักหมายถึงสิทธิ์ไม่ตรงกัน; ② <strong>บิต</strong> — ฮุก 32/64 บิตไม่ผสมกัน Youdao เก่าบน Acrobat 64 บิตจึงแจ้ง «ปลั๊กอินไม่เข้ากัน โหลด YodaoDict.api ไม่ได้»; ③ <strong>แซนด์บ็อกซ์</strong> — «โหมดป้องกัน» ของ Acrobat คือแซนด์บ็อกซ์ที่ขวางการฉีด .api ของบุคคลที่สาม; ④ <strong>การเร่งฮาร์ดแวร์</strong> — เมื่อเบราว์เซอร์/PDF เรนเดอร์เนื้อหาเป็นพื้นผิว GPU จะไม่เหลือ «ข้อความอ่านได้» ให้จับ; ⑤ <strong>สแกน</strong> — PDF ที่เป็นรูปอย่างเดียวไม่มีชั้นข้อความ ใช้ «OCR จับแบบแรง». ด้านล่างคือแผงตรวจสอบตนเอง; ถัดไปคือเปรียบเทียบคู่แข่งและประมาณการ 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="แผงตรวจสอบตนเองก่อนจับของ Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">แผงตรวจสอบตนเองการเปิดจับ (เขียว = ยืนยันแล้ว / แดง = มองข้ามง่าย)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">รายการตรวจ</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ผลตัดสิน</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">สถานะ</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao ทำงานเบื้องหลัง (ถาดไม่ใช่สีเทา)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">กระบวนการอยู่</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ยืนยันแล้ว</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ติ๊ก จับ / เลือก / แปลอัตโนมัติเมื่อเลือก</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 สวิตช์</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ยืนยันแล้ว</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ทริกเกอร์จับถูก (ชี้เมาส์ / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ทริกเกอร์</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ยืนยันแล้ว</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">แอปเป้าหมายเข้ากันได้ (ส่วนเสริม Office / PDF ไม่ป้องกัน / ส่วนขยายเบราว์เซอร์)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ฝั่งแอป</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ต้องตรวจ</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ให้สิทธิ์แล้ว (mac การช่วยเข้าถึง+บันทึก / win ผู้ดูแล)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ระดับสิทธิ์</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">ยืนยันแล้ว</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ไม่ชนปุ่มลัด + ไม่ใช่สแกน / เปิด OCR</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">มองข้ามง่าย</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ต้องตรวจ</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">หมายเหตุ: แดง = สองอย่างที่มองข้ามมากที่สุด - ความเข้ากันได้ของแอปเฉพาะ (Office / PDF / เบราว์เซอร์) และเนื้อหา/ปุ่มลัด (สแกนต้อง OCR, ปุ่มชน); ตรวจสองอย่างนี้ก่อน.</text></svg><figcaption>รูป 2: แผงตรวจสอบตนเองการเปิดจับ (เขียว = ยืนยันแล้ว / แดง = มองข้ามง่าย)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_th.webp"><img src="/img/board_th.png" alt="ภาพประกอบแผงตรวจสอบตนเองก่อนจับของ Youdao รายการเขียว/แดง" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>รูป: ตรวจ «กำลังทำงาน + สามสวิตช์ + สิทธิ์» ก่อน แล้วจึง «ความเข้ากันได้ของแอป + เนื้อหา/ปุ่มลัด» - สองอย่างหลังมองข้ามมากที่สุด</figcaption></figure>
+<h2>ตารางอาการครบ (อาการ L1 / ตำแหน่งทางการ · สาเหตุราก L2)</h2>
+<table id="tbl"></table>
+<h2>เปรียบเทียบเครื่องมือเลือก/จับของคู่แข่ง (โหมดจับ / OCR / แพลตฟอร์ม / ราคา · ข้อมูลสาธารณะ)</h2>
+<table class="cmp"><tr><th>ซอฟต์แวร์</th><th>จับหน้าจอ / เลือก</th><th>OCR ภาพหน้าจอ</th><th>แพลตฟอร์ม</th><th>พจนานุกรมเสริม</th><th>ราคา (ประมาณ)</th></tr><tr><td>Youdao</td><td>จับส่วนกลาง + เลือกแปล</td><td>OCR ภาพหน้าจอ + จับแบบแรง</td><td>Win / Mac / iOS / Android / Web / ส่วนขยายเบราว์เซอร์</td><td>mdx อ่อน</td><td>หลักฟรี (บางสมาชิก / ไม่มีโฆษณา)</td></tr><tr><td>Eudic</td><td>เลือก + จับหน้าจอ</td><td>จับภาพหน้าจอ</td><td>Win / Mac / iOS / Android</td><td>mdx แข็งแรง (คลังใหญ่)</td><td>พื้นฐานฟรี + ขั้นสูงเสียเงิน</td></tr><tr><td>iCIBA (Kingsoft)</td><td>จับ + เลือก</td><td>แปลภาพหน้าจอ</td><td>Win / Mac / มือถือ / Web</td><td>ปานกลาง</td><td>ฟรี (โฆษณา) + สมาชิก</td></tr><tr><td>Saladict</td><td>เลือกในเบราว์เซอร์ (ส่วนขยาย)</td><td>ขึ้นกับหน้า / OCR ต้องตั้งค่า</td><td>ส่วนขยายเบราว์เซอร์ (Chrome / Edge / Firefox)</td><td>แหล่งกำหนดเองได้</td><td>ฟรี · โอเพนซอร์ส</td></tr><tr><td>Microsoft Translator / Bing</td><td>เลือกระดับระบบอ่อน</td><td>Office ในตัว + ภาพหน้าจอ</td><td>Win / Office / Edge / มือถือ</td><td>ไม่มี</td><td>ฟรี</td></tr></table><section class="i4data">
+<h2>สาเหตุความล้มเหลวจับ Youdao และเปรียบเทียบเครื่องมือเลือก (ประมาณการ 2026)</h2>
+<p>ต่อไปนี้คือ <strong>ประมาณการ 2026</strong> ที่สังเคราะห์จากความช่วยเหลือ / FAQ ทางการของ Youdao เอกสารสาธารณะของคู่แข่ง และการแก้ปัญหาของนักพัฒนา (ไม่ใช่คำมั่นของผู้ผลิต ไม่ใช่การวัดตรง; เพื่ออ้างอิง เปลี่ยนตามเวอร์ชันและ OS):</p>
+<table>
+<tr><th>มิติ</th><th>ประมาณการ / เปรียบเทียบ</th></tr>
+<tr><td>สัดส่วนสาเหตุความล้มเหลวจับ (ชุมชน · ประมาณ)</td><td><strong>ไม่เปิด / สิทธิ์ ~40%</strong> &gt; <strong>ความเข้ากันได้ของแอป (Office/PDF/เบราว์เซอร์) ~25%</strong> &gt; ปุ่มลัดชน ~20% &gt; การเรนเดอร์ / เนื้อหา (เร่งฮาร์ด / สแกน) ~15%</td></tr>
+<tr><td>จับจริง ๆ คืออะไร</td><td>จับหน้าจอ = <strong>ฮุกส่วนกลาง / ฉีด DLL</strong> ที่อ่านบัฟเฟอร์ข้อความของแอปเป้าหมาย (ไม่ได้อ่านภาพหน้าจอ); จึงได้รับผลจากระดับสิทธิ์ บิต แซนด์บ็อกซ์ การเร่งฮาร์ดแวร์</td></tr>
+<tr><td>จับตามแพลตฟอร์ม (ประมาณ)</td><td>เดสก์ท็อป (Win/Mac) รองรับ <strong>จับหน้าจอส่วนกลาง + เลือก + OCR ภาพหน้าจอ</strong>; มือถือส่วนใหญ่เลือก / แปลภาพถ่าย; เว็บ / เบราว์เซอร์ต้องมี <strong>ส่วนขยายจับ</strong></td></tr>
+<tr><td>ภาพรวมเครื่องมือเลือก / จับ (ประมาณ)</td><td>Youdao = ทุกแพลตฟอร์ม + แปล AI แข็งแรง; Eudic = คลังเสริมแข็งแรง (mdx); iCIBA = ฟรีมวลชน; Saladict = เบราว์เซอร์โอเพนซอร์ส; Microsoft = Office ในตัว</td></tr>
+<tr><td>ระดับราคา (ประมาณ)</td><td>Youdao / iCIBA <strong>หลักฟรี</strong> (สมาชิกเพื่อไม่มีโฆษณา / เสริม) · Eudic <strong>ขั้นสูงเสียเงิน</strong> · Saladict <strong>ฟรีโอเพนซอร์ส</strong> · Microsoft Translator <strong>ฟรี</strong></td></tr>
+</table>
+<p><small>พื้นฐานประมาณการ: เส้นฐานแหล่งข้อมูล + การคาดการณ์ตามเวลา (ความช่วยเหลือ / FAQ ทางการ cidian.youdao.com, เอกสารสาธารณะ Eudic / iCIBA / Saladict / Microsoft, บทความนักพัฒนาสาธารณะ, 2026); เปลี่ยนตามเวอร์ชันและนโยบาย OS ของแต่ละผู้ให้บริการ. อ้างอิงข้อมูลทางการล่าสุด. โลคัลไลซ์ด้วย LLM.</small></p>
+</section>
+<h2>กรณีจริง - อ่านเร็ว</h2>
+<ul class="scenes"><li>จับในเบราว์เซอร์ไม่ได้แต่ Notepad / Word ได้: มักเบราว์เซอร์ไม่มีส่วนขยายจับ Youdao หรือเร่งฮาร์ดแวร์ GPU เรนเดอร์หน้าเป็นพื้นผิว → ติดตั้งส่วนขยาย หรือปิด «ใช้การเร่งฮาร์ดแวร์» แล้วเริ่มใหม่.</li><li>Acrobat 64 บิต เลือกใน PDF ไม่ตอบสนอง «ปลั๊กอินไม่เข้ากัน โหลด YodaoDict.api ไม่ได้»: ปิดใน Acrobat แก้ไข → การตั้งค่า → ความปลอดภัย (ขั้นสูง) → «เปิดโหมดป้องกันตอนเริ่ม» เปิด Youdao ก่อน Acrobat; ถ้ายัง คัดลอก YodaoDict.api จากโฟลเดอร์ Youdao ไป plug_ins ของ Acrobat.</li><li>ข้อความ PDF เลือกได้แต่จับไม่ได้ หรือทั้งหน้าไม่ได้: เป็นสแกน (PDF รูปไม่มีชั้นข้อความ ต้อง «OCR จับแบบแรง») หรือโหมดป้องกัน Acrobat / การล็อก Autotray.exe ขวางการฉีด.</li><li>หลังติดตั้ง Office (โดยเฉพาะ Education / 365) Word แปลข้อความที่เลือกไม่ได้: ส่วนเสริม COM Office ของ Youdao ถูกปิด → ไฟล์ → ตัวเลือก → ส่วนเสริม → ส่วนเสริม COM → เปิด; ถ้าไม่ได้ ติดตั้ง Youdao ใหม่เพื่อลงทะเบียนใหม่.</li><li>หลังอัปเดต OS จับและปุ่มลัดตายบน macOS: อัปเดตรีเซ็ตสิทธิ์ → ให้ Youdao «การช่วยการเข้าถึง» และ «บันทึกหน้าจอ» ใหม่ในความเป็นส่วนตัวและความปลอดภัย แล้วเริ่มใหม่.</li><li>จับได้ในแอปปกติแต่ล้มเหลวในแอป «รันแบบผู้ดูแล»: ระดับสิทธิ์ต่างกันทำให้ฮุกส่วนกลางฉีดเข้ากระบวนการสิทธิ์สูงไม่ได้ → คลิกขวา Youdao «รันในฐานะผู้ดูแล».</li><li>หลายจอ / DPI สูง: ป๊อปอัปจับ «ลอย» ไปที่มองไม่เห็น: เพราะสเกล DPI แต่ละจอไม่ตรง → ติ๊ก «ตรึงตำแหน่งหน้าต่าง» ในตั้งค่าจับเพื่อตรึงที่มุมบนซ้ายของจอหลัก.</li></ul><div class="related"><h2>ที่เกี่ยวข้อง</h2><ul><li><a href="https://yoydao.com/">ดาวน์โหลด Youdao / คู่มือการตั้งค่า</a></li><li><a href="https://yoydao.com/th/tutorial/">คู่มือจับและเลือก Youdao</a></li><li><a href="https://yoydao.com/th/tools/youdao-word-capture/">Youdao ค้นหาวิธีแก้จับ (ตารางครบที่เชื่อถือได้)</a></li><li><a href="https://yoidao.com/th/">รหัสข้อผิดพลาด API Youdao Zhiyun (เว็บพี่น้อง)</a></li></ul></div></main>
+<footer>หมายเหตุเกี่ยวกับจับ/เลือก/OCR/ความเข้ากันได้ 64 บิต รวบรวมจาก FAQ และความช่วยเหลือเดสก์ท็อปทางการของ Youdao (cidian.youdao.com); การแก้ปัญหาส่วนเสริม Office อ้างอิง Q&A ทางการของ Microsoft, และหมายเหตุ Acrobat 64 บิต «โหลด YodaoDict.api ไม่ได้ / ปิดโหมดป้องกัน» จากบทความนักพัฒนาสาธารณะ (เรียบเรียงใหม่). การเปรียบเทียบมาจากเอกสารสาธารณะของ Eudic, iCIBA, Saladict และ Microsoft Translator. สัดส่วน/แพลตฟอร์ม/ราคา 2026 เป็นการประมาณ ไม่ใช่คำมั่นของผู้ผลิตหรือการวัดตรง. โลคัลไลซ์ด้วย LLM; อ้างอิงข้อมูลทางการล่าสุดของแต่ละผู้ให้บริการ.<br>หน้าเครื่องมือ · ไม่แทนไคลเอนต์ทางการ</footer>
+</div>
+<script src="/th/codes.js"></script><script src="/app.js"></script>
+</body></html>
