@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="bn"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao স্ক্রিন শব্দ ক্যাপচার/নির্বাচন অনুবাদ/OCR/শর্টকাট কাজ করছে না - কারণ ও সমাধান (PDF, Word, ব্রাউজার, 64-বিট)</title>
+<meta name="description" content="Youdao-এর স্ক্রিন শব্দ ক্যাপচার (হোভারে দেখুন), নির্বাচন অনুবাদ, স্ক্রিনশট OCR বা শর্টকাট কাজ করছে না? উপসর্গ খুঁজুন (ক্যাপচার মৃত / নির্বাচনে পপআপ নেই / Word-Office ক্যাপচার / PDF-Acrobat ক্যাপচার / Chrome ব্রাউজার নির্বাচন / OCR / শর্টকাট সংঘর্ষ / macOS অনুমতি / মাল্টি-মনিটরে পপআপ স্ক্রিনের বাইরে / 64-বিট / পোর্টেবল সংস্করণ) — L1 উপসর্গ ও অফিশিয়াল অবস্থান এবং L2 মূল কারণ: গ্লোবাল হুক / DLL ইনজেকশন, UAC বিশেষাধিকার স্তর, Office COM অ্যাড-ইন, Acrobat সুরক্ষিত মোড, GPU হার্ডওয়্যার ত্বরণ টেক্সট-কে টেক্সচার করে, স্ক্যান PDF-এ OCR লাগে, DPI মাল্টি-মনিটর; Youdao বনাম Eudic / iCIBA / Saladict / Microsoft Translator তুলনা ও 2026 অনুমান সহ.">
+<link rel="canonical" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao ক্যাপচার/নির্বাচন/OCR/শর্টকাট সমাধান খোঁজ",
+   "url": "https://yoydao.github.io/bn/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "bn",
+   "description": "Youdao-এর স্ক্রিন শব্দ ক্যাপচার (হোভারে দেখুন), নির্বাচন অনুবাদ, স্ক্রিনশট OCR বা শর্টকাট কাজ করছে না? উপসর্গ খুঁজুন (ক্যাপচার মৃত / নির্বাচনে পপআপ নেই / Word-Office ক্যাপচার / PDF-Acrobat ক্যাপচার / Chrome ব্রাউজার নির্বাচন / OCR / শর্টকাট সংঘর্ষ / macOS অনুমতি / মাল্টি-মনিটরে পপআপ স্ক্রিনের বাইরে / 64-বিট / পোর্টেবল সংস্করণ) — L1 উপসর্গ ও অফিশিয়াল অবস্থান এবং L2 মূল কারণ: গ্লোবাল হুক / DLL ইনজেকশন, UAC বিশেষাধিকার স্তর, Office COM অ্যাড-ইন, Acrobat সুরক্ষিত মোড, GPU হার্ডওয়্যার ত্বরণ টেক্সট-কে টেক্সচার করে, স্ক্যান PDF-এ OCR লাগে, DPI মাল্টি-মনিটর; Youdao বনাম Eudic / iCIBA / Saladict / Microsoft Translator তুলনা ও 2026 অনুমান সহ.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "bn",
+   "url": "https://yoydao.github.io/bn/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao স্ক্রিন ক্যাপচার সামগ্রিকভাবে মৃত - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "স্ক্রিন ক্যাপচারের জন্য Youdao পটভূমিতে ক্যাপচার সক্ষম থাকতে হবে; অফিশিয়াল ডেস্কটপ স্মার্ট ক্যাপচার / ক্লিপবোর্ড ক্যাপচার / OCR ক্যাপচার দেয়. স্ক্রিন ক্যাপচার সামনের অ্যাপে ইনজেক্ট করা গ্লোবাল হুক দিয়ে টেক্সট পড়ে: চলমান Youdao প্রক্রিয়া + সক্রিয় প্রধান ক্যাপচার সুইচ + মিল ট্রিগার কী লাগে. একটি কম হলে «পুরোপুরি মৃত» মনে হয়, প্রায়ই সফটওয়্যার নষ্ট ভাবা হয়. ট্রে আইকন সক্রিয় কিনা যাচাই করুন (ধূসর = চলছে না, শুরু করতে ডবল-ক্লিক); সেটিং → ক্যাপচার ও নির্বাচন, «ক্যাপচার সক্ষম» টিক করুন ও মোড বেছে নিন (হোভার / Ctrl ধরুন); Youdao পুনরায় চালু করে আবার চেষ্টা করুন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao নির্বাচন অনুবাদ পপআপ দেখায় না - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "নির্বাচন অনুবাদের জন্য «নির্বাচন» সক্ষম ও «নির্বাচনে স্বয়ংক্রিয় অনুবাদ» টিক লাগে; নির্বাচনে বা কী দিয়ে অনুবাদ করতে পারে. নির্বাচন ও ক্যাপচার আলাদা সুইচ: অনেকে ক্যাপচার সক্ষম করে কিন্তু নির্বাচন নয়, বা «নির্বাচনে স্বয়ংক্রিয় অনুবাদ» বন্ধ করে, তাই «নির্বাচন কিছু দেখায় না»; নির্বাচন হটকীও নেওয়া থাকতে পারে. সেটিং → ক্যাপচার ও নির্বাচন, «নির্বাচন অনুবাদ সক্ষম» ও «নির্বাচনে স্বয়ংক্রিয় অনুবাদ» টিক করুন; কী-ট্রিগার হলে সেই কী মুক্ত নিশ্চিত করুন; ব্রাউজারে নির্বাচনেও ক্যাপচার এক্সটেনশন লাগে."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Word / Office-এ ক্যাপচার/নির্বাচন ব্যর্থ - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao নির্বাচন / বাক্য অনুবাদের জন্য COM অ্যাড-ইন দিয়ে Office-এর সাথে একত্রিত হয়; অ্যাড-ইন নিষ্ক্রিয় বা অনিবন্ধিত হলে ব্যর্থ. Office সামঞ্জস্য বা নীতির জন্য তৃতীয়-পক্ষ COM অ্যাড-ইন নিষ্ক্রিয় করে; সংস্করণ পরিবর্তন (যেমন নতুন Education) পুরনো অ্যাড-ইনকে নতুন Office-এর জন্য অনিবন্ধিত রাখে, তাই «আগে চলত, এখন না». Word: ফাইল → অপশন → অ্যাড-ইন → নিচে «পরিচালনা: COM অ্যাড-ইন» → যান → Youdao অ্যাড-ইন টিক করুন; না হলে পুনঃনিবন্ধনে Youdao পুনরায় ইনস্টল করুন; Youdao ও Office বিটনেস মিল যাচাই করুন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao PDF / Acrobat-এ ক্যাপচার ব্যর্থ - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "অফিশিয়াল সংস্করণ Adobe Reader / Acrobat-এ PDF স্ক্রিন ক্যাপচার সমর্থন করে; অননুমোদিত «পোর্টেবল» সংস্করণ PDF ক্যাপচার পারে না, ও PDF টেক্সট হতে হবে, ছবি নয়. তিন কারণ: ① Acrobat-এর «সুরক্ষিত মোড» একটি স্যান্ডবক্স যা তৃতীয়-পক্ষ YodaoDict.api ইনজেকশন আটকায়; ② 64-বিট Acrobat ও পুরনো Youdao প্লাগ-ইনের মধ্যে বিটনেস অমিল «অসংগত প্লাগ-ইন» দেয়; ③ PDF একটি স্ক্যান (ছবি, টেক্সট স্তরবিহীন). Acrobat-এ সম্পাদনা → পছন্দসমূহ → নিরাপত্তা (উন্নত) → «স্টার্টআপে সুরক্ষিত মোড সক্ষম» বন্ধ করুন, Acrobat-এর আগে Youdao খুলুন; 64-বিট «অসংগত»-এর জন্য সর্বশেষ Youdao ইনস্টল করুন, বা YodaoDict.api Acrobat-এর plug_ins-এ কপি করুন; স্ক্যানের জন্য OCR শক্তি ক্যাপচার ব্যবহার করুন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chrome / ব্রাউজারে নির্বাচন/ক্যাপচার ব্যর্থ - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox ইত্যাদির আলাদা Youdao ক্যাপচার এক্সটেনশন লাগে; অফিশিয়াল ডেস্কটপ «Chrome ক্যাপচার» দেয়. ব্রাউজার তার নিজস্ব স্যান্ডবক্স: ① Youdao ক্যাপচার এক্সটেনশন ছাড়া গ্লোবাল হুক DOM টেক্সট পড়তে পারে না; ② GPU হার্ডওয়্যার ত্বরণ পৃষ্ঠাকে পঠনযোগ্য স্তর ছাড়াই টেক্সচারে রেন্ডার করে; ③ adblock / নিরাপত্তা টগল (যেমন 360 ব্রাউজার) ক্যাপচার আটকায়. আপনার ব্রাউজারের জন্য Youdao ক্যাপচার এক্সটেনশন ইনস্টল করুন (Youdao সেটিং বা স্টোর থেকে); ব্রাউজার সেটিংয়ে «হার্ডওয়্যার ত্বরণ ব্যবহার» বন্ধ করে পুনরায় চালু করুন; 360 ব্রাউজারে adblock বন্ধ করুন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao স্ক্রিনশট / এলাকা OCR অনুবাদ কাজ করে না - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "স্ক্রিনশট OCR-এর জন্য সেট স্ক্রিনশট-শনাক্ত হটকী (যেমন Ctrl+Alt+O) ও ডাউনলোড করা OCR মডিউল লাগে; টেনে স্ক্রিন এলাকা নির্বাচন করেন. স্ক্রিনশট OCR-এর টেক্সট স্তর লাগে না - নির্বাচিত এলাকাকে ছবি দিয়ে শনাক্ত করে, তাই ডাউনলোড করা OCR মডিউল + মুক্ত হটকী + (macOS) পিক্সেল পড়তে স্ক্রিন রেকর্ডিং অনুমতি লাগে. সেটিং → শর্টকাট, «OCR স্ক্রিনশট»-এর জন্য সংঘর্ষহীন কী নির্ধারণ করুন; প্রথম ব্যবহারে OCR মডিউল ডাউনলোড করুন; macOS-এ «স্ক্রিন রেকর্ডিং» দিন; শনাক্ত ব্যর্থ হলে স্পষ্ট এলাকা বেছে নিন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ক্যাপচার / স্ক্রিনশট শর্টকাট সংঘর্ষ - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ক্যাপচার / নির্বাচন / স্ক্রিনশট-শনাক্ত সব শর্টকাটে কাস্টমাইজযোগ্য; সংঘর্ষে সতর্ক করে, ও পুনরায় বাঁধা বা রিসেট করা যায়. গ্লোবাল শর্টকাট আগে-আসলে-আগে: স্ক্রিনশট সরঞ্জাম, ইনপুট পদ্ধতি, QQ / WeChat বা অন্য অভিধান একই সংমিশ্রণ ধরতে পারে, তাই Youdao কী কিছু করে না. সেটিং → শর্টকাট, সংঘর্ষ সতর্কতা দেখুন; বিরল সংমিশ্রণে যান যেমন Ctrl+Shift+অক্ষর / Alt+অক্ষর; দোষী খুঁজতে কী-ধারী অ্যাপ একে একে বন্ধ করুন."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS ক্যাপচার / শর্টকাটে অনুমোদন লাগে - কীভাবে সমাধান?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS-কে Youdao-কে «অ্যাক্সেসিবিলিটি» (শর্টকাট নিরীক্ষণ / নিয়ন্ত্রণ) ও «স্ক্রিন রেকর্ডিং» (ক্যাপচার / স্ক্রিনশটের জন্য স্ক্রিন পড়া) সিস্টেম সেটিং → গোপনীয়তা ও নিরাপত্তায় দিতে হবে. macOS স্যান্ডবক্স স্পষ্ট অনুমতি চায়: «অ্যাক্সেসিবিলিটি» ছাড়া গ্লোবাল শর্টকাট শোনে না, «স্ক্রিন রেকর্ডিং» ছাড়া পিক্সেল পড়ে না; আপডেট প্রায়ই দুটোই রিসেট করে. সিস্টেম সেটিং → গোপনীয়তা ও নিরাপত্তা → «অ্যাক্সেসিবিলিটি» ও «স্ক্রিন রেকর্ডিং»-এ Youdao টিক করে পুনরায় চালু করুন; প্রতি macOS আপডেটের পর আবার দিন."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ভাষা: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <strong>বাংলা</strong> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao স্ক্রিন শব্দ ক্যাপচার / নির্বাচন অনুবাদ / OCR / শর্টকাট - সমাধান খোঁজ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_bn.webp"><img src="/img/cover_bn.png" alt="Youdao ক্যাপচার/নির্বাচন/স্ক্রিনশট সমাধান খোঁজ সরঞ্জামের চিত্র" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>চিত্র: Youdao ক্যাপচার / নির্বাচন / স্ক্রিনশট সমাধান খোঁজ (L1 উপসর্গ + L2 মূল কারণ + প্রতিযোগী তুলনা)</figcaption></figure>
+<p><strong>Youdao</strong>-এর <strong>স্ক্রিন শব্দ ক্যাপচার</strong> (হোভারে দেখুন), <strong>নির্বাচন অনুবাদ</strong>, <strong>OCR</strong> বা <strong>শর্টকাট</strong> হঠাৎ থেমে গেছে? প্রথমে তিনটি বিষয় স্পষ্ট করুন: <strong>সক্ষম নয় / অনুমতি নেই, কোনো নির্দিষ্ট অ্যাপের (Office / PDF / ব্রাউজার) সামঞ্জস্য, নাকি বিষয়বস্তু নিজেই (স্ক্যান / হার্ডওয়্যার ত্বরণ) পঠনযোগ্য টেক্সটহীন?</strong> আপনার <strong>উপসর্গ বা কীওয়ার্ড</strong> খুঁজুন (যেমন <code>ক্যাপচার</code>, <code>pdf</code>, <code>নির্বাচন</code>, <code>শর্টকাট</code>, <code>64-বিট</code>, <code>OCR</code>): প্রথমে <strong>L1 উপসর্গ ও অফিশিয়াল অবস্থান</strong>, তারপর <strong>L2 মূল কারণ ও সমাধান</strong>, শেষে প্রতিযোগী তুলনা ও বাস্তব ঘটনা. ইনস্টল / সেটআপ? দেখুন <a href="https://yoydao.com/">Youdao ডাউনলোড / ক্যাপচার ও নির্বাচন গাইড</a>.</p>
+<input id="q" placeholder="উপসর্গ বা কীওয়ার্ড দিন, যেমন ক্যাপচার / pdf / নির্বাচন / শর্টকাট / 64-বিট / OCR" autocomplete="off">
+<button id="go">খুঁজুন</button>
+<div id="out"></div>
+<h2>ধাপ 1: প্রথমে চার দলে ভাগ করুন (L1 - তখনই পুনরায় ইনস্টল নয়)</h2>
+<p>Youdao ক্যাপচার/নির্বাচন থামলে, 10-এর মধ্যে 9 বার এটি চার দলের একটি - প্রথমে দোষ খুঁজুন: ① <strong>সক্ষম/সেটিং</strong> — Youdao পটভূমিতে চলছে না (ট্রে আইকন ধূসর), বা «ক্যাপচার / নির্বাচন / নির্বাচনে স্বয়ংক্রিয় অনুবাদ সক্ষম» টিক নেই, বা ভুল ট্রিগার; ② <strong>অনুমতি</strong> — macOS «অ্যাক্সেসিবিলিটি + স্ক্রিন রেকর্ডিং» দেওয়া হয়নি, বা Windows-এ লক্ষ্য একটি উন্নত অ্যাপ অথচ Youdao প্রশাসক হিসেবে চলছে না; ③ <strong>অ্যাপ সামঞ্জস্য</strong> — Word/Excel-এ Youdao COM অ্যাড-ইন নিষ্ক্রিয়, Acrobat সুরক্ষিত মোড ইনজেকশন আটকায়, বা ব্রাউজারে ক্যাপচার এক্সটেনশন নেই; ④ <strong>রেন্ডারিং/বিষয়বস্তু</strong> — স্ক্যান PDF একটি ছবি (OCR লাগে), ব্রাউজার/PDF GPU হার্ডওয়্যার ত্বরণে টেক্সট-কে টেক্সচার আঁকে, বা অমিল মাল্টি-মনিটর DPI পপআপ স্ক্রিনের বাইরে ফেলে. সম্পূর্ণ সেটআপ: <a href="https://yoydao.com/tutorial/">Youdao ক্যাপচার ও নির্বাচন গাইড</a>.</p>
+<div class="cat"><div class="catbox"><b>সক্ষম / সেটিং</b><span class="cs">ক্যাপচার · নির্বাচন · স্বয়ংক্রিয় অনুবাদ · OCR শক্তি</span><div>নিশ্চিত করুন Youdao পটভূমিতে চলছে (ট্রে আইকন ধূসর নয়), সেটিং → ক্যাপচার ও নির্বাচন-এ যান এবং «ক্যাপচার সক্ষম», «নির্বাচন সক্ষম», «নির্বাচনে স্বয়ংক্রিয় অনুবাদ» টিক করুন, ও সঠিক ট্রিগার বেছে নিন (হোভার / Ctrl ধরুন).</div></div><div class="catbox"><b>অনুমতি</b><span class="cs">macOS অ্যাক্সেসিবিলিটি+স্ক্রিন রেকর্ডিং · Windows প্রশাসক/UAC</span><div>macOS: সিস্টেম সেটিং → গোপনীয়তা ও নিরাপত্তা, Youdao-কে «অ্যাক্সেসিবিলিটি» ও «স্ক্রিন রেকর্ডিং» দিন; Windows: লক্ষ্য «প্রশাসক হিসেবে চলে» হলে Youdao-ও প্রশাসক হিসেবে চালান (হুক কেবল একই বিশেষাধিকার স্তরে ইনজেক্ট করে).</div></div><div class="catbox"><b>অ্যাপ সামঞ্জস্য</b><span class="cs">Office COM · Acrobat সুরক্ষিত মোড · 64-বিট · ব্রাউজার এক্সটেনশন</span><div>Office: ফাইল → অপশন → অ্যাড-ইন → COM অ্যাড-ইন, Youdao অ্যাড-ইন টিক করুন; Acrobat: «স্টার্টআপে সুরক্ষিত মোড সক্ষম» বন্ধ করুন, প্রয়োজনে YodaoDict.api plug_ins-এ কপি করুন; ব্রাউজার: Youdao ক্যাপচার এক্সটেনশন ইনস্টল করুন.</div></div><div class="catbox"><b>শর্টকাট</b><span class="cs">সংঘর্ষ · কাস্টম · OCR স্ক্রিনশট কী</span><div>সেটিং → শর্টকাট, সংঘর্ষ সতর্কতা দেখুন; কম-সংঘর্ষ সংমিশ্রণে যান যেমন Ctrl+Shift / Alt+অক্ষর; OCR স্ক্রিনশটকে নিজস্ব কী দিন (যেমন Ctrl+Alt+O, অন্য অ্যাপ থেকে দূরে).</div></div><div class="catbox"><b>রেন্ডারিং / প্রদর্শন</b><span class="cs">হার্ডওয়্যার ত্বরণ · স্ক্যান · DPI মাল্টি-মনিটর · পূর্ণ স্ক্রিন</span><div>GPU হার্ডওয়্যার ত্বরণযুক্ত ব্রাউজার/PDF বিষয়বস্তু পঠনযোগ্য টেক্সট ছাড়াই টেক্সচারে রেন্ডার করে (ত্বরণ বন্ধ করুন); স্ক্যান PDF একটি ছবি (OCR ব্যবহার করুন); মাল্টি-মনিটরে স্ক্রিন-বাইরে পপআপের জন্য «উইন্ডো অবস্থান পিন» টিক করুন.</div></div><div class="catbox"><b>নেটওয়ার্ক / ইনস্টলেশন</b><span class="cs">ক্যাপচার গতি · পোর্টেবল সংস্করণ · অ্যাড-ইন লোড হয়নি</span><div>অনলাইন অনুসন্ধান ধীর? নেটওয়ার্ক যাচাই করুন; সবসময় অফিশিয়াল পূর্ণ সংস্করণ ইনস্টল করুন - অননুমোদিত «পোর্টেবল/হালকা» সংস্করণে নিবন্ধিত ক্যাপচার-হুক DLL নেই, তাই PDF/গ্লোবাল ক্যাপচার সঙ্গে সঙ্গে ব্যর্থ হয়.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao ক্যাপচার/নির্বাচন ব্যর্থতা ট্রায়াজ প্রবাহ" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ক্যাপচার / নির্বাচন কাজ করে না ট্রায়াজ (প্রথমে চার দল: সুইচ / অনুমতি / অ্যাপ / বিষয়বস্তু)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ক্যাপচার মৃত</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">চার দল</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">হোস্ট স্ব-যাচাই →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">সুইচ বন্ধ · অনুমতি নেই</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">অ্যাপ / বিষয়বস্তু →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/ব্রাউজার · স্ক্যান/হার্ড-ত্বরণ</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">চার মূল কারণ (প্রতি আইটেমে কারণ / সমাধান পড়ুন)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① সক্ষম/সেটিং</text><text x="32" y="234" fill="#555" font-size="11">ক্যাপচার · নির্বাচন · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② অনুমতি</text><text x="206" y="234" fill="#555" font-size="11">mac অ্যাক্সেসিবিলিটি · win প্রশাসক</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ অ্যাপ সামঞ্জস্য</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · ব্রাউজার</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ রেন্ডার/বিষয়বস্তু</text><text x="554" y="234" fill="#555" font-size="11">স্ক্যান · ত্বরণ · মাল্টি-মনিটর</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>চিত্র 1: Youdao ক্যাপচার/নির্বাচন ব্যর্থতা ট্রায়াজ - চার দলে ভাগ করুন, তারপর হোস্ট / অ্যাপ / বিষয়বস্তুতে সীমাবদ্ধ করুন</figcaption></figure>
+<h2>ধাপ 2: সবচেয়ে উপেক্ষিত মূল কারণ → L2 (স্ক্রিন ক্যাপচার = গ্লোবাল হুক / DLL ইনজেকশন)</h2>
+<p>মূল ধারণা: <strong>স্ক্রিন ক্যাপচার «স্ক্রিনের ছবি পড়ে না» - Youdao ক্যাপচার কোড (গ্লোবাল হুক / DLL) অন্য অ্যাপে ইনজেক্ট করে তার টেক্সট বাফার পড়ে</strong>. এটি বেশিরভাগ «রহস্যময়» ব্যর্থতা ব্যাখ্যা করে: ① <strong>বিশেষাধিকার স্তর</strong> — সাধারণ অধিকারের Youdao «প্রশাসক হিসেবে চালানো» অ্যাপে ইনজেক্ট করতে পারে না (এবং বিপরীত), তাই «শুধু সেই অ্যাপ ক্যাপচার করে না» সাধারণত অমিল বিশেষাধিকার; ② <strong>বিটনেস</strong> — 32/64-বিট হুক মেশে না, তাই পুরনো Youdao 64-বিট Acrobat-এ «অসংগত প্লাগ-ইন, YodaoDict.api লোড হয়নি» দেয়; ③ <strong>স্যান্ডবক্স</strong> — Acrobat-এর «সুরক্ষিত মোড» একটি স্যান্ডবক্স যা তৃতীয়-পক্ষ .api ইনজেকশন আটকায়; ④ <strong>হার্ডওয়্যার ত্বরণ</strong> — ব্রাউজার/PDF বিষয়বস্তু GPU টেক্সচারে রেন্ডার করলে ক্যাপচারের জন্য «পঠনযোগ্য টেক্সট» থাকে না; ⑤ <strong>স্ক্যান</strong> — শুধু-ছবি PDF-এ টেক্সট স্তর নেই, «OCR শক্তি ক্যাপচার» ব্যবহার করুন. নিচে স্ব-পরীক্ষা প্যানেল; তারপর প্রতিযোগী তুলনা ও 2026 অনুমান.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao প্রি-ক্যাপচার স্ব-পরীক্ষা প্যানেল" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ক্যাপচার সক্ষম স্ব-পরীক্ষা প্যানেল (সবুজ = নিশ্চিত / লাল = সহজে উপেক্ষিত)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">যাচাই আইটেম</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">রায়</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">অবস্থা</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao পটভূমিতে চলছে (ট্রে ধূসর নয়)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">প্রক্রিয়া জীবিত</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">নিশ্চিত</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">টিক ক্যাপচার / নির্বাচন / নির্বাচনে স্বয়ংক্রিয় অনুবাদ</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 সুইচ</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">নিশ্চিত</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">সঠিক ক্যাপচার ট্রিগার (হোভার / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ট্রিগার</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">নিশ্চিত</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">লক্ষ্য অ্যাপ সামঞ্জস্যপূর্ণ (Office অ্যাড-ইন / PDF অসুরক্ষিত / ব্রাউজার এক্সটেনশন)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">অ্যাপ দিক</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">যাচাই করুন</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">অনুমতি দেওয়া (mac অ্যাক্সেসিবিলিটি+রেকর্ডিং / win প্রশাসক)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">বিশেষাধিকার স্তর</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">নিশ্চিত</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">শর্টকাট সংঘর্ষ নেই + স্ক্যান নয় / OCR চালু</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">সহজে উপেক্ষিত</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">যাচাই করুন</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">নোট: লাল = দুটি সবচেয়ে উপেক্ষিত - নির্দিষ্ট অ্যাপ সামঞ্জস্য (Office / PDF / ব্রাউজার) ও বিষয়বস্তু/শর্টকাট (স্ক্যানে OCR লাগে, কী সংঘর্ষ); প্রথমে এই দুটি যাচাই করুন.</text></svg><figcaption>চিত্র 2: ক্যাপচার সক্ষম স্ব-পরীক্ষা প্যানেল (সবুজ = নিশ্চিত / লাল = সহজে উপেক্ষিত)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_bn.webp"><img src="/img/board_bn.png" alt="Youdao প্রি-ক্যাপচার স্ব-পরীক্ষা প্যানেল সবুজ/লাল আইটেমের চিত্র" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>চিত্র: প্রথমে «চলছে + তিন সুইচ + অনুমতি», তারপর «অ্যাপ সামঞ্জস্য + বিষয়বস্তু/শর্টকাট» যাচাই করুন - শেষ দুটি সবচেয়ে উপেক্ষিত</figcaption></figure>
+<h2>সম্পূর্ণ উপসর্গ টেবিল (L1 উপসর্গ / অফিশিয়াল অবস্থান · L2 মূল কারণ)</h2>
+<table id="tbl"></table>
+<h2>প্রতিযোগী নির্বাচন/ক্যাপচার সরঞ্জাম তুলনা (ক্যাপচার মোড / OCR / প্ল্যাটফর্ম / দাম · সর্বজনীন ডেটা)</h2>
+<table class="cmp"><tr><th>সফটওয়্যার</th><th>স্ক্রিন ক্যাপচার / নির্বাচন</th><th>স্ক্রিনশট OCR</th><th>প্ল্যাটফর্ম</th><th>অতিরিক্ত অভিধান</th><th>দাম (আনুমানিক)</th></tr><tr><td>Youdao</td><td>গ্লোবাল ক্যাপচার + নির্বাচন অনুবাদ</td><td>স্ক্রিনশট OCR + শক্তি ক্যাপচার</td><td>Win / Mac / iOS / Android / Web / ব্রাউজার এক্সট</td><td>mdx দুর্বল</td><td>কোর ফ্রি (কিছু সদস্যতা / বিজ্ঞাপনহীন)</td></tr><tr><td>Eudic</td><td>নির্বাচন + স্ক্রিন ক্যাপচার</td><td>স্ক্রিনশট ক্যাপচার</td><td>Win / Mac / iOS / Android</td><td>mdx শক্তিশালী (বিশাল লাইব্রেরি)</td><td>বেস ফ্রি + উন্নত পেইড</td></tr><tr><td>iCIBA (Kingsoft)</td><td>ক্যাপচার + নির্বাচন</td><td>স্ক্রিনশট অনুবাদ</td><td>Win / Mac / মোবাইল / Web</td><td>মাঝারি</td><td>ফ্রি (বিজ্ঞাপন) + সদস্যতা</td></tr><tr><td>Saladict</td><td>ইন-ব্রাউজার নির্বাচন (এক্সটেনশন)</td><td>পৃষ্ঠা-নির্ভর / OCR কনফিগ লাগে</td><td>ব্রাউজার এক্সটেনশন (Chrome / Edge / Firefox)</td><td>কনফিগযোগ্য উৎস</td><td>ফ্রি · ওপেন সোর্স</td></tr><tr><td>Microsoft Translator / Bing</td><td>সিস্টেম-স্তর নির্বাচন দুর্বল</td><td>Office অন্তর্নির্মিত + স্ক্রিনশট</td><td>Win / Office / Edge / মোবাইল</td><td>নেই</td><td>ফ্রি</td></tr></table><section class="i4data">
+<h2>Youdao ক্যাপচার ব্যর্থতার কারণ ও নির্বাচন সরঞ্জাম তুলনা (2026 অনুমান)</h2>
+<p>নিম্নলিখিত Youdao-র অফিশিয়াল সহায়তা / FAQ, প্রতিযোগীদের সর্বজনীন উপকরণ ও ডেভেলপার সমস্যা সমাধান থেকে সংশ্লেষিত <strong>2026 অনুমান</strong> (নির্মাতার প্রতিশ্রুতি নয়, সরাসরি পরিমাপ নয়; রেফারেন্সের জন্য, সংস্করণ ও OS-এ পরিবর্তিত):</p>
+<table>
+<tr><th>মাত্রা</th><th>অনুমান / তুলনা</th></tr>
+<tr><td>ক্যাপচার ব্যর্থতার কারণ বিভাজন (সম্প্রদায় · অনু.)</td><td><strong>সক্ষম নয় / অনুমতি ~40%</strong> &gt; <strong>অ্যাপ সামঞ্জস্য (Office/PDF/ব্রাউজার) ~25%</strong> &gt; শর্টকাট সংঘর্ষ ~20% &gt; রেন্ডারিং / বিষয়বস্তু (হার্ড-ত্বরণ / স্ক্যান) ~15%</td></tr>
+<tr><td>ক্যাপচার আসলে কী</td><td>স্ক্রিন ক্যাপচার = লক্ষ্য অ্যাপের টেক্সট বাফার পড়া <strong>গ্লোবাল হুক / DLL ইনজেকশন</strong> (স্ক্রিনের ছবি পড়ে না); তাই বিশেষাধিকার স্তর, বিটনেস, স্যান্ডবক্স, হার্ডওয়্যার ত্বরণে প্রভাবিত</td></tr>
+<tr><td>প্ল্যাটফর্মভেদে ক্যাপচার (অনু.)</td><td>ডেস্কটপ (Win/Mac) <strong>গ্লোবাল স্ক্রিন ক্যাপচার + নির্বাচন + স্ক্রিনশট OCR</strong> সমর্থন করে; মোবাইল বেশিরভাগ নির্বাচন / ফটো অনুবাদ; ওয়েব / ব্রাউজারে <strong>ক্যাপচার এক্সটেনশন</strong> লাগে</td></tr>
+<tr><td>নির্বাচন / ক্যাপচার সরঞ্জাম সারসংক্ষেপ (অনু.)</td><td>Youdao = সব প্ল্যাটফর্ম + শক্তিশালী AI অনুবাদ; Eudic = শক্তিশালী অতিরিক্ত লাইব্রেরি (mdx); iCIBA = গণ ফ্রি; Saladict = ওপেন-সোর্স ব্রাউজার; Microsoft = Office অন্তর্নির্মিত</td></tr>
+<tr><td>দামের স্তর (অনু.)</td><td>Youdao / iCIBA <strong>কোর ফ্রি</strong> (বিজ্ঞাপনহীন / অতিরিক্তের জন্য সদস্যতা) · Eudic <strong>উন্নত পেইড</strong> · Saladict <strong>ফ্রি ওপেন সোর্স</strong> · Microsoft Translator <strong>ফ্রি</strong></td></tr>
+</table>
+<p><small>অনুমান ভিত্তি: উৎস বেসলাইন + সময় এক্সট্রাপোলেশন (cidian.youdao.com অফিশিয়াল সহায়তা / FAQ, Eudic / iCIBA / Saladict / Microsoft সর্বজনীন উপকরণ, সর্বজনীন ডেভেলপার লেখা, 2026); প্রতিটি সরবরাহকারীর সংস্করণ ও OS নীতিতে পরিবর্তিত. সর্বশেষ অফিশিয়াল তথ্য দেখুন. LLM স্থানীয়করণ.</small></p>
+</section>
+<h2>বাস্তব ঘটনা - দ্রুত পড়া</h2>
+<ul class="scenes"><li>ব্রাউজারে ক্যাপচার হয় না কিন্তু Notepad / Word ঠিক: সাধারণত ব্রাউজারে Youdao ক্যাপচার এক্সটেনশন নেই, বা GPU হার্ডওয়্যার ত্বরণ পৃষ্ঠাকে টেক্সচারে রেন্ডার করেছে → এক্সটেনশন ইনস্টল করুন, বা «হার্ডওয়্যার ত্বরণ ব্যবহার» বন্ধ করে পুনরায় চালু করুন.</li><li>Acrobat 64-বিট, PDF-এ নির্বাচন কিছু করে না, «অসংগত প্লাগ-ইন, YodaoDict.api লোড হয়নি»: Acrobat-এ সম্পাদনা → পছন্দসমূহ → নিরাপত্তা (উন্নত) → «স্টার্টআপে সুরক্ষিত মোড সক্ষম» বন্ধ করুন, Acrobat-এর আগে Youdao খুলুন; চললে YodaoDict.api Youdao ফোল্ডার থেকে Acrobat-এর plug_ins-এ কপি করুন.</li><li>PDF টেক্সট নির্বাচনযোগ্য কিন্তু ক্যাপচার হয় না, বা পুরো পৃষ্ঠা নয়: এটি স্ক্যান (টেক্সট স্তরবিহীন ছবি PDF, «OCR শক্তি ক্যাপচার» লাগে), বা Acrobat সুরক্ষিত মোড / Autotray.exe লক ইনজেকশন আটকায়.</li><li>Office (বিশেষত Education / 365) ইনস্টলের পর Word নির্বাচন অনুবাদ করে না: Youdao Office COM অ্যাড-ইন নিষ্ক্রিয় → ফাইল → অপশন → অ্যাড-ইন → COM অ্যাড-ইন → সক্ষম করুন; না হলে পুনঃনিবন্ধনে Youdao পুনরায় ইনস্টল করুন.</li><li>OS আপডেটের পর macOS-এ ক্যাপচার ও শর্টকাট মরে যায়: আপডেট অনুমতি রিসেট করেছে → গোপনীয়তা ও নিরাপত্তায় Youdao-কে «অ্যাক্সেসিবিলিটি» ও «স্ক্রিন রেকর্ডিং» পুনরায় দিন ও পুনরায় চালু করুন.</li><li>সাধারণ অ্যাপে ক্যাপচার কাজ করে কিন্তু «প্রশাসক হিসেবে চালানো» অ্যাপে ব্যর্থ: ভিন্ন বিশেষাধিকার স্তর গ্লোবাল হুককে উন্নত প্রক্রিয়ায় ইনজেক্ট করা থেকে আটকায় → Youdao-তে রাইট-ক্লিক «প্রশাসক হিসেবে চালান».</li><li>মাল্টি-মনিটর / উচ্চ DPI: ক্যাপচার পপআপ অদৃশ্য স্থানে «উড়ে» যায়: প্রতি-স্ক্রিন অমিল DPI স্কেলিং-এর কারণে → ক্যাপচার সেটিংয়ে «উইন্ডো অবস্থান পিন» টিক করে মূল স্ক্রিনের উপরের-বাঁয়ে আটকান.</li></ul><div class="related"><h2>সম্পর্কিত</h2><ul><li><a href="https://yoydao.com/">Youdao ডাউনলোড / সেটআপ গাইড</a></li><li><a href="https://yoydao.com/bn/tutorial/">Youdao ক্যাপচার ও নির্বাচন গাইড</a></li><li><a href="https://yoydao.com/bn/tools/youdao-word-capture/">Youdao ক্যাপচার সমাধান খোঁজ (নির্ভরযোগ্য সম্পূর্ণ টেবিল)</a></li><li><a href="https://yoidao.com/bn/">Youdao Zhiyun API ত্রুটি কোড (সহোদর সাইট)</a></li></ul></div></main>
+<footer>ক্যাপচার/নির্বাচন/OCR/64-বিট সামঞ্জস্য নোট Youdao-এর অফিশিয়াল ডেস্কটপ FAQ ও সহায়তা (cidian.youdao.com) থেকে সংকলিত; Office অ্যাড-ইন সমস্যা সমাধান Microsoft-এর অফিশিয়াল Q&A উল্লেখ করে, এবং Acrobat 64-বিট «YodaoDict.api লোড হয়নি / সুরক্ষিত মোড বন্ধ করুন» নোট সর্বজনীন ডেভেলপার লেখা থেকে (পুনর্লিখিত). তুলনা Eudic, iCIBA, Saladict ও Microsoft Translator-এর সর্বজনীন উপকরণ থেকে. 2026 অনুপাত/প্ল্যাটফর্ম/দাম অনুমান, নির্মাতার প্রতিশ্রুতি বা সরাসরি পরিমাপ নয়. LLM স্থানীয়করণ; প্রতিটি সরবরাহকারীর সর্বশেষ অফিশিয়াল তথ্য দেখুন.<br>সরঞ্জাম পৃষ্ঠা · অফিশিয়াল ক্লায়েন্টের বিকল্প নয়</footer>
+</div>
+<script src="/bn/codes.js"></script><script src="/app.js"></script>
+</body></html>
