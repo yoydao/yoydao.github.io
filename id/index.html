@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao tangkap kata di layar/terjemah seleksi/OCR/pintasan tidak berfungsi - penyebab dan solusi (PDF, Word, browser, 64-bit)</title>
+<meta name="description" content="Tangkap kata di layar Youdao (cari dengan arahkan kursor), terjemah seleksi, OCR tangkapan layar, atau pintasan tidak berfungsi? Cari gejala (tangkap mati / tidak ada popup saat seleksi / tangkap Word-Office / tangkap PDF-Acrobat / seleksi browser Chrome / OCR / konflik pintasan / izin macOS / popup di luar layar pada multi-monitor / 64-bit / versi portabel) untuk gejala L1 dan posisi resmi plus akar penyebab L2: hook global / injeksi DLL, level privilese UAC, add-in COM Office, mode terlindungi Acrobat, akselerasi perangkat keras GPU merender teks jadi tekstur, PDF pindaian butuh OCR, DPI multi-monitor; dengan perbandingan Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator dan estimasi 2026.">
+<link rel="canonical" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao pencari solusi tangkap/seleksi/OCR/pintasan",
+   "url": "https://yoydao.github.io/id/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "id",
+   "description": "Tangkap kata di layar Youdao (cari dengan arahkan kursor), terjemah seleksi, OCR tangkapan layar, atau pintasan tidak berfungsi? Cari gejala (tangkap mati / tidak ada popup saat seleksi / tangkap Word-Office / tangkap PDF-Acrobat / seleksi browser Chrome / OCR / konflik pintasan / izin macOS / popup di luar layar pada multi-monitor / 64-bit / versi portabel) untuk gejala L1 dan posisi resmi plus akar penyebab L2: hook global / injeksi DLL, level privilese UAC, add-in COM Office, mode terlindungi Acrobat, akselerasi perangkat keras GPU merender teks jadi tekstur, PDF pindaian butuh OCR, DPI multi-monitor; dengan perbandingan Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator dan estimasi 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "id",
+   "url": "https://yoydao.github.io/id/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Tangkap layar mati keseluruhan - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tangkap layar butuh Youdao di latar dengan tangkap aktif; versi desktop resmi menawarkan tangkap pintar / tangkap papan klip / tangkap OCR. Tangkap layar pakai hook global yang disuntik ke aplikasi depan untuk membaca teksnya: butuh proses Youdao jalan + sakelar utama tangkap aktif + tombol pemicu cocok. Bila satu hilang, tampak «mati total», sering dikira perangkat lunak rusak. Periksa ikon tray aktif (abu-abu = tak jalan, klik ganda untuk mulai); Pengaturan → Tangkap dan seleksi, centang «aktifkan tangkap» dan pilih mode (arahkan kursor / tahan Ctrl); mulai ulang Youdao dan coba lagi."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Terjemah seleksi tak menampilkan popup - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Terjemah seleksi butuh «seleksi» aktif dengan «terjemah saat seleksi» tercentang; bisa terjemah saat seleksi atau dengan tombol. Seleksi dan tangkap adalah sakelar terpisah: banyak mengaktifkan tangkap tapi bukan seleksi, atau mematikan «terjemah saat seleksi», maka «seleksi tak menampilkan apa pun»; pintasan seleksi juga bisa terpakai. Pengaturan → Tangkap dan seleksi, centang «aktifkan terjemah seleksi» dan «terjemah saat seleksi»; jika dengan tombol, pastikan tombol itu bebas; seleksi dalam browser juga butuh ekstensi tangkap."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Tangkap/seleksi di Word / Office gagal - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao terintegrasi dengan Office via add-in COM untuk terjemah seleksi / kalimat; bila add-in dinonaktifkan atau tak terdaftar, gagal. Office menonaktifkan add-in COM pihak ketiga demi kompatibilitas atau kebijakan; ganti versi (mis. Education baru) membuat add-in lama tak terdaftar untuk Office baru, maka «dulu bisa, sekarang tidak». Word: File → Opsi → Add-in → bawah «Kelola: Add-in COM» → Buka → centang add-in Youdao; jika tidak, instal ulang Youdao untuk mendaftarkannya lagi; pastikan bitness Youdao dan Office cocok."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Tangkap di PDF / Acrobat gagal - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Versi resmi mendukung tangkap layar PDF di Adobe Reader / Acrobat; versi «portabel» tak resmi tak bisa menangkap PDF, dan PDF harus teks, bukan gambar. Tiga penyebab: ① «mode terlindungi» Acrobat adalah sandbox yang memblokir injeksi YodaoDict.api pihak ketiga; ② ketaksesuaian bitness antara Acrobat 64-bit dan add-in Youdao lama memberi «plugin tidak kompatibel»; ③ PDF adalah pindaian (gambar, tanpa lapisan teks). Matikan di Acrobat Edit → Preferensi → Keamanan (lanjutan) → «Aktifkan mode terlindungi saat mulai», buka Youdao sebelum Acrobat; untuk peringatan «tidak kompatibel» 64-bit, pasang Youdao terbaru, atau salin YodaoDict.api ke plug_ins Acrobat; untuk pindaian pakai OCR tangkap kuat."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Seleksi/tangkap di Chrome / browser gagal - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox dll. butuh ekstensi tangkap Youdao terpisah; versi desktop resmi menawarkan «tangkap Chrome». Browser adalah sandbox sendiri: ① tanpa ekstensi tangkap Youdao, hook global tak bisa membaca teks DOM; ② akselerasi perangkat keras GPU merender halaman jadi tekstur tanpa lapisan terbaca; ③ sakelar adblock / keamanan (mis. browser 360) memblokir tangkap. Pasang ekstensi tangkap Youdao untuk browser Anda (via pengaturan Youdao atau toko); matikan «gunakan akselerasi perangkat keras» di pengaturan browser dan mulai ulang; matikan adblock di browser 360."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR tangkapan/area tak berfungsi - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR tangkapan butuh pintasan kenali tangkapan terset (mis. Ctrl+Alt+O) dan modul OCR terunduh; Anda menyeleksi area layar dengan menyeret. OCR tangkapan tak butuh lapisan teks - mengenali area terpilih via gambar, jadi butuh modul OCR terunduh + pintasan bebas + (macOS) izin perekaman layar untuk membaca piksel. Pengaturan → Pintasan, tetapkan tombol tanpa konflik untuk «OCR tangkapan»; unduh modul OCR saat pertama pakai; di macOS beri «Perekaman Layar»; pilih area lebih tajam bila pengenalan gagal."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Konflik pintasan tangkap / tangkapan layar - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tangkap / seleksi / kenali tangkapan semua bisa dikustom di Pintasan; saat konflik memberi peringatan, dan Anda bisa mengganti atau mereset. Pintasan global siapa-dulu-dia-dapat: alat tangkapan, metode masukan, QQ / WeChat, atau kamus lain bisa memegang kombinasi sama, jadi tombol Youdao tak melakukan apa pun. Pengaturan → Pintasan, perhatikan peringatan konflik; ganti ke kombinasi lebih jarang seperti Ctrl+Shift+huruf / Alt+huruf; tutup aplikasi pemegang tombol satu per satu untuk menemukan pelaku."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS tangkap / pintasan butuh otorisasi - bagaimana menyelesaikannya?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS harus memberi Youdao «Aksesibilitas» (memantau pintasan / mengontrol) dan «Perekaman Layar» (membaca layar untuk tangkap / tangkapan) di Pengaturan Sistem → Privasi dan Keamanan. Sandbox macOS menuntut izin eksplisit: tanpa «Aksesibilitas» tak mendengar pintasan global, tanpa «Perekaman Layar» tak membaca piksel; pembaruan sering mereset keduanya. Pengaturan Sistem → Privasi dan Keamanan → centang Youdao di «Aksesibilitas» dan «Perekaman Layar» lalu mulai ulang; beri ulang setelah tiap pembaruan macOS."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Bahasa: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <strong>Bahasa Indonesia</strong> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao tangkap kata di layar / terjemah seleksi / OCR / pintasan - pencari solusi</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_id.webp"><img src="/img/cover_id.png" alt="Ilustrasi alat pencari solusi tangkap/seleksi/tangkapan layar Youdao" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Gbr: Youdao pencari solusi tangkap / seleksi / tangkapan layar (gejala L1 + akar penyebab L2 + perbandingan rival)</figcaption></figure>
+<p>Apakah <strong>tangkap kata di layar</strong> <strong>Youdao</strong> (cari dengan arahkan kursor), <strong>terjemah seleksi</strong>, <strong>OCR</strong>, atau <strong>pintasan</strong> tiba-tiba berhenti? Pahami tiga hal dulu: <strong>apakah tidak diaktifkan / tanpa izin, kompatibilitas aplikasi tertentu (Office / PDF / browser), atau konten itu sendiri (pindaian / akselerasi perangkat keras) tanpa teks terbaca?</strong> Cari <strong>gejala atau kata kunci</strong> yang Anda alami (mis. <code>tangkap</code>, <code>pdf</code>, <code>seleksi</code>, <code>pintasan</code>, <code>64-bit</code>, <code>OCR</code>): pertama <strong>gejala L1 dan posisi resmi</strong>, lalu <strong>akar penyebab L2 dan solusi</strong>, terakhir perbandingan rival dan kasus nyata. Instal / atur? Lihat <a href="https://yoydao.com/">unduh Youdao / panduan tangkap dan seleksi</a>.</p>
+<input id="q" placeholder="Masukkan gejala atau kata kunci, mis. tangkap / pdf / seleksi / pintasan / 64-bit / OCR" autocomplete="off">
+<button id="go">Cari</button>
+<div id="out"></div>
+<h2>Langkah 1: bagi jadi empat kelompok dulu (L1 - jangan langsung instal ulang)</h2>
+<p>Saat tangkap/seleksi Youdao berhenti, 9 dari 10 kali itu salah satu dari empat kelompok - cari dulu siapa yang salah: ① <strong>aktivasi/pengaturan</strong> — Youdao tidak jalan di latar (ikon tray abu-abu), atau Anda tidak mencentang «aktifkan tangkap / seleksi / terjemah saat seleksi», atau pemicu salah; ② <strong>izin</strong> — macOS «Aksesibilitas + Perekaman Layar» belum diberikan, atau di Windows target aplikasi tinggi sedang Youdao tidak jalan sebagai administrator; ③ <strong>kompatibilitas aplikasi</strong> — add-in COM Youdao dinonaktifkan di Word/Excel, mode terlindungi Acrobat memblokir injeksi, atau browser tanpa ekstensi tangkap; ④ <strong>rendering/konten</strong> — PDF pindaian adalah gambar (butuh OCR), browser/PDF dengan akselerasi perangkat keras GPU menggambar teks jadi tekstur, atau DPI multi-monitor tak cocok melempar popup ke luar layar. Pengaturan lengkap: <a href="https://yoydao.com/tutorial/">panduan tangkap dan seleksi Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Aktivasi / pengaturan</b><span class="cs">tangkap · seleksi · terjemah otomatis · OCR kuat</span><div>Pastikan Youdao jalan di latar (ikon tray bukan abu-abu), buka Pengaturan → Tangkap dan seleksi dan centang «aktifkan tangkap», «aktifkan seleksi», «terjemah saat seleksi», dan pilih pemicu yang benar (arahkan kursor / tahan Ctrl).</div></div><div class="catbox"><b>Izin</b><span class="cs">macOS Aksesibilitas+Perekaman Layar · Windows administrator/UAC</span><div>macOS: Pengaturan Sistem → Privasi dan Keamanan, beri Youdao «Aksesibilitas» dan «Perekaman Layar»; Windows: bila target «dijalankan sebagai administrator», jalankan Youdao juga sebagai administrator (hook hanya menyuntik di level privilese yang sama).</div></div><div class="catbox"><b>Kompatibilitas aplikasi</b><span class="cs">Office COM · mode terlindungi Acrobat · 64-bit · ekstensi browser</span><div>Office: File → Opsi → Add-in → Add-in COM, centang add-in Youdao; Acrobat: matikan «Aktifkan mode terlindungi saat mulai», bila perlu salin YodaoDict.api ke plug_ins; browser: pasang ekstensi tangkap Youdao.</div></div><div class="catbox"><b>Pintasan</b><span class="cs">konflik · kustom · tombol OCR tangkapan</span><div>Pengaturan → Pintasan, perhatikan peringatan konflik; ganti ke kombinasi jarang seperti Ctrl+Shift / Alt+huruf; beri OCR tangkapan tombol sendiri (mis. Ctrl+Alt+O, jauh dari aplikasi lain).</div></div><div class="catbox"><b>Rendering / tampilan</b><span class="cs">akselerasi perangkat keras · pindaian · DPI multi-monitor · layar penuh</span><div>Browser/PDF dengan akselerasi perangkat keras GPU merender konten jadi tekstur tanpa teks terbaca (matikan akselerasi); PDF pindaian adalah gambar (pakai OCR); untuk popup di luar layar pada multi-monitor centang «kunci posisi jendela».</div></div><div class="catbox"><b>Jaringan / instalasi</b><span class="cs">kecepatan tangkap · versi portabel · add-in tak dimuat</span><div>Pencarian online lambat? periksa jaringan; selalu pasang versi resmi lengkap - versi «portabel/ringan» tak resmi tak punya DLL hook tangkap terdaftar, jadi tangkap PDF/global gagal begitu saja.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Alur triase kegagalan tangkap/seleksi Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Triase tangkap / seleksi tak berfungsi (empat kelompok dulu: sakelar / izin / aplikasi / konten)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Tangkap mati</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Empat kelompok</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host bisa periksa-mandiri →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">sakelar mati · tanpa izin</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">Aplikasi / konten →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/browser · pindai/aksel-pk</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Empat akar penyebab (baca penyebab / solusi per item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Aktivasi/pengaturan</text><text x="32" y="234" fill="#555" font-size="11">tangkap · seleksi · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Izin</text><text x="206" y="234" fill="#555" font-size="11">mac Aksesibilitas · win administrator</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Kompat. aplikasi</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · browser</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Render/konten</text><text x="554" y="234" fill="#555" font-size="11">pindai · aksel · multi-monitor</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Gbr 1: triase kegagalan tangkap/seleksi Youdao - bagi jadi empat kelompok, lalu lokalkan ke host / aplikasi / konten</figcaption></figure>
+<h2>Langkah 2: akar penyebab paling terabaikan → L2 (tangkap layar = hook global / injeksi DLL)</h2>
+<p>Inti: <strong>tangkap layar tidak «membaca citra layar» - Youdao menyuntikkan kode tangkap (hook global / DLL) ke aplikasi lain untuk membaca buffer teksnya</strong>. Ini menjelaskan sebagian besar kegagalan «misterius»: ① <strong>level privilese</strong> — Youdao berhak normal tak bisa menyuntik ke aplikasi «dijalankan sebagai administrator» (dan sebaliknya), jadi «hanya aplikasi itu tak menangkap» biasanya berarti privilese tak cocok; ② <strong>bitness</strong> — hook 32/64-bit tak bercampur, jadi Youdao lama di Acrobat 64-bit memberi «plugin tidak kompatibel, tidak bisa memuat YodaoDict.api»; ③ <strong>sandbox</strong> — «mode terlindungi» Acrobat adalah sandbox yang memblokir injeksi .api pihak ketiga; ④ <strong>akselerasi perangkat keras</strong> — begitu browser/PDF merender konten jadi tekstur GPU, tak ada «teks terbaca» untuk ditangkap; ⑤ <strong>pindaian</strong> — PDF hanya gambar tanpa lapisan teks, pakai «OCR tangkap kuat». Di bawah panel periksa-mandiri; selanjutnya perbandingan rival dan estimasi 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Panel periksa-mandiri pra-tangkap Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Panel periksa-mandiri aktivasi tangkap (hijau = terkonfirmasi / merah = mudah terlewat)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Item periksa</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Putusan</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Status</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao jalan di latar (tray bukan abu-abu)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">proses hidup</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">terkonfirmasi</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tercentang tangkap / seleksi / terjemah saat seleksi</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 sakelar</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">terkonfirmasi</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Pemicu tangkap benar (arahkan kursor / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">pemicu</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">terkonfirmasi</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Aplikasi target kompatibel (add-in Office / PDF tak terlindungi / ekstensi browser)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">sisi aplikasi</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">perlu cek</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Izin diberikan (mac Aksesibilitas+Perekaman / win administrator)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">level privilese</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">terkonfirmasi</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tanpa konflik pintasan + bukan pindaian / OCR aktif</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">mudah terlewat</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">perlu cek</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Catatan: merah = dua paling terabaikan - kompatibilitas aplikasi tertentu (Office / PDF / browser) dan konten/pintasan (pindaian butuh OCR, konflik tombol); periksa dua ini dulu.</text></svg><figcaption>Gbr 2: panel periksa-mandiri aktivasi tangkap (hijau = terkonfirmasi / merah = mudah terlewat)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_id.webp"><img src="/img/board_id.png" alt="Ilustrasi panel periksa-mandiri pra-tangkap Youdao dengan item hijau/merah" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Gbr: periksa dulu «jalan + tiga sakelar + izin», lalu «kompatibilitas aplikasi + konten/pintasan» - dua terakhir paling terabaikan</figcaption></figure>
+<h2>Tabel gejala lengkap (gejala L1 / posisi resmi · akar penyebab L2)</h2>
+<table id="tbl"></table>
+<h2>Perbandingan alat seleksi/tangkap rival (mode tangkap / OCR / platform / harga · data publik)</h2>
+<table class="cmp"><tr><th>Perangkat lunak</th><th>Tangkap layar / seleksi</th><th>OCR tangkapan</th><th>Platform</th><th>Kamus tambahan</th><th>Harga (est.)</th></tr><tr><td>Youdao</td><td>tangkap global + terjemah seleksi</td><td>OCR tangkapan + tangkap kuat</td><td>Win / Mac / iOS / Android / Web / ekstensi browser</td><td>mdx lemah</td><td>inti gratis (sebagian keanggotaan / tanpa iklan)</td></tr><tr><td>Eudic</td><td>seleksi + tangkap layar</td><td>tangkap tangkapan</td><td>Win / Mac / iOS / Android</td><td>mdx kuat (pustaka besar)</td><td>dasar gratis + premium berbayar</td></tr><tr><td>iCIBA (Kingsoft)</td><td>tangkap + seleksi</td><td>terjemah tangkapan</td><td>Win / Mac / seluler / Web</td><td>sedang</td><td>gratis (iklan) + keanggotaan</td></tr><tr><td>Saladict</td><td>seleksi dalam browser (ekstensi)</td><td>tergantung halaman / OCR perlu konfigurasi</td><td>ekstensi browser (Chrome / Edge / Firefox)</td><td>sumber dapat diatur</td><td>gratis · sumber terbuka</td></tr><tr><td>Microsoft Translator / Bing</td><td>seleksi tingkat sistem lemah</td><td>bawaan Office + tangkapan</td><td>Win / Office / Edge / seluler</td><td>tidak ada</td><td>gratis</td></tr></table><section class="i4data">
+<h2>Penyebab kegagalan tangkap Youdao dan perbandingan alat seleksi (estimasi 2026)</h2>
+<p>Berikut <strong>estimasi 2026</strong> yang disintesis dari bantuan / FAQ resmi Youdao, materi publik rival, dan pemecahan masalah pengembang (bukan komitmen produsen, bukan pengukuran langsung; sebagai acuan, berubah per versi dan OS):</p>
+<table>
+<tr><th>Dimensi</th><th>Estimasi / perbandingan</th></tr>
+<tr><td>Pembagian penyebab kegagalan tangkap (komunitas · est.)</td><td><strong>tak diaktifkan / izin ~40%</strong> &gt; <strong>kompatibilitas aplikasi (Office/PDF/browser) ~25%</strong> &gt; konflik pintasan ~20% &gt; rendering / konten (aksel-pk / pindaian) ~15%</td></tr>
+<tr><td>Apa sebenarnya tangkap itu</td><td>tangkap layar = <strong>hook global / injeksi DLL</strong> yang membaca buffer teks aplikasi target (bukan membaca citra layar); maka dipengaruhi level privilese, bitness, sandbox, akselerasi perangkat keras</td></tr>
+<tr><td>Tangkap per platform (est.)</td><td>desktop (Win/Mac) mendukung <strong>tangkap layar global + seleksi + OCR tangkapan</strong>; seluler kebanyakan seleksi / terjemah foto; web / browser butuh <strong>ekstensi tangkap</strong></td></tr>
+<tr><td>Ringkasan alat seleksi / tangkap (est.)</td><td>Youdao = semua platform + terjemah AI kuat; Eudic = pustaka tambahan kuat (mdx); iCIBA = gratis massal; Saladict = browser sumber terbuka; Microsoft = bawaan Office</td></tr>
+<tr><td>Tingkat harga (est.)</td><td>Youdao / iCIBA <strong>inti gratis</strong> (keanggotaan untuk tanpa iklan / ekstra) · Eudic <strong>premium berbayar</strong> · Saladict <strong>gratis sumber terbuka</strong> · Microsoft Translator <strong>gratis</strong></td></tr>
+</table>
+<p><small>Dasar estimasi: garis dasar sumber + ekstrapolasi waktu (bantuan / FAQ resmi cidian.youdao.com, materi publik Eudic / iCIBA / Saladict / Microsoft, artikel publik pengembang, 2026); berubah dengan versi dan kebijakan OS tiap penyedia. Rujuk info resmi terbaru. Lokalisasi LLM.</small></p>
+</section>
+<h2>Kasus nyata - baca cepat</h2>
+<ul class="scenes"><li>Tak menangkap di browser tapi Notepad / Word bisa: biasanya browser tak punya ekstensi tangkap Youdao, atau akselerasi perangkat keras GPU merender halaman jadi tekstur → pasang ekstensi, atau matikan «gunakan akselerasi perangkat keras» dan mulai ulang.</li><li>Acrobat 64-bit, seleksi di PDF tak ada respons, «plugin tidak kompatibel, tidak bisa memuat YodaoDict.api»: matikan di Acrobat Edit → Preferensi → Keamanan (lanjutan) → «Aktifkan mode terlindungi saat mulai», buka Youdao sebelum Acrobat; jika tetap, salin YodaoDict.api dari folder Youdao ke plug_ins Acrobat.</li><li>Teks PDF bisa diseleksi tapi tak tertangkap, atau seluruh halaman tidak: itu pindaian (PDF gambar tanpa lapisan teks, butuh «OCR tangkap kuat»), atau mode terlindungi Acrobat / kunci Autotray.exe menghalangi injeksi.</li><li>Setelah pasang Office (terutama Education / 365) Word tak menerjemahkan seleksi: add-in COM Office Youdao dinonaktifkan → File → Opsi → Add-in → Add-in COM → aktifkan; jika tidak, instal ulang Youdao untuk mendaftarkannya lagi.</li><li>Setelah pembaruan OS, tangkap dan pintasan mati di macOS: pembaruan mereset izin → beri ulang Youdao «Aksesibilitas» dan «Perekaman Layar» di Privasi dan Keamanan lalu mulai ulang.</li><li>Tangkap bekerja di aplikasi normal tapi gagal di aplikasi «dijalankan sebagai administrator»: level privilese berbeda menghalangi hook global menyuntik ke proses tinggi → klik kanan Youdao «Jalankan sebagai administrator».</li><li>Multi-monitor / DPI tinggi: popup tangkap «terbang» ke tempat tak terlihat: akibat penskalaan DPI per layar tak cocok → centang «kunci posisi jendela» di pengaturan tangkap untuk memakukannya di kiri atas layar utama.</li></ul><div class="related"><h2>Terkait</h2><ul><li><a href="https://yoydao.com/">Unduh Youdao / panduan penyiapan</a></li><li><a href="https://yoydao.com/id/tutorial/">Panduan tangkap dan seleksi Youdao</a></li><li><a href="https://yoydao.com/id/tools/youdao-word-capture/">Youdao pencari solusi tangkap (tabel lengkap otoritatif)</a></li><li><a href="https://yoidao.com/id/">Kode galat API Youdao Zhiyun (situs saudara)</a></li></ul></div></main>
+<footer>Catatan tangkap/seleksi/OCR/kompatibilitas 64-bit dirangkum dari FAQ dan bantuan desktop resmi Youdao (cidian.youdao.com); pemecahan add-in Office merujuk Q&A resmi Microsoft, dan catatan Acrobat 64-bit «tidak bisa memuat YodaoDict.api / matikan mode terlindungi» dari artikel publik pengembang (diformulasikan ulang). Perbandingan dari materi publik Eudic, iCIBA, Saladict, dan Microsoft Translator. Proporsi/platform/harga 2026 adalah estimasi, bukan komitmen produsen atau pengukuran langsung. Lokalisasi LLM; rujuk info resmi terbaru tiap penyedia.<br>Halaman alat · bukan pengganti klien resmi</footer>
+</div>
+<script src="/id/codes.js"></script><script src="/app.js"></script>
+</body></html>
