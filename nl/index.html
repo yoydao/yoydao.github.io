@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="nl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao schermwoordopname/selectievertaling/OCR/sneltoetsen werkt niet - oorzaken en oplossing (PDF, Word, browser, 64-bit)</title>
+<meta name="description" content="Werken Youdao's schermwoordopname (opzoeken bij hover), selectievertaling, schermafbeelding-OCR of sneltoetsen niet? Zoek het symptoom (opname dood / geen pop-up bij selectie / Word-Office-opname / PDF-Acrobat-opname / Chrome-browserselectie / OCR / sneltoetsconflict / macOS-rechten / pop-up buiten beeld bij multi-monitor / 64-bit / portable versie) voor het L1-symptoom en de officiële positie plus de L2-grondoorzaak: globale hook / DLL-injectie, UAC-rechtenniveau, Office-COM-invoegtoepassing, beschermde modus van Acrobat, GPU-hardwareversnelling die tekst als textuur rendert, gescande PDF die OCR nodig heeft, DPI multi-monitor; met een vergelijking Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator en schattingen 2026.">
+<link rel="canonical" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao oplossingszoeker opname/selectie/OCR/sneltoetsen",
+   "url": "https://yoydao.github.io/nl/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "nl",
+   "description": "Werken Youdao's schermwoordopname (opzoeken bij hover), selectievertaling, schermafbeelding-OCR of sneltoetsen niet? Zoek het symptoom (opname dood / geen pop-up bij selectie / Word-Office-opname / PDF-Acrobat-opname / Chrome-browserselectie / OCR / sneltoetsconflict / macOS-rechten / pop-up buiten beeld bij multi-monitor / 64-bit / portable versie) voor het L1-symptoom en de officiële positie plus de L2-grondoorzaak: globale hook / DLL-injectie, UAC-rechtenniveau, Office-COM-invoegtoepassing, beschermde modus van Acrobat, GPU-hardwareversnelling die tekst als textuur rendert, gescande PDF die OCR nodig heeft, DPI multi-monitor; met een vergelijking Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator en schattingen 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "nl",
+   "url": "https://yoydao.github.io/nl/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Schermopname over de hele linie dood - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Schermopname vereist Youdao op de achtergrond met opname ingeschakeld; de officiële desktopversie biedt slimme opname / klembordopname / OCR-opname. Schermopname gebruikt een globale hook geïnjecteerd in de voorgrond-app om diens tekst te lezen: nodig zijn het draaiende Youdao-proces + de actieve hoofdopnameschakelaar + de juiste triggertoets. Mist er één, dan lijkt het «helemaal dood», vaak aangezien voor kapotte software. Controleer of het vakpictogram actief is (grijs = draait niet, dubbelklik om te starten); Instellingen → Opname en selectie, vink «opname inschakelen» aan en kies de modus (hover / Ctrl ingedrukt); herstart Youdao en probeer opnieuw."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Selectievertaling toont geen pop-up - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Selectievertaling vereist «selectie» ingeschakeld met «vertalen bij selectie» aangevinkt; kan vertalen bij selectie of via een toets. Selectie en opname zijn aparte schakelaars: velen schakelen opname in maar niet selectie, of zetten «vertalen bij selectie» uit, vandaar «selecteren toont niets»; de selectiesneltoets kan ook bezet zijn. Instellingen → Opname en selectie, vink «selectievertaling inschakelen» en «vertalen bij selectie» aan; bij toetstrigger, bevestig dat die toets vrij is; selectie in de browser heeft ook de opname-extensie nodig."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Opname/selectie in Word / Office faalt - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao integreert met Office via een COM-invoegtoepassing voor selectie-/zinsvertaling; is de invoegtoepassing uitgeschakeld of niet geregistreerd, dan faalt het. Office schakelt COM-invoegtoepassingen van derden uit om compatibiliteit of beleid; van versie wisselen (bv. een nieuwe Education) laat de oude invoegtoepassing ongeregistreerd voor het nieuwe Office, vandaar «het werkte, nu niet». Word: Bestand → Opties → Invoegtoepassingen → onderaan «Beheren: COM-invoegtoepassingen» → Start → vink de Youdao-invoegtoepassing aan; zo niet, herinstalleer Youdao om hem opnieuw te registreren; controleer of de bitness van Youdao en Office overeenkomt."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Opname in PDF / Acrobat faalt - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Officiële versies ondersteunen PDF-schermopname in Adobe Reader / Acrobat; onofficiële «portable» versies kunnen geen PDF opnemen, en de PDF moet tekst zijn, geen afbeelding. Drie oorzaken: ① de «beschermde modus» van Acrobat is een sandbox die injectie van YodaoDict.api van derden blokkeert; ② de bitness-mismatch tussen 64-bit Acrobat en een oude Youdao-invoegtoepassing geeft «incompatibele invoegtoepassing»; ③ de PDF is een scan (afbeelding, zonder tekstlaag). Zet in Acrobat Bewerken → Voorkeuren → Beveiliging (uitgebreid) → «Beschermde modus bij opstarten inschakelen» uit, open Youdao vóór Acrobat; bij de 64-bit «incompatibel»-melding, installeer het nieuwste Youdao, of kopieer YodaoDict.api naar plug_ins van Acrobat; voor scans gebruik krachtige OCR-opname."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Selectie/opname in Chrome / browser faalt - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox enz. hebben een aparte Youdao-opname-extensie nodig; de officiële desktopversie biedt «Chrome-opname». De browser is z'n eigen sandbox: ① zonder Youdao-opname-extensie kan de globale hook de DOM-tekst niet lezen; ② GPU-hardwareversnelling rendert de pagina naar textuur zonder leesbare laag; ③ adblock-/beveiligingsschakelaars (bv. 360-browser) blokkeren de opname. Installeer de Youdao-opname-extensie voor je browser (via Youdao-instellingen of de store); zet «hardwareversnelling gebruiken» uit in de browserinstellingen en herstart; zet adblock in de 360-browser uit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Schermafbeelding-/gebied-OCR-vertaling werkt niet - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Schermafbeelding-OCR vereist een ingestelde herkenningssneltoets (bv. Ctrl+Alt+O) en de gedownloade OCR-module; je selecteert een schermgebied door slepen. Schermafbeelding-OCR heeft geen tekstlaag nodig - het herkent het geselecteerde gebied via afbeelding, dus nodig zijn de gedownloade OCR-module + een vrije sneltoets + (macOS) schermopnamerecht om de pixels te lezen. Instellingen → Sneltoetsen, wijs een conflictvrije toets toe aan «OCR-schermafbeelding»; download de OCR-module bij eerste gebruik; verleen op macOS «Schermopname»; kies een scherper gebied als de herkenning mist."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Conflict van opname-/schermafbeeldingssneltoets - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Opname / selectie / schermafbeelding-herkenning zijn allemaal aanpasbaar in Sneltoetsen; bij conflict waarschuwt het, en je kunt opnieuw toewijzen of resetten. Globale sneltoetsen zijn wie-het-eerst-komt: een schermafbeeldingstool, invoermethode, QQ / WeChat of een ander woordenboek kunnen dezelfde combinatie houden, dus de Youdao-toets doet niets. Instellingen → Sneltoetsen, let op de conflictmelding; wissel naar een zeldzamere combinatie zoals Ctrl+Shift+letter / Alt+letter; sluit toets-houdende apps één voor één om de boosdoener te vinden."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS opname / sneltoetsen vereisen autorisatie - hoe op te lossen?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS moet Youdao «Toegankelijkheid» (om sneltoetsen te monitoren / besturen) en «Schermopname» (om het scherm te lezen voor opname / schermafbeelding) verlenen in Systeeminstellingen → Privacy en beveiliging. De macOS-sandbox vereist expliciete machtigingen: zonder «Toegankelijkheid» hoort het geen globale sneltoetsen, zonder «Schermopname» leest het geen pixels; updates resetten vaak beide. Systeeminstellingen → Privacy en beveiliging → vink Youdao aan in «Toegankelijkheid» en «Schermopname» en herstart hem; verleen opnieuw na elke macOS-update."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Taal: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <strong>Nederlands</strong> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao schermwoordopname / selectievertaling / OCR / sneltoetsen - oplossingszoeker</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_nl.webp"><img src="/img/cover_nl.png" alt="Illustratie van Youdao's oplossingszoektool voor opname/selectie/schermafbeelding" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: Youdao oplossingszoeker opname / selectie / schermafbeelding (L1-symptoom + L2-grondoorzaak + rivalenvergelijking)</figcaption></figure>
+<p>Zijn <strong>Youdao</strong>'s <strong>schermwoordopname</strong> (opzoeken bij hover), <strong>selectievertaling</strong>, <strong>OCR</strong> of <strong>sneltoetsen</strong> plotseling gestopt? Verhelder eerst drie dingen: <strong>is het niet ingeschakeld / geen rechten, de compatibiliteit van een specifieke app (Office / PDF / browser), of heeft de inhoud zelf (scan / hardwareversnelling) geen leesbare tekst?</strong> Zoek het <strong>symptoom of trefwoord</strong> dat je hebt (bv. <code>opname</code>, <code>pdf</code>, <code>selectie</code>, <code>sneltoets</code>, <code>64-bit</code>, <code>OCR</code>): eerst het <strong>L1-symptoom en de officiële positie</strong>, dan de <strong>L2-grondoorzaak en oplossing</strong>, ten slotte de vergelijking met rivalen en echte gevallen. Installeren / instellen? Zie <a href="https://yoydao.com/">Youdao-download / gids voor opname en selectie</a>.</p>
+<input id="q" placeholder="Voer een symptoom of trefwoord in, bv. opname / pdf / selectie / sneltoets / 64-bit / OCR" autocomplete="off">
+<button id="go">Zoeken</button>
+<div id="out"></div>
+<h2>Stap 1: deel eerst in vier groepen (L1 - niet meteen opnieuw installeren)</h2>
+<p>Als Youdao's opname/selectie stopt, is het 9 van de 10 keer een van vier groepen - zoek eerst wiens schuld het is: ① <strong>inschakeling/instellingen</strong> — Youdao draait niet op de achtergrond (vakpictogram grijs), of je hebt «opname / selectie / vertalen bij selectie inschakelen» niet aangevinkt, of de verkeerde opnametrigger; ② <strong>rechten</strong> — macOS «Toegankelijkheid + Schermopname» niet verleend, of op Windows is het doel een verhoogde app terwijl Youdao niet als beheerder draait; ③ <strong>app-compatibiliteit</strong> — de Youdao-COM-invoegtoepassing is uitgeschakeld in Word/Excel, de beschermde modus van Acrobat blokkeert de injectie, of de browser heeft geen opname-extensie; ④ <strong>rendering/inhoud</strong> — een gescande PDF is een afbeelding (heeft OCR nodig), de browser/PDF heeft GPU-hardwareversnelling die tekst als textuur tekent, of ongelijke multi-monitor-DPI gooit de pop-up buiten beeld. Volledige instelling: <a href="https://yoydao.com/tutorial/">Youdao-gids voor opname en selectie</a>.</p>
+<div class="cat"><div class="catbox"><b>Inschakeling / instellingen</b><span class="cs">opname · selectie · automatisch vertalen · krachtige OCR</span><div>Zorg dat Youdao op de achtergrond draait (vakpictogram niet grijs), ga naar Instellingen → Opname en selectie en vink «opname inschakelen», «selectie inschakelen», «vertalen bij selectie» aan, en kies de juiste trigger (hover / Ctrl ingedrukt).</div></div><div class="catbox"><b>Rechten</b><span class="cs">macOS Toegankelijkheid+Schermopname · Windows beheerder/UAC</span><div>macOS: Systeeminstellingen → Privacy en beveiliging, verleen Youdao «Toegankelijkheid» en «Schermopname»; Windows: als het doel «als beheerder uitgevoerd» is, voer Youdao ook als beheerder uit (een hook injecteert alleen op hetzelfde rechtenniveau).</div></div><div class="catbox"><b>App-compatibiliteit</b><span class="cs">Office COM · beschermde modus Acrobat · 64-bit · browserextensie</span><div>Office: Bestand → Opties → Invoegtoepassingen → COM-invoegtoepassingen, vink de Youdao-invoegtoepassing aan; Acrobat: zet «Beschermde modus bij opstarten inschakelen» uit, en kopieer indien nodig YodaoDict.api naar plug_ins; browser: installeer de Youdao-opname-extensie.</div></div><div class="catbox"><b>Sneltoetsen</b><span class="cs">conflict · aangepast · OCR-opnametoets</span><div>Instellingen → Sneltoetsen, let op de conflictmelding; wissel naar een minder botsende combinatie zoals Ctrl+Shift / Alt+letter; geef OCR-opname een eigen toets (bv. Ctrl+Alt+O, weg van andere apps).</div></div><div class="catbox"><b>Rendering / weergave</b><span class="cs">hardwareversnelling · scans · DPI multi-monitor · volledig scherm</span><div>Een browser/PDF met GPU-hardwareversnelling rendert inhoud naar een textuur zonder leesbare tekst (zet versnelling uit); een gescande PDF is een afbeelding (gebruik OCR); voor pop-ups buiten beeld bij multi-monitor vink «vensterpositie vastzetten» aan.</div></div><div class="catbox"><b>Netwerk / installatie</b><span class="cs">opnamesnelheid · portable versie · invoegtoepassing niet geladen</span><div>Online opzoeken traag? controleer het netwerk; installeer altijd de officiële volledige versie - onofficiële «portable/lichte» versies missen de geregistreerde opname-hook-DLL, dus PDF/globale opname faalt simpelweg.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Triage-stroom van opname-/selectiefouten van Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Triage opname / selectie werkt niet (eerst vier groepen: schakelaars / rechten / app / inhoud)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Opname dood</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Vier groepen</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host zelf-controleerbaar →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">schakelaar uit · geen rechten</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">App / inhoud →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/browser · scan/hw-versn</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Vier grondoorzaken (lees oorzaak / oplossing per item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Inschakeling/inst.</text><text x="32" y="234" fill="#555" font-size="11">opname · selectie · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Rechten</text><text x="206" y="234" fill="#555" font-size="11">mac Toegankelijkh. · win beheerder</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ App-compat.</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · browser</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Render/inhoud</text><text x="554" y="234" fill="#555" font-size="11">scan · versn · multi-monitor</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Fig 1: triage van opname-/selectiefouten van Youdao - deel in vier groepen, lokaliseer dan op host / app / inhoud</figcaption></figure>
+<h2>Stap 2: de meest over het hoofd geziene grondoorzaak → L2 (schermopname = globale hook / DLL-injectie)</h2>
+<p>Kerngedachte: <strong>schermopname «leest niet het schermbeeld» - Youdao injecteert opnamecode (een globale hook / DLL) in de andere app om diens tekstbuffer te lezen</strong>. Dat verklaart de meeste «mysterieuze» fouten: ① <strong>rechtenniveau</strong> — een Youdao met normale rechten kan niet injecteren in een app «als beheerder uitgevoerd» (en omgekeerd), dus «alleen die app neemt niet op» betekent meestal ongelijke rechten; ② <strong>bitness</strong> — 32/64-bit hooks mengen niet, dus een oud Youdao op 64-bit Acrobat geeft «incompatibele invoegtoepassing, kan YodaoDict.api niet laden»; ③ <strong>sandbox</strong> — de «beschermde modus» van Acrobat is een sandbox die injectie van .api van derden blokkeert; ④ <strong>hardwareversnelling</strong> — zodra een browser/PDF de inhoud naar een GPU-textuur rendert, blijft er geen «leesbare tekst» over om op te nemen; ⑤ <strong>scans</strong> — een PDF met alleen afbeelding heeft geen tekstlaag, gebruik «krachtige OCR-opname». Hieronder het zelfcontrolepaneel; verder de vergelijking met rivalen en de schattingen 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao zelfcontrolepaneel voor opname" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Zelfcontrolepaneel voor opname-inschakeling (groen = bevestigd / rood = makkelijk gemist)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Controlepunt</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Oordeel</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Status</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao draait op achtergrond (vak niet grijs)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">proces actief</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">bevestigd</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Aangevinkt opname / selectie / vertalen bij selectie</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 schakelaars</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">bevestigd</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Juiste opnametrigger (hover / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">trigger</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">bevestigd</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Doel-app compatibel (Office-invoegtoep. / PDF niet beschermd / browserextensie)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">app-kant</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">te checken</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Rechten verleend (mac Toegankelijkh.+Opname / win beheerder)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">rechtenniveau</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">bevestigd</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Geen sneltoetsconflict + geen scan / OCR aan</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">makkelijk gemist</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">te checken</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Let op: rood = de twee meest gemiste - app-compatibiliteit (Office / PDF / browser) en inhoud/sneltoets (scan heeft OCR nodig, toetsconflicten); check deze twee eerst.</text></svg><figcaption>Fig 2: zelfcontrolepaneel voor opname-inschakeling (groen = bevestigd / rood = makkelijk gemist)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_nl.webp"><img src="/img/board_nl.png" alt="Illustratie van Youdao's zelfcontrolepaneel voor opname met groen/rode items" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Fig: controleer eerst «draait + drie schakelaars + rechten», dan «app-compatibiliteit + inhoud/sneltoets» - de laatste twee worden het meest gemist</figcaption></figure>
+<h2>Volledige symptomentabel (L1-symptoom / officiële positie · L2-grondoorzaak)</h2>
+<table id="tbl"></table>
+<h2>Vergelijking van rivaliserende selectie-/opnametools (opnamemodus / OCR / platform / prijs · openbare data)</h2>
+<table class="cmp"><tr><th>Software</th><th>Schermopname / selectie</th><th>Schermafbeelding-OCR</th><th>Platforms</th><th>Extra woordenboeken</th><th>Prijs (schat.)</th></tr><tr><td>Youdao</td><td>globale opname + selectievertaling</td><td>schermafbeelding-OCR + krachtige opname</td><td>Win / Mac / iOS / Android / Web / browserext.</td><td>mdx zwak</td><td>kern gratis (deels lidmaatschap / advertentievrij)</td></tr><tr><td>Eudic</td><td>selectie + schermopname</td><td>schermafbeelding-opname</td><td>Win / Mac / iOS / Android</td><td>mdx sterk (enorme bibliotheken)</td><td>basis gratis + premium betaald</td></tr><tr><td>iCIBA (Kingsoft)</td><td>opname + selectie</td><td>schermafbeelding-vertaling</td><td>Win / Mac / mobiel / Web</td><td>gemiddeld</td><td>gratis (advertenties) + lidmaatschap</td></tr><tr><td>Saladict</td><td>selectie in browser (extensie)</td><td>pagina-afhankelijk / OCR vereist config</td><td>browserextensie (Chrome / Edge / Firefox)</td><td>configureerbare bronnen</td><td>gratis · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>systeembrede selectie zwak</td><td>ingebouwd in Office + schermafbeelding</td><td>Win / Office / Edge / mobiel</td><td>geen</td><td>gratis</td></tr></table><section class="i4data">
+<h2>Oorzaken van Youdao-opnamefouten en vergelijking van selectietools (schatting 2026)</h2>
+<p>Het volgende zijn <strong>2026-schattingen</strong> samengevoegd uit de officiële help / FAQ van Youdao, openbaar materiaal van rivalen en ontwikkelaars-troubleshooting (geen toezeggingen van de fabrikant, geen eigen meting; ter referentie, verandert per versie en OS):</p>
+<table>
+<tr><th>Dimensie</th><th>Schatting / vergelijking</th></tr>
+<tr><td>Verdeling van oorzaken van opnamefouten (community · schat.)</td><td><strong>niet ingeschakeld / rechten ~40%</strong> &gt; <strong>app-compatibiliteit (Office/PDF/browser) ~25%</strong> &gt; sneltoetsconflict ~20% &gt; rendering / inhoud (hw-versn / scan) ~15%</td></tr>
+<tr><td>Wat opname echt is</td><td>schermopname = <strong>globale hook / DLL-injectie</strong> die de tekstbuffer van de doel-app leest (leest niet het schermbeeld); vandaar de invloed van rechtenniveau, bitness, sandbox, hardwareversnelling</td></tr>
+<tr><td>Opname per platform (schat.)</td><td>desktop (Win/Mac) ondersteunt <strong>globale schermopname + selectie + schermafbeelding-OCR</strong>; mobiel is vooral selectie / fotovertaling; web / browser heeft een <strong>opname-extensie</strong> nodig</td></tr>
+<tr><td>Overzicht selectie-/opnametools (schat.)</td><td>Youdao = alle platforms + sterke AI-vertaling; Eudic = sterke extra bibliotheken (mdx); iCIBA = massagratis; Saladict = open-source browser; Microsoft = ingebouwd in Office</td></tr>
+<tr><td>Prijsniveaus (schat.)</td><td>Youdao / iCIBA <strong>kern gratis</strong> (lidmaatschap voor advertentievrij / extra's) · Eudic <strong>premium betaald</strong> · Saladict <strong>gratis open source</strong> · Microsoft Translator <strong>gratis</strong></td></tr>
+</table>
+<p><small>Schattingsbasis: bronbasislijn + tijdsextrapolatie (officiële help / FAQ van cidian.youdao.com, openbaar materiaal van Eudic / iCIBA / Saladict / Microsoft, openbare ontwikkelaarsartikelen, 2026); verandert met de versie en OS-beleid van elke aanbieder. Richt je op de nieuwste officiële info. LLM-lokalisatie.</small></p>
+</section>
+<h2>Echte gevallen - snel lezen</h2>
+<ul class="scenes"><li>Geen opname in de browser maar Kladblok / Word wel: meestal heeft de browser geen Youdao-opname-extensie, of GPU-hardwareversnelling rendert de pagina naar textuur → installeer de extensie, of zet «hardwareversnelling gebruiken» uit en herstart.</li><li>Acrobat 64-bit, selecteren in een PDF doet niets, «incompatibele invoegtoepassing, kan YodaoDict.api niet laden»: zet in Acrobat Bewerken → Voorkeuren → Beveiliging (uitgebreid) → «Beschermde modus bij opstarten inschakelen» uit, open Youdao vóór Acrobat; blijft het, kopieer YodaoDict.api uit de Youdao-map naar plug_ins van Acrobat.</li><li>PDF-tekst is selecteerbaar maar neemt niet op, of de hele pagina niet: het is een scan (afbeelding-PDF zonder tekstlaag, heeft «krachtige OCR-opname» nodig), of de beschermde modus van Acrobat / een Autotray.exe-blokkade hindert de injectie.</li><li>Na installatie van Office (vooral Education / 365) vertaalt Word een selectie niet: de Youdao-Office-COM-invoegtoepassing is uitgeschakeld → Bestand → Opties → Invoegtoepassingen → COM-invoegtoepassingen → inschakelen; zo niet, herinstalleer Youdao om hem opnieuw te registreren.</li><li>Na een OS-update sterven opname en sneltoetsen op macOS: de update zette de rechten terug → verleen Youdao opnieuw «Toegankelijkheid» en «Schermopname» in Privacy en beveiliging en herstart hem.</li><li>Opname werkt in normale apps maar faalt in een app «als beheerder uitgevoerd»: verschillende rechtenniveaus beletten de globale hook in het verhoogde proces te injecteren → rechtsklik Youdao «Als administrator uitvoeren».</li><li>Multi-monitor / hoge DPI: de opname-pop-up «vliegt» naar een onzichtbare plek: door ongelijke DPI-schaling per scherm → vink «vensterpositie vastzetten» aan in de opname-instellingen om hem linksboven op het hoofdscherm vast te zetten.</li></ul><div class="related"><h2>Gerelateerd</h2><ul><li><a href="https://yoydao.com/">Youdao-download / installatiegids</a></li><li><a href="https://yoydao.com/nl/tutorial/">Youdao-gids voor opname en selectie</a></li><li><a href="https://yoydao.com/nl/tools/youdao-word-capture/">Youdao opname-oplossingszoeker (gezaghebbende volledige tabel)</a></li><li><a href="https://yoidao.com/nl/">Youdao Zhiyun API-foutcodes (zustersite)</a></li></ul></div></main>
+<footer>De notities over opname/selectie/OCR/64-bit-compatibiliteit zijn samengesteld uit de officiële desktop-FAQ en help van Youdao (cidian.youdao.com); het oplossen van de Office-invoegtoepassing verwijst naar Microsofts officiële Q&A, en de Acrobat-64-bit-notities «kan YodaoDict.api niet laden / beschermde modus uitzetten» komen uit openbare ontwikkelaarsartikelen (geherformuleerd). Vergelijkingen komen uit openbaar materiaal van Eudic, iCIBA, Saladict en Microsoft Translator. Verhoudingen/platforms/prijzen 2026 zijn schattingen, geen toezeggingen van de fabrikant noch eigen meting. LLM-lokalisatie; richt je op de nieuwste officiële info van elke aanbieder.<br>Toolpagina · geen vervanging voor de officiële client</footer>
+</div>
+<script src="/nl/codes.js"></script><script src="/app.js"></script>
+</body></html>
