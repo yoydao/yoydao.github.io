@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao स्क्रीन शब्द कैप्चर/चयन अनुवाद/OCR/शॉर्टकट काम नहीं कर रहा - कारण और समाधान (PDF, Word, ब्राउज़र, 64-बिट)</title>
+<meta name="description" content="Youdao का स्क्रीन शब्द कैप्चर (होवर पर देखें), चयन अनुवाद, स्क्रीनशॉट OCR या शॉर्टकट काम नहीं कर रहे? लक्षण खोजें (कैप्चर मृत / चयन पर पॉपअप नहीं / Word-Office कैप्चर / PDF-Acrobat कैप्चर / Chrome ब्राउज़र चयन / OCR / शॉर्टकट टकराव / macOS अनुमतियाँ / मल्टी-मॉनिटर पर पॉपअप स्क्रीन से बाहर / 64-बिट / पोर्टेबल संस्करण) — L1 लक्षण और आधिकारिक स्थिति तथा L2 मूल कारण: ग्लोबल हुक / DLL इंजेक्शन, UAC विशेषाधिकार स्तर, Office COM ऐड-इन, Acrobat संरक्षित मोड, GPU हार्डवेयर त्वरण टेक्स्ट को टेक्सचर बनाता है, स्कैन PDF को OCR चाहिए, DPI मल्टी-मॉनिटर; Youdao बनाम Eudic / iCIBA / Saladict / Microsoft Translator तुलना और 2026 अनुमानों के साथ.">
+<link rel="canonical" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao कैप्चर/चयन/OCR/शॉर्टकट समाधान खोज",
+   "url": "https://yoydao.github.io/hi/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "hi",
+   "description": "Youdao का स्क्रीन शब्द कैप्चर (होवर पर देखें), चयन अनुवाद, स्क्रीनशॉट OCR या शॉर्टकट काम नहीं कर रहे? लक्षण खोजें (कैप्चर मृत / चयन पर पॉपअप नहीं / Word-Office कैप्चर / PDF-Acrobat कैप्चर / Chrome ब्राउज़र चयन / OCR / शॉर्टकट टकराव / macOS अनुमतियाँ / मल्टी-मॉनिटर पर पॉपअप स्क्रीन से बाहर / 64-बिट / पोर्टेबल संस्करण) — L1 लक्षण और आधिकारिक स्थिति तथा L2 मूल कारण: ग्लोबल हुक / DLL इंजेक्शन, UAC विशेषाधिकार स्तर, Office COM ऐड-इन, Acrobat संरक्षित मोड, GPU हार्डवेयर त्वरण टेक्स्ट को टेक्सचर बनाता है, स्कैन PDF को OCR चाहिए, DPI मल्टी-मॉनिटर; Youdao बनाम Eudic / iCIBA / Saladict / Microsoft Translator तुलना और 2026 अनुमानों के साथ.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "hi",
+   "url": "https://yoydao.github.io/hi/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao स्क्रीन कैप्चर समग्र रूप से मृत - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "स्क्रीन कैप्चर के लिए Youdao पृष्ठभूमि में कैप्चर सक्षम होना चाहिए; आधिकारिक डेस्कटॉप स्मार्ट कैप्चर / क्लिपबोर्ड कैप्चर / OCR कैप्चर देता है. स्क्रीन कैप्चर अग्रभूमि ऐप में इंजेक्ट किए ग्लोबल हुक से टेक्स्ट पढ़ता है: चलती Youdao प्रक्रिया + सक्रिय मुख्य कैप्चर स्विच + मेल खाती ट्रिगर कुंजी चाहिए. एक कम हो तो «पूरी तरह मृत» लगता है, अक्सर सॉफ़्टवेयर खराब समझा जाता है. ट्रे आइकन सक्रिय जाँचें (धूसर = नहीं चल रहा, आरंभ हेतु डबल-क्लिक); सेटिंग → कैप्चर और चयन, «कैप्चर सक्षम करें» टिक करें और मोड चुनें (होवर / Ctrl दबाएँ); Youdao पुनः आरंभ करके फिर प्रयास करें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao चयन अनुवाद पॉपअप नहीं दिखाता - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "चयन अनुवाद के लिए «चयन» सक्षम और «चयन पर स्वतः अनुवाद» टिक चाहिए; चयन पर या कुंजी से अनुवाद कर सकता है. चयन और कैप्चर अलग स्विच हैं: कई कैप्चर सक्षम करते पर चयन नहीं, या «चयन पर स्वतः अनुवाद» बंद करते, इसलिए «चयन कुछ नहीं दिखाता»; चयन हॉटकी भी ली जा सकती है. सेटिंग → कैप्चर और चयन, «चयन अनुवाद सक्षम करें» और «चयन पर स्वतः अनुवाद» टिक करें; कुंजी-ट्रिगर हो तो वह कुंजी मुक्त है पुष्टि करें; ब्राउज़र में चयन को कैप्चर एक्सटेंशन भी चाहिए."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Word / Office में कैप्चर/चयन विफल - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao चयन / वाक्य अनुवाद हेतु COM ऐड-इन से Office के साथ एकीकृत होता है; ऐड-इन अक्षम या अपंजीकृत हो तो विफल. Office संगतता या नीति से तृतीय-पक्ष COM ऐड-इन अक्षम करता है; संस्करण बदलना (जैसे नया Education) पुराने ऐड-इन को नए Office हेतु अपंजीकृत छोड़ता है, इसलिए «पहले चलता था, अब नहीं». Word: फ़ाइल → विकल्प → ऐड-इन → नीचे «प्रबंधित करें: COM ऐड-इन» → जाएँ → Youdao ऐड-इन टिक करें; नहीं तो पुनः पंजीकरण हेतु Youdao पुनः इंस्टॉल करें; Youdao और Office बिटनेस मेल पुष्टि करें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao PDF / Acrobat में कैप्चर विफल - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "आधिकारिक संस्करण Adobe Reader / Acrobat में PDF स्क्रीन कैप्चर समर्थन करते; अनधिकृत «पोर्टेबल» संस्करण PDF कैप्चर नहीं कर सकते, और PDF टेक्स्ट होना चाहिए, छवि नहीं. तीन कारण: ① Acrobat का «संरक्षित मोड» सैंडबॉक्स है जो तृतीय-पक्ष YodaoDict.api इंजेक्शन रोकता है; ② 64-बिट Acrobat और पुराने Youdao प्लग-इन के बीच बिटनेस बेमेल «असंगत प्लग-इन» देता है; ③ PDF एक स्कैन है (छवि, बिना टेक्स्ट परत). Acrobat में संपादित करें → वरीयताएँ → सुरक्षा (उन्नत) → «स्टार्टअप पर संरक्षित मोड सक्षम करें» बंद करें, Acrobat से पहले Youdao खोलें; 64-बिट «असंगत» के लिए नवीनतम Youdao इंस्टॉल करें, या YodaoDict.api को Acrobat के plug_ins में कॉपी करें; स्कैन हेतु OCR शक्ति कैप्चर उपयोग करें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Chrome / ब्राउज़र में चयन/कैप्चर विफल - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox आदि को अलग Youdao कैप्चर एक्सटेंशन चाहिए; आधिकारिक डेस्कटॉप «Chrome कैप्चर» देता है. ब्राउज़र अपना सैंडबॉक्स है: ① Youdao कैप्चर एक्सटेंशन बिना, ग्लोबल हुक DOM टेक्स्ट नहीं पढ़ सकता; ② GPU हार्डवेयर त्वरण पृष्ठ को बिना पठनीय परत के टेक्सचर में रेंडर करता है; ③ adblock / सुरक्षा टॉगल (जैसे 360 ब्राउज़र) कैप्चर रोकते हैं. अपने ब्राउज़र हेतु Youdao कैप्चर एक्सटेंशन इंस्टॉल करें (Youdao सेटिंग या स्टोर से); ब्राउज़र सेटिंग में «हार्डवेयर त्वरण उपयोग करें» बंद करके पुनः आरंभ करें; 360 ब्राउज़र में adblock बंद करें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao स्क्रीनशॉट / क्षेत्र OCR अनुवाद काम नहीं - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "स्क्रीनशॉट OCR को सेट स्क्रीनशॉट-पहचान हॉटकी (जैसे Ctrl+Alt+O) और डाउनलोड OCR मॉड्यूल चाहिए; खींचकर स्क्रीन क्षेत्र चुनते हैं. स्क्रीनशॉट OCR को टेक्स्ट परत नहीं चाहिए - यह चुने क्षेत्र को छवि से पहचानता है, इसलिए डाउनलोड OCR मॉड्यूल + मुक्त हॉटकी + (macOS) पिक्सेल पढ़ने हेतु स्क्रीन रिकॉर्डिंग अनुमति चाहिए. सेटिंग → शॉर्टकट, «OCR स्क्रीनशॉट» को बिना-टकराव कुंजी दें; पहली बार OCR मॉड्यूल डाउनलोड करें; macOS पर «स्क्रीन रिकॉर्डिंग» दें; पहचान विफल हो तो स्पष्ट क्षेत्र चुनें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao कैप्चर / स्क्रीनशॉट शॉर्टकट टकराव - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "कैप्चर / चयन / स्क्रीनशॉट-पहचान सभी शॉर्टकट में अनुकूलन योग्य; टकराव पर चेतावनी देता, और पुनः-बाइंड या रीसेट कर सकते हैं. ग्लोबल शॉर्टकट पहले-आओ-पहले-पाओ: स्क्रीनशॉट उपकरण, इनपुट विधि, QQ / WeChat या अन्य शब्दकोश वही संयोजन रख सकते, इसलिए Youdao कुंजी कुछ नहीं करती. सेटिंग → शॉर्टकट, टकराव चेतावनी देखें; दुर्लभ संयोजन जैसे Ctrl+Shift+अक्षर / Alt+अक्षर पर बदलें; दोषी ढूँढने हेतु कुंजी-धारी ऐप एक-एक बंद करें."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS कैप्चर / शॉर्टकट को प्राधिकरण चाहिए - कैसे हल करें?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS को Youdao को «एक्सेसिबिलिटी» (शॉर्टकट निगरानी / नियंत्रण) और «स्क्रीन रिकॉर्डिंग» (कैप्चर / स्क्रीनशॉट हेतु स्क्रीन पढ़ना) सिस्टम सेटिंग → गोपनीयता और सुरक्षा में देना चाहिए. macOS सैंडबॉक्स स्पष्ट अनुमति माँगता है: «एक्सेसिबिलिटी» बिना ग्लोबल शॉर्टकट नहीं सुनता, «स्क्रीन रिकॉर्डिंग» बिना पिक्सेल नहीं पढ़ता; अपडेट अक्सर दोनों रीसेट करते हैं. सिस्टम सेटिंग → गोपनीयता और सुरक्षा → «एक्सेसिबिलिटी» और «स्क्रीन रिकॉर्डिंग» में Youdao टिक करके पुनः आरंभ करें; हर macOS अपडेट के बाद फिर दें."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">भाषा: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <strong>हिन्दी</strong> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao स्क्रीन शब्द कैप्चर / चयन अनुवाद / OCR / शॉर्टकट - समाधान खोज</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_hi.webp"><img src="/img/cover_hi.png" alt="Youdao कैप्चर/चयन/स्क्रीनशॉट समाधान खोज उपकरण चित्रण" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>चित्र: Youdao कैप्चर / चयन / स्क्रीनशॉट समाधान खोज (L1 लक्षण + L2 मूल कारण + प्रतिद्वंद्वी तुलना)</figcaption></figure>
+<p>क्या <strong>Youdao</strong> का <strong>स्क्रीन शब्द कैप्चर</strong> (होवर पर देखें), <strong>चयन अनुवाद</strong>, <strong>OCR</strong> या <strong>शॉर्टकट</strong> अचानक रुक गए? पहले तीन बातें स्पष्ट करें: <strong>सक्षम नहीं / अनुमति नहीं, किसी विशेष ऐप (Office / PDF / ब्राउज़र) की संगतता, या सामग्री स्वयं (स्कैन / हार्डवेयर त्वरण) में पठनीय टेक्स्ट नहीं?</strong> अपना <strong>लक्षण या कीवर्ड</strong> खोजें (जैसे <code>कैप्चर</code>, <code>pdf</code>, <code>चयन</code>, <code>शॉर्टकट</code>, <code>64-बिट</code>, <code>OCR</code>): पहले <strong>L1 लक्षण और आधिकारिक स्थिति</strong>, फिर <strong>L2 मूल कारण और समाधान</strong>, अंत में प्रतिद्वंद्वी तुलना और वास्तविक मामले. इंस्टॉल / सेटअप? देखें <a href="https://yoydao.com/">Youdao डाउनलोड / कैप्चर और चयन गाइड</a>.</p>
+<input id="q" placeholder="लक्षण या कीवर्ड डालें, जैसे कैप्चर / pdf / चयन / शॉर्टकट / 64-बिट / OCR" autocomplete="off">
+<button id="go">खोजें</button>
+<div id="out"></div>
+<h2>चरण 1: पहले चार समूहों में बाँटें (L1 - तुरंत पुनः इंस्टॉल न करें)</h2>
+<p>जब Youdao का कैप्चर/चयन रुकता है, तो 10 में से 9 बार यह चार समूहों में से एक होता है - पहले दोष ढूँढें: ① <strong>सक्षम/सेटिंग</strong> — Youdao पृष्ठभूमि में नहीं चल रहा (ट्रे आइकन धूसर), या «कैप्चर / चयन / चयन पर स्वतः अनुवाद सक्षम करें» टिक नहीं किया, या गलत ट्रिगर; ② <strong>अनुमतियाँ</strong> — macOS «एक्सेसिबिलिटी + स्क्रीन रिकॉर्डिंग» नहीं दी, या Windows में लक्ष्य एक उन्नत ऐप है जबकि Youdao व्यवस्थापक रूप में नहीं चल रहा; ③ <strong>ऐप संगतता</strong> — Word/Excel में Youdao COM ऐड-इन अक्षम, Acrobat संरक्षित मोड इंजेक्शन रोकता है, या ब्राउज़र में कैप्चर एक्सटेंशन नहीं; ④ <strong>रेंडरिंग/सामग्री</strong> — स्कैन PDF एक छवि है (OCR चाहिए), ब्राउज़र/PDF में GPU हार्डवेयर त्वरण टेक्स्ट को टेक्सचर बनाता है, या बेमेल मल्टी-मॉनिटर DPI पॉपअप को स्क्रीन से बाहर फेंकता है. पूरा सेटअप: <a href="https://yoydao.com/tutorial/">Youdao कैप्चर और चयन गाइड</a>.</p>
+<div class="cat"><div class="catbox"><b>सक्षम / सेटिंग</b><span class="cs">कैप्चर · चयन · स्वतः अनुवाद · OCR शक्ति</span><div>सुनिश्चित करें कि Youdao पृष्ठभूमि में चल रहा (ट्रे आइकन धूसर नहीं), सेटिंग → कैप्चर और चयन में जाएँ और «कैप्चर सक्षम करें», «चयन सक्षम करें», «चयन पर स्वतः अनुवाद» टिक करें, और सही ट्रिगर चुनें (होवर / Ctrl दबाएँ).</div></div><div class="catbox"><b>अनुमतियाँ</b><span class="cs">macOS एक्सेसिबिलिटी+स्क्रीन रिकॉर्डिंग · Windows व्यवस्थापक/UAC</span><div>macOS: सिस्टम सेटिंग → गोपनीयता और सुरक्षा, Youdao को «एक्सेसिबिलिटी» और «स्क्रीन रिकॉर्डिंग» दें; Windows: जब लक्ष्य «व्यवस्थापक रूप में चलता है», तो Youdao को भी व्यवस्थापक रूप में चलाएँ (हुक केवल समान विशेषाधिकार स्तर पर इंजेक्ट करता है).</div></div><div class="catbox"><b>ऐप संगतता</b><span class="cs">Office COM · Acrobat संरक्षित मोड · 64-बिट · ब्राउज़र एक्सटेंशन</span><div>Office: फ़ाइल → विकल्प → ऐड-इन → COM ऐड-इन, Youdao ऐड-इन टिक करें; Acrobat: «स्टार्टअप पर संरक्षित मोड सक्षम करें» बंद करें, ज़रूरत हो तो YodaoDict.api को plug_ins में कॉपी करें; ब्राउज़र: Youdao कैप्चर एक्सटेंशन इंस्टॉल करें.</div></div><div class="catbox"><b>शॉर्टकट</b><span class="cs">टकराव · कस्टम · OCR स्क्रीनशॉट कुंजी</span><div>सेटिंग → शॉर्टकट, टकराव चेतावनी देखें; कम टकराने वाले संयोजन जैसे Ctrl+Shift / Alt+अक्षर पर बदलें; OCR स्क्रीनशॉट को अपनी कुंजी दें (जैसे Ctrl+Alt+O, अन्य ऐप से दूर).</div></div><div class="catbox"><b>रेंडरिंग / प्रदर्शन</b><span class="cs">हार्डवेयर त्वरण · स्कैन · DPI मल्टी-मॉनिटर · पूर्ण स्क्रीन</span><div>GPU हार्डवेयर त्वरण वाला ब्राउज़र/PDF सामग्री को बिना पठनीय टेक्स्ट के टेक्सचर में रेंडर करता है (त्वरण बंद करें); स्कैन PDF छवि है (OCR उपयोग करें); मल्टी-मॉनिटर पर स्क्रीन-बाहर पॉपअप के लिए «विंडो स्थिति पिन करें» टिक करें.</div></div><div class="catbox"><b>नेटवर्क / इंस्टॉलेशन</b><span class="cs">कैप्चर गति · पोर्टेबल संस्करण · ऐड-इन लोड नहीं</span><div>ऑनलाइन खोज धीमी? नेटवर्क जाँचें; हमेशा आधिकारिक पूर्ण संस्करण इंस्टॉल करें - अनधिकृत «पोर्टेबल/हल्के» संस्करणों में पंजीकृत कैप्चर-हुक DLL नहीं होती, इसलिए PDF/ग्लोबल कैप्चर तुरंत विफल हो जाता है.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao कैप्चर/चयन विफलता ट्राइएज प्रवाह" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">कैप्चर / चयन काम नहीं ट्राइएज (पहले चार समूह: स्विच / अनुमतियाँ / ऐप / सामग्री)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">कैप्चर मृत</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">चार समूह</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">होस्ट स्व-जाँच →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">स्विच बंद · अनुमति नहीं</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">ऐप / सामग्री →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/ब्राउज़र · स्कैन/हार्ड-त्वरण</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">चार मूल कारण (प्रति आइटम कारण / समाधान पढ़ें)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① सक्षम/सेटिंग</text><text x="32" y="234" fill="#555" font-size="11">कैप्चर · चयन · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② अनुमतियाँ</text><text x="206" y="234" fill="#555" font-size="11">mac एक्सेसिबिलिटी · win व्यवस्थापक</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ ऐप संगतता</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · ब्राउज़र</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ रेंडर/सामग्री</text><text x="554" y="234" fill="#555" font-size="11">स्कैन · त्वरण · मल्टी-मॉनिटर</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>चित्र 1: Youdao कैप्चर/चयन विफलता ट्राइएज - चार समूहों में बाँटें, फिर होस्ट / ऐप / सामग्री पर सीमित करें</figcaption></figure>
+<h2>चरण 2: सबसे अनदेखा मूल कारण → L2 (स्क्रीन कैप्चर = ग्लोबल हुक / DLL इंजेक्शन)</h2>
+<p>मुख्य विचार: <strong>स्क्रीन कैप्चर «स्क्रीन की छवि नहीं पढ़ता» - Youdao कैप्चर कोड (ग्लोबल हुक / DLL) दूसरे ऐप में इंजेक्ट करके उसका टेक्स्ट बफर पढ़ता है</strong>. यह अधिकांश «रहस्यमय» विफलताओं को समझाता है: ① <strong>विशेषाधिकार स्तर</strong> — सामान्य अधिकार वाला Youdao «व्यवस्थापक रूप में चलने वाले» ऐप में इंजेक्ट नहीं कर सकता (और इसके विपरीत), इसलिए «केवल वह ऐप कैप्चर नहीं करता» आमतौर पर बेमेल विशेषाधिकार है; ② <strong>बिटनेस</strong> — 32/64-बिट हुक मिश्रित नहीं होते, इसलिए पुराना Youdao 64-बिट Acrobat पर «असंगत प्लग-इन, YodaoDict.api लोड नहीं कर सकता» देता है; ③ <strong>सैंडबॉक्स</strong> — Acrobat का «संरक्षित मोड» एक सैंडबॉक्स है जो तृतीय-पक्ष .api इंजेक्शन रोकता है; ④ <strong>हार्डवेयर त्वरण</strong> — जब ब्राउज़र/PDF सामग्री को GPU टेक्सचर में रेंडर करता है तो कैप्चर के लिए «पठनीय टेक्स्ट» नहीं बचता; ⑤ <strong>स्कैन</strong> — केवल-छवि PDF में टेक्स्ट परत नहीं होती, «OCR शक्ति कैप्चर» उपयोग करें. नीचे स्व-जाँच पैनल; आगे प्रतिद्वंद्वी तुलना और 2026 अनुमान.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Youdao प्री-कैप्चर स्व-जाँच पैनल" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">कैप्चर सक्षम स्व-जाँच पैनल (हरा = पुष्ट / लाल = आसानी से अनदेखा)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">जाँच आइटम</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">निर्णय</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">स्थिति</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao पृष्ठभूमि में चल रहा (ट्रे धूसर नहीं)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">प्रक्रिया जीवित</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">पुष्ट</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">टिक कैप्चर / चयन / चयन पर स्वतः अनुवाद</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 स्विच</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">पुष्ट</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">सही कैप्चर ट्रिगर (होवर / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">ट्रिगर</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">पुष्ट</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">लक्ष्य ऐप संगत (Office ऐड-इन / PDF असंरक्षित / ब्राउज़र एक्सटेंशन)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ऐप पक्ष</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">जाँचना है</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">अनुमतियाँ दी (mac एक्सेसिबिलिटी+रिकॉर्डिंग / win व्यवस्थापक)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">विशेषाधिकार स्तर</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">पुष्ट</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">शॉर्टकट टकराव नहीं + स्कैन नहीं / OCR चालू</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">आसानी से अनदेखा</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">जाँचना है</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">नोट: लाल = दो सबसे अनदेखे - विशेष ऐप संगतता (Office / PDF / ब्राउज़र) और सामग्री/शॉर्टकट (स्कैन को OCR चाहिए, कुंजी टकराव); पहले ये दो जाँचें.</text></svg><figcaption>चित्र 2: कैप्चर सक्षम स्व-जाँच पैनल (हरा = पुष्ट / लाल = आसानी से अनदेखा)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_hi.webp"><img src="/img/board_hi.png" alt="Youdao प्री-कैप्चर स्व-जाँच पैनल हरे/लाल आइटम चित्रण" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>चित्र: पहले «चल रहा + तीन स्विच + अनुमतियाँ», फिर «ऐप संगतता + सामग्री/शॉर्टकट» जाँचें - अंतिम दो सबसे अनदेखे</figcaption></figure>
+<h2>पूरी लक्षण तालिका (L1 लक्षण / आधिकारिक स्थिति · L2 मूल कारण)</h2>
+<table id="tbl"></table>
+<h2>प्रतिद्वंद्वी चयन/कैप्चर उपकरण तुलना (कैप्चर मोड / OCR / प्लेटफ़ॉर्म / मूल्य · सार्वजनिक डेटा)</h2>
+<table class="cmp"><tr><th>सॉफ़्टवेयर</th><th>स्क्रीन कैप्चर / चयन</th><th>स्क्रीनशॉट OCR</th><th>प्लेटफ़ॉर्म</th><th>अतिरिक्त शब्दकोश</th><th>मूल्य (अनु.)</th></tr><tr><td>Youdao</td><td>ग्लोबल कैप्चर + चयन अनुवाद</td><td>स्क्रीनशॉट OCR + शक्ति कैप्चर</td><td>Win / Mac / iOS / Android / Web / ब्राउज़र एक्सट</td><td>mdx कमज़ोर</td><td>कोर मुफ़्त (कुछ सदस्यता / बिना विज्ञापन)</td></tr><tr><td>Eudic</td><td>चयन + स्क्रीन कैप्चर</td><td>स्क्रीनशॉट कैप्चर</td><td>Win / Mac / iOS / Android</td><td>mdx मज़बूत (विशाल पुस्तकालय)</td><td>बेस मुफ़्त + उन्नत सशुल्क</td></tr><tr><td>iCIBA (Kingsoft)</td><td>कैप्चर + चयन</td><td>स्क्रीनशॉट अनुवाद</td><td>Win / Mac / मोबाइल / Web</td><td>औसत</td><td>मुफ़्त (विज्ञापन) + सदस्यता</td></tr><tr><td>Saladict</td><td>इन-ब्राउज़र चयन (एक्सटेंशन)</td><td>पृष्ठ-निर्भर / OCR को कॉन्फ़िग चाहिए</td><td>ब्राउज़र एक्सटेंशन (Chrome / Edge / Firefox)</td><td>कॉन्फ़िग योग्य स्रोत</td><td>मुफ़्त · ओपन सोर्स</td></tr><tr><td>Microsoft Translator / Bing</td><td>सिस्टम-स्तरीय चयन कमज़ोर</td><td>Office अंतर्निहित + स्क्रीनशॉट</td><td>Win / Office / Edge / मोबाइल</td><td>कोई नहीं</td><td>मुफ़्त</td></tr></table><section class="i4data">
+<h2>Youdao कैप्चर विफलता कारण और चयन उपकरण तुलना (2026 अनुमान)</h2>
+<p>निम्नलिखित Youdao की आधिकारिक सहायता / FAQ, प्रतिद्वंद्वियों की सार्वजनिक सामग्री और डेवलपर समस्या निवारण से संश्लेषित <strong>2026 अनुमान</strong> हैं (निर्माता प्रतिबद्धता नहीं, प्रत्यक्ष माप नहीं; संदर्भ हेतु, संस्करण और OS से बदलते हैं):</p>
+<table>
+<tr><th>आयाम</th><th>अनुमान / तुलना</th></tr>
+<tr><td>कैप्चर विफलता कारण विभाजन (समुदाय · अनु.)</td><td><strong>सक्षम नहीं / अनुमतियाँ ~40%</strong> &gt; <strong>ऐप संगतता (Office/PDF/ब्राउज़र) ~25%</strong> &gt; शॉर्टकट टकराव ~20% &gt; रेंडरिंग / सामग्री (हार्ड-त्वरण / स्कैन) ~15%</td></tr>
+<tr><td>कैप्चर वास्तव में क्या है</td><td>स्क्रीन कैप्चर = लक्ष्य ऐप का टेक्स्ट बफर पढ़ने वाला <strong>ग्लोबल हुक / DLL इंजेक्शन</strong> (स्क्रीन की छवि नहीं पढ़ता); इसलिए विशेषाधिकार स्तर, बिटनेस, सैंडबॉक्स, हार्डवेयर त्वरण से प्रभावित</td></tr>
+<tr><td>प्रति-प्लेटफ़ॉर्म कैप्चर (अनु.)</td><td>डेस्कटॉप (Win/Mac) <strong>ग्लोबल स्क्रीन कैप्चर + चयन + स्क्रीनशॉट OCR</strong> समर्थन करता; मोबाइल अधिकतर चयन / फ़ोटो अनुवाद; वेब / ब्राउज़र को <strong>कैप्चर एक्सटेंशन</strong> चाहिए</td></tr>
+<tr><td>चयन / कैप्चर उपकरण सारांश (अनु.)</td><td>Youdao = सभी प्लेटफ़ॉर्म + मज़बूत AI अनुवाद; Eudic = मज़बूत अतिरिक्त पुस्तकालय (mdx); iCIBA = जन मुफ़्त; Saladict = ओपन-सोर्स ब्राउज़र; Microsoft = Office अंतर्निहित</td></tr>
+<tr><td>मूल्य स्तर (अनु.)</td><td>Youdao / iCIBA <strong>कोर मुफ़्त</strong> (बिना विज्ञापन / अतिरिक्त हेतु सदस्यता) · Eudic <strong>उन्नत सशुल्क</strong> · Saladict <strong>मुफ़्त ओपन सोर्स</strong> · Microsoft Translator <strong>मुफ़्त</strong></td></tr>
+</table>
+<p><small>अनुमान आधार: स्रोत आधाररेखा + समय बहिर्वेशन (cidian.youdao.com आधिकारिक सहायता / FAQ, Eudic / iCIBA / Saladict / Microsoft सार्वजनिक सामग्री, सार्वजनिक डेवलपर लेख, 2026); प्रत्येक प्रदाता के संस्करण और OS नीति से बदलते. नवीनतम आधिकारिक जानकारी देखें. LLM स्थानीयकरण.</small></p>
+</section>
+<h2>वास्तविक मामले - त्वरित पढ़ें</h2>
+<ul class="scenes"><li>ब्राउज़र में कैप्चर नहीं पर Notepad / Word में ठीक: आमतौर पर ब्राउज़र में Youdao कैप्चर एक्सटेंशन नहीं, या GPU हार्डवेयर त्वरण ने पृष्ठ को टेक्सचर में रेंडर किया → एक्सटेंशन इंस्टॉल करें, या «हार्डवेयर त्वरण उपयोग करें» बंद करके पुनः आरंभ करें.</li><li>Acrobat 64-बिट, PDF में चयन कुछ नहीं करता, «असंगत प्लग-इन, YodaoDict.api लोड नहीं कर सकता»: Acrobat में संपादित करें → वरीयताएँ → सुरक्षा (उन्नत) → «स्टार्टअप पर संरक्षित मोड सक्षम करें» बंद करें, Acrobat से पहले Youdao खोलें; बना रहे तो YodaoDict.api को Youdao फ़ोल्डर से Acrobat के plug_ins में कॉपी करें.</li><li>PDF टेक्स्ट चुना जा सकता पर कैप्चर नहीं, या पूरा पृष्ठ नहीं: यह स्कैन है (बिना टेक्स्ट परत वाली छवि PDF, «OCR शक्ति कैप्चर» चाहिए), या Acrobat संरक्षित मोड / Autotray.exe लॉक इंजेक्शन रोकता है.</li><li>Office (विशेषकर Education / 365) इंस्टॉल के बाद Word चयन का अनुवाद नहीं करता: Youdao Office COM ऐड-इन अक्षम → फ़ाइल → विकल्प → ऐड-इन → COM ऐड-इन → सक्षम करें; नहीं तो पुनः पंजीकरण हेतु Youdao पुनः इंस्टॉल करें.</li><li>OS अपडेट के बाद macOS पर कैप्चर और शॉर्टकट मर जाते हैं: अपडेट ने अनुमतियाँ रीसेट कीं → गोपनीयता और सुरक्षा में Youdao को «एक्सेसिबिलिटी» और «स्क्रीन रिकॉर्डिंग» फिर से दें और पुनः आरंभ करें.</li><li>सामान्य ऐप में कैप्चर काम करता पर «व्यवस्थापक रूप में चलने वाले» ऐप में विफल: भिन्न विशेषाधिकार स्तर ग्लोबल हुक को उन्नत प्रक्रिया में इंजेक्ट करने से रोकते हैं → Youdao पर राइट-क्लिक «व्यवस्थापक के रूप में चलाएँ».</li><li>मल्टी-मॉनिटर / उच्च DPI: कैप्चर पॉपअप किसी अदृश्य स्थान पर «उड़» जाता है: प्रति-स्क्रीन बेमेल DPI स्केलिंग के कारण → कैप्चर सेटिंग में «विंडो स्थिति पिन करें» टिक करके इसे मुख्य स्क्रीन के ऊपरी-बाएँ में टिकाएँ.</li></ul><div class="related"><h2>संबंधित</h2><ul><li><a href="https://yoydao.com/">Youdao डाउनलोड / सेटअप गाइड</a></li><li><a href="https://yoydao.com/hi/tutorial/">Youdao कैप्चर और चयन गाइड</a></li><li><a href="https://yoydao.com/hi/tools/youdao-word-capture/">Youdao कैप्चर समाधान खोज (आधिकारिक पूर्ण तालिका)</a></li><li><a href="https://yoidao.com/hi/">Youdao Zhiyun API त्रुटि कोड (सहोदर साइट)</a></li></ul></div></main>
+<footer>कैप्चर/चयन/OCR/64-बिट संगतता नोट्स Youdao के आधिकारिक डेस्कटॉप FAQ और सहायता (cidian.youdao.com) से संकलित; Office ऐड-इन समस्या निवारण Microsoft के आधिकारिक Q&A का संदर्भ देता है, और Acrobat 64-बिट «YodaoDict.api लोड नहीं कर सकता / संरक्षित मोड बंद करें» नोट्स सार्वजनिक डेवलपर लेखों से (पुनर्कथित). तुलनाएँ Eudic, iCIBA, Saladict और Microsoft Translator की सार्वजनिक सामग्री से. 2026 अनुपात/प्लेटफ़ॉर्म/मूल्य अनुमान हैं, निर्माता की प्रतिबद्धता या प्रत्यक्ष माप नहीं. LLM स्थानीयकरण; प्रत्येक प्रदाता की नवीनतम आधिकारिक जानकारी देखें.<br>उपकरण पृष्ठ · आधिकारिक क्लाइंट का विकल्प नहीं</footer>
+</div>
+<script src="/hi/codes.js"></script><script src="/app.js"></script>
+</body></html>
