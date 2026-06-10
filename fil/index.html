@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao screen word capture/select translate/OCR/shortcut hindi gumagana - mga sanhi at solusyon (PDF, Word, browser, 64-bit)</title>
+<meta name="description" content="Hindi gumagana ang screen word capture ng Youdao (hover para tingnan), select translate, screenshot OCR, o mga shortcut? Hanapin ang sintomas (patay ang capture / walang popup sa pagpili / Word-Office capture / PDF-Acrobat capture / Chrome browser select / OCR / banggaan ng shortcut / pahintulot ng macOS / popup sa labas ng screen sa multi-monitor / 64-bit / portable na bersyon) para sa L1 na sintomas at opisyal na pagsasaposisyon kasama ang L2 na ugat na sanhi: global hook / DLL injection, UAC privilege level, Office COM add-in, Acrobat protected mode, GPU hardware acceleration na nagre-render ng teksto bilang texture, scanned PDF na kailangan ng OCR, DPI multi-monitor; may paghahambing Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator at mga tantiya sa 2026.">
+<link rel="canonical" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao paghahanap ng solusyon sa capture/select/OCR/shortcut",
+   "url": "https://yoydao.github.io/fil/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "fil",
+   "description": "Hindi gumagana ang screen word capture ng Youdao (hover para tingnan), select translate, screenshot OCR, o mga shortcut? Hanapin ang sintomas (patay ang capture / walang popup sa pagpili / Word-Office capture / PDF-Acrobat capture / Chrome browser select / OCR / banggaan ng shortcut / pahintulot ng macOS / popup sa labas ng screen sa multi-monitor / 64-bit / portable na bersyon) para sa L1 na sintomas at opisyal na pagsasaposisyon kasama ang L2 na ugat na sanhi: global hook / DLL injection, UAC privilege level, Office COM add-in, Acrobat protected mode, GPU hardware acceleration na nagre-render ng teksto bilang texture, scanned PDF na kailangan ng OCR, DPI multi-monitor; may paghahambing Youdao vs Eudic / iCIBA / Saladict / Microsoft Translator at mga tantiya sa 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "fil",
+   "url": "https://yoydao.github.io/fil/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao Patay ang screen capture sa kabuuan - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kailangan ng screen capture na nasa background ang Youdao na naka-enable ang capture; nag-aalok ang opisyal na desktop ng smart capture / clipboard capture / OCR capture. Gumagamit ang screen capture ng global hook na ini-inject sa foreground app para basahin ang teksto nito: kailangan ng tumatakbong Youdao process + aktibong master capture switch + tugmang trigger key. Kapag may kulang, mukhang «patay na patay», madalas akalain na sirang software. I-check kung aktibo ang tray icon (kulay-abo = hindi tumatakbo, i-double-click para simulan); Settings → Capture at select, i-check ang «i-enable ang capture» at piliin ang mode (hover / pindutin ang Ctrl); i-restart ang Youdao at subukan ulit."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Walang popup ang select translate - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kailangan ng select translate na naka-enable ang «select» na may naka-check na «auto-translate sa pagpili»; pwedeng mag-translate sa pagpili o sa pamamagitan ng key. Magkahiwalay na switch ang select at capture: marami ang nag-e-enable ng capture pero hindi ng select, o pinapatay ang «auto-translate sa pagpili», kaya «walang lumalabas sa pagpili»; pwede ring kinuha ang select hotkey. Settings → Capture at select, i-check ang «i-enable ang select translate» at «auto-translate sa pagpili»; kung key-triggered, tiyaking malaya ang key na iyon; ang in-browser select ay kailangan din ng capture extension."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Nabibigo ang capture/select sa Word / Office - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Nag-i-integrate ang Youdao sa Office sa pamamagitan ng COM add-in para sa select / pangungusap na pagsasalin; kung naka-disable o hindi naka-rehistro ang add-in, nabibigo. Dini-disable ng Office ang third-party COM add-in dahil sa kompatibilidad o patakaran; ang pagpapalit ng bersyon (hal. bagong Education) ay nag-iiwan ng lumang add-in na hindi naka-rehistro para sa bagong Office, kaya «dati gumagana, ngayon hindi». Word: File → Options → Add-ins → ibaba «Manage: COM Add-ins» → Go → i-check ang Youdao add-in; kung hindi, i-reinstall ang Youdao para i-rehistro ulit; tiyaking tugma ang bitness ng Youdao at Office."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Nabibigo ang capture sa PDF / Acrobat - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Sinusuportahan ng opisyal na bersyon ang PDF screen capture sa Adobe Reader / Acrobat; ang hindi opisyal na «portable» na bersyon ay hindi makaka-capture ng PDF, at dapat teksto ang PDF, hindi larawan. Tatlong sanhi: ① ang «protected mode» ng Acrobat ay sandbox na humaharang sa third-party YodaoDict.api injection; ② ang bitness mismatch sa pagitan ng 64-bit Acrobat at lumang Youdao plug-in ay nagbibigay ng «incompatible plug-in»; ③ ang PDF ay scan (larawan, walang text layer). Patayin sa Acrobat Edit → Preferences → Security (Enhanced) → «Enable protected mode at startup», buksan ang Youdao bago ang Acrobat; para sa 64-bit «incompatible», i-install ang pinakabagong Youdao, o kopyahin ang YodaoDict.api sa plug_ins ng Acrobat; para sa scan gamitin ang OCR power capture."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Nabibigo ang select/capture sa Chrome / browser - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kailangan ng Chrome / Firefox atbp. ng hiwalay na Youdao capture extension; nag-aalok ang opisyal na desktop ng «Chrome capture». Ang browser ay sariling sandbox: ① kung walang Youdao capture extension, hindi mababasa ng global hook ang DOM text; ② nire-render ng GPU hardware acceleration ang pahina sa texture na walang nababasang layer; ③ hinaharang ng adblock / security toggle (hal. 360 browser) ang capture. I-install ang Youdao capture extension para sa browser mo (via Youdao settings o store); patayin ang «gumamit ng hardware acceleration» sa browser settings at i-restart; patayin ang adblock sa 360 browser."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Hindi gumagana ang screenshot/region OCR translate - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kailangan ng screenshot OCR ng nakatakdang screenshot-recognize hotkey (hal. Ctrl+Alt+O) at na-download na OCR module; pumipili ka ng screen region sa pag-drag. Hindi kailangan ng screenshot OCR ng text layer - kinikilala nito ang napiling region via image, kaya kailangan ng na-download na OCR module + malayang hotkey + (macOS) screen recording permission para basahin ang pixel. Settings → Shortcut, magtalaga ng walang banggaang key para sa «OCR screenshot»; i-download ang OCR module sa unang paggamit; sa macOS ibigay ang «Screen Recording»; pumili ng mas malinaw na region kung mali ang recognition."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao Banggaan ng capture / screenshot hotkey - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Lahat ng capture / select / screenshot-recognize ay maaaring i-customize sa Shortcut; sa banggaan nagbababala ito, at maaaring mag-rebind o mag-reset. First-come-first-served ang global hotkey: maaaring hawak ng screenshot tool, input method, QQ / WeChat, o ibang diksyunaryo ang parehong kombinasyon, kaya walang ginagawa ang Youdao key. Settings → Shortcut, abangan ang babala sa banggaan; lumipat sa mas bihirang kombinasyon tulad ng Ctrl+Shift+letra / Alt+letra; isa-isang isara ang mga app na humahawak ng key para mahanap ang dahilan."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS capture / shortcut kailangan ng awtorisasyon - paano aayusin?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Kailangan ng macOS na ibigay sa Youdao ang «Accessibility» (subaybayan ang shortcut / kontrolin) at «Screen Recording» (basahin ang screen para sa capture / screenshot) sa System Settings → Privacy at Security. Hinihingi ng macOS sandbox ang tahasang pahintulot: kung walang «Accessibility» hindi naririnig ang global hotkey, kung walang «Screen Recording» hindi nababasa ang pixel; madalas i-reset ng update ang dalawa. System Settings → Privacy at Security → i-check ang Youdao sa «Accessibility» at «Screen Recording» at i-restart; ibigay ulit pagkatapos ng bawat macOS update."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">Wika: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <strong>Filipino</strong> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <a href="/km/">ភាសាខ្មែរ</a> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao screen word capture / select translate / OCR / shortcut - paghahanap ng solusyon</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_fil.webp"><img src="/img/cover_fil.png" alt="Ilustrasyon ng Youdao tool sa paghahanap ng solusyon sa capture/select/screenshot" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Larawan: Youdao paghahanap ng solusyon sa capture / select / screenshot (L1 na sintomas + L2 na ugat na sanhi + paghahambing sa karibal)</figcaption></figure>
+<p>Biglang tumigil ba ang <strong>screen word capture</strong> ng <strong>Youdao</strong> (hover para tingnan), <strong>select translate</strong>, <strong>OCR</strong>, o mga <strong>shortcut</strong>? Linawin muna ang tatlong bagay: <strong>hindi pa naka-enable / walang pahintulot, kompatibilidad ng isang partikular na app (Office / PDF / browser), o ang mismong nilalaman (scan / hardware acceleration) na walang nababasang teksto?</strong> Hanapin ang <strong>sintomas o keyword</strong> na nararanasan (hal. <code>capture</code>, <code>pdf</code>, <code>select</code>, <code>shortcut</code>, <code>64-bit</code>, <code>OCR</code>): una ang <strong>L1 na sintomas at opisyal na posisyon</strong>, tapos ang <strong>L2 na ugat na sanhi at solusyon</strong>, panghuli ang paghahambing sa karibal at totoong kaso. Mag-install / mag-setup? Tingnan ang <a href="https://yoydao.com/">pag-download ng Youdao / gabay sa capture at select</a>.</p>
+<input id="q" placeholder="Maglagay ng sintomas o keyword, hal. capture / pdf / select / shortcut / 64-bit / OCR" autocomplete="off">
+<button id="go">Hanapin</button>
+<div id="out"></div>
+<h2>Hakbang 1: hatiin muna sa apat na grupo (L1 - huwag agad mag-reinstall)</h2>
+<p>Kapag huminto ang capture/select ng Youdao, 9 sa 10 beses ito ay isa sa apat na grupo - alamin muna kaninong kasalanan: ① <strong>pag-enable/setting</strong> — hindi tumatakbo ang Youdao sa background (kulay-abo ang tray icon), o hindi naka-check ang «i-enable ang capture / select / auto-translate sa pagpili», o maling trigger; ② <strong>pahintulot</strong> — hindi naibigay sa macOS ang «Accessibility + Screen Recording», o sa Windows ang target ay elevated app habang hindi tumatakbo ang Youdao bilang administrator; ③ <strong>kompatibilidad ng app</strong> — naka-disable ang Youdao COM add-in sa Word/Excel, hinaharang ng protected mode ng Acrobat ang injection, o walang capture extension ang browser; ④ <strong>rendering/nilalaman</strong> — ang scanned PDF ay larawan (kailangan ng OCR), ang browser/PDF na may GPU hardware acceleration ay nagdo-drawing ng teksto bilang texture, o ang hindi tugmang multi-monitor DPI ay nagtatapon ng popup sa labas. Buong setup: <a href="https://yoydao.com/tutorial/">gabay sa capture at select ng Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>Pag-enable / setting</b><span class="cs">capture · select · auto-translate · OCR power capture</span><div>Tiyaking tumatakbo ang Youdao sa background (tray icon hindi kulay-abo), pumunta sa Settings → Capture at select at i-check ang «i-enable ang capture», «i-enable ang select», «auto-translate sa pagpili», at piliin ang tamang trigger (hover / pindutin ang Ctrl).</div></div><div class="catbox"><b>Pahintulot</b><span class="cs">macOS Accessibility+Screen Recording · Windows administrator/UAC</span><div>macOS: System Settings → Privacy at Security, ibigay sa Youdao ang «Accessibility» at «Screen Recording»; Windows: kapag ang target ay «tinakbo bilang administrator», patakbuhin din ang Youdao bilang administrator (nag-i-inject lang ang hook sa parehong privilege level).</div></div><div class="catbox"><b>Kompatibilidad ng app</b><span class="cs">Office COM · Acrobat protected mode · 64-bit · browser extension</span><div>Office: File → Options → Add-ins → COM Add-ins, i-check ang Youdao add-in; Acrobat: patayin ang «Enable protected mode at startup», kung kailangan kopyahin ang YodaoDict.api sa plug_ins; browser: i-install ang Youdao capture extension.</div></div><div class="catbox"><b>Shortcut</b><span class="cs">banggaan · custom · OCR screenshot key</span><div>Settings → Shortcut, abangan ang babala sa banggaan; lumipat sa mas bihirang kombinasyon tulad ng Ctrl+Shift / Alt+letra; bigyan ang OCR screenshot ng sariling key (hal. Ctrl+Alt+O, malayo sa ibang app).</div></div><div class="catbox"><b>Rendering / display</b><span class="cs">hardware acceleration · scan · DPI multi-monitor · full screen</span><div>Ang browser/PDF na may GPU hardware acceleration ay nagre-render ng nilalaman sa texture na walang nababasang teksto (patayin ang acceleration); ang scanned PDF ay larawan (gamitin ang OCR); para sa popup sa labas ng screen sa multi-monitor i-check ang «i-pin ang posisyon ng window».</div></div><div class="catbox"><b>Network / installation</b><span class="cs">bilis ng capture · portable na bersyon · add-in hindi na-load</span><div>Mabagal ang online lookup? i-check ang network; laging i-install ang opisyal na buong bersyon - ang hindi opisyal na «portable/lightweight» na bersyon ay walang naka-rehistrong capture-hook DLL, kaya nabibigo agad ang PDF/global capture.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Daloy ng triage sa pagkabigo ng capture/select ng Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Triage capture / select hindi gumagana (apat na grupo muna: switch / pahintulot / app / nilalaman)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">Patay ang capture</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">Apat na grupo</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">Host na-self-check →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">switch off · walang pahintulot</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">App / nilalaman →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/browser · scan/hardware-accel</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">Apat na ugat na sanhi (basahin ang sanhi / solusyon kada item)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① Pag-enable/setting</text><text x="32" y="234" fill="#555" font-size="11">capture · select · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② Pahintulot</text><text x="206" y="234" fill="#555" font-size="11">mac Accessibility · win admin</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ Kompat. ng app</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · browser</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ Render/nilalaman</text><text x="554" y="234" fill="#555" font-size="11">scan · accel · multi-monitor</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>Larawan 1: triage ng pagkabigo sa capture/select ng Youdao - hatiin sa apat na grupo, tapos i-localize sa host / app / nilalaman</figcaption></figure>
+<h2>Hakbang 2: ang pinaka-napapansin na ugat na sanhi → L2 (screen capture = global hook / DLL injection)</h2>
+<p>Pangunahing ideya: <strong>ang screen capture ay hindi «nagbabasa ng imahe ng screen» - nag-i-inject ang Youdao ng capture code (global hook / DLL) sa kabilang app para basahin ang text buffer nito</strong>. Ipinapaliwanag nito ang karamihan ng «mahiwagang» pagkabigo: ① <strong>privilege level</strong> — hindi makakapag-inject ang Youdao na normal ang karapatan sa app na «tinakbo bilang administrator» (at vice versa), kaya ang «iyon lang na app ang hindi nagka-capture» ay kadalasang hindi tugmang privilege; ② <strong>bitness</strong> — hindi naghahalo ang 32/64-bit hook, kaya ang lumang Youdao sa 64-bit Acrobat ay nagbibigay ng «incompatible plug-in, hindi mai-load ang YodaoDict.api»; ③ <strong>sandbox</strong> — ang «protected mode» ng Acrobat ay sandbox na humaharang sa third-party .api injection; ④ <strong>hardware acceleration</strong> — kapag nire-render ng browser/PDF ang nilalaman sa GPU texture, wala nang «nababasang teksto» para i-capture; ⑤ <strong>scan</strong> — ang image-only na PDF ay walang text layer, gamitin ang «OCR power capture». Sa ibaba ang self-check panel; sunod ang paghahambing sa karibal at mga tantiya sa 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pre-capture self-check panel ng Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">Self-check panel ng pag-enable ng capture (berde = nakumpirma / pula = madaling makaligtaan)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">Item na ichi-check</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Hatol</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">Estado</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tumatakbo ang Youdao sa background (tray hindi kulay-abo)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">proseso buhay</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">nakumpirma</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Naka-check capture / select / auto-translate sa pagpili</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 switch</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">nakumpirma</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Tamang capture trigger (hover / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">trigger</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">nakumpirma</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Kompatibol ang target app (Office add-in / PDF hindi protektado / browser extension)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">panig ng app</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">i-verify</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Naibigay ang pahintulot (mac Accessibility+Recording / win admin)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">privilege level</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">nakumpirma</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Walang banggaan ng shortcut + hindi scan / naka-on ang OCR</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">madaling makaligtaan</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">i-verify</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">Tala: pula = ang dalawang pinaka-napapansin - kompatibilidad ng partikular na app (Office / PDF / browser) at nilalaman/shortcut (scan kailangan ng OCR, banggaan ng key); i-check muna ang dalawang ito.</text></svg><figcaption>Larawan 2: self-check panel ng pag-enable ng capture (berde = nakumpirma / pula = madaling makaligtaan)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_fil.webp"><img src="/img/board_fil.png" alt="Ilustrasyon ng pre-capture self-check panel ng Youdao na may berde/pulang item" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>Larawan: i-check muna ang «tumatakbo + tatlong switch + pahintulot», tapos ang «kompatibilidad ng app + nilalaman/shortcut» - ang huling dalawa ang pinaka-napapansin</figcaption></figure>
+<h2>Buong talahanayan ng sintomas (L1 na sintomas / opisyal na posisyon · L2 na ugat na sanhi)</h2>
+<table id="tbl"></table>
+<h2>Paghahambing ng karibal na tool sa select/capture (capture mode / OCR / platform / presyo · pampublikong datos)</h2>
+<table class="cmp"><tr><th>Software</th><th>Screen capture / select</th><th>Screenshot OCR</th><th>Platform</th><th>Karagdagang diksyunaryo</th><th>Presyo (tantya)</th></tr><tr><td>Youdao</td><td>global capture + select translate</td><td>screenshot OCR + power capture</td><td>Win / Mac / iOS / Android / Web / browser ext</td><td>mahina ang mdx</td><td>core libre (ilang membership / walang ad)</td></tr><tr><td>Eudic</td><td>select + screen capture</td><td>screenshot capture</td><td>Win / Mac / iOS / Android</td><td>malakas ang mdx (malalaking library)</td><td>base libre + enhanced bayad</td></tr><tr><td>iCIBA (Kingsoft)</td><td>capture + select</td><td>screenshot translate</td><td>Win / Mac / mobile / Web</td><td>katamtaman</td><td>libre (ad) + membership</td></tr><tr><td>Saladict</td><td>in-browser select (extension)</td><td>depende sa pahina / OCR kailangan i-config</td><td>browser extension (Chrome / Edge / Firefox)</td><td>configurable na source</td><td>libre · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>mahina ang system-level select</td><td>Office built-in + screenshot</td><td>Win / Office / Edge / mobile</td><td>wala</td><td>libre</td></tr></table><section class="i4data">
+<h2>Mga sanhi ng pagkabigo ng Youdao capture at paghahambing ng select tool (tantya 2026)</h2>
+<p>Ang sumusunod ay mga <strong>tantya sa 2026</strong> na sinintesis mula sa opisyal na tulong / FAQ ng Youdao, pampublikong materyal ng karibal at troubleshooting ng developer (hindi pangako ng tagagawa, hindi direktang sukat; para sa sanggunian, nagbabago kada bersyon at OS):</p>
+<table>
+<tr><th>Dimensyon</th><th>Tantya / paghahambing</th></tr>
+<tr><td>Hatian ng sanhi ng pagkabigo ng capture (komunidad · tantya)</td><td><strong>hindi naka-enable / pahintulot ~40%</strong> &gt; <strong>kompatibilidad ng app (Office/PDF/browser) ~25%</strong> &gt; banggaan ng shortcut ~20% &gt; rendering / nilalaman (hardware-accel / scan) ~15%</td></tr>
+<tr><td>Ano talaga ang capture</td><td>screen capture = <strong>global hook / DLL injection</strong> na nagbabasa ng text buffer ng target app (hindi nagbabasa ng imahe ng screen); kaya naaapektuhan ng privilege level, bitness, sandbox, hardware acceleration</td></tr>
+<tr><td>Capture kada platform (tantya)</td><td>desktop (Win/Mac) sumusuporta sa <strong>global screen capture + select + screenshot OCR</strong>; mobile karamihan select / photo translate; web / browser kailangan ng <strong>capture extension</strong></td></tr>
+<tr><td>Pangkalahatan ng select / capture tool (tantya)</td><td>Youdao = lahat ng platform + malakas na AI translate; Eudic = malakas na add-on library (mdx); iCIBA = mass libre; Saladict = open-source browser; Microsoft = Office built-in</td></tr>
+<tr><td>Mga tier ng presyo (tantya)</td><td>Youdao / iCIBA <strong>core libre</strong> (membership para walang ad / extra) · Eudic <strong>enhanced bayad</strong> · Saladict <strong>libre open source</strong> · Microsoft Translator <strong>libre</strong></td></tr>
+</table>
+<p><small>Batayan ng tantya: source baseline + time extrapolation (cidian.youdao.com opisyal na tulong / FAQ, pampublikong materyal ng Eudic / iCIBA / Saladict / Microsoft, pampublikong sulat ng developer, 2026); nagbabago kasama ng bersyon at patakaran sa OS ng bawat provider. Sumangguni sa pinakabagong opisyal na impormasyon. Lokalisasyong LLM.</small></p>
+</section>
+<h2>Totoong kaso - mabilis na basa</h2>
+<ul class="scenes"><li>Hindi nagka-capture sa browser pero okay ang Notepad / Word: kadalasan walang Youdao capture extension ang browser, o nag-render ng pahina sa texture ang GPU hardware acceleration → i-install ang extension, o patayin ang «gumamit ng hardware acceleration» at i-restart.</li><li>Acrobat 64-bit, walang tugon ang pagpili sa PDF, «incompatible plug-in, hindi mai-load ang YodaoDict.api»: patayin sa Acrobat Edit → Preferences → Security (Enhanced) → «Enable protected mode at startup», buksan ang Youdao bago ang Acrobat; kung tuloy-tuloy, kopyahin ang YodaoDict.api mula sa folder ng Youdao papunta sa plug_ins ng Acrobat.</li><li>Napipili ang teksto sa PDF pero hindi nagka-capture, o ang buong pahina ay hindi: scan ito (image PDF na walang text layer, kailangan ng «OCR power capture»), o ang protected mode ng Acrobat / Autotray.exe lock ang humaharang sa injection.</li><li>Pagkatapos mag-install ng Office (lalo na Education / 365) hindi nagsasalin ng pagpili ang Word: naka-disable ang Youdao Office COM add-in → File → Options → Add-ins → COM Add-ins → i-enable; kung hindi, i-reinstall ang Youdao para i-rehistro ulit.</li><li>Pagkatapos ng OS update, namamatay ang capture at shortcut sa macOS: ni-reset ng update ang mga pahintulot → ibigay ulit sa Youdao ang «Accessibility» at «Screen Recording» sa Privacy at Security at i-restart.</li><li>Gumagana ang capture sa normal na app pero nabibigo sa app na «tinakbo bilang administrator»: pinipigilan ng magkaibang privilege level ang global hook na mag-inject sa elevated process → right-click sa Youdao «Run as administrator».</li><li>Multi-monitor / high DPI: «lumilipad» ang capture popup sa hindi nakikitang lugar: dahil sa hindi tugmang DPI scaling kada screen → i-check ang «i-pin ang posisyon ng window» sa capture settings para i-pin sa kaliwang taas ng pangunahing screen.</li></ul><div class="related"><h2>Kaugnay</h2><ul><li><a href="https://yoydao.com/">Pag-download ng Youdao / gabay sa setup</a></li><li><a href="https://yoydao.com/fil/tutorial/">Gabay sa capture at select ng Youdao</a></li><li><a href="https://yoydao.com/fil/tools/youdao-word-capture/">Youdao paghahanap ng solusyon sa capture (awtoridad na buong talahanayan)</a></li><li><a href="https://yoidao.com/fil/">Youdao Zhiyun API error code (kapatid na site)</a></li></ul></div></main>
+<footer>Ang mga tala sa capture/select/OCR/64-bit kompatibilidad ay tinipon mula sa opisyal na desktop FAQ at tulong ng Youdao (cidian.youdao.com); ang pag-troubleshoot ng Office add-in ay tumutukoy sa opisyal na Q&A ng Microsoft, at ang mga tala sa Acrobat 64-bit «hindi mai-load ang YodaoDict.api / patayin ang protected mode» ay mula sa pampublikong sulat ng developer (muling binigkas). Ang mga paghahambing ay mula sa pampublikong materyal ng Eudic, iCIBA, Saladict at Microsoft Translator. Ang mga proporsyon/platform/presyo sa 2026 ay mga tantiya, hindi pangako ng tagagawa o direktang sukat. Lokalisasyong LLM; sumangguni sa pinakabagong opisyal na impormasyon ng bawat provider.<br>Pahina ng tool · hindi kapalit ng opisyal na client</footer>
+</div>
+<script src="/fil/codes.js"></script><script src="/app.js"></script>
+</body></html>
