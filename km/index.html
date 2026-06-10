@@ -1,0 +1,167 @@
+<!DOCTYPE html><html lang="km"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Youdao ការចាប់យកពាក្យលើអេក្រង់/ការបកប្រែតាមការជ្រើស/OCR/ផ្លូវកាត់ មិនដំណើរការ - មូលហេតុ និង ដំណោះស្រាយ (PDF, Word, កម្មវិធីរុករក, 64-ប៊ីត)</title>
+<meta name="description" content="ការចាប់យកពាក្យលើអេក្រង់ Youdao (ស្វែងរកដោយដាក់ម៉ៅស៍), ការបកប្រែតាមការជ្រើស, OCR រូបថតអេក្រង់ ឬ ផ្លូវកាត់ មិនដំណើរការ? ស្វែងរករោគសញ្ញា (ការចាប់យកស្លាប់ / គ្មាន popup ពេលជ្រើស / ការចាប់យក Word-Office / ការចាប់យក PDF-Acrobat / ការជ្រើសកម្មវិធីរុករក Chrome / OCR / ការប៉ះទង្គិចផ្លូវកាត់ / សិទ្ធិ macOS / popup ក្រៅអេក្រង់លើពហុម៉ូនីទ័រ / 64-ប៊ីត / កំណែ portable) — រោគសញ្ញា L1 និង ទីតាំងផ្លូវការ ព្រមទាំងមូលហេតុឫស L2: global hook / DLL injection, កម្រិតសិទ្ធិ UAC, Office COM add-in, Acrobat protected mode, ការបង្កើនល្បឿនផ្នែករឹង GPU បំប្លែងអត្ថបទទៅជា texture, ស្កេន PDF ត្រូវការ OCR, DPI ពហុម៉ូនីទ័រ; ជាមួយការប្រៀបធៀប Youdao ទល់នឹង Eudic / iCIBA / Saladict / Microsoft Translator និង ការប៉ាន់ស្មាន 2026.">
+<link rel="canonical" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="zh-Hans" href="https://yoydao.github.io/">
+<link rel="alternate" hreflang="en" href="https://yoydao.github.io/en/">
+<link rel="alternate" hreflang="ja" href="https://yoydao.github.io/ja/">
+<link rel="alternate" hreflang="zh-Hant" href="https://yoydao.github.io/zh-tw/">
+<link rel="alternate" hreflang="ko" href="https://yoydao.github.io/ko/">
+<link rel="alternate" hreflang="id" href="https://yoydao.github.io/id/">
+<link rel="alternate" hreflang="vi" href="https://yoydao.github.io/vi/">
+<link rel="alternate" hreflang="th" href="https://yoydao.github.io/th/">
+<link rel="alternate" hreflang="es" href="https://yoydao.github.io/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://yoydao.github.io/pt-br/">
+<link rel="alternate" hreflang="de" href="https://yoydao.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://yoydao.github.io/fr/">
+<link rel="alternate" hreflang="ru" href="https://yoydao.github.io/ru/">
+<link rel="alternate" hreflang="it" href="https://yoydao.github.io/it/">
+<link rel="alternate" hreflang="pl" href="https://yoydao.github.io/pl/">
+<link rel="alternate" hreflang="nl" href="https://yoydao.github.io/nl/">
+<link rel="alternate" hreflang="tr" href="https://yoydao.github.io/tr/">
+<link rel="alternate" hreflang="ar" href="https://yoydao.github.io/ar/">
+<link rel="alternate" hreflang="hi" href="https://yoydao.github.io/hi/">
+<link rel="alternate" hreflang="ms" href="https://yoydao.github.io/ms/">
+<link rel="alternate" hreflang="fa" href="https://yoydao.github.io/fa/">
+<link rel="alternate" hreflang="bn" href="https://yoydao.github.io/bn/">
+<link rel="alternate" hreflang="ta" href="https://yoydao.github.io/ta/">
+<link rel="alternate" hreflang="te" href="https://yoydao.github.io/te/">
+<link rel="alternate" hreflang="fil" href="https://yoydao.github.io/fil/">
+<link rel="alternate" hreflang="ur" href="https://yoydao.github.io/ur/">
+<link rel="alternate" hreflang="lo" href="https://yoydao.github.io/lo/">
+<link rel="alternate" hreflang="km" href="https://yoydao.github.io/km/">
+<link rel="alternate" hreflang="my" href="https://yoydao.github.io/my/">
+<link rel="alternate" hreflang="x-default" href="https://yoydao.github.io/">
+<link rel="stylesheet" href="/style.css">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "WebApplication",
+   "name": "Youdao ការស្វែងរកដំណោះស្រាយ ការចាប់យក/ការជ្រើស/OCR/ផ្លូវកាត់",
+   "url": "https://yoydao.github.io/km/",
+   "applicationCategory": "UtilitiesApplication",
+   "operatingSystem": "Web browser",
+   "inLanguage": "km",
+   "description": "ការចាប់យកពាក្យលើអេក្រង់ Youdao (ស្វែងរកដោយដាក់ម៉ៅស៍), ការបកប្រែតាមការជ្រើស, OCR រូបថតអេក្រង់ ឬ ផ្លូវកាត់ មិនដំណើរការ? ស្វែងរករោគសញ្ញា (ការចាប់យកស្លាប់ / គ្មាន popup ពេលជ្រើស / ការចាប់យក Word-Office / ការចាប់យក PDF-Acrobat / ការជ្រើសកម្មវិធីរុករក Chrome / OCR / ការប៉ះទង្គិចផ្លូវកាត់ / សិទ្ធិ macOS / popup ក្រៅអេក្រង់លើពហុម៉ូនីទ័រ / 64-ប៊ីត / កំណែ portable) — រោគសញ្ញា L1 និង ទីតាំងផ្លូវការ ព្រមទាំងមូលហេតុឫស L2: global hook / DLL injection, កម្រិតសិទ្ធិ UAC, Office COM add-in, Acrobat protected mode, ការបង្កើនល្បឿនផ្នែករឹង GPU បំប្លែងអត្ថបទទៅជា texture, ស្កេន PDF ត្រូវការ OCR, DPI ពហុម៉ូនីទ័រ; ជាមួយការប្រៀបធៀប Youdao ទល់នឹង Eudic / iCIBA / Saladict / Microsoft Translator និង ការប៉ាន់ស្មាន 2026.",
+   "isAccessibleForFree": true,
+   "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+   }
+  },
+  {
+   "@type": "FAQPage",
+   "inLanguage": "km",
+   "url": "https://yoydao.github.io/km/",
+   "mainEntity": [
+    {
+     "@type": "Question",
+     "name": "Youdao ការចាប់យកអេក្រង់ស្លាប់ទាំងស្រុង - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ការចាប់យកអេក្រង់ត្រូវការ Youdao នៅផ្ទៃខាងក្រោយដោយបើកការចាប់យក; កំណែ desktop ផ្លូវការផ្តល់ ការចាប់យកឆ្លាត / ការចាប់យក clipboard / ការចាប់យក OCR. ការចាប់យកអេក្រង់ប្រើ global hook ដែលចាក់ចូលកម្មវិធីខាងមុខដើម្បីអានអត្ថបទ: ត្រូវការ process Youdao ដំណើរការ + switch ការចាប់យកមេសកម្ម + គ្រាប់ចុច trigger ត្រូវគ្នា. ខ្វះមួយក៏មើលទៅ «ស្លាប់ទាំងស្រុង», ច្រើនយល់ច្រឡំថាសូហ្វវែរខូច. ត្រួតពិនិត្យរូបតំណាង tray សកម្ម (ប្រផេះ = មិនដំណើរការ, ចុចពីរដងដើម្បីចាប់ផ្តើម); ការកំណត់ → ការចាប់យក និង ការជ្រើស, ធីក «បើកការចាប់យក» ហើយជ្រើសរបៀប (ដាក់ម៉ៅស៍ / ចុច Ctrl); ចាប់ផ្តើម Youdao ឡើងវិញហើយព្យាយាមម្តងទៀត."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ការបកប្រែតាមការជ្រើសមិនបង្ហាញ popup - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ការបកប្រែតាមការជ្រើសត្រូវការ «ការជ្រើស» បើកដោយធីក «បកប្រែស្វ័យប្រវត្តិពេលជ្រើស»; អាចបកប្រែពេលជ្រើស ឬ ដោយគ្រាប់ចុច. ការជ្រើស និង ការចាប់យក ជា switch ដាច់ដោយឡែក: ច្រើនបើកការចាប់យក ប៉ុន្តែមិនការជ្រើស, ឬ បិទ «បកប្រែស្វ័យប្រវត្តិពេលជ្រើស», ដូច្នេះ «ការជ្រើសមិនបង្ហាញអ្វី»; hotkey ការជ្រើសក៏អាចត្រូវយក. ការកំណត់ → ការចាប់យក និង ការជ្រើស, ធីក «បើកការបកប្រែតាមការជ្រើស» និង «បកប្រែស្វ័យប្រវត្តិពេលជ្រើស»; បើដោយគ្រាប់ចុច ត្រួតពិនិត្យគ្រាប់ចុចនោះទំនេរ; ការជ្រើសក្នុងកម្មវិធីរុករកត្រូវការផ្នែកបន្ថែមការចាប់យកផងដែរ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ការចាប់យក/ការជ្រើសក្នុង Word / Office បរាជ័យ - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Youdao រួមបញ្ចូលជាមួយ Office តាម COM add-in សម្រាប់ការបកប្រែការជ្រើស / ប្រយោគ; បើ add-in ត្រូវបិទ ឬ មិនចុះបញ្ជីក៏បរាជ័យ. Office បិទ COM add-in ភាគីទីបីសម្រាប់ភាពឆបគ្នា ឬ គោលនយោបាយ; ការប្តូរកំណែ (ឧ. Education ថ្មី) ទុក add-in ចាស់មិនចុះបញ្ជីសម្រាប់ Office ថ្មី, ដូច្នេះ «មុនដំណើរការ, ឥឡូវមិន». Word: File → Options → Add-ins → ខាងក្រោម «Manage: COM add-ins» → Go → ធីក Youdao add-in; បើមិនដូច្នេះ ដំឡើង Youdao ឡើងវិញដើម្បីចុះបញ្ជីឡើងវិញ; ត្រួតពិនិត្យ bitness Youdao និង Office ត្រូវគ្នា."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ការចាប់យកក្នុង PDF / Acrobat បរាជ័យ - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "កំណែផ្លូវការគាំទ្រការចាប់យកអេក្រង់ PDF ក្នុង Adobe Reader / Acrobat; កំណែ «portable» មិនផ្លូវការមិនអាចចាប់យក PDF, និង PDF ត្រូវជាអត្ថបទ, មិនមែនរូបភាព. បីមូលហេតុ: ① «protected mode» របស់ Acrobat ជា sandbox ដែលរារាំង injection YodaoDict.api ភាគីទីបី; ② bitness មិនត្រូវគ្នារវាង Acrobat 64-ប៊ីត និង Youdao plug-in ចាស់ ផ្តល់ «plug-in មិនឆបគ្នា»; ③ PDF ជាស្កេន (រូបភាព, គ្មានស្រទាប់អត្ថបទ). ក្នុង Acrobat Edit → Preferences → Security (Enhanced) → «បើក protected mode ពេលចាប់ផ្តើម» បិទ, បើក Youdao មុន Acrobat; សម្រាប់ «មិនឆបគ្នា» 64-ប៊ីត ដំឡើង Youdao ថ្មីបំផុត, ឬ copy YodaoDict.api ទៅ plug_ins របស់ Acrobat; សម្រាប់ស្កេនប្រើ OCR ការចាប់យកខ្លាំង."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ការជ្រើស/ការចាប់យកក្នុង Chrome / កម្មវិធីរុករក បរាជ័យ - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chrome / Firefox ។ល។ ត្រូវការផ្នែកបន្ថែមការចាប់យក Youdao ដាច់ដោយឡែក; កំណែ desktop ផ្លូវការផ្តល់ «ការចាប់យក Chrome». កម្មវិធីរុករកជា sandbox ផ្ទាល់ខ្លួន: ① គ្មានផ្នែកបន្ថែមការចាប់យក Youdao, global hook អាន DOM អត្ថបទមិនបាន; ② ការបង្កើនល្បឿនផ្នែករឹង GPU render ទំព័រជា texture ដោយគ្មានស្រទាប់អានបាន; ③ adblock / សុវត្ថិភាព toggle (ឧ. 360 កម្មវិធីរុករក) រារាំងការចាប់យក. ដំឡើងផ្នែកបន្ថែមការចាប់យក Youdao សម្រាប់កម្មវិធីរុករករបស់អ្នក (តាមការកំណត់ Youdao ឬ store); បិទ «ប្រើការបង្កើនល្បឿនផ្នែករឹង» ក្នុងការកំណត់កម្មវិធីរុករកហើយចាប់ផ្តើមឡើងវិញ; បិទ adblock ក្នុង 360 កម្មវិធីរុករក."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao OCR រូបថតអេក្រង់/តំបន់ មិនដំណើរការ - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "OCR រូបថតអេក្រង់ត្រូវការ hotkey សម្គាល់រូបថតអេក្រង់ដែលកំណត់ (ឧ. Ctrl+Alt+O) និង ម៉ូឌុល OCR ទាញយក; អូសជ្រើសតំបន់អេក្រង់. OCR រូបថតអេក្រង់មិនត្រូវការស្រទាប់អត្ថបទ - សម្គាល់តំបន់ជ្រើសដោយរូបភាព, ដូច្នេះត្រូវការម៉ូឌុល OCR ទាញយក + hotkey ទំនេរ + (macOS) សិទ្ធិការថតអេក្រង់ដើម្បីអាន pixel. ការកំណត់ → ផ្លូវកាត់, កំណត់គ្រាប់ចុចគ្មានការប៉ះទង្គិចសម្រាប់ «OCR រូបថតអេក្រង់»; ទាញយកម៉ូឌុល OCR ពេលប្រើដំបូង; នៅ macOS ផ្តល់ «ការថតអេក្រង់»; ជ្រើសតំបន់ច្បាស់ជាងបើសម្គាល់បរាជ័យ."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao ការប៉ះទង្គិចផ្លូវកាត់ការចាប់យក / រូបថតអេក្រង់ - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "ការចាប់យក / ការជ្រើស / ការសម្គាល់រូបថតអេក្រង់ ទាំងអស់អាចប្តូរតាមបំណងក្នុង ផ្លូវកាត់; ពេលប៉ះទង្គិចព្រមាន, និង អាច rebind ឬ reset. ផ្លូវកាត់ global មុនមកមុនបាន: ឧបករណ៍រូបថតអេក្រង់, វិធីបញ្ចូល, QQ / WeChat ឬ វចនានុក្រមផ្សេង អាចកាន់បន្សំដូចគ្នា, ដូច្នេះគ្រាប់ចុច Youdao មិនធ្វើអ្វី. ការកំណត់ → ផ្លូវកាត់, មើលការព្រមានការប៉ះទង្គិច; ប្តូរទៅបន្សំកម្រ ដូចជា Ctrl+Shift+អក្សរ / Alt+អក្សរ; បិទកម្មវិធីកាន់គ្រាប់ចុចម្តងមួយដើម្បីរកជនល្មើស."
+     }
+    },
+    {
+     "@type": "Question",
+     "name": "Youdao macOS ការចាប់យក / ផ្លូវកាត់ ត្រូវការការអនុញ្ញាត - ដោះស្រាយយ៉ាងណា?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "macOS ត្រូវផ្តល់ Youdao «ភាពងាយស្រួល» (តាមដានផ្លូវកាត់ / គ្រប់គ្រង) និង «ការថតអេក្រង់» (អានអេក្រង់សម្រាប់ការចាប់យក / រូបថតអេក្រង់) ក្នុង ការកំណត់ប្រព័ន្ធ → ឯកជនភាព និង សុវត្ថិភាព. sandbox macOS តម្រូវការអនុញ្ញាតច្បាស់: គ្មាន «ភាពងាយស្រួល» មិនឮផ្លូវកាត់ global, គ្មាន «ការថតអេក្រង់» មិនអាន pixel; ការធ្វើបច្ចុប្បន្នភាពច្រើន reset ទាំងពីរ. ការកំណត់ប្រព័ន្ធ → ឯកជនភាព និង សុវត្ថិភាព → ធីក Youdao ក្នុង «ភាពងាយស្រួល» និង «ការថតអេក្រង់» ហើយចាប់ផ្តើមឡើងវិញ; ផ្តល់ឡើងវិញបន្ទាប់ពីការធ្វើបច្ចុប្បន្នភាព macOS នីមួយៗ."
+     }
+    }
+   ]
+  }
+ ]
+}
+</script>
+</head>
+<body><div class="wrap"><main>
+<nav class="lang">ភាសា: <a href="/">简体中文</a> · <a href="/en/">English</a> · <a href="/ja/">日本語</a> · <a href="/zh-tw/">繁體中文</a> · <a href="/ko/">한국어</a> · <a href="/id/">Bahasa Indonesia</a> · <a href="/vi/">Tiếng Việt</a> · <a href="/th/">ไทย</a> · <a href="/es/">Español</a> · <a href="/pt-br/">Português (BR)</a> · <a href="/de/">Deutsch</a> · <a href="/fr/">Français</a> · <a href="/ru/">Русский</a> · <a href="/it/">Italiano</a> · <a href="/pl/">Polski</a> · <a href="/nl/">Nederlands</a> · <a href="/tr/">Türkçe</a> · <a href="/ar/">العربية</a> · <a href="/hi/">हिन्दी</a> · <a href="/ms/">Bahasa Melayu</a> · <a href="/fa/">فارسی</a> · <a href="/bn/">বাংলা</a> · <a href="/ta/">தமிழ்</a> · <a href="/te/">తెలుగు</a> · <a href="/fil/">Filipino</a> · <a href="/ur/">اردو</a> · <a href="/lo/">ພາສາລາວ</a> · <strong>ភាសាខ្មែរ</strong> · <a href="/my/">မြန်မာ</a></nav>
+<h1>Youdao ការចាប់យកពាក្យលើអេក្រង់ / ការបកប្រែតាមការជ្រើស / OCR / ផ្លូវកាត់ - ការស្វែងរកដំណោះស្រាយ</h1>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/cover_km.webp"><img src="/img/cover_km.png" alt="រូបភាពពន្យល់ឧបករណ៍ Youdao សម្រាប់ការស្វែងរកដំណោះស្រាយ ការចាប់យក/ការជ្រើស/រូបថតអេក្រង់" fetchpriority="high" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>រូប: Youdao ការស្វែងរកដំណោះស្រាយ ការចាប់យក / ការជ្រើស / រូបថតអេក្រង់ (រោគសញ្ញា L1 + មូលហេតុឫស L2 + ការប្រៀបធៀបគូប្រកួត)</figcaption></figure>
+<p>តើ <strong>ការចាប់យកពាក្យលើអេក្រង់</strong> របស់ <strong>Youdao</strong> (ស្វែងរកដោយដាក់ម៉ៅស៍), <strong>ការបកប្រែតាមការជ្រើស</strong>, <strong>OCR</strong> ឬ <strong>ផ្លូវកាត់</strong> បានឈប់ភ្លាមៗ? បញ្ជាក់បីរឿងជាមុនសិន: <strong>មិនបានបើក / គ្មានសិទ្ធិ, ភាពឆបគ្នានៃកម្មវិធីជាក់លាក់ (Office / PDF / កម្មវិធីរុករក), ឬ ខ្លឹមសារខ្លួនឯង (ស្កេន / ការបង្កើនល្បឿនផ្នែករឹង) គ្មានអត្ថបទដែលអាចអានបាន?</strong> ស្វែងរក <strong>រោគសញ្ញា ឬ ពាក្យគន្លឹះ</strong> ដែលអ្នកជួប (ឧ. <code>ការចាប់យក</code>, <code>pdf</code>, <code>ការជ្រើស</code>, <code>ផ្លូវកាត់</code>, <code>64-ប៊ីត</code>, <code>OCR</code>): ដំបូង <strong>រោគសញ្ញា L1 និង ទីតាំងផ្លូវការ</strong>, បន្ទាប់មក <strong>មូលហេតុឫស L2 និង ដំណោះស្រាយ</strong>, ចុងក្រោយការប្រៀបធៀបគូប្រកួត និង ករណីពិត. ដំឡើង / រៀបចំ? មើល <a href="https://yoydao.com/">ទាញយក Youdao / មគ្គុទ្ទេសក៍ការចាប់យក និង ការជ្រើស</a>.</p>
+<input id="q" placeholder="បញ្ចូលរោគសញ្ញា ឬ ពាក្យគន្លឹះ, ឧ. ការចាប់យក / pdf / ការជ្រើស / ផ្លូវកាត់ / 64-ប៊ីត / OCR" autocomplete="off">
+<button id="go">ស្វែងរក</button>
+<div id="out"></div>
+<h2>ជំហានទី 1: បែងចែកជាបួនក្រុមជាមុនសិន (L1 - កុំដំឡើងឡើងវិញភ្លាមៗ)</h2>
+<p>ពេលការចាប់យក/ការជ្រើស Youdao ឈប់ 9 ក្នុង 10 ដងវាជាមួយក្នុងបួនក្រុម - រកកំហុសជាមុនសិន: ① <strong>ការបើក/ការកំណត់</strong> — Youdao មិនដំណើរការផ្ទៃខាងក្រោយ (រូបតំណាង tray ប្រផេះ), ឬ មិនបានធីក «បើកការចាប់យក / ការជ្រើស / បកប្រែស្វ័យប្រវត្តិពេលជ្រើស», ឬ trigger ខុស; ② <strong>សិទ្ធិ</strong> — macOS «ភាពងាយស្រួល + ការថតអេក្រង់» មិនបានផ្តល់, ឬ នៅ Windows គោលដៅជាកម្មវិធីសិទ្ធិខ្ពស់ ប៉ុន្តែ Youdao មិនដំណើរការជាអ្នកគ្រប់គ្រង; ③ <strong>ភាពឆបគ្នាកម្មវិធី</strong> — Youdao COM add-in ក្នុង Word/Excel ត្រូវបានបិទ, Acrobat protected mode រារាំង injection, ឬ កម្មវិធីរុករកគ្មានផ្នែកបន្ថែមការចាប់យក; ④ <strong>ការ render/ខ្លឹមសារ</strong> — ស្កេន PDF ជារូបភាព (ត្រូវការ OCR), កម្មវិធីរុករក/PDF ជាមួយការបង្កើនល្បឿនផ្នែករឹង GPU គូរអត្ថបទជា texture, ឬ DPI ពហុម៉ូនីទ័រមិនត្រូវគ្នា បោះ popup ក្រៅអេក្រង់. ការរៀបចំពេញលេញ: <a href="https://yoydao.com/tutorial/">មគ្គុទ្ទេសក៍ការចាប់យក និង ការជ្រើស Youdao</a>.</p>
+<div class="cat"><div class="catbox"><b>ការបើក / ការកំណត់</b><span class="cs">ការចាប់យក · ការជ្រើស · បកប្រែស្វ័យប្រវត្តិ · OCR ខ្លាំង</span><div>ប្រាកដថា Youdao ដំណើរការផ្ទៃខាងក្រោយ (រូបតំណាង tray មិនប្រផេះ), ទៅ ការកំណត់ → ការចាប់យក និង ការជ្រើស ហើយធីក «បើកការចាប់យក», «បើកការជ្រើស», «បកប្រែស្វ័យប្រវត្តិពេលជ្រើស» និង ជ្រើស trigger ត្រឹមត្រូវ (ដាក់ម៉ៅស៍ / ចុច Ctrl).</div></div><div class="catbox"><b>សិទ្ធិ</b><span class="cs">macOS ភាពងាយស្រួល+ការថតអេក្រង់ · Windows អ្នកគ្រប់គ្រង/UAC</span><div>macOS: ការកំណត់ប្រព័ន្ធ → ឯកជនភាព និង សុវត្ថិភាព, ផ្តល់ Youdao «ភាពងាយស្រួល» និង «ការថតអេក្រង់»; Windows: ពេលគោលដៅ «ដំណើរការជាអ្នកគ្រប់គ្រង», ដំណើរការ Youdao ជាអ្នកគ្រប់គ្រងផងដែរ (hook ចាក់តែក្នុងកម្រិតសិទ្ធិដូចគ្នា).</div></div><div class="catbox"><b>ភាពឆបគ្នាកម្មវិធី</b><span class="cs">Office COM · Acrobat protected mode · 64-ប៊ីត · ផ្នែកបន្ថែមកម្មវិធីរុករក</span><div>Office: File → Options → Add-ins → COM add-ins, ធីក Youdao add-in; Acrobat: បិទ «បើក protected mode ពេលចាប់ផ្តើម», បើចាំបាច់ copy YodaoDict.api ទៅ plug_ins; កម្មវិធីរុករក: ដំឡើងផ្នែកបន្ថែមការចាប់យក Youdao.</div></div><div class="catbox"><b>ផ្លូវកាត់</b><span class="cs">ការប៉ះទង្គិច · ផ្ទាល់ខ្លួន · គ្រាប់ចុច OCR រូបថតអេក្រង់</span><div>ការកំណត់ → ផ្លូវកាត់, មើលការព្រមានការប៉ះទង្គិច; ប្តូរទៅបន្សំប៉ះទង្គិចតិច ដូចជា Ctrl+Shift / Alt+អក្សរ; ផ្តល់ OCR រូបថតអេក្រង់គ្រាប់ចុចផ្ទាល់ខ្លួន (ឧ. Ctrl+Alt+O, ឆ្ងាយពីកម្មវិធីផ្សេង).</div></div><div class="catbox"><b>ការ render / ការបង្ហាញ</b><span class="cs">ការបង្កើនល្បឿនផ្នែករឹង · ស្កេន · DPI ពហុម៉ូនីទ័រ · ពេញអេក្រង់</span><div>កម្មវិធីរុករក/PDF ជាមួយការបង្កើនល្បឿនផ្នែករឹង GPU render ខ្លឹមសារជា texture ដោយគ្មានអត្ថបទអានបាន (បិទការបង្កើនល្បឿន); ស្កេន PDF ជារូបភាព (ប្រើ OCR); សម្រាប់ popup ក្រៅអេក្រង់លើពហុម៉ូនីទ័រ ធីក «ខ្ទាស់ទីតាំងបង្អួច».</div></div><div class="catbox"><b>បណ្តាញ / ការដំឡើង</b><span class="cs">ល្បឿនការចាប់យក · កំណែ portable · add-in មិនផ្ទុក</span><div>ការស្វែងរកអនឡាញយឺត? ត្រួតពិនិត្យបណ្តាញ; ដំឡើងកំណែពេញផ្លូវការជានិច្ច - កំណែ «portable/ស្រាល» មិនផ្លូវការគ្មាន DLL hook ការចាប់យកដែលបានចុះបញ្ជី, ដូច្នេះការចាប់យក PDF/global បរាជ័យភ្លាមៗ.</div></div></div><figure><svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="លំហូរការចាត់ថ្នាក់ការបរាជ័យការចាប់យក/ការជ្រើស Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">ការចាត់ថ្នាក់ការចាប់យក / ការជ្រើស មិនដំណើរការ (បួនក្រុមជាមុន: switch / សិទ្ធិ / កម្មវិធី / ខ្លឹមសារ)</text><rect x="20" y="46" width="150" height="46" rx="10" fill="#111"/><text x="95" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#fff">ការចាប់យកស្លាប់</text><path d="M170 69 H206" stroke="#999" stroke-width="2" fill="none" marker-end="url(#a)"/><rect x="206" y="46" width="172" height="46" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="292" y="74" text-anchor="middle" font-family="system-ui,Arial" font-size="13" fill="#b91c1c">បួនក្រុម</text><rect x="440" y="20" width="262" height="56" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="455" y="42" font-family="system-ui,Arial" font-size="12.5" fill="#1d4ed8">host ត្រួតពិនិត្យខ្លួនឯង →</text><text x="455" y="62" font-family="system-ui,Arial" font-size="11.5" fill="#1e3a8a">switch បិទ · គ្មានសិទ្ធិ</text><rect x="440" y="86" width="262" height="56" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="455" y="108" font-family="system-ui,Arial" font-size="12.5" fill="#b45309">កម្មវិធី / ខ្លឹមសារ →</text><text x="455" y="128" font-family="system-ui,Arial" font-size="11.5" fill="#92400e">Office/PDF/កម្មវិធីរុករក · ស្កេន/បង្កើន-រឹង</text><path d="M378 60 H410 V48 H440" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#a)"/><path d="M378 78 H410 V114 H440" stroke="#d97706" stroke-width="2" fill="none" marker-end="url(#a)"/><text x="20" y="178" font-family="system-ui,Arial" font-size="13" font-weight="700" fill="#1d1d1f">បួនមូលហេតុឫស (អានមូលហេតុ / ដំណោះស្រាយក្នុងធាតុ)</text><g font-family="system-ui,Arial" font-size="12"><rect x="20" y="190" width="162" height="92" rx="10" fill="#eef4ff" stroke="#cfe0ff"/><text x="32" y="212" font-weight="700" fill="#1d4ed8">① ការបើក/ការកំណត់</text><text x="32" y="234" fill="#555" font-size="11">ការចាប់យក · ការជ្រើស · OCR</text><rect x="194" y="190" width="162" height="92" rx="10" fill="#fff1f1" stroke="#ffd5d5"/><text x="206" y="212" font-weight="700" fill="#b91c1c">② សិទ្ធិ</text><text x="206" y="234" fill="#555" font-size="11">mac ភាពងាយស្រួល · win អ្នកគ្រប់គ្រង</text><rect x="368" y="190" width="162" height="92" rx="10" fill="#fffbeb" stroke="#fde68a"/><text x="380" y="212" font-weight="700" fill="#b45309">③ ភាពឆបគ្នាកម្មវិធី</text><text x="380" y="234" fill="#555" font-size="11">Office · PDF · កម្មវិធីរុករក</text><rect x="542" y="190" width="160" height="92" rx="10" fill="#ecfdf5" stroke="#bbf7e0"/><text x="554" y="212" font-weight="700" fill="#047857">④ render/ខ្លឹមសារ</text><text x="554" y="234" fill="#555" font-size="11">ស្កេន · បង្កើន · ពហុម៉ូនីទ័រ</text></g><defs><marker id="a" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#999"/></marker></defs></svg><figcaption>រូបទី 1: ការចាត់ថ្នាក់ការបរាជ័យការចាប់យក/ការជ្រើស Youdao - បែងចែកជាបួនក្រុម, បន្ទាប់មកកំណត់ទៅ host / កម្មវិធី / ខ្លឹមសារ</figcaption></figure>
+<h2>ជំហានទី 2: មូលហេតុឫសដែលធ្វេសប្រហែសច្រើនបំផុត → L2 (ការចាប់យកអេក្រង់ = global hook / DLL injection)</h2>
+<p>គំនិតសំខាន់: <strong>ការចាប់យកអេក្រង់ «មិនអានរូបភាពអេក្រង់» - Youdao ចាក់កូដការចាប់យក (global hook / DLL) ចូលកម្មវិធីផ្សេងដើម្បីអាន text buffer របស់វា</strong>. នេះពន្យល់ការបរាជ័យ «អាថ៌កំបាំង» ភាគច្រើន: ① <strong>កម្រិតសិទ្ធិ</strong> — Youdao សិទ្ធិធម្មតាចាក់ចូលកម្មវិធី «ដំណើរការជាអ្នកគ្រប់គ្រង» មិនបាន (និងផ្ទុយ), ដូច្នេះ «តែកម្មវិធីនោះមិនចាប់យក» ជាធម្មតាសិទ្ធិមិនត្រូវគ្នា; ② <strong>bitness</strong> — hook 32/64-ប៊ីត មិនលាយគ្នា, ដូច្នេះ Youdao ចាស់លើ Acrobat 64-ប៊ីត ផ្តល់ «plug-in មិនឆបគ្នា, ផ្ទុក YodaoDict.api មិនបាន»; ③ <strong>sandbox</strong> — «protected mode» របស់ Acrobat ជា sandbox ដែលរារាំង injection .api ភាគីទីបី; ④ <strong>ការបង្កើនល្បឿនផ្នែករឹង</strong> — ពេលកម្មវិធីរុករក/PDF render ខ្លឹមសារជា GPU texture គ្មាន «អត្ថបទដែលអាចអានបាន» ឱ្យចាប់យក; ⑤ <strong>ស្កេន</strong> — PDF រូបភាពតែប៉ុណ្ណោះគ្មានស្រទាប់អត្ថបទ, ប្រើ «OCR ការចាប់យកខ្លាំង». ខាងក្រោមជា panel ត្រួតពិនិត្យខ្លួនឯង; បន្ទាប់មកការប្រៀបធៀបគូប្រកួត និង ការប៉ាន់ស្មាន 2026.</p>
+<figure><svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="panel ត្រួតពិនិត្យខ្លួនឯងមុនការចាប់យករបស់ Youdao" style="width:100%;height:auto;border:1px solid #eee;border-radius:12px;background:#fff"><text x="20" y="28" font-family="system-ui,Arial" font-size="15.5" font-weight="700" fill="#1d1d1f">panel ត្រួតពិនិត្យខ្លួនឯងការបើកការចាប់យក (បៃតង = បានបញ្ជាក់ / ក្រហម = ធ្វេសប្រហែសងាយ)</text><rect x="20" y="42" width="680" height="226" rx="14" fill="#f8fafc" stroke="#e2e8f0"/><text x="38" y="66" font-family="system-ui,Arial" font-size="12.5" font-weight="700" fill="#475569">ធាតុត្រួតពិនិត្យ</text><text x="300" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">សេចក្តីសម្រេច</text><text x="610" y="66" font-family="system-ui,Arial" font-size="12" fill="#94a3b8">ស្ថានភាព</text><line x1="38" y1="74" x2="682" y2="74" stroke="#e2e8f0" stroke-width="1"/><text x="38" y="98" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">Youdao ដំណើរការផ្ទៃខាងក្រោយ (tray មិនប្រផេះ)</text><text x="300" y="98" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">process រស់</text><circle cx="612" cy="94" r="6" fill="#16a34a"/><text x="628" y="98" font-family="system-ui,Arial" font-size="12" fill="#16a34a">បានបញ្ជាក់</text><text x="38" y="128" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">ធីក ការចាប់យក / ការជ្រើស / បកប្រែស្វ័យប្រវត្តិពេលជ្រើស</text><text x="300" y="128" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">3 switch</text><circle cx="612" cy="124" r="6" fill="#16a34a"/><text x="628" y="128" font-family="system-ui,Arial" font-size="12" fill="#16a34a">បានបញ្ជាក់</text><text x="38" y="158" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">trigger ការចាប់យកត្រឹមត្រូវ (ដាក់ម៉ៅស៍ / Ctrl)</text><text x="300" y="158" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">trigger</text><circle cx="612" cy="154" r="6" fill="#16a34a"/><text x="628" y="158" font-family="system-ui,Arial" font-size="12" fill="#16a34a">បានបញ្ជាក់</text><text x="38" y="188" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">កម្មវិធីគោលដៅឆបគ្នា (Office add-in / PDF មិនការពារ / ផ្នែកបន្ថែមកម្មវិធីរុករក)</text><text x="300" y="188" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ផ្នែកកម្មវិធី</text><circle cx="612" cy="184" r="6" fill="#ef4444"/><text x="628" y="188" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ត្រូវត្រួតពិនិត្យ</text><text x="38" y="218" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">បានផ្តល់សិទ្ធិ (mac ភាពងាយស្រួល+ការថត / win អ្នកគ្រប់គ្រង)</text><text x="300" y="218" font-family="system-ui,Arial" font-size="12.5" fill="#16a34a">កម្រិតសិទ្ធិ</text><circle cx="612" cy="214" r="6" fill="#16a34a"/><text x="628" y="218" font-family="system-ui,Arial" font-size="12" fill="#16a34a">បានបញ្ជាក់</text><text x="38" y="248" font-family="system-ui,Arial" font-size="13" fill="#1d1d1f">គ្មានការប៉ះទង្គិចផ្លូវកាត់ + មិនមែនស្កេន / OCR បើក</text><text x="300" y="248" font-family="system-ui,Arial" font-size="12.5" fill="#ef4444">ធ្វេសប្រហែសងាយ</text><circle cx="612" cy="244" r="6" fill="#ef4444"/><text x="628" y="248" font-family="system-ui,Arial" font-size="12" fill="#ef4444">ត្រូវត្រួតពិនិត្យ</text><text x="20" y="296" font-family="system-ui,Arial" font-size="11.5" fill="#94a3b8">ចំណាំ: ក្រហម = ពីរដែលធ្វេសប្រហែសច្រើនបំផុត - ភាពឆបគ្នាកម្មវិធីជាក់លាក់ (Office / PDF / កម្មវិធីរុករក) និង ខ្លឹមសារ/ផ្លូវកាត់ (ស្កេនត្រូវការ OCR, ការប៉ះទង្គិចគ្រាប់ចុច); ត្រួតពិនិត្យពីរនេះជាមុន.</text></svg><figcaption>រូបទី 2: panel ត្រួតពិនិត្យខ្លួនឯងការបើកការចាប់យក (បៃតង = បានបញ្ជាក់ / ក្រហម = ធ្វេសប្រហែសងាយ)</figcaption></figure>
+<figure class="i4png"><picture><source type="image/webp" srcset="/img/board_km.webp"><img src="/img/board_km.png" alt="រូបភាពពន្យល់ panel ត្រួតពិនិត្យខ្លួនឯងមុនការចាប់យករបស់ Youdao ធាតុបៃតង/ក្រហម" loading="lazy" width="1120" height="746" style="width:100%;height:auto;border-radius:12px;border:1px solid #eee"></picture><figcaption>រូប: ត្រួតពិនិត្យ «កំពុងដំណើរការ + បីswitch + សិទ្ធិ» ជាមុន, បន្ទាប់មក «ភាពឆបគ្នាកម្មវិធី + ខ្លឹមសារ/ផ្លូវកាត់» - ពីរចុងក្រោយធ្វេសប្រហែសច្រើនបំផុត</figcaption></figure>
+<h2>តារាងរោគសញ្ញាពេញលេញ (រោគសញ្ញា L1 / ទីតាំងផ្លូវការ · មូលហេតុឫស L2)</h2>
+<table id="tbl"></table>
+<h2>ការប្រៀបធៀបឧបករណ៍ការជ្រើស/ការចាប់យកគូប្រកួត (របៀបចាប់យក / OCR / វេទិកា / តម្លៃ · ទិន្នន័យសាធារណៈ)</h2>
+<table class="cmp"><tr><th>សូហ្វវែរ</th><th>ការចាប់យកអេក្រង់ / ការជ្រើស</th><th>OCR រូបថតអេក្រង់</th><th>វេទិកា</th><th>វចនានុក្រមបន្ថែម</th><th>តម្លៃ (ប៉ាន់)</th></tr><tr><td>Youdao</td><td>ការចាប់យក global + ការបកប្រែតាមការជ្រើស</td><td>OCR រូបថតអេក្រង់ + ការចាប់យកខ្លាំង</td><td>Win / Mac / iOS / Android / Web / ផ្នែកបន្ថែមកម្មវិធីរុករក</td><td>mdx ខ្សោយ</td><td>core ឥតគិតថ្លៃ (សមាជិកខ្លះ / គ្មានផ្សាយ)</td></tr><tr><td>Eudic</td><td>ការជ្រើស + ការចាប់យកអេក្រង់</td><td>ការចាប់យករូបថតអេក្រង់</td><td>Win / Mac / iOS / Android</td><td>mdx ខ្លាំង (បណ្ណាល័យធំ)</td><td>មូលដ្ឋានឥតគិតថ្លៃ + កែលម្អបង់ប្រាក់</td></tr><tr><td>iCIBA (Kingsoft)</td><td>ការចាប់យក + ការជ្រើស</td><td>ការបកប្រែរូបថតអេក្រង់</td><td>Win / Mac / ទូរស័ព្ទ / Web</td><td>មធ្យម</td><td>ឥតគិតថ្លៃ (ផ្សាយ) + សមាជិក</td></tr><tr><td>Saladict</td><td>ការជ្រើសក្នុងកម្មវិធីរុករក (ផ្នែកបន្ថែម)</td><td>អាស្រ័យទំព័រ / OCR ត្រូវ config</td><td>ផ្នែកបន្ថែមកម្មវិធីរុករក (Chrome / Edge / Firefox)</td><td>ប្រភពកំណត់បាន</td><td>ឥតគិតថ្លៃ · open source</td></tr><tr><td>Microsoft Translator / Bing</td><td>ការជ្រើសកម្រិតប្រព័ន្ធខ្សោយ</td><td>Office built-in + រូបថតអេក្រង់</td><td>Win / Office / Edge / ទូរស័ព្ទ</td><td>គ្មាន</td><td>ឥតគិតថ្លៃ</td></tr></table><section class="i4data">
+<h2>មូលហេតុការបរាជ័យការចាប់យក Youdao និង ការប្រៀបធៀបឧបករណ៍ការជ្រើស (ការប៉ាន់ស្មាន 2026)</h2>
+<p>ខាងក្រោមជា <strong>ការប៉ាន់ស្មាន 2026</strong> ដែលសំយោគពីជំនួយ / FAQ ផ្លូវការរបស់ Youdao, ឯកសារសាធារណៈរបស់គូប្រកួត និង ការដោះស្រាយរបស់អ្នកអភិវឌ្ឍន៍ (មិនមែនការសន្យាអ្នកផលិត, មិនមែនការវាស់វែងផ្ទាល់; សម្រាប់ឯកសារយោង, ផ្លាស់ប្តូរតាមកំណែ និង OS):</p>
+<table>
+<tr><th>វិមាត្រ</th><th>ការប៉ាន់ស្មាន / ការប្រៀបធៀប</th></tr>
+<tr><td>ការបែងចែកមូលហេតុការបរាជ័យការចាប់យក (សហគមន៍ · ប៉ាន់)</td><td><strong>មិនបើក / សិទ្ធិ ~40%</strong> &gt; <strong>ភាពឆបគ្នាកម្មវិធី (Office/PDF/កម្មវិធីរុករក) ~25%</strong> &gt; ការប៉ះទង្គិចផ្លូវកាត់ ~20% &gt; ការ render / ខ្លឹមសារ (បង្កើន-រឹង / ស្កេន) ~15%</td></tr>
+<tr><td>ការចាប់យកពិតប្រាកដគឺអ្វី</td><td>ការចាប់យកអេក្រង់ = <strong>global hook / DLL injection</strong> ដែលអាន text buffer របស់កម្មវិធីគោលដៅ (មិនអានរូបភាពអេក្រង់); ដូច្នេះត្រូវប៉ះពាល់ដោយកម្រិតសិទ្ធិ, bitness, sandbox, ការបង្កើនល្បឿនផ្នែករឹង</td></tr>
+<tr><td>ការចាប់យកតាមវេទិកា (ប៉ាន់)</td><td>desktop (Win/Mac) គាំទ្រ <strong>ការចាប់យកអេក្រង់ global + ការជ្រើស + OCR រូបថតអេក្រង់</strong>; ទូរស័ព្ទភាគច្រើនការជ្រើស / ការបកប្រែរូបថត; web / កម្មវិធីរុករកត្រូវការ <strong>ផ្នែកបន្ថែមការចាប់យក</strong></td></tr>
+<tr><td>សង្ខេបឧបករណ៍ការជ្រើស / ការចាប់យក (ប៉ាន់)</td><td>Youdao = គ្រប់វេទិកា + ការបកប្រែ AI ខ្លាំង; Eudic = បណ្ណាល័យបន្ថែមខ្លាំង (mdx); iCIBA = ឥតគិតថ្លៃមហាជន; Saladict = កម្មវិធីរុករក open source; Microsoft = Office built-in</td></tr>
+<tr><td>កម្រិតតម្លៃ (ប៉ាន់)</td><td>Youdao / iCIBA <strong>core ឥតគិតថ្លៃ</strong> (សមាជិកសម្រាប់គ្មានផ្សាយ / បន្ថែម) · Eudic <strong>កែលម្អបង់ប្រាក់</strong> · Saladict <strong>ឥតគិតថ្លៃ open source</strong> · Microsoft Translator <strong>ឥតគិតថ្លៃ</strong></td></tr>
+</table>
+<p><small>មូលដ្ឋានការប៉ាន់ស្មាន: baseline ប្រភព + ការ extrapolate ពេលវេលា (cidian.youdao.com ជំនួយ / FAQ ផ្លូវការ, Eudic / iCIBA / Saladict / Microsoft ឯកសារសាធារណៈ, ការសរសេរអ្នកអភិវឌ្ឍន៍សាធារណៈ, 2026); ផ្លាស់ប្តូរតាមកំណែ និង គោលនយោបាយ OS របស់អ្នកផ្តល់សេវានីមួយៗ. មើលព័ត៌មានផ្លូវការថ្មីបំផុត. ការធ្វើមូលដ្ឋានីយកម្ម LLM.</small></p>
+</section>
+<h2>ករណីពិត - អានរហ័ស</h2>
+<ul class="scenes"><li>មិនចាប់យកក្នុងកម្មវិធីរុករក ប៉ុន្តែ Notepad / Word ធម្មតា: ជាធម្មតាកម្មវិធីរុករកគ្មានផ្នែកបន្ថែមការចាប់យក Youdao, ឬ ការបង្កើនល្បឿនផ្នែករឹង GPU បាន render ទំព័រជា texture → ដំឡើងផ្នែកបន្ថែម, ឬ បិទ «ប្រើការបង្កើនល្បឿនផ្នែករឹង» ហើយចាប់ផ្តើមឡើងវិញ.</li><li>Acrobat 64-ប៊ីត, ការជ្រើសក្នុង PDF មិនធ្វើអ្វី, «plug-in មិនឆបគ្នា, ផ្ទុក YodaoDict.api មិនបាន»: ក្នុង Acrobat Edit → Preferences → Security (Enhanced) → «បើក protected mode ពេលចាប់ផ្តើម» បិទ, បើក Youdao មុន Acrobat; បើនៅតែ copy YodaoDict.api ពីថត Youdao ទៅ plug_ins របស់ Acrobat.</li><li>អត្ថបទ PDF អាចជ្រើស ប៉ុន្តែមិនចាប់យក, ឬ ទំព័រទាំងមូលមិនបាន: វាជាស្កេន (PDF រូបភាពគ្មានស្រទាប់អត្ថបទ, ត្រូវការ «OCR ការចាប់យកខ្លាំង»), ឬ Acrobat protected mode / ការចាក់សោ Autotray.exe រារាំង injection.</li><li>បន្ទាប់ពីដំឡើង Office (ជាពិសេស Education / 365) Word មិនបកប្រែការជ្រើស: Youdao Office COM add-in ត្រូវបានបិទ → File → Options → Add-ins → COM add-ins → បើក; បើមិនដូច្នេះ ដំឡើង Youdao ឡើងវិញដើម្បីចុះបញ្ជីឡើងវិញ.</li><li>បន្ទាប់ពីធ្វើបច្ចុប្បន្នភាព OS ការចាប់យក និង ផ្លូវកាត់ ស្លាប់នៅ macOS: ការធ្វើបច្ចុប្បន្នភាព reset សិទ្ធិ → ផ្តល់ Youdao «ភាពងាយស្រួល» និង «ការថតអេក្រង់» ឡើងវិញក្នុង ឯកជនភាព និង សុវត្ថិភាព ហើយចាប់ផ្តើមឡើងវិញ.</li><li>ការចាប់យកដំណើរការក្នុងកម្មវិធីធម្មតា ប៉ុន្តែបរាជ័យក្នុងកម្មវិធី «ដំណើរការជាអ្នកគ្រប់គ្រង»: កម្រិតសិទ្ធិខុសគ្នារារាំង global hook ចាក់ចូល process សិទ្ធិខ្ពស់ → ចុចស្តាំ Youdao «ដំណើរការជាអ្នកគ្រប់គ្រង».</li><li>ពហុម៉ូនីទ័រ / DPI ខ្ពស់: popup ការចាប់យក «ហោះ» ទៅកន្លែងមើលមិនឃើញ: ដោយសារ DPI scaling ក្នុងម៉ូនីទ័រនីមួយៗមិនត្រូវគ្នា → ធីក «ខ្ទាស់ទីតាំងបង្អួច» ក្នុងការកំណត់ការចាប់យកដើម្បីខ្ទាស់នៅជ្រុងលើឆ្វេងនៃអេក្រង់មេ.</li></ul><div class="related"><h2>ពាក់ព័ន្ធ</h2><ul><li><a href="https://yoydao.com/">ទាញយក Youdao / មគ្គុទ្ទេសក៍ការរៀបចំ</a></li><li><a href="https://yoydao.com/km/tutorial/">មគ្គុទ្ទេសក៍ការចាប់យក និង ការជ្រើស Youdao</a></li><li><a href="https://yoydao.com/km/tools/youdao-word-capture/">Youdao ការស្វែងរកដំណោះស្រាយការចាប់យក (តារាងពេញដែលអាចទុកចិត្ត)</a></li><li><a href="https://yoidao.com/km/">Youdao Zhiyun API លេខកូដកំហុស (គេហទំព័របងប្អូន)</a></li></ul></div></main>
+<footer>កំណត់ចំណាំការចាប់យក/ការជ្រើស/OCR/ភាពឆបគ្នា 64-ប៊ីត ប្រមូលពី FAQ និង ជំនួយ desktop ផ្លូវការរបស់ Youdao (cidian.youdao.com); ការដោះស្រាយ Office add-in យោង Q&A ផ្លូវការរបស់ Microsoft, និង កំណត់ចំណាំ Acrobat 64-ប៊ីត «ផ្ទុក YodaoDict.api មិនបាន / បិទ protected mode» ពីការសរសេរអ្នកអភិវឌ្ឍន៍សាធារណៈ (រៀបរៀង). ការប្រៀបធៀបពីឯកសារសាធារណៈរបស់ Eudic, iCIBA, Saladict និង Microsoft Translator. សមាមាត្រ/វេទិកា/តម្លៃ 2026 ជាការប៉ាន់ស្មាន, មិនមែនការសន្យាអ្នកផលិត ឬ ការវាស់វែងផ្ទាល់. ការធ្វើមូលដ្ឋានីយកម្ម LLM; មើលព័ត៌មានផ្លូវការថ្មីបំផុតរបស់អ្នកផ្តល់សេវានីមួយៗ.<br>ទំព័រឧបករណ៍ · មិនជំនួស client ផ្លូវការ</footer>
+</div>
+<script src="/km/codes.js"></script><script src="/app.js"></script>
+</body></html>
